@@ -1,26 +1,26 @@
 {
     "reset": {
         "request": {
-            "title": "உங்கள் கடவுச்சொல்லை மாற்று",
+            "title": "പാസ് വേര്‍ഡ് റീസെറ്റ് ചെയ്യുക",
             "form": {
-                "button": "கடவுச்சொல் மாற்று"
+                "button": "പാസ് വേര്‍ഡ് റീസെറ്റ് ചെയ്യുക"
             },
             "messages": {
-                "info": "பதிவு செய்த மின்னஞ்சலை கொடுக்கவும்",
-                "success": "கடவுச்சொல்லை மாற்ற உங்கள் மின்னஞ்சலை பார்க்கவும்.",
-                "notfound": "<strong>மின்னஞ்சல் பதிவு செய்யப்படவில்லை!</strong> மீண்டும் முயற்சிக்கவும்"
+                "info": "രജിസ്റ്റര്‍ ചെയ്ത സമയത്തെ ഇമെയില്‍ വിലാസം എന്റര്‍ ചെയ്യുക",
+                "success": "Check your emails for details on how to reset your password.",
+                "notfound": "<strong>Email address isn't registered!</strong> Please check and try again"
             }
         },
         "finish" : {
-            "title": "கடவுச்சொல் மாற்று",
+            "title": "പാസ് വേര്‍ഡ് റീസെറ്റ് ചെയ്യുക",
             "form": {
-                "button": "புதிய கடவுச்சொல்லை உறுதி செய்யவும்"
+                "button": "പാസ്വേര്‍ഡ് ഉറപ്പുവരുത്തുക"
             },
             "messages": {
-                "info": "புதிய கடவுச்சொல்லை தேர்வு செய்க",
-                "success": "<strong>உங்கள் கடவுச்சொல் மாற்றப்பட்டது.</strong> தயவு செய்து <a href=\"#/login\"> உறுதி செய்க</a>.",
-                "keymissing": "மாற்று சாவி காணவில்லை.",
-                "error": "உங்கள் கடவுச்சொல்லை மாற்ற இயலவில்லை. கடவுச்சொல் கோரிக்கை 24 மணி நேரம் மட்டுமே செல்லுப்படியாகும்."
+                "info": "പുതിയ പാസ് വേര്‍ഡ് തിരഞ്ഞെടുക്കുക",
+                "success": "<strong>Your password has been reset.</strong> Please <a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">sign in</a>.",
+                "keymissing": "The reset key is missing.",
+                "error": "Your password couldn't be reset. Remember a password request is only valid for 24 hours."
             }
         }
     }
