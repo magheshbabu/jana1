@@ -92,20 +92,23 @@ public class ApekshaResourceIntTest {
     private static final String DEFAULT_VILLAGE = "AAAAAAAAAA";
     private static final String UPDATED_VILLAGE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_TALUK = "AAAAAAAAAA";
+    private static final String UPDATED_TALUK = "BBBBBBBBBB";
+
     private static final String DEFAULT_PANCHAYAT = "AAAAAAAAAA";
     private static final String UPDATED_PANCHAYAT = "BBBBBBBBBB";
 
     private static final String DEFAULT_POST_OFFICE = "AAAAAAAAAA";
     private static final String UPDATED_POST_OFFICE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_PIN_CODE = "AAAAAAAAAA";
+    private static final String UPDATED_PIN_CODE = "BBBBBBBBBB";
+
     private static final String DEFAULT_MOBILE_NUMBER = "AAAAAAAAAA";
     private static final String UPDATED_MOBILE_NUMBER = "BBBBBBBBBB";
 
     private static final String DEFAULT_LAND_LINE_WITH_STD = "AAAAAAAAAA";
     private static final String UPDATED_LAND_LINE_WITH_STD = "BBBBBBBBBB";
-
-    private static final String DEFAULT_PIN_CODE = "AAAAAAAAAA";
-    private static final String UPDATED_PIN_CODE = "BBBBBBBBBB";
 
     private static final String DEFAULT_OCCUPATION = "AAAAAAAAAA";
     private static final String UPDATED_OCCUPATION = "BBBBBBBBBB";
@@ -128,14 +131,20 @@ public class ApekshaResourceIntTest {
     private static final String DEFAULT_LAND_DISTRICT = "AAAAAAAAAA";
     private static final String UPDATED_LAND_DISTRICT = "BBBBBBBBBB";
 
-    private static final String DEFAULT_THALUK = "AAAAAAAAAA";
-    private static final String UPDATED_THALUK = "BBBBBBBBBB";
-
     private static final String DEFAULT_REQUIREMENT_PURPOSE = "AAAAAAAAAA";
     private static final String UPDATED_REQUIREMENT_PURPOSE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_RECOMMENDATION = "AAAAAAAAAA";
-    private static final String UPDATED_RECOMMENDATION = "BBBBBBBBBB";
+    private static final String DEFAULT_RECOMMENDATION_MINISTER = "AAAAAAAAAA";
+    private static final String UPDATED_RECOMMENDATION_MINISTER = "BBBBBBBBBB";
+
+    private static final String DEFAULT_RECOMMENDATION_MLA = "AAAAAAAAAA";
+    private static final String UPDATED_RECOMMENDATION_MLA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_RECOMMENDATION_MP = "AAAAAAAAAA";
+    private static final String UPDATED_RECOMMENDATION_MP = "BBBBBBBBBB";
+
+    private static final String DEFAULT_RECOMMENDATION_OTHERS = "AAAAAAAAAA";
+    private static final String UPDATED_RECOMMENDATION_OTHERS = "BBBBBBBBBB";
 
     private static final String DEFAULT_HOSPITAL_NAME = "AAAAAAAAAA";
     private static final String UPDATED_HOSPITAL_NAME = "BBBBBBBBBB";
@@ -145,6 +154,12 @@ public class ApekshaResourceIntTest {
 
     private static final Double DEFAULT_EXPECTED_AMOUNT = 1D;
     private static final Double UPDATED_EXPECTED_AMOUNT = 2D;
+
+    private static final Double DEFAULT_ANY_AMOUNT_RECEIVING_FROM_GOVT = 1D;
+    private static final Double UPDATED_ANY_AMOUNT_RECEIVING_FROM_GOVT = 2D;
+
+    private static final String DEFAULT_GOVT_AMOUNT_PURPOSE_DETAILS = "AAAAAAAAAA";
+    private static final String UPDATED_GOVT_AMOUNT_PURPOSE_DETAILS = "BBBBBBBBBB";
 
     private static final String DEFAULT_BANK_NAME = "AAAAAAAAAA";
     private static final String UPDATED_BANK_NAME = "BBBBBBBBBB";
@@ -226,6 +241,56 @@ public class ApekshaResourceIntTest {
     private static final String DEFAULT_NOMINEE_BANK_IFSC_CODE = "AAAAAAAAAA";
     private static final String UPDATED_NOMINEE_BANK_IFSC_CODE = "BBBBBBBBBB";
 
+    private static final byte[] DEFAULT_PHOTO = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_PHOTO = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_PHOTO_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_PHOTO_CONTENT_TYPE = "image/png";
+
+    private static final byte[] DEFAULT_APPLICATION_FORM = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_APPLICATION_FORM = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_APPLICATION_FORM_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_APPLICATION_FORM_CONTENT_TYPE = "image/png";
+
+    private static final byte[] DEFAULT_AADHAR_CARD = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_AADHAR_CARD = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_AADHAR_CARD_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_AADHAR_CARD_CONTENT_TYPE = "image/png";
+
+    private static final byte[] DEFAULT_RATION_CARD = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_RATION_CARD = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_RATION_CARD_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_RATION_CARD_CONTENT_TYPE = "image/png";
+
+    private static final byte[] DEFAULT_DOCTOR_REPORT = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_DOCTOR_REPORT = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_DOCTOR_REPORT_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_DOCTOR_REPORT_CONTENT_TYPE = "image/png";
+
+    private static final byte[] DEFAULT_BANK_PASSBOOK_FRONT_PAGE = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_BANK_PASSBOOK_FRONT_PAGE = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE = "image/png";
+
+    private static final byte[] DEFAULT_NOMINEE_PHOTO = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_NOMINEE_PHOTO = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_NOMINEE_PHOTO_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_NOMINEE_PHOTO_CONTENT_TYPE = "image/png";
+
+    private static final byte[] DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_NOMINEE_AADHAR_CARD_RATION_CARD = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_NOMINEE_AADHAR_CARD_RATION_CARD_CONTENT_TYPE = "image/png";
+
+    private static final byte[] DEFAULT_NOMINEE_RELATION_SHIP_PROOF = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_NOMINEE_RELATION_SHIP_PROOF = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_NOMINEE_RELATION_SHIP_PROOF_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_NOMINEE_RELATION_SHIP_PROOF_CONTENT_TYPE = "image/png";
+
+    private static final byte[] DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_NOMINEE_BANK_PASSBOOK_FRONT_PAGE = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_NOMINEE_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE = "image/png";
+
     @Autowired
     private ApekshaRepository apekshaRepository;
 
@@ -288,11 +353,12 @@ public class ApekshaResourceIntTest {
             .houseNumber(DEFAULT_HOUSE_NUMBER)
             .tcNumber(DEFAULT_TC_NUMBER)
             .village(DEFAULT_VILLAGE)
+            .taluk(DEFAULT_TALUK)
             .panchayat(DEFAULT_PANCHAYAT)
             .postOffice(DEFAULT_POST_OFFICE)
+            .pinCode(DEFAULT_PIN_CODE)
             .mobileNumber(DEFAULT_MOBILE_NUMBER)
             .landLineWithSTD(DEFAULT_LAND_LINE_WITH_STD)
-            .pinCode(DEFAULT_PIN_CODE)
             .occupation(DEFAULT_OCCUPATION)
             .annualIncome(DEFAULT_ANNUAL_INCOME)
             .familyDetails(DEFAULT_FAMILY_DETAILS)
@@ -300,12 +366,16 @@ public class ApekshaResourceIntTest {
             .landThaluk(DEFAULT_LAND_THALUK)
             .landVillage(DEFAULT_LAND_VILLAGE)
             .landDistrict(DEFAULT_LAND_DISTRICT)
-            .thaluk(DEFAULT_THALUK)
             .requirementPurpose(DEFAULT_REQUIREMENT_PURPOSE)
-            .recommendation(DEFAULT_RECOMMENDATION)
+            .recommendationMinister(DEFAULT_RECOMMENDATION_MINISTER)
+            .recommendationMLA(DEFAULT_RECOMMENDATION_MLA)
+            .recommendationMP(DEFAULT_RECOMMENDATION_MP)
+            .recommendationOthers(DEFAULT_RECOMMENDATION_OTHERS)
             .hospitalName(DEFAULT_HOSPITAL_NAME)
             .treatmentHistory(DEFAULT_TREATMENT_HISTORY)
             .expectedAmount(DEFAULT_EXPECTED_AMOUNT)
+            .anyAmountReceivingFromGovt(DEFAULT_ANY_AMOUNT_RECEIVING_FROM_GOVT)
+            .govtAmountPurposeDetails(DEFAULT_GOVT_AMOUNT_PURPOSE_DETAILS)
             .bankName(DEFAULT_BANK_NAME)
             .bankBranchName(DEFAULT_BANK_BRANCH_NAME)
             .bankAccountNumber(DEFAULT_BANK_ACCOUNT_NUMBER)
@@ -332,7 +402,27 @@ public class ApekshaResourceIntTest {
             .nomineeBankName(DEFAULT_NOMINEE_BANK_NAME)
             .nomineeBankBranch(DEFAULT_NOMINEE_BANK_BRANCH)
             .nomineeBankAccountNumber(DEFAULT_NOMINEE_BANK_ACCOUNT_NUMBER)
-            .nomineeBankIfscCode(DEFAULT_NOMINEE_BANK_IFSC_CODE);
+            .nomineeBankIfscCode(DEFAULT_NOMINEE_BANK_IFSC_CODE)
+            .photo(DEFAULT_PHOTO)
+            .photoContentType(DEFAULT_PHOTO_CONTENT_TYPE)
+            .applicationForm(DEFAULT_APPLICATION_FORM)
+            .applicationFormContentType(DEFAULT_APPLICATION_FORM_CONTENT_TYPE)
+            .aadharCard(DEFAULT_AADHAR_CARD)
+            .aadharCardContentType(DEFAULT_AADHAR_CARD_CONTENT_TYPE)
+            .rationCard(DEFAULT_RATION_CARD)
+            .rationCardContentType(DEFAULT_RATION_CARD_CONTENT_TYPE)
+            .doctorReport(DEFAULT_DOCTOR_REPORT)
+            .doctorReportContentType(DEFAULT_DOCTOR_REPORT_CONTENT_TYPE)
+            .bankPassbookFrontPage(DEFAULT_BANK_PASSBOOK_FRONT_PAGE)
+            .bankPassbookFrontPageContentType(DEFAULT_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE)
+            .nomineePhoto(DEFAULT_NOMINEE_PHOTO)
+            .nomineePhotoContentType(DEFAULT_NOMINEE_PHOTO_CONTENT_TYPE)
+            .nomineeAadharCardRationCard(DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD)
+            .nomineeAadharCardRationCardContentType(DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD_CONTENT_TYPE)
+            .nomineeRelationShipProof(DEFAULT_NOMINEE_RELATION_SHIP_PROOF)
+            .nomineeRelationShipProofContentType(DEFAULT_NOMINEE_RELATION_SHIP_PROOF_CONTENT_TYPE)
+            .nomineeBankPassbookFrontPage(DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE)
+            .nomineeBankPassbookFrontPageContentType(DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE);
         return apeksha;
     }
 
@@ -374,11 +464,12 @@ public class ApekshaResourceIntTest {
         assertThat(testApeksha.getHouseNumber()).isEqualTo(DEFAULT_HOUSE_NUMBER);
         assertThat(testApeksha.getTcNumber()).isEqualTo(DEFAULT_TC_NUMBER);
         assertThat(testApeksha.getVillage()).isEqualTo(DEFAULT_VILLAGE);
+        assertThat(testApeksha.getTaluk()).isEqualTo(DEFAULT_TALUK);
         assertThat(testApeksha.getPanchayat()).isEqualTo(DEFAULT_PANCHAYAT);
         assertThat(testApeksha.getPostOffice()).isEqualTo(DEFAULT_POST_OFFICE);
+        assertThat(testApeksha.getPinCode()).isEqualTo(DEFAULT_PIN_CODE);
         assertThat(testApeksha.getMobileNumber()).isEqualTo(DEFAULT_MOBILE_NUMBER);
         assertThat(testApeksha.getLandLineWithSTD()).isEqualTo(DEFAULT_LAND_LINE_WITH_STD);
-        assertThat(testApeksha.getPinCode()).isEqualTo(DEFAULT_PIN_CODE);
         assertThat(testApeksha.getOccupation()).isEqualTo(DEFAULT_OCCUPATION);
         assertThat(testApeksha.getAnnualIncome()).isEqualTo(DEFAULT_ANNUAL_INCOME);
         assertThat(testApeksha.getFamilyDetails()).isEqualTo(DEFAULT_FAMILY_DETAILS);
@@ -386,12 +477,16 @@ public class ApekshaResourceIntTest {
         assertThat(testApeksha.getLandThaluk()).isEqualTo(DEFAULT_LAND_THALUK);
         assertThat(testApeksha.getLandVillage()).isEqualTo(DEFAULT_LAND_VILLAGE);
         assertThat(testApeksha.getLandDistrict()).isEqualTo(DEFAULT_LAND_DISTRICT);
-        assertThat(testApeksha.getThaluk()).isEqualTo(DEFAULT_THALUK);
         assertThat(testApeksha.getRequirementPurpose()).isEqualTo(DEFAULT_REQUIREMENT_PURPOSE);
-        assertThat(testApeksha.getRecommendation()).isEqualTo(DEFAULT_RECOMMENDATION);
+        assertThat(testApeksha.getRecommendationMinister()).isEqualTo(DEFAULT_RECOMMENDATION_MINISTER);
+        assertThat(testApeksha.getRecommendationMLA()).isEqualTo(DEFAULT_RECOMMENDATION_MLA);
+        assertThat(testApeksha.getRecommendationMP()).isEqualTo(DEFAULT_RECOMMENDATION_MP);
+        assertThat(testApeksha.getRecommendationOthers()).isEqualTo(DEFAULT_RECOMMENDATION_OTHERS);
         assertThat(testApeksha.getHospitalName()).isEqualTo(DEFAULT_HOSPITAL_NAME);
         assertThat(testApeksha.getTreatmentHistory()).isEqualTo(DEFAULT_TREATMENT_HISTORY);
         assertThat(testApeksha.getExpectedAmount()).isEqualTo(DEFAULT_EXPECTED_AMOUNT);
+        assertThat(testApeksha.getAnyAmountReceivingFromGovt()).isEqualTo(DEFAULT_ANY_AMOUNT_RECEIVING_FROM_GOVT);
+        assertThat(testApeksha.getGovtAmountPurposeDetails()).isEqualTo(DEFAULT_GOVT_AMOUNT_PURPOSE_DETAILS);
         assertThat(testApeksha.getBankName()).isEqualTo(DEFAULT_BANK_NAME);
         assertThat(testApeksha.getBankBranchName()).isEqualTo(DEFAULT_BANK_BRANCH_NAME);
         assertThat(testApeksha.getBankAccountNumber()).isEqualTo(DEFAULT_BANK_ACCOUNT_NUMBER);
@@ -419,6 +514,26 @@ public class ApekshaResourceIntTest {
         assertThat(testApeksha.getNomineeBankBranch()).isEqualTo(DEFAULT_NOMINEE_BANK_BRANCH);
         assertThat(testApeksha.getNomineeBankAccountNumber()).isEqualTo(DEFAULT_NOMINEE_BANK_ACCOUNT_NUMBER);
         assertThat(testApeksha.getNomineeBankIfscCode()).isEqualTo(DEFAULT_NOMINEE_BANK_IFSC_CODE);
+        assertThat(testApeksha.getPhoto()).isEqualTo(DEFAULT_PHOTO);
+        assertThat(testApeksha.getPhotoContentType()).isEqualTo(DEFAULT_PHOTO_CONTENT_TYPE);
+        assertThat(testApeksha.getApplicationForm()).isEqualTo(DEFAULT_APPLICATION_FORM);
+        assertThat(testApeksha.getApplicationFormContentType()).isEqualTo(DEFAULT_APPLICATION_FORM_CONTENT_TYPE);
+        assertThat(testApeksha.getAadharCard()).isEqualTo(DEFAULT_AADHAR_CARD);
+        assertThat(testApeksha.getAadharCardContentType()).isEqualTo(DEFAULT_AADHAR_CARD_CONTENT_TYPE);
+        assertThat(testApeksha.getRationCard()).isEqualTo(DEFAULT_RATION_CARD);
+        assertThat(testApeksha.getRationCardContentType()).isEqualTo(DEFAULT_RATION_CARD_CONTENT_TYPE);
+        assertThat(testApeksha.getDoctorReport()).isEqualTo(DEFAULT_DOCTOR_REPORT);
+        assertThat(testApeksha.getDoctorReportContentType()).isEqualTo(DEFAULT_DOCTOR_REPORT_CONTENT_TYPE);
+        assertThat(testApeksha.getBankPassbookFrontPage()).isEqualTo(DEFAULT_BANK_PASSBOOK_FRONT_PAGE);
+        assertThat(testApeksha.getBankPassbookFrontPageContentType()).isEqualTo(DEFAULT_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE);
+        assertThat(testApeksha.getNomineePhoto()).isEqualTo(DEFAULT_NOMINEE_PHOTO);
+        assertThat(testApeksha.getNomineePhotoContentType()).isEqualTo(DEFAULT_NOMINEE_PHOTO_CONTENT_TYPE);
+        assertThat(testApeksha.getNomineeAadharCardRationCard()).isEqualTo(DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD);
+        assertThat(testApeksha.getNomineeAadharCardRationCardContentType()).isEqualTo(DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD_CONTENT_TYPE);
+        assertThat(testApeksha.getNomineeRelationShipProof()).isEqualTo(DEFAULT_NOMINEE_RELATION_SHIP_PROOF);
+        assertThat(testApeksha.getNomineeRelationShipProofContentType()).isEqualTo(DEFAULT_NOMINEE_RELATION_SHIP_PROOF_CONTENT_TYPE);
+        assertThat(testApeksha.getNomineeBankPassbookFrontPage()).isEqualTo(DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE);
+        assertThat(testApeksha.getNomineeBankPassbookFrontPageContentType()).isEqualTo(DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE);
 
         // Validate the Apeksha in Elasticsearch
         Apeksha apekshaEs = apekshaSearchRepository.findOne(testApeksha.getId());
@@ -738,11 +853,12 @@ public class ApekshaResourceIntTest {
             .andExpect(jsonPath("$.[*].houseNumber").value(hasItem(DEFAULT_HOUSE_NUMBER.toString())))
             .andExpect(jsonPath("$.[*].tcNumber").value(hasItem(DEFAULT_TC_NUMBER.toString())))
             .andExpect(jsonPath("$.[*].village").value(hasItem(DEFAULT_VILLAGE.toString())))
+            .andExpect(jsonPath("$.[*].taluk").value(hasItem(DEFAULT_TALUK.toString())))
             .andExpect(jsonPath("$.[*].panchayat").value(hasItem(DEFAULT_PANCHAYAT.toString())))
             .andExpect(jsonPath("$.[*].postOffice").value(hasItem(DEFAULT_POST_OFFICE.toString())))
+            .andExpect(jsonPath("$.[*].pinCode").value(hasItem(DEFAULT_PIN_CODE.toString())))
             .andExpect(jsonPath("$.[*].mobileNumber").value(hasItem(DEFAULT_MOBILE_NUMBER.toString())))
             .andExpect(jsonPath("$.[*].landLineWithSTD").value(hasItem(DEFAULT_LAND_LINE_WITH_STD.toString())))
-            .andExpect(jsonPath("$.[*].pinCode").value(hasItem(DEFAULT_PIN_CODE.toString())))
             .andExpect(jsonPath("$.[*].occupation").value(hasItem(DEFAULT_OCCUPATION.toString())))
             .andExpect(jsonPath("$.[*].annualIncome").value(hasItem(DEFAULT_ANNUAL_INCOME.doubleValue())))
             .andExpect(jsonPath("$.[*].familyDetails").value(hasItem(DEFAULT_FAMILY_DETAILS.toString())))
@@ -750,12 +866,16 @@ public class ApekshaResourceIntTest {
             .andExpect(jsonPath("$.[*].landThaluk").value(hasItem(DEFAULT_LAND_THALUK.toString())))
             .andExpect(jsonPath("$.[*].landVillage").value(hasItem(DEFAULT_LAND_VILLAGE.toString())))
             .andExpect(jsonPath("$.[*].landDistrict").value(hasItem(DEFAULT_LAND_DISTRICT.toString())))
-            .andExpect(jsonPath("$.[*].thaluk").value(hasItem(DEFAULT_THALUK.toString())))
             .andExpect(jsonPath("$.[*].requirementPurpose").value(hasItem(DEFAULT_REQUIREMENT_PURPOSE.toString())))
-            .andExpect(jsonPath("$.[*].recommendation").value(hasItem(DEFAULT_RECOMMENDATION.toString())))
+            .andExpect(jsonPath("$.[*].recommendationMinister").value(hasItem(DEFAULT_RECOMMENDATION_MINISTER.toString())))
+            .andExpect(jsonPath("$.[*].recommendationMLA").value(hasItem(DEFAULT_RECOMMENDATION_MLA.toString())))
+            .andExpect(jsonPath("$.[*].recommendationMP").value(hasItem(DEFAULT_RECOMMENDATION_MP.toString())))
+            .andExpect(jsonPath("$.[*].recommendationOthers").value(hasItem(DEFAULT_RECOMMENDATION_OTHERS.toString())))
             .andExpect(jsonPath("$.[*].hospitalName").value(hasItem(DEFAULT_HOSPITAL_NAME.toString())))
             .andExpect(jsonPath("$.[*].treatmentHistory").value(hasItem(DEFAULT_TREATMENT_HISTORY.toString())))
             .andExpect(jsonPath("$.[*].expectedAmount").value(hasItem(DEFAULT_EXPECTED_AMOUNT.doubleValue())))
+            .andExpect(jsonPath("$.[*].anyAmountReceivingFromGovt").value(hasItem(DEFAULT_ANY_AMOUNT_RECEIVING_FROM_GOVT.doubleValue())))
+            .andExpect(jsonPath("$.[*].govtAmountPurposeDetails").value(hasItem(DEFAULT_GOVT_AMOUNT_PURPOSE_DETAILS.toString())))
             .andExpect(jsonPath("$.[*].bankName").value(hasItem(DEFAULT_BANK_NAME.toString())))
             .andExpect(jsonPath("$.[*].bankBranchName").value(hasItem(DEFAULT_BANK_BRANCH_NAME.toString())))
             .andExpect(jsonPath("$.[*].bankAccountNumber").value(hasItem(DEFAULT_BANK_ACCOUNT_NUMBER.toString())))
@@ -782,7 +902,27 @@ public class ApekshaResourceIntTest {
             .andExpect(jsonPath("$.[*].nomineeBankName").value(hasItem(DEFAULT_NOMINEE_BANK_NAME.toString())))
             .andExpect(jsonPath("$.[*].nomineeBankBranch").value(hasItem(DEFAULT_NOMINEE_BANK_BRANCH.toString())))
             .andExpect(jsonPath("$.[*].nomineeBankAccountNumber").value(hasItem(DEFAULT_NOMINEE_BANK_ACCOUNT_NUMBER.toString())))
-            .andExpect(jsonPath("$.[*].nomineeBankIfscCode").value(hasItem(DEFAULT_NOMINEE_BANK_IFSC_CODE.toString())));
+            .andExpect(jsonPath("$.[*].nomineeBankIfscCode").value(hasItem(DEFAULT_NOMINEE_BANK_IFSC_CODE.toString())))
+            .andExpect(jsonPath("$.[*].photoContentType").value(hasItem(DEFAULT_PHOTO_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].photo").value(hasItem(Base64Utils.encodeToString(DEFAULT_PHOTO))))
+            .andExpect(jsonPath("$.[*].applicationFormContentType").value(hasItem(DEFAULT_APPLICATION_FORM_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].applicationForm").value(hasItem(Base64Utils.encodeToString(DEFAULT_APPLICATION_FORM))))
+            .andExpect(jsonPath("$.[*].aadharCardContentType").value(hasItem(DEFAULT_AADHAR_CARD_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].aadharCard").value(hasItem(Base64Utils.encodeToString(DEFAULT_AADHAR_CARD))))
+            .andExpect(jsonPath("$.[*].rationCardContentType").value(hasItem(DEFAULT_RATION_CARD_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].rationCard").value(hasItem(Base64Utils.encodeToString(DEFAULT_RATION_CARD))))
+            .andExpect(jsonPath("$.[*].doctorReportContentType").value(hasItem(DEFAULT_DOCTOR_REPORT_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].doctorReport").value(hasItem(Base64Utils.encodeToString(DEFAULT_DOCTOR_REPORT))))
+            .andExpect(jsonPath("$.[*].bankPassbookFrontPageContentType").value(hasItem(DEFAULT_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].bankPassbookFrontPage").value(hasItem(Base64Utils.encodeToString(DEFAULT_BANK_PASSBOOK_FRONT_PAGE))))
+            .andExpect(jsonPath("$.[*].nomineePhotoContentType").value(hasItem(DEFAULT_NOMINEE_PHOTO_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].nomineePhoto").value(hasItem(Base64Utils.encodeToString(DEFAULT_NOMINEE_PHOTO))))
+            .andExpect(jsonPath("$.[*].nomineeAadharCardRationCardContentType").value(hasItem(DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].nomineeAadharCardRationCard").value(hasItem(Base64Utils.encodeToString(DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD))))
+            .andExpect(jsonPath("$.[*].nomineeRelationShipProofContentType").value(hasItem(DEFAULT_NOMINEE_RELATION_SHIP_PROOF_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].nomineeRelationShipProof").value(hasItem(Base64Utils.encodeToString(DEFAULT_NOMINEE_RELATION_SHIP_PROOF))))
+            .andExpect(jsonPath("$.[*].nomineeBankPassbookFrontPageContentType").value(hasItem(DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].nomineeBankPassbookFrontPage").value(hasItem(Base64Utils.encodeToString(DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE))));
     }
 
     @Test
@@ -812,11 +952,12 @@ public class ApekshaResourceIntTest {
             .andExpect(jsonPath("$.houseNumber").value(DEFAULT_HOUSE_NUMBER.toString()))
             .andExpect(jsonPath("$.tcNumber").value(DEFAULT_TC_NUMBER.toString()))
             .andExpect(jsonPath("$.village").value(DEFAULT_VILLAGE.toString()))
+            .andExpect(jsonPath("$.taluk").value(DEFAULT_TALUK.toString()))
             .andExpect(jsonPath("$.panchayat").value(DEFAULT_PANCHAYAT.toString()))
             .andExpect(jsonPath("$.postOffice").value(DEFAULT_POST_OFFICE.toString()))
+            .andExpect(jsonPath("$.pinCode").value(DEFAULT_PIN_CODE.toString()))
             .andExpect(jsonPath("$.mobileNumber").value(DEFAULT_MOBILE_NUMBER.toString()))
             .andExpect(jsonPath("$.landLineWithSTD").value(DEFAULT_LAND_LINE_WITH_STD.toString()))
-            .andExpect(jsonPath("$.pinCode").value(DEFAULT_PIN_CODE.toString()))
             .andExpect(jsonPath("$.occupation").value(DEFAULT_OCCUPATION.toString()))
             .andExpect(jsonPath("$.annualIncome").value(DEFAULT_ANNUAL_INCOME.doubleValue()))
             .andExpect(jsonPath("$.familyDetails").value(DEFAULT_FAMILY_DETAILS.toString()))
@@ -824,12 +965,16 @@ public class ApekshaResourceIntTest {
             .andExpect(jsonPath("$.landThaluk").value(DEFAULT_LAND_THALUK.toString()))
             .andExpect(jsonPath("$.landVillage").value(DEFAULT_LAND_VILLAGE.toString()))
             .andExpect(jsonPath("$.landDistrict").value(DEFAULT_LAND_DISTRICT.toString()))
-            .andExpect(jsonPath("$.thaluk").value(DEFAULT_THALUK.toString()))
             .andExpect(jsonPath("$.requirementPurpose").value(DEFAULT_REQUIREMENT_PURPOSE.toString()))
-            .andExpect(jsonPath("$.recommendation").value(DEFAULT_RECOMMENDATION.toString()))
+            .andExpect(jsonPath("$.recommendationMinister").value(DEFAULT_RECOMMENDATION_MINISTER.toString()))
+            .andExpect(jsonPath("$.recommendationMLA").value(DEFAULT_RECOMMENDATION_MLA.toString()))
+            .andExpect(jsonPath("$.recommendationMP").value(DEFAULT_RECOMMENDATION_MP.toString()))
+            .andExpect(jsonPath("$.recommendationOthers").value(DEFAULT_RECOMMENDATION_OTHERS.toString()))
             .andExpect(jsonPath("$.hospitalName").value(DEFAULT_HOSPITAL_NAME.toString()))
             .andExpect(jsonPath("$.treatmentHistory").value(DEFAULT_TREATMENT_HISTORY.toString()))
             .andExpect(jsonPath("$.expectedAmount").value(DEFAULT_EXPECTED_AMOUNT.doubleValue()))
+            .andExpect(jsonPath("$.anyAmountReceivingFromGovt").value(DEFAULT_ANY_AMOUNT_RECEIVING_FROM_GOVT.doubleValue()))
+            .andExpect(jsonPath("$.govtAmountPurposeDetails").value(DEFAULT_GOVT_AMOUNT_PURPOSE_DETAILS.toString()))
             .andExpect(jsonPath("$.bankName").value(DEFAULT_BANK_NAME.toString()))
             .andExpect(jsonPath("$.bankBranchName").value(DEFAULT_BANK_BRANCH_NAME.toString()))
             .andExpect(jsonPath("$.bankAccountNumber").value(DEFAULT_BANK_ACCOUNT_NUMBER.toString()))
@@ -856,7 +1001,27 @@ public class ApekshaResourceIntTest {
             .andExpect(jsonPath("$.nomineeBankName").value(DEFAULT_NOMINEE_BANK_NAME.toString()))
             .andExpect(jsonPath("$.nomineeBankBranch").value(DEFAULT_NOMINEE_BANK_BRANCH.toString()))
             .andExpect(jsonPath("$.nomineeBankAccountNumber").value(DEFAULT_NOMINEE_BANK_ACCOUNT_NUMBER.toString()))
-            .andExpect(jsonPath("$.nomineeBankIfscCode").value(DEFAULT_NOMINEE_BANK_IFSC_CODE.toString()));
+            .andExpect(jsonPath("$.nomineeBankIfscCode").value(DEFAULT_NOMINEE_BANK_IFSC_CODE.toString()))
+            .andExpect(jsonPath("$.photoContentType").value(DEFAULT_PHOTO_CONTENT_TYPE))
+            .andExpect(jsonPath("$.photo").value(Base64Utils.encodeToString(DEFAULT_PHOTO)))
+            .andExpect(jsonPath("$.applicationFormContentType").value(DEFAULT_APPLICATION_FORM_CONTENT_TYPE))
+            .andExpect(jsonPath("$.applicationForm").value(Base64Utils.encodeToString(DEFAULT_APPLICATION_FORM)))
+            .andExpect(jsonPath("$.aadharCardContentType").value(DEFAULT_AADHAR_CARD_CONTENT_TYPE))
+            .andExpect(jsonPath("$.aadharCard").value(Base64Utils.encodeToString(DEFAULT_AADHAR_CARD)))
+            .andExpect(jsonPath("$.rationCardContentType").value(DEFAULT_RATION_CARD_CONTENT_TYPE))
+            .andExpect(jsonPath("$.rationCard").value(Base64Utils.encodeToString(DEFAULT_RATION_CARD)))
+            .andExpect(jsonPath("$.doctorReportContentType").value(DEFAULT_DOCTOR_REPORT_CONTENT_TYPE))
+            .andExpect(jsonPath("$.doctorReport").value(Base64Utils.encodeToString(DEFAULT_DOCTOR_REPORT)))
+            .andExpect(jsonPath("$.bankPassbookFrontPageContentType").value(DEFAULT_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE))
+            .andExpect(jsonPath("$.bankPassbookFrontPage").value(Base64Utils.encodeToString(DEFAULT_BANK_PASSBOOK_FRONT_PAGE)))
+            .andExpect(jsonPath("$.nomineePhotoContentType").value(DEFAULT_NOMINEE_PHOTO_CONTENT_TYPE))
+            .andExpect(jsonPath("$.nomineePhoto").value(Base64Utils.encodeToString(DEFAULT_NOMINEE_PHOTO)))
+            .andExpect(jsonPath("$.nomineeAadharCardRationCardContentType").value(DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD_CONTENT_TYPE))
+            .andExpect(jsonPath("$.nomineeAadharCardRationCard").value(Base64Utils.encodeToString(DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD)))
+            .andExpect(jsonPath("$.nomineeRelationShipProofContentType").value(DEFAULT_NOMINEE_RELATION_SHIP_PROOF_CONTENT_TYPE))
+            .andExpect(jsonPath("$.nomineeRelationShipProof").value(Base64Utils.encodeToString(DEFAULT_NOMINEE_RELATION_SHIP_PROOF)))
+            .andExpect(jsonPath("$.nomineeBankPassbookFrontPageContentType").value(DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE))
+            .andExpect(jsonPath("$.nomineeBankPassbookFrontPage").value(Base64Utils.encodeToString(DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE)));
     }
 
     @Test
@@ -894,11 +1059,12 @@ public class ApekshaResourceIntTest {
             .houseNumber(UPDATED_HOUSE_NUMBER)
             .tcNumber(UPDATED_TC_NUMBER)
             .village(UPDATED_VILLAGE)
+            .taluk(UPDATED_TALUK)
             .panchayat(UPDATED_PANCHAYAT)
             .postOffice(UPDATED_POST_OFFICE)
+            .pinCode(UPDATED_PIN_CODE)
             .mobileNumber(UPDATED_MOBILE_NUMBER)
             .landLineWithSTD(UPDATED_LAND_LINE_WITH_STD)
-            .pinCode(UPDATED_PIN_CODE)
             .occupation(UPDATED_OCCUPATION)
             .annualIncome(UPDATED_ANNUAL_INCOME)
             .familyDetails(UPDATED_FAMILY_DETAILS)
@@ -906,12 +1072,16 @@ public class ApekshaResourceIntTest {
             .landThaluk(UPDATED_LAND_THALUK)
             .landVillage(UPDATED_LAND_VILLAGE)
             .landDistrict(UPDATED_LAND_DISTRICT)
-            .thaluk(UPDATED_THALUK)
             .requirementPurpose(UPDATED_REQUIREMENT_PURPOSE)
-            .recommendation(UPDATED_RECOMMENDATION)
+            .recommendationMinister(UPDATED_RECOMMENDATION_MINISTER)
+            .recommendationMLA(UPDATED_RECOMMENDATION_MLA)
+            .recommendationMP(UPDATED_RECOMMENDATION_MP)
+            .recommendationOthers(UPDATED_RECOMMENDATION_OTHERS)
             .hospitalName(UPDATED_HOSPITAL_NAME)
             .treatmentHistory(UPDATED_TREATMENT_HISTORY)
             .expectedAmount(UPDATED_EXPECTED_AMOUNT)
+            .anyAmountReceivingFromGovt(UPDATED_ANY_AMOUNT_RECEIVING_FROM_GOVT)
+            .govtAmountPurposeDetails(UPDATED_GOVT_AMOUNT_PURPOSE_DETAILS)
             .bankName(UPDATED_BANK_NAME)
             .bankBranchName(UPDATED_BANK_BRANCH_NAME)
             .bankAccountNumber(UPDATED_BANK_ACCOUNT_NUMBER)
@@ -938,7 +1108,27 @@ public class ApekshaResourceIntTest {
             .nomineeBankName(UPDATED_NOMINEE_BANK_NAME)
             .nomineeBankBranch(UPDATED_NOMINEE_BANK_BRANCH)
             .nomineeBankAccountNumber(UPDATED_NOMINEE_BANK_ACCOUNT_NUMBER)
-            .nomineeBankIfscCode(UPDATED_NOMINEE_BANK_IFSC_CODE);
+            .nomineeBankIfscCode(UPDATED_NOMINEE_BANK_IFSC_CODE)
+            .photo(UPDATED_PHOTO)
+            .photoContentType(UPDATED_PHOTO_CONTENT_TYPE)
+            .applicationForm(UPDATED_APPLICATION_FORM)
+            .applicationFormContentType(UPDATED_APPLICATION_FORM_CONTENT_TYPE)
+            .aadharCard(UPDATED_AADHAR_CARD)
+            .aadharCardContentType(UPDATED_AADHAR_CARD_CONTENT_TYPE)
+            .rationCard(UPDATED_RATION_CARD)
+            .rationCardContentType(UPDATED_RATION_CARD_CONTENT_TYPE)
+            .doctorReport(UPDATED_DOCTOR_REPORT)
+            .doctorReportContentType(UPDATED_DOCTOR_REPORT_CONTENT_TYPE)
+            .bankPassbookFrontPage(UPDATED_BANK_PASSBOOK_FRONT_PAGE)
+            .bankPassbookFrontPageContentType(UPDATED_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE)
+            .nomineePhoto(UPDATED_NOMINEE_PHOTO)
+            .nomineePhotoContentType(UPDATED_NOMINEE_PHOTO_CONTENT_TYPE)
+            .nomineeAadharCardRationCard(UPDATED_NOMINEE_AADHAR_CARD_RATION_CARD)
+            .nomineeAadharCardRationCardContentType(UPDATED_NOMINEE_AADHAR_CARD_RATION_CARD_CONTENT_TYPE)
+            .nomineeRelationShipProof(UPDATED_NOMINEE_RELATION_SHIP_PROOF)
+            .nomineeRelationShipProofContentType(UPDATED_NOMINEE_RELATION_SHIP_PROOF_CONTENT_TYPE)
+            .nomineeBankPassbookFrontPage(UPDATED_NOMINEE_BANK_PASSBOOK_FRONT_PAGE)
+            .nomineeBankPassbookFrontPageContentType(UPDATED_NOMINEE_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE);
         ApekshaDTO apekshaDTO = apekshaMapper.toDto(updatedApeksha);
 
         restApekshaMockMvc.perform(put("/api/apekshas")
@@ -966,11 +1156,12 @@ public class ApekshaResourceIntTest {
         assertThat(testApeksha.getHouseNumber()).isEqualTo(UPDATED_HOUSE_NUMBER);
         assertThat(testApeksha.getTcNumber()).isEqualTo(UPDATED_TC_NUMBER);
         assertThat(testApeksha.getVillage()).isEqualTo(UPDATED_VILLAGE);
+        assertThat(testApeksha.getTaluk()).isEqualTo(UPDATED_TALUK);
         assertThat(testApeksha.getPanchayat()).isEqualTo(UPDATED_PANCHAYAT);
         assertThat(testApeksha.getPostOffice()).isEqualTo(UPDATED_POST_OFFICE);
+        assertThat(testApeksha.getPinCode()).isEqualTo(UPDATED_PIN_CODE);
         assertThat(testApeksha.getMobileNumber()).isEqualTo(UPDATED_MOBILE_NUMBER);
         assertThat(testApeksha.getLandLineWithSTD()).isEqualTo(UPDATED_LAND_LINE_WITH_STD);
-        assertThat(testApeksha.getPinCode()).isEqualTo(UPDATED_PIN_CODE);
         assertThat(testApeksha.getOccupation()).isEqualTo(UPDATED_OCCUPATION);
         assertThat(testApeksha.getAnnualIncome()).isEqualTo(UPDATED_ANNUAL_INCOME);
         assertThat(testApeksha.getFamilyDetails()).isEqualTo(UPDATED_FAMILY_DETAILS);
@@ -978,12 +1169,16 @@ public class ApekshaResourceIntTest {
         assertThat(testApeksha.getLandThaluk()).isEqualTo(UPDATED_LAND_THALUK);
         assertThat(testApeksha.getLandVillage()).isEqualTo(UPDATED_LAND_VILLAGE);
         assertThat(testApeksha.getLandDistrict()).isEqualTo(UPDATED_LAND_DISTRICT);
-        assertThat(testApeksha.getThaluk()).isEqualTo(UPDATED_THALUK);
         assertThat(testApeksha.getRequirementPurpose()).isEqualTo(UPDATED_REQUIREMENT_PURPOSE);
-        assertThat(testApeksha.getRecommendation()).isEqualTo(UPDATED_RECOMMENDATION);
+        assertThat(testApeksha.getRecommendationMinister()).isEqualTo(UPDATED_RECOMMENDATION_MINISTER);
+        assertThat(testApeksha.getRecommendationMLA()).isEqualTo(UPDATED_RECOMMENDATION_MLA);
+        assertThat(testApeksha.getRecommendationMP()).isEqualTo(UPDATED_RECOMMENDATION_MP);
+        assertThat(testApeksha.getRecommendationOthers()).isEqualTo(UPDATED_RECOMMENDATION_OTHERS);
         assertThat(testApeksha.getHospitalName()).isEqualTo(UPDATED_HOSPITAL_NAME);
         assertThat(testApeksha.getTreatmentHistory()).isEqualTo(UPDATED_TREATMENT_HISTORY);
         assertThat(testApeksha.getExpectedAmount()).isEqualTo(UPDATED_EXPECTED_AMOUNT);
+        assertThat(testApeksha.getAnyAmountReceivingFromGovt()).isEqualTo(UPDATED_ANY_AMOUNT_RECEIVING_FROM_GOVT);
+        assertThat(testApeksha.getGovtAmountPurposeDetails()).isEqualTo(UPDATED_GOVT_AMOUNT_PURPOSE_DETAILS);
         assertThat(testApeksha.getBankName()).isEqualTo(UPDATED_BANK_NAME);
         assertThat(testApeksha.getBankBranchName()).isEqualTo(UPDATED_BANK_BRANCH_NAME);
         assertThat(testApeksha.getBankAccountNumber()).isEqualTo(UPDATED_BANK_ACCOUNT_NUMBER);
@@ -1011,6 +1206,26 @@ public class ApekshaResourceIntTest {
         assertThat(testApeksha.getNomineeBankBranch()).isEqualTo(UPDATED_NOMINEE_BANK_BRANCH);
         assertThat(testApeksha.getNomineeBankAccountNumber()).isEqualTo(UPDATED_NOMINEE_BANK_ACCOUNT_NUMBER);
         assertThat(testApeksha.getNomineeBankIfscCode()).isEqualTo(UPDATED_NOMINEE_BANK_IFSC_CODE);
+        assertThat(testApeksha.getPhoto()).isEqualTo(UPDATED_PHOTO);
+        assertThat(testApeksha.getPhotoContentType()).isEqualTo(UPDATED_PHOTO_CONTENT_TYPE);
+        assertThat(testApeksha.getApplicationForm()).isEqualTo(UPDATED_APPLICATION_FORM);
+        assertThat(testApeksha.getApplicationFormContentType()).isEqualTo(UPDATED_APPLICATION_FORM_CONTENT_TYPE);
+        assertThat(testApeksha.getAadharCard()).isEqualTo(UPDATED_AADHAR_CARD);
+        assertThat(testApeksha.getAadharCardContentType()).isEqualTo(UPDATED_AADHAR_CARD_CONTENT_TYPE);
+        assertThat(testApeksha.getRationCard()).isEqualTo(UPDATED_RATION_CARD);
+        assertThat(testApeksha.getRationCardContentType()).isEqualTo(UPDATED_RATION_CARD_CONTENT_TYPE);
+        assertThat(testApeksha.getDoctorReport()).isEqualTo(UPDATED_DOCTOR_REPORT);
+        assertThat(testApeksha.getDoctorReportContentType()).isEqualTo(UPDATED_DOCTOR_REPORT_CONTENT_TYPE);
+        assertThat(testApeksha.getBankPassbookFrontPage()).isEqualTo(UPDATED_BANK_PASSBOOK_FRONT_PAGE);
+        assertThat(testApeksha.getBankPassbookFrontPageContentType()).isEqualTo(UPDATED_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE);
+        assertThat(testApeksha.getNomineePhoto()).isEqualTo(UPDATED_NOMINEE_PHOTO);
+        assertThat(testApeksha.getNomineePhotoContentType()).isEqualTo(UPDATED_NOMINEE_PHOTO_CONTENT_TYPE);
+        assertThat(testApeksha.getNomineeAadharCardRationCard()).isEqualTo(UPDATED_NOMINEE_AADHAR_CARD_RATION_CARD);
+        assertThat(testApeksha.getNomineeAadharCardRationCardContentType()).isEqualTo(UPDATED_NOMINEE_AADHAR_CARD_RATION_CARD_CONTENT_TYPE);
+        assertThat(testApeksha.getNomineeRelationShipProof()).isEqualTo(UPDATED_NOMINEE_RELATION_SHIP_PROOF);
+        assertThat(testApeksha.getNomineeRelationShipProofContentType()).isEqualTo(UPDATED_NOMINEE_RELATION_SHIP_PROOF_CONTENT_TYPE);
+        assertThat(testApeksha.getNomineeBankPassbookFrontPage()).isEqualTo(UPDATED_NOMINEE_BANK_PASSBOOK_FRONT_PAGE);
+        assertThat(testApeksha.getNomineeBankPassbookFrontPageContentType()).isEqualTo(UPDATED_NOMINEE_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE);
 
         // Validate the Apeksha in Elasticsearch
         Apeksha apekshaEs = apekshaSearchRepository.findOne(testApeksha.getId());
@@ -1086,11 +1301,12 @@ public class ApekshaResourceIntTest {
             .andExpect(jsonPath("$.[*].houseNumber").value(hasItem(DEFAULT_HOUSE_NUMBER.toString())))
             .andExpect(jsonPath("$.[*].tcNumber").value(hasItem(DEFAULT_TC_NUMBER.toString())))
             .andExpect(jsonPath("$.[*].village").value(hasItem(DEFAULT_VILLAGE.toString())))
+            .andExpect(jsonPath("$.[*].taluk").value(hasItem(DEFAULT_TALUK.toString())))
             .andExpect(jsonPath("$.[*].panchayat").value(hasItem(DEFAULT_PANCHAYAT.toString())))
             .andExpect(jsonPath("$.[*].postOffice").value(hasItem(DEFAULT_POST_OFFICE.toString())))
+            .andExpect(jsonPath("$.[*].pinCode").value(hasItem(DEFAULT_PIN_CODE.toString())))
             .andExpect(jsonPath("$.[*].mobileNumber").value(hasItem(DEFAULT_MOBILE_NUMBER.toString())))
             .andExpect(jsonPath("$.[*].landLineWithSTD").value(hasItem(DEFAULT_LAND_LINE_WITH_STD.toString())))
-            .andExpect(jsonPath("$.[*].pinCode").value(hasItem(DEFAULT_PIN_CODE.toString())))
             .andExpect(jsonPath("$.[*].occupation").value(hasItem(DEFAULT_OCCUPATION.toString())))
             .andExpect(jsonPath("$.[*].annualIncome").value(hasItem(DEFAULT_ANNUAL_INCOME.doubleValue())))
             .andExpect(jsonPath("$.[*].familyDetails").value(hasItem(DEFAULT_FAMILY_DETAILS.toString())))
@@ -1098,12 +1314,16 @@ public class ApekshaResourceIntTest {
             .andExpect(jsonPath("$.[*].landThaluk").value(hasItem(DEFAULT_LAND_THALUK.toString())))
             .andExpect(jsonPath("$.[*].landVillage").value(hasItem(DEFAULT_LAND_VILLAGE.toString())))
             .andExpect(jsonPath("$.[*].landDistrict").value(hasItem(DEFAULT_LAND_DISTRICT.toString())))
-            .andExpect(jsonPath("$.[*].thaluk").value(hasItem(DEFAULT_THALUK.toString())))
             .andExpect(jsonPath("$.[*].requirementPurpose").value(hasItem(DEFAULT_REQUIREMENT_PURPOSE.toString())))
-            .andExpect(jsonPath("$.[*].recommendation").value(hasItem(DEFAULT_RECOMMENDATION.toString())))
+            .andExpect(jsonPath("$.[*].recommendationMinister").value(hasItem(DEFAULT_RECOMMENDATION_MINISTER.toString())))
+            .andExpect(jsonPath("$.[*].recommendationMLA").value(hasItem(DEFAULT_RECOMMENDATION_MLA.toString())))
+            .andExpect(jsonPath("$.[*].recommendationMP").value(hasItem(DEFAULT_RECOMMENDATION_MP.toString())))
+            .andExpect(jsonPath("$.[*].recommendationOthers").value(hasItem(DEFAULT_RECOMMENDATION_OTHERS.toString())))
             .andExpect(jsonPath("$.[*].hospitalName").value(hasItem(DEFAULT_HOSPITAL_NAME.toString())))
             .andExpect(jsonPath("$.[*].treatmentHistory").value(hasItem(DEFAULT_TREATMENT_HISTORY.toString())))
             .andExpect(jsonPath("$.[*].expectedAmount").value(hasItem(DEFAULT_EXPECTED_AMOUNT.doubleValue())))
+            .andExpect(jsonPath("$.[*].anyAmountReceivingFromGovt").value(hasItem(DEFAULT_ANY_AMOUNT_RECEIVING_FROM_GOVT.doubleValue())))
+            .andExpect(jsonPath("$.[*].govtAmountPurposeDetails").value(hasItem(DEFAULT_GOVT_AMOUNT_PURPOSE_DETAILS.toString())))
             .andExpect(jsonPath("$.[*].bankName").value(hasItem(DEFAULT_BANK_NAME.toString())))
             .andExpect(jsonPath("$.[*].bankBranchName").value(hasItem(DEFAULT_BANK_BRANCH_NAME.toString())))
             .andExpect(jsonPath("$.[*].bankAccountNumber").value(hasItem(DEFAULT_BANK_ACCOUNT_NUMBER.toString())))
@@ -1130,7 +1350,27 @@ public class ApekshaResourceIntTest {
             .andExpect(jsonPath("$.[*].nomineeBankName").value(hasItem(DEFAULT_NOMINEE_BANK_NAME.toString())))
             .andExpect(jsonPath("$.[*].nomineeBankBranch").value(hasItem(DEFAULT_NOMINEE_BANK_BRANCH.toString())))
             .andExpect(jsonPath("$.[*].nomineeBankAccountNumber").value(hasItem(DEFAULT_NOMINEE_BANK_ACCOUNT_NUMBER.toString())))
-            .andExpect(jsonPath("$.[*].nomineeBankIfscCode").value(hasItem(DEFAULT_NOMINEE_BANK_IFSC_CODE.toString())));
+            .andExpect(jsonPath("$.[*].nomineeBankIfscCode").value(hasItem(DEFAULT_NOMINEE_BANK_IFSC_CODE.toString())))
+            .andExpect(jsonPath("$.[*].photoContentType").value(hasItem(DEFAULT_PHOTO_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].photo").value(hasItem(Base64Utils.encodeToString(DEFAULT_PHOTO))))
+            .andExpect(jsonPath("$.[*].applicationFormContentType").value(hasItem(DEFAULT_APPLICATION_FORM_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].applicationForm").value(hasItem(Base64Utils.encodeToString(DEFAULT_APPLICATION_FORM))))
+            .andExpect(jsonPath("$.[*].aadharCardContentType").value(hasItem(DEFAULT_AADHAR_CARD_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].aadharCard").value(hasItem(Base64Utils.encodeToString(DEFAULT_AADHAR_CARD))))
+            .andExpect(jsonPath("$.[*].rationCardContentType").value(hasItem(DEFAULT_RATION_CARD_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].rationCard").value(hasItem(Base64Utils.encodeToString(DEFAULT_RATION_CARD))))
+            .andExpect(jsonPath("$.[*].doctorReportContentType").value(hasItem(DEFAULT_DOCTOR_REPORT_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].doctorReport").value(hasItem(Base64Utils.encodeToString(DEFAULT_DOCTOR_REPORT))))
+            .andExpect(jsonPath("$.[*].bankPassbookFrontPageContentType").value(hasItem(DEFAULT_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].bankPassbookFrontPage").value(hasItem(Base64Utils.encodeToString(DEFAULT_BANK_PASSBOOK_FRONT_PAGE))))
+            .andExpect(jsonPath("$.[*].nomineePhotoContentType").value(hasItem(DEFAULT_NOMINEE_PHOTO_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].nomineePhoto").value(hasItem(Base64Utils.encodeToString(DEFAULT_NOMINEE_PHOTO))))
+            .andExpect(jsonPath("$.[*].nomineeAadharCardRationCardContentType").value(hasItem(DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].nomineeAadharCardRationCard").value(hasItem(Base64Utils.encodeToString(DEFAULT_NOMINEE_AADHAR_CARD_RATION_CARD))))
+            .andExpect(jsonPath("$.[*].nomineeRelationShipProofContentType").value(hasItem(DEFAULT_NOMINEE_RELATION_SHIP_PROOF_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].nomineeRelationShipProof").value(hasItem(Base64Utils.encodeToString(DEFAULT_NOMINEE_RELATION_SHIP_PROOF))))
+            .andExpect(jsonPath("$.[*].nomineeBankPassbookFrontPageContentType").value(hasItem(DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].nomineeBankPassbookFrontPage").value(hasItem(Base64Utils.encodeToString(DEFAULT_NOMINEE_BANK_PASSBOOK_FRONT_PAGE))));
     }
 
     @Test

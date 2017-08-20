@@ -59,6 +59,116 @@
         };
         vm.datePickerOpenStatus.dateOfApplcation = false;
 
+        vm.setPhoto = function ($file, apeksha) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        apeksha.photo = base64Data;
+                        apeksha.photoContentType = $file.type;
+                    });
+                });
+            }
+        };
+
+        vm.setApplicationForm = function ($file, apeksha) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        apeksha.applicationForm = base64Data;
+                        apeksha.applicationFormContentType = $file.type;
+                    });
+                });
+            }
+        };
+
+        vm.setAadharCard = function ($file, apeksha) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        apeksha.aadharCard = base64Data;
+                        apeksha.aadharCardContentType = $file.type;
+                    });
+                });
+            }
+        };
+
+        vm.setRationCard = function ($file, apeksha) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        apeksha.rationCard = base64Data;
+                        apeksha.rationCardContentType = $file.type;
+                    });
+                });
+            }
+        };
+
+        vm.setDoctorReport = function ($file, apeksha) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        apeksha.doctorReport = base64Data;
+                        apeksha.doctorReportContentType = $file.type;
+                    });
+                });
+            }
+        };
+
+        vm.setBankPassbookFrontPage = function ($file, apeksha) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        apeksha.bankPassbookFrontPage = base64Data;
+                        apeksha.bankPassbookFrontPageContentType = $file.type;
+                    });
+                });
+            }
+        };
+
+        vm.setNomineePhoto = function ($file, apeksha) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        apeksha.nomineePhoto = base64Data;
+                        apeksha.nomineePhotoContentType = $file.type;
+                    });
+                });
+            }
+        };
+
+        vm.setNomineeAadharCardRationCard = function ($file, apeksha) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        apeksha.nomineeAadharCardRationCard = base64Data;
+                        apeksha.nomineeAadharCardRationCardContentType = $file.type;
+                    });
+                });
+            }
+        };
+
+        vm.setNomineeRelationShipProof = function ($file, apeksha) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        apeksha.nomineeRelationShipProof = base64Data;
+                        apeksha.nomineeRelationShipProofContentType = $file.type;
+                    });
+                });
+            }
+        };
+
+        vm.setNomineeBankPassbookFrontPage = function ($file, apeksha) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        apeksha.nomineeBankPassbookFrontPage = base64Data;
+                        apeksha.nomineeBankPassbookFrontPageContentType = $file.type;
+                    });
+                });
+            }
+        };
+
         function openCalendar (date) {
             vm.datePickerOpenStatus[date] = true;
         }

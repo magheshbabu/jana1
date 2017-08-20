@@ -91,6 +91,10 @@
         <dd>
             <span>{{vm.apeksha.village}}</span>
         </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.taluk">Taluk</span></dt>
+        <dd>
+            <span>{{vm.apeksha.taluk}}</span>
+        </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.panchayat">Panchayat</span></dt>
         <dd>
             <span>{{vm.apeksha.panchayat}}</span>
@@ -99,6 +103,10 @@
         <dd>
             <span>{{vm.apeksha.postOffice}}</span>
         </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.pinCode">Pin Code</span></dt>
+        <dd>
+            <span>{{vm.apeksha.pinCode}}</span>
+        </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.mobileNumber">Mobile Number</span></dt>
         <dd>
             <span>{{vm.apeksha.mobileNumber}}</span>
@@ -106,10 +114,6 @@
         <dt><span data-translate="janasanthwanamApp.apeksha.landLineWithSTD">Land Line With STD</span></dt>
         <dd>
             <span>{{vm.apeksha.landLineWithSTD}}</span>
-        </dd>
-        <dt><span data-translate="janasanthwanamApp.apeksha.pinCode">Pin Code</span></dt>
-        <dd>
-            <span>{{vm.apeksha.pinCode}}</span>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.occupation">Occupation</span></dt>
         <dd>
@@ -139,10 +143,7 @@
         <dd>
             <span>{{vm.apeksha.landDistrict}}</span>
         </dd>
-        <dt><span data-translate="janasanthwanamApp.apeksha.thaluk">Thaluk</span></dt>
-        <dd>
-            <span>{{vm.apeksha.thaluk}}</span>
-        </dd>
+
     </dl>
 </div>
 <div class="tab-pane" id="2a">    
@@ -152,9 +153,21 @@
         <dd>
             <span>{{vm.apeksha.requirementPurpose}}</span>
         </dd>
-        <dt><span data-translate="janasanthwanamApp.apeksha.recommendation">Recommendation</span></dt>
+        <dt><span data-translate="janasanthwanamApp.apeksha.recommendationMinister">Recommendation Minister</span></dt>
         <dd>
-            <span>{{vm.apeksha.recommendation}}</span>
+            <span>{{vm.apeksha.recommendationMinister}}</span>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.recommendationMLA">Recommendation MLA</span></dt>
+        <dd>
+            <span>{{vm.apeksha.recommendationMLA}}</span>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.recommendationMP">Recommendation MP</span></dt>
+        <dd>
+            <span>{{vm.apeksha.recommendationMP}}</span>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.recommendationOthers">Recommendation Others</span></dt>
+        <dd>
+            <span>{{vm.apeksha.recommendationOthers}}</span>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.hospitalName">Hospital Name</span></dt>
         <dd>
@@ -167,6 +180,14 @@
         <dt><span data-translate="janasanthwanamApp.apeksha.expectedAmount">Expected Amount</span></dt>
         <dd>
             <span>{{vm.apeksha.expectedAmount}}</span>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.anyAmountReceivingFromGovt">Any Amount Receiving From Govt</span></dt>
+        <dd>
+            <span>{{vm.apeksha.anyAmountReceivingFromGovt}}</span>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.govtAmountPurposeDetails">Govt Amount Purpose Details</span></dt>
+        <dd>
+            <span>{{vm.apeksha.govtAmountPurposeDetails}}</span>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.bankName">Bank Name</span></dt>
         <dd>
@@ -280,10 +301,79 @@
         <dd>
             <span>{{vm.apeksha.nomineeBankIfscCode}}</span>
         </dd>
-        </dl>
+        <dt><span data-translate="janasanthwanamApp.apeksha.photo">Photo</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.photo">
+                <a ng-click="vm.openFile(vm.apeksha.photoContentType, vm.apeksha.photo)" data-translate="entity.action.open">open</a>
+                {{vm.apeksha.photoContentType}}, {{vm.byteSize(vm.apeksha.photo)}}
+            </div>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.applicationForm">Application Form</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.applicationForm">
+                <a ng-click="vm.openFile(vm.apeksha.applicationFormContentType, vm.apeksha.applicationForm)" data-translate="entity.action.open">open</a>
+                {{vm.apeksha.applicationFormContentType}}, {{vm.byteSize(vm.apeksha.applicationForm)}}
+            </div>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.aadharCard">Aadhar Card</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.aadharCard">
+                <a ng-click="vm.openFile(vm.apeksha.aadharCardContentType, vm.apeksha.aadharCard)" data-translate="entity.action.open">open</a>
+                {{vm.apeksha.aadharCardContentType}}, {{vm.byteSize(vm.apeksha.aadharCard)}}
+            </div>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.rationCard">Ration Card</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.rationCard">
+                <a ng-click="vm.openFile(vm.apeksha.rationCardContentType, vm.apeksha.rationCard)" data-translate="entity.action.open">open</a>
+                {{vm.apeksha.rationCardContentType}}, {{vm.byteSize(vm.apeksha.rationCard)}}
+            </div>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.doctorReport">Doctor Report</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.doctorReport">
+                <a ng-click="vm.openFile(vm.apeksha.doctorReportContentType, vm.apeksha.doctorReport)" data-translate="entity.action.open">open</a>
+                {{vm.apeksha.doctorReportContentType}}, {{vm.byteSize(vm.apeksha.doctorReport)}}
+            </div>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.bankPassbookFrontPage">Bank Passbook Front Page</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.bankPassbookFrontPage">
+                <a ng-click="vm.openFile(vm.apeksha.bankPassbookFrontPageContentType, vm.apeksha.bankPassbookFrontPage)" data-translate="entity.action.open">open</a>
+                {{vm.apeksha.bankPassbookFrontPageContentType}}, {{vm.byteSize(vm.apeksha.bankPassbookFrontPage)}}
+            </div>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.nomineePhoto">Nominee Photo</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.nomineePhoto">
+                <a ng-click="vm.openFile(vm.apeksha.nomineePhotoContentType, vm.apeksha.nomineePhoto)" data-translate="entity.action.open">open</a>
+                {{vm.apeksha.nomineePhotoContentType}}, {{vm.byteSize(vm.apeksha.nomineePhoto)}}
+            </div>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.nomineeAadharCardRationCard">Nominee Aadhar Card Ration Card</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.nomineeAadharCardRationCard">
+                <a ng-click="vm.openFile(vm.apeksha.nomineeAadharCardRationCardContentType, vm.apeksha.nomineeAadharCardRationCard)" data-translate="entity.action.open">open</a>
+                {{vm.apeksha.nomineeAadharCardRationCardContentType}}, {{vm.byteSize(vm.apeksha.nomineeAadharCardRationCard)}}
+            </div>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.nomineeRelationShipProof">Nominee Relation Ship Proof</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.nomineeRelationShipProof">
+                <a ng-click="vm.openFile(vm.apeksha.nomineeRelationShipProofContentType, vm.apeksha.nomineeRelationShipProof)" data-translate="entity.action.open">open</a>
+                {{vm.apeksha.nomineeRelationShipProofContentType}}, {{vm.byteSize(vm.apeksha.nomineeRelationShipProof)}}
+            </div>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.nomineeBankPassbookFrontPage">Nominee Bank Passbook Front Page</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.nomineeBankPassbookFrontPage">
+                <a ng-click="vm.openFile(vm.apeksha.nomineeBankPassbookFrontPageContentType, vm.apeksha.nomineeBankPassbookFrontPage)" data-translate="entity.action.open">open</a>
+                {{vm.apeksha.nomineeBankPassbookFrontPageContentType}}, {{vm.byteSize(vm.apeksha.nomineeBankPassbookFrontPage)}}
+            </div>
+        </dd>
+    </dl>
 </div>        
 </div>
-
     <button type="submit"
             ui-sref="{{ vm.previousState }}"
             class="btn btn-info">
@@ -295,4 +385,3 @@
         <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
     </button>
 </div>
- </div>

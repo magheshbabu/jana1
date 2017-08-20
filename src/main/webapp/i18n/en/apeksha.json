@@ -2,7 +2,7 @@
     "janasanthwanamApp": {
         "apeksha" : {
             "home": {
-                "title": "അപേക്ഷ",
+                "title": "Apekshas",
                 "createLabel": "Create a new Apeksha",
                 "createOrEditLabel": "Create or edit a Apeksha",
                 "search": "Search for Apeksha"
@@ -32,11 +32,12 @@
             "houseNumber": "House Number",
             "tcNumber": "Tc Number",
             "village": "Village",
+            "taluk": "Taluk",
             "panchayat": "Panchayat",
             "postOffice": "Post Office",
+            "pinCode": "Pin Code",
             "mobileNumber": "Mobile Number",
             "landLineWithSTD": "Land Line With STD",
-            "pinCode": "Pin Code",
             "occupation": "Occupation",
             "annualIncome": "Annual Income",
             "familyDetails": "Family Details",
@@ -44,12 +45,16 @@
             "landThaluk": "Land Thaluk",
             "landVillage": "Land Village",
             "landDistrict": "Land District",
-            "thaluk": "Thaluk",
             "requirementPurpose": "Requirement Purpose",
-            "recommendation": "Recommendation",
+            "recommendationMinister": "Recommendation Minister",
+            "recommendationMLA": "Recommendation MLA",
+            "recommendationMP": "Recommendation MP",
+            "recommendationOthers": "Recommendation Others",
             "hospitalName": "Hospital Name",
             "treatmentHistory": "Treatment History",
             "expectedAmount": "Expected Amount",
+            "anyAmountReceivingFromGovt": "Any Amount Receiving From Govt",
+            "govtAmountPurposeDetails": "Govt Amount Purpose Details",
             "bankName": "Bank Name",
             "bankBranchName": "Bank Branch Name",
             "bankAccountNumber": "Bank Account Number",
@@ -75,7 +80,17 @@
             "nomineeBankName": "Nominee Bank Name",
             "nomineeBankBranch": "Nominee Bank Branch",
             "nomineeBankAccountNumber": "Nominee Bank Account Number",
-            "nomineeBankIfscCode": "Nominee Bank Ifsc Code"
+            "nomineeBankIfscCode": "Nominee Bank Ifsc Code",
+            "photo": "Photo",
+            "applicationForm": "Application Form",
+            "aadharCard": "Aadhar Card",
+            "rationCard": "Ration Card",
+            "doctorReport": "Doctor Report",
+            "bankPassbookFrontPage": "Bank Passbook Front Page",
+            "nomineePhoto": "Nominee Photo",
+            "nomineeAadharCardRationCard": "Nominee Aadhar Card Ration Card",
+            "nomineeRelationShipProof": "Nominee Relation Ship Proof",
+            "nomineeBankPassbookFrontPage": "Nominee Bank Passbook Front Page"
         }
     }
 }

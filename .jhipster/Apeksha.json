@@ -94,11 +94,19 @@
             ]
         },
         {
+            "fieldName": "taluk",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "panchayat",
             "fieldType": "String"
         },
         {
             "fieldName": "postOffice",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pinCode",
             "fieldType": "String"
         },
         {
@@ -110,10 +118,6 @@
         },
         {
             "fieldName": "landLineWithSTD",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "pinCode",
             "fieldType": "String"
         },
         {
@@ -148,10 +152,6 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "thaluk",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "requirementPurpose",
             "fieldType": "String",
             "fieldValidateRules": [
@@ -159,7 +159,19 @@
             ]
         },
         {
-            "fieldName": "recommendation",
+            "fieldName": "recommendationMinister",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recommendationMLA",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recommendationMP",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recommendationOthers",
             "fieldType": "String"
         },
         {
@@ -179,6 +191,14 @@
             "fieldValidateRules": [
                 "required"
             ]
+        },
+        {
+            "fieldName": "anyAmountReceivingFromGovt",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "govtAmountPurposeDetails",
+            "fieldType": "String"
         },
         {
             "fieldName": "bankName",
@@ -284,6 +304,56 @@
         {
             "fieldName": "nomineeBankIfscCode",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "photo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "applicationForm",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "aadharCard",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "rationCard",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "doctorReport",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "bankPassbookFrontPage",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "nomineePhoto",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "nomineeAadharCardRationCard",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "nomineeRelationShipProof",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "nomineeBankPassbookFrontPage",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
         }
     ],
     "changelogDate": "20170801173123",

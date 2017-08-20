@@ -55,16 +55,18 @@ public class ApekshaDTO implements Serializable {
     @NotNull
     private String village;
 
+    private String taluk;
+
     private String panchayat;
 
     private String postOffice;
+
+    private String pinCode;
 
     @NotNull
     private String mobileNumber;
 
     private String landLineWithSTD;
-
-    private String pinCode;
 
     private String occupation;
 
@@ -81,12 +83,16 @@ public class ApekshaDTO implements Serializable {
 
     private String landDistrict;
 
-    private String thaluk;
-
     @NotNull
     private String requirementPurpose;
 
-    private String recommendation;
+    private String recommendationMinister;
+
+    private String recommendationMLA;
+
+    private String recommendationMP;
+
+    private String recommendationOthers;
 
     @NotNull
     private String hospitalName;
@@ -95,6 +101,10 @@ public class ApekshaDTO implements Serializable {
 
     @NotNull
     private Double expectedAmount;
+
+    private Double anyAmountReceivingFromGovt;
+
+    private String govtAmountPurposeDetails;
 
     private String bankName;
 
@@ -149,6 +159,46 @@ public class ApekshaDTO implements Serializable {
     private String nomineeBankAccountNumber;
 
     private String nomineeBankIfscCode;
+
+    @Lob
+    private byte[] photo;
+    private String photoContentType;
+
+    @Lob
+    private byte[] applicationForm;
+    private String applicationFormContentType;
+
+    @Lob
+    private byte[] aadharCard;
+    private String aadharCardContentType;
+
+    @Lob
+    private byte[] rationCard;
+    private String rationCardContentType;
+
+    @Lob
+    private byte[] doctorReport;
+    private String doctorReportContentType;
+
+    @Lob
+    private byte[] bankPassbookFrontPage;
+    private String bankPassbookFrontPageContentType;
+
+    @Lob
+    private byte[] nomineePhoto;
+    private String nomineePhotoContentType;
+
+    @Lob
+    private byte[] nomineeAadharCardRationCard;
+    private String nomineeAadharCardRationCardContentType;
+
+    @Lob
+    private byte[] nomineeRelationShipProof;
+    private String nomineeRelationShipProofContentType;
+
+    @Lob
+    private byte[] nomineeBankPassbookFrontPage;
+    private String nomineeBankPassbookFrontPageContentType;
 
     public Long getId() {
         return id;
@@ -286,6 +336,14 @@ public class ApekshaDTO implements Serializable {
         this.village = village;
     }
 
+    public String getTaluk() {
+        return taluk;
+    }
+
+    public void setTaluk(String taluk) {
+        this.taluk = taluk;
+    }
+
     public String getPanchayat() {
         return panchayat;
     }
@@ -302,6 +360,14 @@ public class ApekshaDTO implements Serializable {
         this.postOffice = postOffice;
     }
 
+    public String getPinCode() {
+        return pinCode;
+    }
+
+    public void setPinCode(String pinCode) {
+        this.pinCode = pinCode;
+    }
+
     public String getMobileNumber() {
         return mobileNumber;
     }
@@ -316,14 +382,6 @@ public class ApekshaDTO implements Serializable {
 
     public void setLandLineWithSTD(String landLineWithSTD) {
         this.landLineWithSTD = landLineWithSTD;
-    }
-
-    public String getPinCode() {
-        return pinCode;
-    }
-
-    public void setPinCode(String pinCode) {
-        this.pinCode = pinCode;
     }
 
     public String getOccupation() {
@@ -382,14 +440,6 @@ public class ApekshaDTO implements Serializable {
         this.landDistrict = landDistrict;
     }
 
-    public String getThaluk() {
-        return thaluk;
-    }
-
-    public void setThaluk(String thaluk) {
-        this.thaluk = thaluk;
-    }
-
     public String getRequirementPurpose() {
         return requirementPurpose;
     }
@@ -398,12 +448,36 @@ public class ApekshaDTO implements Serializable {
         this.requirementPurpose = requirementPurpose;
     }
 
-    public String getRecommendation() {
-        return recommendation;
+    public String getRecommendationMinister() {
+        return recommendationMinister;
     }
 
-    public void setRecommendation(String recommendation) {
-        this.recommendation = recommendation;
+    public void setRecommendationMinister(String recommendationMinister) {
+        this.recommendationMinister = recommendationMinister;
+    }
+
+    public String getRecommendationMLA() {
+        return recommendationMLA;
+    }
+
+    public void setRecommendationMLA(String recommendationMLA) {
+        this.recommendationMLA = recommendationMLA;
+    }
+
+    public String getRecommendationMP() {
+        return recommendationMP;
+    }
+
+    public void setRecommendationMP(String recommendationMP) {
+        this.recommendationMP = recommendationMP;
+    }
+
+    public String getRecommendationOthers() {
+        return recommendationOthers;
+    }
+
+    public void setRecommendationOthers(String recommendationOthers) {
+        this.recommendationOthers = recommendationOthers;
     }
 
     public String getHospitalName() {
@@ -428,6 +502,22 @@ public class ApekshaDTO implements Serializable {
 
     public void setExpectedAmount(Double expectedAmount) {
         this.expectedAmount = expectedAmount;
+    }
+
+    public Double getAnyAmountReceivingFromGovt() {
+        return anyAmountReceivingFromGovt;
+    }
+
+    public void setAnyAmountReceivingFromGovt(Double anyAmountReceivingFromGovt) {
+        this.anyAmountReceivingFromGovt = anyAmountReceivingFromGovt;
+    }
+
+    public String getGovtAmountPurposeDetails() {
+        return govtAmountPurposeDetails;
+    }
+
+    public void setGovtAmountPurposeDetails(String govtAmountPurposeDetails) {
+        this.govtAmountPurposeDetails = govtAmountPurposeDetails;
     }
 
     public String getBankName() {
@@ -646,6 +736,166 @@ public class ApekshaDTO implements Serializable {
         this.nomineeBankIfscCode = nomineeBankIfscCode;
     }
 
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
+
+    public String getPhotoContentType() {
+        return photoContentType;
+    }
+
+    public void setPhotoContentType(String photoContentType) {
+        this.photoContentType = photoContentType;
+    }
+
+    public byte[] getApplicationForm() {
+        return applicationForm;
+    }
+
+    public void setApplicationForm(byte[] applicationForm) {
+        this.applicationForm = applicationForm;
+    }
+
+    public String getApplicationFormContentType() {
+        return applicationFormContentType;
+    }
+
+    public void setApplicationFormContentType(String applicationFormContentType) {
+        this.applicationFormContentType = applicationFormContentType;
+    }
+
+    public byte[] getAadharCard() {
+        return aadharCard;
+    }
+
+    public void setAadharCard(byte[] aadharCard) {
+        this.aadharCard = aadharCard;
+    }
+
+    public String getAadharCardContentType() {
+        return aadharCardContentType;
+    }
+
+    public void setAadharCardContentType(String aadharCardContentType) {
+        this.aadharCardContentType = aadharCardContentType;
+    }
+
+    public byte[] getRationCard() {
+        return rationCard;
+    }
+
+    public void setRationCard(byte[] rationCard) {
+        this.rationCard = rationCard;
+    }
+
+    public String getRationCardContentType() {
+        return rationCardContentType;
+    }
+
+    public void setRationCardContentType(String rationCardContentType) {
+        this.rationCardContentType = rationCardContentType;
+    }
+
+    public byte[] getDoctorReport() {
+        return doctorReport;
+    }
+
+    public void setDoctorReport(byte[] doctorReport) {
+        this.doctorReport = doctorReport;
+    }
+
+    public String getDoctorReportContentType() {
+        return doctorReportContentType;
+    }
+
+    public void setDoctorReportContentType(String doctorReportContentType) {
+        this.doctorReportContentType = doctorReportContentType;
+    }
+
+    public byte[] getBankPassbookFrontPage() {
+        return bankPassbookFrontPage;
+    }
+
+    public void setBankPassbookFrontPage(byte[] bankPassbookFrontPage) {
+        this.bankPassbookFrontPage = bankPassbookFrontPage;
+    }
+
+    public String getBankPassbookFrontPageContentType() {
+        return bankPassbookFrontPageContentType;
+    }
+
+    public void setBankPassbookFrontPageContentType(String bankPassbookFrontPageContentType) {
+        this.bankPassbookFrontPageContentType = bankPassbookFrontPageContentType;
+    }
+
+    public byte[] getNomineePhoto() {
+        return nomineePhoto;
+    }
+
+    public void setNomineePhoto(byte[] nomineePhoto) {
+        this.nomineePhoto = nomineePhoto;
+    }
+
+    public String getNomineePhotoContentType() {
+        return nomineePhotoContentType;
+    }
+
+    public void setNomineePhotoContentType(String nomineePhotoContentType) {
+        this.nomineePhotoContentType = nomineePhotoContentType;
+    }
+
+    public byte[] getNomineeAadharCardRationCard() {
+        return nomineeAadharCardRationCard;
+    }
+
+    public void setNomineeAadharCardRationCard(byte[] nomineeAadharCardRationCard) {
+        this.nomineeAadharCardRationCard = nomineeAadharCardRationCard;
+    }
+
+    public String getNomineeAadharCardRationCardContentType() {
+        return nomineeAadharCardRationCardContentType;
+    }
+
+    public void setNomineeAadharCardRationCardContentType(String nomineeAadharCardRationCardContentType) {
+        this.nomineeAadharCardRationCardContentType = nomineeAadharCardRationCardContentType;
+    }
+
+    public byte[] getNomineeRelationShipProof() {
+        return nomineeRelationShipProof;
+    }
+
+    public void setNomineeRelationShipProof(byte[] nomineeRelationShipProof) {
+        this.nomineeRelationShipProof = nomineeRelationShipProof;
+    }
+
+    public String getNomineeRelationShipProofContentType() {
+        return nomineeRelationShipProofContentType;
+    }
+
+    public void setNomineeRelationShipProofContentType(String nomineeRelationShipProofContentType) {
+        this.nomineeRelationShipProofContentType = nomineeRelationShipProofContentType;
+    }
+
+    public byte[] getNomineeBankPassbookFrontPage() {
+        return nomineeBankPassbookFrontPage;
+    }
+
+    public void setNomineeBankPassbookFrontPage(byte[] nomineeBankPassbookFrontPage) {
+        this.nomineeBankPassbookFrontPage = nomineeBankPassbookFrontPage;
+    }
+
+    public String getNomineeBankPassbookFrontPageContentType() {
+        return nomineeBankPassbookFrontPageContentType;
+    }
+
+    public void setNomineeBankPassbookFrontPageContentType(String nomineeBankPassbookFrontPageContentType) {
+        this.nomineeBankPassbookFrontPageContentType = nomineeBankPassbookFrontPageContentType;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -687,11 +937,12 @@ public class ApekshaDTO implements Serializable {
             ", houseNumber='" + getHouseNumber() + "'" +
             ", tcNumber='" + getTcNumber() + "'" +
             ", village='" + getVillage() + "'" +
+            ", taluk='" + getTaluk() + "'" +
             ", panchayat='" + getPanchayat() + "'" +
             ", postOffice='" + getPostOffice() + "'" +
+            ", pinCode='" + getPinCode() + "'" +
             ", mobileNumber='" + getMobileNumber() + "'" +
             ", landLineWithSTD='" + getLandLineWithSTD() + "'" +
-            ", pinCode='" + getPinCode() + "'" +
             ", occupation='" + getOccupation() + "'" +
             ", annualIncome='" + getAnnualIncome() + "'" +
             ", familyDetails='" + getFamilyDetails() + "'" +
@@ -699,12 +950,16 @@ public class ApekshaDTO implements Serializable {
             ", landThaluk='" + getLandThaluk() + "'" +
             ", landVillage='" + getLandVillage() + "'" +
             ", landDistrict='" + getLandDistrict() + "'" +
-            ", thaluk='" + getThaluk() + "'" +
             ", requirementPurpose='" + getRequirementPurpose() + "'" +
-            ", recommendation='" + getRecommendation() + "'" +
+            ", recommendationMinister='" + getRecommendationMinister() + "'" +
+            ", recommendationMLA='" + getRecommendationMLA() + "'" +
+            ", recommendationMP='" + getRecommendationMP() + "'" +
+            ", recommendationOthers='" + getRecommendationOthers() + "'" +
             ", hospitalName='" + getHospitalName() + "'" +
             ", treatmentHistory='" + getTreatmentHistory() + "'" +
             ", expectedAmount='" + getExpectedAmount() + "'" +
+            ", anyAmountReceivingFromGovt='" + getAnyAmountReceivingFromGovt() + "'" +
+            ", govtAmountPurposeDetails='" + getGovtAmountPurposeDetails() + "'" +
             ", bankName='" + getBankName() + "'" +
             ", bankBranchName='" + getBankBranchName() + "'" +
             ", bankAccountNumber='" + getBankAccountNumber() + "'" +
@@ -731,6 +986,16 @@ public class ApekshaDTO implements Serializable {
             ", nomineeBankBranch='" + getNomineeBankBranch() + "'" +
             ", nomineeBankAccountNumber='" + getNomineeBankAccountNumber() + "'" +
             ", nomineeBankIfscCode='" + getNomineeBankIfscCode() + "'" +
+            ", photo='" + getPhoto() + "'" +
+            ", applicationForm='" + getApplicationForm() + "'" +
+            ", aadharCard='" + getAadharCard() + "'" +
+            ", rationCard='" + getRationCard() + "'" +
+            ", doctorReport='" + getDoctorReport() + "'" +
+            ", bankPassbookFrontPage='" + getBankPassbookFrontPage() + "'" +
+            ", nomineePhoto='" + getNomineePhoto() + "'" +
+            ", nomineeAadharCardRationCard='" + getNomineeAadharCardRationCard() + "'" +
+            ", nomineeRelationShipProof='" + getNomineeRelationShipProof() + "'" +
+            ", nomineeBankPassbookFrontPage='" + getNomineeBankPassbookFrontPage() + "'" +
             "}";
     }
 }

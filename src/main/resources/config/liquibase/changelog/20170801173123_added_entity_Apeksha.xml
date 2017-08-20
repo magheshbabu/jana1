@@ -86,6 +86,10 @@
                 <constraints nullable="false" />
             </column>
 
+            <column name="taluk" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
             <column name="panchayat" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -94,15 +98,15 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="pin_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
             <column name="mobile_number" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
 
             <column name="land_line_with_std" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="pin_code" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
@@ -134,15 +138,23 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="thaluk" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
             <column name="requirement_purpose" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
 
-            <column name="recommendation" type="varchar(255)">
+            <column name="recommendation_minister" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="recommendation_mla" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="recommendation_mp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="recommendation_others" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
@@ -156,6 +168,14 @@
 
             <column name="expected_amount" type="double">
                 <constraints nullable="false" />
+            </column>
+
+            <column name="any_amount_receiving_from_govt" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="govt_amount_purpose_details" type="varchar(255)">
+                <constraints nullable="true" />
             </column>
 
             <column name="bank_name" type="varchar(255)">
@@ -265,9 +285,78 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="photo" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="photo_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="application_form" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="application_form_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="aadhar_card" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="aadhar_card_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ration_card" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="ration_card_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="doctor_report" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="doctor_report_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="bank_passbook_front_page" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="bank_passbook_front_page_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nominee_photo" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="nominee_photo_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nominee_aadhar_card_ration_card" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="nominee_aadhar_card_ration_card_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nominee_relation_ship_proof" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="nominee_relation_ship_proof_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nominee_bank_passbook_front_page" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="nominee_bank_passbook_front_page_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
-            
-            <column name="created_by" type="varchar(50)">
+             <column name="created_by" type="varchar(50)">
                 <constraints nullable="false"/>
             </column>
             <column name="created_date" type="timestamp" defaultValueDate="${now}">
@@ -275,7 +364,6 @@
             </column>
             <column name="last_modified_by" type="varchar(50)"/>
             <column name="last_modified_date" type="timestamp"/>
-            
         </createTable>
         
     </changeSet>

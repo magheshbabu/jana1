@@ -82,11 +82,17 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
     @Column(name = "village", nullable = false)
     private String village;
 
+    @Column(name = "taluk")
+    private String taluk;
+
     @Column(name = "panchayat")
     private String panchayat;
 
     @Column(name = "post_office")
     private String postOffice;
+
+    @Column(name = "pin_code")
+    private String pinCode;
 
     @NotNull
     @Column(name = "mobile_number", nullable = false)
@@ -94,9 +100,6 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
 
     @Column(name = "land_line_with_std")
     private String landLineWithSTD;
-
-    @Column(name = "pin_code")
-    private String pinCode;
 
     @Column(name = "occupation")
     private String occupation;
@@ -120,15 +123,21 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
     @Column(name = "land_district")
     private String landDistrict;
 
-    @Column(name = "thaluk")
-    private String thaluk;
-
     @NotNull
     @Column(name = "requirement_purpose", nullable = false)
     private String requirementPurpose;
 
-    @Column(name = "recommendation")
-    private String recommendation;
+    @Column(name = "recommendation_minister")
+    private String recommendationMinister;
+
+    @Column(name = "recommendation_mla")
+    private String recommendationMLA;
+
+    @Column(name = "recommendation_mp")
+    private String recommendationMP;
+
+    @Column(name = "recommendation_others")
+    private String recommendationOthers;
 
     @NotNull
     @Column(name = "hospital_name", nullable = false)
@@ -140,6 +149,12 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
     @NotNull
     @Column(name = "expected_amount", nullable = false)
     private Double expectedAmount;
+
+    @Column(name = "any_amount_receiving_from_govt")
+    private Double anyAmountReceivingFromGovt;
+
+    @Column(name = "govt_amount_purpose_details")
+    private String govtAmountPurposeDetails;
 
     @Column(name = "bank_name")
     private String bankName;
@@ -222,6 +237,76 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
 
     @Column(name = "nominee_bank_ifsc_code")
     private String nomineeBankIfscCode;
+
+    @Lob
+    @Column(name = "photo")
+    private byte[] photo;
+
+    @Column(name = "photo_content_type")
+    private String photoContentType;
+
+    @Lob
+    @Column(name = "application_form")
+    private byte[] applicationForm;
+
+    @Column(name = "application_form_content_type")
+    private String applicationFormContentType;
+
+    @Lob
+    @Column(name = "aadhar_card")
+    private byte[] aadharCard;
+
+    @Column(name = "aadhar_card_content_type")
+    private String aadharCardContentType;
+
+    @Lob
+    @Column(name = "ration_card")
+    private byte[] rationCard;
+
+    @Column(name = "ration_card_content_type")
+    private String rationCardContentType;
+
+    @Lob
+    @Column(name = "doctor_report")
+    private byte[] doctorReport;
+
+    @Column(name = "doctor_report_content_type")
+    private String doctorReportContentType;
+
+    @Lob
+    @Column(name = "bank_passbook_front_page")
+    private byte[] bankPassbookFrontPage;
+
+    @Column(name = "bank_passbook_front_page_content_type")
+    private String bankPassbookFrontPageContentType;
+
+    @Lob
+    @Column(name = "nominee_photo")
+    private byte[] nomineePhoto;
+
+    @Column(name = "nominee_photo_content_type")
+    private String nomineePhotoContentType;
+
+    @Lob
+    @Column(name = "nominee_aadhar_card_ration_card")
+    private byte[] nomineeAadharCardRationCard;
+
+    @Column(name = "nominee_aadhar_card_ration_card_content_type")
+    private String nomineeAadharCardRationCardContentType;
+
+    @Lob
+    @Column(name = "nominee_relation_ship_proof")
+    private byte[] nomineeRelationShipProof;
+
+    @Column(name = "nominee_relation_ship_proof_content_type")
+    private String nomineeRelationShipProofContentType;
+
+    @Lob
+    @Column(name = "nominee_bank_passbook_front_page")
+    private byte[] nomineeBankPassbookFrontPage;
+
+    @Column(name = "nominee_bank_passbook_front_page_content_type")
+    private String nomineeBankPassbookFrontPageContentType;
 
     public Long getId() {
         return id;
@@ -439,6 +524,19 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
         this.village = village;
     }
 
+    public String getTaluk() {
+        return taluk;
+    }
+
+    public Apeksha taluk(String taluk) {
+        this.taluk = taluk;
+        return this;
+    }
+
+    public void setTaluk(String taluk) {
+        this.taluk = taluk;
+    }
+
     public String getPanchayat() {
         return panchayat;
     }
@@ -465,6 +563,19 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
         this.postOffice = postOffice;
     }
 
+    public String getPinCode() {
+        return pinCode;
+    }
+
+    public Apeksha pinCode(String pinCode) {
+        this.pinCode = pinCode;
+        return this;
+    }
+
+    public void setPinCode(String pinCode) {
+        this.pinCode = pinCode;
+    }
+
     public String getMobileNumber() {
         return mobileNumber;
     }
@@ -489,19 +600,6 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
 
     public void setLandLineWithSTD(String landLineWithSTD) {
         this.landLineWithSTD = landLineWithSTD;
-    }
-
-    public String getPinCode() {
-        return pinCode;
-    }
-
-    public Apeksha pinCode(String pinCode) {
-        this.pinCode = pinCode;
-        return this;
-    }
-
-    public void setPinCode(String pinCode) {
-        this.pinCode = pinCode;
     }
 
     public String getOccupation() {
@@ -595,19 +693,6 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
         this.landDistrict = landDistrict;
     }
 
-    public String getThaluk() {
-        return thaluk;
-    }
-
-    public Apeksha thaluk(String thaluk) {
-        this.thaluk = thaluk;
-        return this;
-    }
-
-    public void setThaluk(String thaluk) {
-        this.thaluk = thaluk;
-    }
-
     public String getRequirementPurpose() {
         return requirementPurpose;
     }
@@ -621,17 +706,56 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
         this.requirementPurpose = requirementPurpose;
     }
 
-    public String getRecommendation() {
-        return recommendation;
+    public String getRecommendationMinister() {
+        return recommendationMinister;
     }
 
-    public Apeksha recommendation(String recommendation) {
-        this.recommendation = recommendation;
+    public Apeksha recommendationMinister(String recommendationMinister) {
+        this.recommendationMinister = recommendationMinister;
         return this;
     }
 
-    public void setRecommendation(String recommendation) {
-        this.recommendation = recommendation;
+    public void setRecommendationMinister(String recommendationMinister) {
+        this.recommendationMinister = recommendationMinister;
+    }
+
+    public String getRecommendationMLA() {
+        return recommendationMLA;
+    }
+
+    public Apeksha recommendationMLA(String recommendationMLA) {
+        this.recommendationMLA = recommendationMLA;
+        return this;
+    }
+
+    public void setRecommendationMLA(String recommendationMLA) {
+        this.recommendationMLA = recommendationMLA;
+    }
+
+    public String getRecommendationMP() {
+        return recommendationMP;
+    }
+
+    public Apeksha recommendationMP(String recommendationMP) {
+        this.recommendationMP = recommendationMP;
+        return this;
+    }
+
+    public void setRecommendationMP(String recommendationMP) {
+        this.recommendationMP = recommendationMP;
+    }
+
+    public String getRecommendationOthers() {
+        return recommendationOthers;
+    }
+
+    public Apeksha recommendationOthers(String recommendationOthers) {
+        this.recommendationOthers = recommendationOthers;
+        return this;
+    }
+
+    public void setRecommendationOthers(String recommendationOthers) {
+        this.recommendationOthers = recommendationOthers;
     }
 
     public String getHospitalName() {
@@ -671,6 +795,32 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
 
     public void setExpectedAmount(Double expectedAmount) {
         this.expectedAmount = expectedAmount;
+    }
+
+    public Double getAnyAmountReceivingFromGovt() {
+        return anyAmountReceivingFromGovt;
+    }
+
+    public Apeksha anyAmountReceivingFromGovt(Double anyAmountReceivingFromGovt) {
+        this.anyAmountReceivingFromGovt = anyAmountReceivingFromGovt;
+        return this;
+    }
+
+    public void setAnyAmountReceivingFromGovt(Double anyAmountReceivingFromGovt) {
+        this.anyAmountReceivingFromGovt = anyAmountReceivingFromGovt;
+    }
+
+    public String getGovtAmountPurposeDetails() {
+        return govtAmountPurposeDetails;
+    }
+
+    public Apeksha govtAmountPurposeDetails(String govtAmountPurposeDetails) {
+        this.govtAmountPurposeDetails = govtAmountPurposeDetails;
+        return this;
+    }
+
+    public void setGovtAmountPurposeDetails(String govtAmountPurposeDetails) {
+        this.govtAmountPurposeDetails = govtAmountPurposeDetails;
     }
 
     public String getBankName() {
@@ -1024,6 +1174,266 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
         this.nomineeBankIfscCode = nomineeBankIfscCode;
     }
 
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public Apeksha photo(byte[] photo) {
+        this.photo = photo;
+        return this;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
+
+    public String getPhotoContentType() {
+        return photoContentType;
+    }
+
+    public Apeksha photoContentType(String photoContentType) {
+        this.photoContentType = photoContentType;
+        return this;
+    }
+
+    public void setPhotoContentType(String photoContentType) {
+        this.photoContentType = photoContentType;
+    }
+
+    public byte[] getApplicationForm() {
+        return applicationForm;
+    }
+
+    public Apeksha applicationForm(byte[] applicationForm) {
+        this.applicationForm = applicationForm;
+        return this;
+    }
+
+    public void setApplicationForm(byte[] applicationForm) {
+        this.applicationForm = applicationForm;
+    }
+
+    public String getApplicationFormContentType() {
+        return applicationFormContentType;
+    }
+
+    public Apeksha applicationFormContentType(String applicationFormContentType) {
+        this.applicationFormContentType = applicationFormContentType;
+        return this;
+    }
+
+    public void setApplicationFormContentType(String applicationFormContentType) {
+        this.applicationFormContentType = applicationFormContentType;
+    }
+
+    public byte[] getAadharCard() {
+        return aadharCard;
+    }
+
+    public Apeksha aadharCard(byte[] aadharCard) {
+        this.aadharCard = aadharCard;
+        return this;
+    }
+
+    public void setAadharCard(byte[] aadharCard) {
+        this.aadharCard = aadharCard;
+    }
+
+    public String getAadharCardContentType() {
+        return aadharCardContentType;
+    }
+
+    public Apeksha aadharCardContentType(String aadharCardContentType) {
+        this.aadharCardContentType = aadharCardContentType;
+        return this;
+    }
+
+    public void setAadharCardContentType(String aadharCardContentType) {
+        this.aadharCardContentType = aadharCardContentType;
+    }
+
+    public byte[] getRationCard() {
+        return rationCard;
+    }
+
+    public Apeksha rationCard(byte[] rationCard) {
+        this.rationCard = rationCard;
+        return this;
+    }
+
+    public void setRationCard(byte[] rationCard) {
+        this.rationCard = rationCard;
+    }
+
+    public String getRationCardContentType() {
+        return rationCardContentType;
+    }
+
+    public Apeksha rationCardContentType(String rationCardContentType) {
+        this.rationCardContentType = rationCardContentType;
+        return this;
+    }
+
+    public void setRationCardContentType(String rationCardContentType) {
+        this.rationCardContentType = rationCardContentType;
+    }
+
+    public byte[] getDoctorReport() {
+        return doctorReport;
+    }
+
+    public Apeksha doctorReport(byte[] doctorReport) {
+        this.doctorReport = doctorReport;
+        return this;
+    }
+
+    public void setDoctorReport(byte[] doctorReport) {
+        this.doctorReport = doctorReport;
+    }
+
+    public String getDoctorReportContentType() {
+        return doctorReportContentType;
+    }
+
+    public Apeksha doctorReportContentType(String doctorReportContentType) {
+        this.doctorReportContentType = doctorReportContentType;
+        return this;
+    }
+
+    public void setDoctorReportContentType(String doctorReportContentType) {
+        this.doctorReportContentType = doctorReportContentType;
+    }
+
+    public byte[] getBankPassbookFrontPage() {
+        return bankPassbookFrontPage;
+    }
+
+    public Apeksha bankPassbookFrontPage(byte[] bankPassbookFrontPage) {
+        this.bankPassbookFrontPage = bankPassbookFrontPage;
+        return this;
+    }
+
+    public void setBankPassbookFrontPage(byte[] bankPassbookFrontPage) {
+        this.bankPassbookFrontPage = bankPassbookFrontPage;
+    }
+
+    public String getBankPassbookFrontPageContentType() {
+        return bankPassbookFrontPageContentType;
+    }
+
+    public Apeksha bankPassbookFrontPageContentType(String bankPassbookFrontPageContentType) {
+        this.bankPassbookFrontPageContentType = bankPassbookFrontPageContentType;
+        return this;
+    }
+
+    public void setBankPassbookFrontPageContentType(String bankPassbookFrontPageContentType) {
+        this.bankPassbookFrontPageContentType = bankPassbookFrontPageContentType;
+    }
+
+    public byte[] getNomineePhoto() {
+        return nomineePhoto;
+    }
+
+    public Apeksha nomineePhoto(byte[] nomineePhoto) {
+        this.nomineePhoto = nomineePhoto;
+        return this;
+    }
+
+    public void setNomineePhoto(byte[] nomineePhoto) {
+        this.nomineePhoto = nomineePhoto;
+    }
+
+    public String getNomineePhotoContentType() {
+        return nomineePhotoContentType;
+    }
+
+    public Apeksha nomineePhotoContentType(String nomineePhotoContentType) {
+        this.nomineePhotoContentType = nomineePhotoContentType;
+        return this;
+    }
+
+    public void setNomineePhotoContentType(String nomineePhotoContentType) {
+        this.nomineePhotoContentType = nomineePhotoContentType;
+    }
+
+    public byte[] getNomineeAadharCardRationCard() {
+        return nomineeAadharCardRationCard;
+    }
+
+    public Apeksha nomineeAadharCardRationCard(byte[] nomineeAadharCardRationCard) {
+        this.nomineeAadharCardRationCard = nomineeAadharCardRationCard;
+        return this;
+    }
+
+    public void setNomineeAadharCardRationCard(byte[] nomineeAadharCardRationCard) {
+        this.nomineeAadharCardRationCard = nomineeAadharCardRationCard;
+    }
+
+    public String getNomineeAadharCardRationCardContentType() {
+        return nomineeAadharCardRationCardContentType;
+    }
+
+    public Apeksha nomineeAadharCardRationCardContentType(String nomineeAadharCardRationCardContentType) {
+        this.nomineeAadharCardRationCardContentType = nomineeAadharCardRationCardContentType;
+        return this;
+    }
+
+    public void setNomineeAadharCardRationCardContentType(String nomineeAadharCardRationCardContentType) {
+        this.nomineeAadharCardRationCardContentType = nomineeAadharCardRationCardContentType;
+    }
+
+    public byte[] getNomineeRelationShipProof() {
+        return nomineeRelationShipProof;
+    }
+
+    public Apeksha nomineeRelationShipProof(byte[] nomineeRelationShipProof) {
+        this.nomineeRelationShipProof = nomineeRelationShipProof;
+        return this;
+    }
+
+    public void setNomineeRelationShipProof(byte[] nomineeRelationShipProof) {
+        this.nomineeRelationShipProof = nomineeRelationShipProof;
+    }
+
+    public String getNomineeRelationShipProofContentType() {
+        return nomineeRelationShipProofContentType;
+    }
+
+    public Apeksha nomineeRelationShipProofContentType(String nomineeRelationShipProofContentType) {
+        this.nomineeRelationShipProofContentType = nomineeRelationShipProofContentType;
+        return this;
+    }
+
+    public void setNomineeRelationShipProofContentType(String nomineeRelationShipProofContentType) {
+        this.nomineeRelationShipProofContentType = nomineeRelationShipProofContentType;
+    }
+
+    public byte[] getNomineeBankPassbookFrontPage() {
+        return nomineeBankPassbookFrontPage;
+    }
+
+    public Apeksha nomineeBankPassbookFrontPage(byte[] nomineeBankPassbookFrontPage) {
+        this.nomineeBankPassbookFrontPage = nomineeBankPassbookFrontPage;
+        return this;
+    }
+
+    public void setNomineeBankPassbookFrontPage(byte[] nomineeBankPassbookFrontPage) {
+        this.nomineeBankPassbookFrontPage = nomineeBankPassbookFrontPage;
+    }
+
+    public String getNomineeBankPassbookFrontPageContentType() {
+        return nomineeBankPassbookFrontPageContentType;
+    }
+
+    public Apeksha nomineeBankPassbookFrontPageContentType(String nomineeBankPassbookFrontPageContentType) {
+        this.nomineeBankPassbookFrontPageContentType = nomineeBankPassbookFrontPageContentType;
+        return this;
+    }
+
+    public void setNomineeBankPassbookFrontPageContentType(String nomineeBankPassbookFrontPageContentType) {
+        this.nomineeBankPassbookFrontPageContentType = nomineeBankPassbookFrontPageContentType;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -1064,11 +1474,12 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
             ", houseNumber='" + getHouseNumber() + "'" +
             ", tcNumber='" + getTcNumber() + "'" +
             ", village='" + getVillage() + "'" +
+            ", taluk='" + getTaluk() + "'" +
             ", panchayat='" + getPanchayat() + "'" +
             ", postOffice='" + getPostOffice() + "'" +
+            ", pinCode='" + getPinCode() + "'" +
             ", mobileNumber='" + getMobileNumber() + "'" +
             ", landLineWithSTD='" + getLandLineWithSTD() + "'" +
-            ", pinCode='" + getPinCode() + "'" +
             ", occupation='" + getOccupation() + "'" +
             ", annualIncome='" + getAnnualIncome() + "'" +
             ", familyDetails='" + getFamilyDetails() + "'" +
@@ -1076,12 +1487,16 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
             ", landThaluk='" + getLandThaluk() + "'" +
             ", landVillage='" + getLandVillage() + "'" +
             ", landDistrict='" + getLandDistrict() + "'" +
-            ", thaluk='" + getThaluk() + "'" +
             ", requirementPurpose='" + getRequirementPurpose() + "'" +
-            ", recommendation='" + getRecommendation() + "'" +
+            ", recommendationMinister='" + getRecommendationMinister() + "'" +
+            ", recommendationMLA='" + getRecommendationMLA() + "'" +
+            ", recommendationMP='" + getRecommendationMP() + "'" +
+            ", recommendationOthers='" + getRecommendationOthers() + "'" +
             ", hospitalName='" + getHospitalName() + "'" +
             ", treatmentHistory='" + getTreatmentHistory() + "'" +
             ", expectedAmount='" + getExpectedAmount() + "'" +
+            ", anyAmountReceivingFromGovt='" + getAnyAmountReceivingFromGovt() + "'" +
+            ", govtAmountPurposeDetails='" + getGovtAmountPurposeDetails() + "'" +
             ", bankName='" + getBankName() + "'" +
             ", bankBranchName='" + getBankBranchName() + "'" +
             ", bankAccountNumber='" + getBankAccountNumber() + "'" +
@@ -1109,6 +1524,26 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
             ", nomineeBankBranch='" + getNomineeBankBranch() + "'" +
             ", nomineeBankAccountNumber='" + getNomineeBankAccountNumber() + "'" +
             ", nomineeBankIfscCode='" + getNomineeBankIfscCode() + "'" +
+            ", photo='" + getPhoto() + "'" +
+            ", photoContentType='" + photoContentType + "'" +
+            ", applicationForm='" + getApplicationForm() + "'" +
+            ", applicationFormContentType='" + applicationFormContentType + "'" +
+            ", aadharCard='" + getAadharCard() + "'" +
+            ", aadharCardContentType='" + aadharCardContentType + "'" +
+            ", rationCard='" + getRationCard() + "'" +
+            ", rationCardContentType='" + rationCardContentType + "'" +
+            ", doctorReport='" + getDoctorReport() + "'" +
+            ", doctorReportContentType='" + doctorReportContentType + "'" +
+            ", bankPassbookFrontPage='" + getBankPassbookFrontPage() + "'" +
+            ", bankPassbookFrontPageContentType='" + bankPassbookFrontPageContentType + "'" +
+            ", nomineePhoto='" + getNomineePhoto() + "'" +
+            ", nomineePhotoContentType='" + nomineePhotoContentType + "'" +
+            ", nomineeAadharCardRationCard='" + getNomineeAadharCardRationCard() + "'" +
+            ", nomineeAadharCardRationCardContentType='" + nomineeAadharCardRationCardContentType + "'" +
+            ", nomineeRelationShipProof='" + getNomineeRelationShipProof() + "'" +
+            ", nomineeRelationShipProofContentType='" + nomineeRelationShipProofContentType + "'" +
+            ", nomineeBankPassbookFrontPage='" + getNomineeBankPassbookFrontPage() + "'" +
+            ", nomineeBankPassbookFrontPageContentType='" + nomineeBankPassbookFrontPageContentType + "'" +
             "}";
     }
 }

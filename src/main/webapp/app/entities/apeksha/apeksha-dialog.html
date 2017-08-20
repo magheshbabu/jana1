@@ -172,6 +172,12 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.taluk" for="field_taluk">Taluk</label>
+            <input type="text" class="form-control" name="taluk" id="field_taluk"
+                    ng-model="vm.apeksha.taluk"
+                    />
+        </div>
+        <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.panchayat" for="field_panchayat">Panchayat</label>
             <input type="text" class="form-control" name="panchayat" id="field_panchayat"
                     ng-model="vm.apeksha.panchayat"
@@ -181,6 +187,12 @@
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.postOffice" for="field_postOffice">Post Office</label>
             <input type="text" class="form-control" name="postOffice" id="field_postOffice"
                     ng-model="vm.apeksha.postOffice"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.pinCode" for="field_pinCode">Pin Code</label>
+            <input type="text" class="form-control" name="pinCode" id="field_pinCode"
+                    ng-model="vm.apeksha.pinCode"
                     />
         </div>
         <div class="form-group">
@@ -199,12 +211,6 @@
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.landLineWithSTD" for="field_landLineWithSTD">Land Line With STD</label>
             <input type="text" class="form-control" name="landLineWithSTD" id="field_landLineWithSTD"
                     ng-model="vm.apeksha.landLineWithSTD"
-                    />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="janasanthwanamApp.apeksha.pinCode" for="field_pinCode">Pin Code</label>
-            <input type="text" class="form-control" name="pinCode" id="field_pinCode"
-                    ng-model="vm.apeksha.pinCode"
                     />
         </div>
         <div class="form-group">
@@ -260,12 +266,6 @@
                     />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="janasanthwanamApp.apeksha.thaluk" for="field_thaluk">Thaluk</label>
-            <input type="text" class="form-control" name="thaluk" id="field_thaluk"
-                    ng-model="vm.apeksha.thaluk"
-                    />
-        </div>
-        <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.requirementPurpose" for="field_requirementPurpose">Requirement Purpose</label>
             <input type="text" class="form-control" name="requirementPurpose" id="field_requirementPurpose"
                     ng-model="vm.apeksha.requirementPurpose"
@@ -278,9 +278,27 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendation" for="field_recommendation">Recommendation</label>
-            <input type="text" class="form-control" name="recommendation" id="field_recommendation"
-                    ng-model="vm.apeksha.recommendation"
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMinister" for="field_recommendationMinister">Recommendation Minister</label>
+            <input type="text" class="form-control" name="recommendationMinister" id="field_recommendationMinister"
+                    ng-model="vm.apeksha.recommendationMinister"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMLA" for="field_recommendationMLA">Recommendation MLA</label>
+            <input type="text" class="form-control" name="recommendationMLA" id="field_recommendationMLA"
+                    ng-model="vm.apeksha.recommendationMLA"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMP" for="field_recommendationMP">Recommendation MP</label>
+            <input type="text" class="form-control" name="recommendationMP" id="field_recommendationMP"
+                    ng-model="vm.apeksha.recommendationMP"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationOthers" for="field_recommendationOthers">Recommendation Others</label>
+            <input type="text" class="form-control" name="recommendationOthers" id="field_recommendationOthers"
+                    ng-model="vm.apeksha.recommendationOthers"
                     />
         </div>
         <div class="form-group">
@@ -316,6 +334,18 @@
                     This field should be a number.
                 </p>
             </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.anyAmountReceivingFromGovt" for="field_anyAmountReceivingFromGovt">Any Amount Receiving From Govt</label>
+            <input type="number" class="form-control" name="anyAmountReceivingFromGovt" id="field_anyAmountReceivingFromGovt"
+                    ng-model="vm.apeksha.anyAmountReceivingFromGovt"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.govtAmountPurposeDetails" for="field_govtAmountPurposeDetails">Govt Amount Purpose Details</label>
+            <input type="text" class="form-control" name="govtAmountPurposeDetails" id="field_govtAmountPurposeDetails"
+                    ng-model="vm.apeksha.govtAmountPurposeDetails"
+                    />
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankName" for="field_bankName">Bank Name</label>
@@ -492,6 +522,226 @@
             <input type="text" class="form-control" name="nomineeBankIfscCode" id="field_nomineeBankIfscCode"
                     ng-model="vm.apeksha.nomineeBankIfscCode"
                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setPhoto($file, vm.apeksha)">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.photo" for="field_photo">Photo</label>
+            <div>
+                <div ng-if="vm.apeksha.photo" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.apeksha.photoContentType, vm.apeksha.photo)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.apeksha.photoContentType}}, {{vm.byteSize(vm.apeksha.photo)}}</span>
+                    <button type="button" ng-click="vm.apeksha.photo=null;vm.apeksha.photoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setPhoto($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="photo" id="field_photo"
+                    ng-model="vm.apeksha.photo"
+                    />
+            <input type="hidden" class="form-control" name="photoContentType" id="field_photoContentType"
+                    ng-model="vm.apeksha.photoContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setApplicationForm($file, vm.apeksha)">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicationForm" for="field_applicationForm">Application Form</label>
+            <div>
+                <div ng-if="vm.apeksha.applicationForm" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.apeksha.applicationFormContentType, vm.apeksha.applicationForm)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.apeksha.applicationFormContentType}}, {{vm.byteSize(vm.apeksha.applicationForm)}}</span>
+                    <button type="button" ng-click="vm.apeksha.applicationForm=null;vm.apeksha.applicationFormContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setApplicationForm($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="applicationForm" id="field_applicationForm"
+                    ng-model="vm.apeksha.applicationForm"
+                    />
+            <input type="hidden" class="form-control" name="applicationFormContentType" id="field_applicationFormContentType"
+                    ng-model="vm.apeksha.applicationFormContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setAadharCard($file, vm.apeksha)">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.aadharCard" for="field_aadharCard">Aadhar Card</label>
+            <div>
+                <div ng-if="vm.apeksha.aadharCard" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.apeksha.aadharCardContentType, vm.apeksha.aadharCard)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.apeksha.aadharCardContentType}}, {{vm.byteSize(vm.apeksha.aadharCard)}}</span>
+                    <button type="button" ng-click="vm.apeksha.aadharCard=null;vm.apeksha.aadharCardContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setAadharCard($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="aadharCard" id="field_aadharCard"
+                    ng-model="vm.apeksha.aadharCard"
+                    />
+            <input type="hidden" class="form-control" name="aadharCardContentType" id="field_aadharCardContentType"
+                    ng-model="vm.apeksha.aadharCardContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setRationCard($file, vm.apeksha)">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.rationCard" for="field_rationCard">Ration Card</label>
+            <div>
+                <div ng-if="vm.apeksha.rationCard" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.apeksha.rationCardContentType, vm.apeksha.rationCard)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.apeksha.rationCardContentType}}, {{vm.byteSize(vm.apeksha.rationCard)}}</span>
+                    <button type="button" ng-click="vm.apeksha.rationCard=null;vm.apeksha.rationCardContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setRationCard($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="rationCard" id="field_rationCard"
+                    ng-model="vm.apeksha.rationCard"
+                    />
+            <input type="hidden" class="form-control" name="rationCardContentType" id="field_rationCardContentType"
+                    ng-model="vm.apeksha.rationCardContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setDoctorReport($file, vm.apeksha)">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.doctorReport" for="field_doctorReport">Doctor Report</label>
+            <div>
+                <div ng-if="vm.apeksha.doctorReport" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.apeksha.doctorReportContentType, vm.apeksha.doctorReport)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.apeksha.doctorReportContentType}}, {{vm.byteSize(vm.apeksha.doctorReport)}}</span>
+                    <button type="button" ng-click="vm.apeksha.doctorReport=null;vm.apeksha.doctorReportContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setDoctorReport($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="doctorReport" id="field_doctorReport"
+                    ng-model="vm.apeksha.doctorReport"
+                    />
+            <input type="hidden" class="form-control" name="doctorReportContentType" id="field_doctorReportContentType"
+                    ng-model="vm.apeksha.doctorReportContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setBankPassbookFrontPage($file, vm.apeksha)">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankPassbookFrontPage" for="field_bankPassbookFrontPage">Bank Passbook Front Page</label>
+            <div>
+                <div ng-if="vm.apeksha.bankPassbookFrontPage" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.apeksha.bankPassbookFrontPageContentType, vm.apeksha.bankPassbookFrontPage)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.apeksha.bankPassbookFrontPageContentType}}, {{vm.byteSize(vm.apeksha.bankPassbookFrontPage)}}</span>
+                    <button type="button" ng-click="vm.apeksha.bankPassbookFrontPage=null;vm.apeksha.bankPassbookFrontPageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setBankPassbookFrontPage($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="bankPassbookFrontPage" id="field_bankPassbookFrontPage"
+                    ng-model="vm.apeksha.bankPassbookFrontPage"
+                    />
+            <input type="hidden" class="form-control" name="bankPassbookFrontPageContentType" id="field_bankPassbookFrontPageContentType"
+                    ng-model="vm.apeksha.bankPassbookFrontPageContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setNomineePhoto($file, vm.apeksha)">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePhoto" for="field_nomineePhoto">Nominee Photo</label>
+            <div>
+                <div ng-if="vm.apeksha.nomineePhoto" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineePhotoContentType, vm.apeksha.nomineePhoto)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.apeksha.nomineePhotoContentType}}, {{vm.byteSize(vm.apeksha.nomineePhoto)}}</span>
+                    <button type="button" ng-click="vm.apeksha.nomineePhoto=null;vm.apeksha.nomineePhotoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setNomineePhoto($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="nomineePhoto" id="field_nomineePhoto"
+                    ng-model="vm.apeksha.nomineePhoto"
+                    />
+            <input type="hidden" class="form-control" name="nomineePhotoContentType" id="field_nomineePhotoContentType"
+                    ng-model="vm.apeksha.nomineePhotoContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setNomineeAadharCardRationCard($file, vm.apeksha)">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeAadharCardRationCard" for="field_nomineeAadharCardRationCard">Nominee Aadhar Card Ration Card</label>
+            <div>
+                <div ng-if="vm.apeksha.nomineeAadharCardRationCard" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineeAadharCardRationCardContentType, vm.apeksha.nomineeAadharCardRationCard)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.apeksha.nomineeAadharCardRationCardContentType}}, {{vm.byteSize(vm.apeksha.nomineeAadharCardRationCard)}}</span>
+                    <button type="button" ng-click="vm.apeksha.nomineeAadharCardRationCard=null;vm.apeksha.nomineeAadharCardRationCardContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setNomineeAadharCardRationCard($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="nomineeAadharCardRationCard" id="field_nomineeAadharCardRationCard"
+                    ng-model="vm.apeksha.nomineeAadharCardRationCard"
+                    />
+            <input type="hidden" class="form-control" name="nomineeAadharCardRationCardContentType" id="field_nomineeAadharCardRationCardContentType"
+                    ng-model="vm.apeksha.nomineeAadharCardRationCardContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setNomineeRelationShipProof($file, vm.apeksha)">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeRelationShipProof" for="field_nomineeRelationShipProof">Nominee Relation Ship Proof</label>
+            <div>
+                <div ng-if="vm.apeksha.nomineeRelationShipProof" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineeRelationShipProofContentType, vm.apeksha.nomineeRelationShipProof)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.apeksha.nomineeRelationShipProofContentType}}, {{vm.byteSize(vm.apeksha.nomineeRelationShipProof)}}</span>
+                    <button type="button" ng-click="vm.apeksha.nomineeRelationShipProof=null;vm.apeksha.nomineeRelationShipProofContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setNomineeRelationShipProof($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="nomineeRelationShipProof" id="field_nomineeRelationShipProof"
+                    ng-model="vm.apeksha.nomineeRelationShipProof"
+                    />
+            <input type="hidden" class="form-control" name="nomineeRelationShipProofContentType" id="field_nomineeRelationShipProofContentType"
+                    ng-model="vm.apeksha.nomineeRelationShipProofContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setNomineeBankPassbookFrontPage($file, vm.apeksha)">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankPassbookFrontPage" for="field_nomineeBankPassbookFrontPage">Nominee Bank Passbook Front Page</label>
+            <div>
+                <div ng-if="vm.apeksha.nomineeBankPassbookFrontPage" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineeBankPassbookFrontPageContentType, vm.apeksha.nomineeBankPassbookFrontPage)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.apeksha.nomineeBankPassbookFrontPageContentType}}, {{vm.byteSize(vm.apeksha.nomineeBankPassbookFrontPage)}}</span>
+                    <button type="button" ng-click="vm.apeksha.nomineeBankPassbookFrontPage=null;vm.apeksha.nomineeBankPassbookFrontPageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setNomineeBankPassbookFrontPage($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="nomineeBankPassbookFrontPage" id="field_nomineeBankPassbookFrontPage"
+                    ng-model="vm.apeksha.nomineeBankPassbookFrontPage"
+                    />
+            <input type="hidden" class="form-control" name="nomineeBankPassbookFrontPageContentType" id="field_nomineeBankPassbookFrontPageContentType"
+                    ng-model="vm.apeksha.nomineeBankPassbookFrontPageContentType" />
         </div>
 
     </div>
