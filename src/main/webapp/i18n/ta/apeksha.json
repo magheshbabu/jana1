@@ -47,10 +47,15 @@
 			"thaluk": "താലൂക്ക്",
 			"taluk": "താലൂക്ക്",
 			"requirementPurpose": "ആവശ്യകത",
-			"recommendation": "ശുപാര്‍ശ",
+            "recommendationMinister": "Recommendation Minister",
+            "recommendationMLA": "Recommendation MLA",
+            "recommendationMP": "Recommendation MP",
+            "recommendationOthers": "Recommendation Others",
 			"hospitalName": "ആശുപത്രിയുടെ പേര്",
 			"treatmentHistory": "ചികിത്സാചരിത്രം",
 			"expectedAmount": "പ്രതീക്ഷിക്കുന്നതുക",
+            "anyAmountReceivingFromGovt": "Any Amount Receiving From Govt",
+            "govtAmountPurposeDetails": "Govt Amount Purpose Details",			
 			"bankName": "ബാങ്കിന്‍റെ പേര്",
 			"bankBranchName": "ബാങ്ക് ശാഖയുടെ പേര്",
 			"bankAccountNumber": "ബാങ്ക് അംഗത്വ നമ്പര്‍ ",
@@ -76,7 +81,17 @@
 			"nomineeBankName": "അവകാശിയുടെ ബാങ്കിന്‍റെ പേര്",
 			"nomineeBankBranch": "അവകാശിയുടെ ബാങ്കിന്‍റെ ശാഖയുടെ പേര്",
 			"nomineeBankAccountNumber": "അവകാശിയുടെ ബാങ്ക് അംഗത്വ നമ്പര്‍ ",
-			"nomineeBankIfscCode": "അവകാശിയുടെ ബാങ്ക് ഐ എഫ്  സി കോഡ് "
+			"nomineeBankIfscCode": "അവകാശിയുടെ ബാങ്ക് ഐ എഫ്  സി കോഡ് ",
+            "photo": "Photo",
+            "applicationForm": "Application Form",
+            "aadharCard": "Aadhar Card",
+            "rationCard": "Ration Card",
+            "doctorReport": "Doctor Report",
+            "bankPassbookFrontPage": "Bank Passbook Front Page",
+            "nomineePhoto": "Nominee Photo",
+            "nomineeAadharCardRationCard": "Nominee Aadhar Card Ration Card",
+            "nomineeRelationShipProof": "Nominee Relation Ship Proof",
+            "nomineeBankPassbookFrontPage": "Nominee Bank Passbook Front Page"			
 		}
 	}
 }
