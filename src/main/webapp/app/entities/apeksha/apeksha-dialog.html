@@ -33,9 +33,18 @@
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.district" for="field_district">District</label>
-            <input type="text" class="form-control" name="district" id="field_district"
+            <!-- <input type="text" class="form-control" name="district" id="field_district"
                     ng-model="vm.apeksha.district"
-                    required/>
+                    required/> -->
+
+                    <select class="form-control" name="district" id="field_district" ng-model="vm.apeksha.district" required>
+                        <option ng-repeat="x in vm.masterDistricts" value="{{x.malDistName}}">{{x.malDistName}}</option>
+                        </select>
+                    <!-- <input type="select" class="form-control" name="district" id="field_district"
+                    ng-model="vm.apeksha.district"
+                    required/> -->
+                    
+                    
             <div ng-show="editForm.district.$invalid">
                 <p class="help-block"
                     ng-show="editForm.district.$error.required" data-translate="entity.validation.required">

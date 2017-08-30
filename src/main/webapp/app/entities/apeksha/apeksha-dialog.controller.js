@@ -5,9 +5,9 @@
         .module('janasanthwanamApp')
         .controller('ApekshaDialogController', ApekshaDialogController);
 
-    ApekshaDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Apeksha'];
+    ApekshaDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Apeksha', 'masterDataPopulator'];
 
-    function ApekshaDialogController ($timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Apeksha) {
+    function ApekshaDialogController ($timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Apeksha, masterDataPopulator) {
         var vm = this;
 
         vm.apeksha = entity;
@@ -17,6 +17,9 @@
         vm.byteSize = DataUtils.byteSize;
         vm.openFile = DataUtils.openFile;
         vm.save = save;
+
+        vm.masterDistricts = masterDataPopulator.getDistricts();
+
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
