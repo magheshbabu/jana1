@@ -28,9 +28,18 @@
             vm.blockslist = masterDataPopulator.getBlocksForDistrict(districtName);
             vm.postofficelist = masterDataPopulator.getPostOfficesForDistrict(districtName);
             vm.villagelist = masterDataPopulator.getVillagesForDistrict(districtName);
+            vm.thalukList = masterDataPopulator.getTaluksForDistrict(districtName);
           
           };
 
+          vm.landMasters = function(districtName) {
+              alert('i');
+            vm.landBlockslist = masterDataPopulator.getBlocksForDistrict(districtName);
+            vm.landPostofficelist = masterDataPopulator.getPostOfficesForDistrict(districtName);
+            vm.landVillagelist = masterDataPopulator.getVillagesForDistrict(districtName);
+            vm.landThalukList = masterDataPopulator.getTaluksForDistrict(districtName);
+          
+          };          
 
 
         $timeout(function (){

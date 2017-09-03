@@ -196,7 +196,10 @@
                 </p>
             </div>
 
-            <select class="form-control" name="villageList" id="field_villageList" ng-model="vm.apeksha.villageList" required>
+            <select class="form-control" name="villageList" id="field_villageList" ng-model="vm.apeksha.villageList" required
+            ng-click="vm.apeksha.village = vm.apeksha.villageList"
+            ng-blur="vm.apeksha.village = vm.apeksha.villageList"
+            >
                 <option ng-repeat="village in vm.villagelist" value="{{village.M}}">{{village.M}}</option>
                 </select>
 
@@ -220,12 +223,29 @@
             <input type="text" class="form-control" name="postOffice" id="field_postOffice"
                     ng-model="vm.apeksha.postOffice"
                     />
+
+                    <select class="form-control" name="postOfficeList" id="field_postOfficeList" ng-model="vm.apeksha.postOfficeList" 
+                    ng-click="vm.apeksha.postOffice = vm.apeksha.postOfficeList"
+                    ng-blur="vm.apeksha.postOffice = vm.apeksha.postOfficeList"
+                    >
+                    >
+                        <option ng-repeat="postOffice in vm.postofficelist" value="{{postOffice.M}}">{{postOffice.M}}</option>
+                        </select>
+        
+
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.pinCode" for="field_pinCode">Pin Code</label>
             <input type="text" class="form-control" name="pinCode" id="field_pinCode"
                     ng-model="vm.apeksha.pinCode"
                     />
+                    <select class="form-control" name="postOfficePIN" id="field_postOfficePIN" ng-model="vm.apeksha.postOfficePIN" 
+                    ng-click="vm.apeksha.pinCode = vm.apeksha.postOfficePIN"
+                    ng-blur="vm.apeksha.pinCode = vm.apeksha.postOfficePIN"
+                    
+                    >
+                        <option ng-repeat="postOffice in vm.postofficelist" value="{{postOffice.PIN}}">{{postOffice.PIN}}</option>
+                        </select>                    
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.mobileNumber" for="field_mobileNumber">Mobile Number</label>
@@ -280,23 +300,46 @@
                     />
         </div>
         <div class="form-group">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.landDistrict" for="field_landDistrict">Land District</label>
+            <input type="text" class="form-control" name="landDistrict" id="field_landDistrict"
+                    ng-model="vm.apeksha.landDistrict"
+                    />
+                    <select class="form-control" name="landDistrictList" id="field_landDistrictList" ng-model="vm.apeksha.landDistrictList" ng-change="vm.landMasters(vm.apeksha.landDistrictList)" required >
+                        <option ng-repeat="x1 in vm.masterDistricts" value="{{x1.malDistName}}">{{x1.malDistName}}</option>
+                        </select>
+        </div>        
+        <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.landThaluk" for="field_landThaluk">Land Thaluk</label>
             <input type="text" class="form-control" name="landThaluk" id="field_landThaluk"
                     ng-model="vm.apeksha.landThaluk"
                     />
+
+                    <select class="form-control" name="landThalukList" id="field_landThalukList" ng-model="vm.apeksha.landThalukList" 
+                    
+                    ng-click="vm.apeksha.landThaluk = vm.apeksha.landThalukList"
+                    ng-blur="vm.apeksha.landThaluk = vm.apeksha.landThalukList"
+                    >
+                        <option ng-repeat="lt in vm.landThalukList" value="{{lt.M}}">{{lt.M}}</option>
+                        </select>   
+
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.landVillage" for="field_landVillage">Land Village</label>
             <input type="text" class="form-control" name="landVillage" id="field_landVillage"
                     ng-model="vm.apeksha.landVillage"
                     />
+
+
+                    <select class="form-control" name="landVillageList" id="field_landVillageList" ng-model="vm.apeksha.landVillageList" 
+                    
+                    ng-click="vm.apeksha.landVillage = vm.apeksha.landVillageList"
+                    ng-blur="vm.apeksha.landVillage = vm.apeksha.landVillageList"
+                    >
+                        <option ng-repeat="lv in vm.landVillagelist" value="{{lv.M}}">{{lv.M}}</option>
+                        </select> 
+
         </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="janasanthwanamApp.apeksha.landDistrict" for="field_landDistrict">Land District</label>
-            <input type="text" class="form-control" name="landDistrict" id="field_landDistrict"
-                    ng-model="vm.apeksha.landDistrict"
-                    />
-        </div>
+
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.requirementPurpose" for="field_requirementPurpose">Requirement Purpose</label>
             <input type="text" class="form-control" name="requirementPurpose" id="field_requirementPurpose"
