@@ -5,10 +5,12 @@
         .module('janasanthwanamApp')
         .controller('ApekshaDialogController', ApekshaDialogController);
 
-    ApekshaDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Apeksha', 'masterDataPopulator'];
+    ApekshaDialogController.$inject = ['$translate', '$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Apeksha', 'masterDataPopulator'];
 
-    function ApekshaDialogController ($timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Apeksha, masterDataPopulator) {
+    function ApekshaDialogController ($translate, $timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Apeksha, masterDataPopulator) {
         var vm = this;
+        
+        vm.currentSelectedLanguage = $translate.use();
 
         vm.apeksha = entity;
         vm.clear = clear;
@@ -18,7 +20,17 @@
         vm.openFile = DataUtils.openFile;
         vm.save = save;
 
+
+
         vm.masterDistricts = masterDataPopulator.getDistricts();
+
+        vm.updateblocks = function(districtName) {
+            vm.blockslist = masterDataPopulator.getBlocksForDistrict(districtName);
+            vm.postofficelist = masterDataPopulator.getPostOfficesForDistrict(districtName);
+            vm.villagelist = masterDataPopulator.getVillagesForDistrict(districtName);
+          
+          };
+
 
 
         $timeout(function (){

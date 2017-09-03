@@ -1,6 +1,6 @@
 
 <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
-
+<h1><p> pref lang is {{ vm.lang }} </p></h1>
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
@@ -33,13 +33,29 @@
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.district" for="field_district">District</label>
-            <!-- <input type="text" class="form-control" name="district" id="field_district"
-                    ng-model="vm.apeksha.district"
-                    required/> -->
-
-                    <select class="form-control" name="district" id="field_district" ng-model="vm.apeksha.district" required>
+             <input type="text" class="form-control" name="district" id="field_district"
+                    ng-model="vm.apeksha.district" list="districtName"
+                    required/>
+                    <select class="form-control" name="districtList" id="field_districtList" ng-model="vm.apeksha.districtList" required ng-change="vm.updateblocks(vm.apeksha.districtList)">
                         <option ng-repeat="x in vm.masterDistricts" value="{{x.malDistName}}">{{x.malDistName}}</option>
                         </select>
+
+
+                    <!-- <select class="form-control" name="districtList" id="field_districtList" ng-model="vm.apeksha.districtList" required>
+                        <option ng-repeat="x in vm.masterDistricts" value="{{x.malDistName}}">{{x.malDistName}}</option>
+                        </select> -->
+
+                        
+
+                            <!-- <ui-select ng-model="vm.apeksha.district" theme="selectize"  title="Choose a district">
+                                <ui-select-match placeholder="Select or search a country in the list...">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="x in vm.masterDistricts | filter: $select.search">
+                                  <span ng-bind-html="x.malDistName | highlight: $select.search"></span>
+                                  <small ng-bind-html="x.malDistName | highlight: $select.search"></small>
+                                </ui-select-choices>
+                              </ui-select> -->
+                              
+                              
                     <!-- <input type="select" class="form-control" name="district" id="field_district"
                     ng-model="vm.apeksha.district"
                     required/> -->
@@ -179,6 +195,13 @@
                     This field is required.
                 </p>
             </div>
+
+            <select class="form-control" name="villageList" id="field_villageList" ng-model="vm.apeksha.villageList" required>
+                <option ng-repeat="village in vm.villagelist" value="{{village.M}}">{{village.M}}</option>
+                </select>
+
+
+
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.taluk" for="field_taluk">Taluk</label>

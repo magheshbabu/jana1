@@ -3,6 +3,7 @@
 
     angular
         .module('janasanthwanamApp', [
+            'ngSanitize',
             'ngStorage',
             'tmh.dynamicLocale',
             'pascalprecht.translate',
