@@ -28,6 +28,8 @@
 
         vm.masterDistricts = masterDataPopulator.getDistricts();
 
+        vm.landMasterDistricts = masterDataPopulator.getDistricts();
+
         vm.updateblocks = function(districtName) {
             vm.blockslist = masterDataPopulator.getBlocksForDistrict(districtName);
             vm.postofficelist = masterDataPopulator.getPostOfficesForDistrict(districtName);
@@ -37,7 +39,7 @@
           };
 
           vm.landMasters = function(districtName) {
-              alert('i');
+              //alert('i');
             vm.landBlockslist = masterDataPopulator.getBlocksForDistrict(districtName);
             vm.landPostofficelist = masterDataPopulator.getPostOfficesForDistrict(districtName);
             vm.landVillagelist = masterDataPopulator.getVillagesForDistrict(districtName);

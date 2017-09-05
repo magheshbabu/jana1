@@ -301,23 +301,35 @@
                             />
                 </div>
                 <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.landDistrict" for="field_landDistrict">Land District</label>
+                        <!-- <input type="text" class="form-control" name="landDistrict" id="field_landDistrict"
+                                ng-model="vm.apeksha.landDistrict"
+                                /> -->
+
+                                <select class="form-control" name="landDistrict" id="field_landDistrict" ng-model="vm.apeksha.landDistrict"  ng-change="vm.landMasters(vm.apeksha.landDistrict)">
+                                        <option ng-repeat="lndDistricts in vm.landMasterDistricts" value="{{lndDistricts.malDistName}}">{{lndDistricts.malDistName}}</option>
+                                        </select>                                   
+                    </div>                
+                <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.landThaluk" for="field_landThaluk">Land Thaluk</label>
-                    <input type="text" class="form-control" name="landThaluk" id="field_landThaluk"
+                    <!-- <input type="text" class="form-control" name="landThaluk" id="field_landThaluk"
                             ng-model="vm.apeksha.landThaluk"
-                            />
+                            /> -->
+                            <select class="form-control" name="landThaluk" id="field_landThaluk" ng-model="vm.apeksha.landThaluk"  >
+                                    <option ng-repeat="lndThluk in vm.landThalukList" value="{{lndThluk.M}}">{{lndThluk.M}}</option>
+                                    </select>                              
                 </div>
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.landVillage" for="field_landVillage">Land Village</label>
-                    <input type="text" class="form-control" name="landVillage" id="field_landVillage"
+                    <!-- <input type="text" class="form-control" name="landVillage" id="field_landVillage"
                             ng-model="vm.apeksha.landVillage"
-                            />
+                            /> -->
+
+                            <select class="form-control" name="landVillage" id="field_landVillage" ng-model="vm.apeksha.landVillage"  >
+                                    <option ng-repeat="lndVilg in vm.landVillagelist" value="{{lndVilg.M}}">{{lndVilg.M}}</option>
+                                    </select>   
                 </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.landDistrict" for="field_landDistrict">Land District</label>
-                    <input type="text" class="form-control" name="landDistrict" id="field_landDistrict"
-                            ng-model="vm.apeksha.landDistrict"
-                            />
-                </div>
+
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.requirementPurpose" for="field_requirementPurpose">Requirement Purpose</label>
                     <input type="text" class="form-control" name="requirementPurpose" id="field_requirementPurpose"
