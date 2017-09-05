@@ -11,6 +11,9 @@ angular.module('janasanthwanamApp')
 .factory('masterDataPopulator', function () {
   // Service logic
   // ...
+
+
+  
   var villages = [
     {
       "E": "Kadakampally",

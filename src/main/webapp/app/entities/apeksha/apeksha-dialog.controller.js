@@ -5,9 +5,9 @@
         .module('janasanthwanamApp')
         .controller('ApekshaDialogController', ApekshaDialogController);
 
-    ApekshaDialogController.$inject = ['$translate', '$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Apeksha', 'masterDataPopulator'];
+    ApekshaDialogController.$inject = ['$translate', '$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Apeksha', 'masterDataPopulator', 'masterCasteReligion'];
 
-    function ApekshaDialogController ($translate, $timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Apeksha, masterDataPopulator) {
+    function ApekshaDialogController ($translate, $timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Apeksha, masterDataPopulator, masterCasteReligion) {
         var vm = this;
         
         vm.currentSelectedLanguage = $translate.use();
@@ -20,6 +20,10 @@
         vm.openFile = DataUtils.openFile;
         vm.save = save;
 
+        vm.masterCasteReligions = function(castename)
+        {
+           vm.casteReligions =  masterCasteReligion.getReligionForCaste(castename);
+        };
 
 
         vm.masterDistricts = masterDataPopulator.getDistricts();
