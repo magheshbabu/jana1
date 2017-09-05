@@ -59,12 +59,50 @@ public class ApekshaServiceImpl implements ApekshaService{
     public ApekshaDTO save(ApekshaDTO apekshaDTO) {
         log.debug("Request to save Apeksha : {}", apekshaDTO);
         Apeksha apeksha = apekshaMapper.toEntity(apekshaDTO);
-        byte[] fileContent = apeksha.getAdditionalDocuments();
+
+        //byte[] fileContent = apeksha.getAdditionalDocuments();
+        byte[] additionalDocuments = apeksha.getAdditionalDocuments();
+        byte[] photo = apeksha.getPhoto();
+        byte[] applicationForm = apeksha.getApplicationForm();
+        byte[] aadharCard = apeksha.getAadharCard();
+        byte[] rationCard = apeksha.getRationCard();
+        byte[] doctorReport = apeksha.getDoctorReport();
+        byte[] bankPassbookFrontPage = apeksha.getBankPassbookFrontPage();
+        byte[] nomineePhoto = apeksha.getNomineePhoto();
+        byte[] nomineeAadharCardRationCard = apeksha.getNomineeAadharCardRationCard();
+        byte[] nomineeRelationShipProof = apeksha.getNomineeRelationShipProof();
+        byte[] nomineeBankPassbookFrontPage = apeksha.getNomineeBankPassbookFrontPage();
+
+
         apeksha.setAdditionalDocuments(null);
+        apeksha.setPhoto(null);
+        apeksha.setApplicationForm(null);
+        apeksha.setAadharCard(null);
+        apeksha.setRationCard(null);
+        apeksha.setDoctorReport(null);
+        apeksha.setBankPassbookFrontPage(null);
+        apeksha.setNomineePhoto(null);
+        apeksha.setNomineeAadharCardRationCard(null);
+        apeksha.setNomineeRelationShipProof(null);
+        apeksha.setNomineeBankPassbookFrontPage(null);
+
         apeksha = apekshaRepository.save(apeksha);
         String fileName = UUID.randomUUID().toString();
         try {
-			fileService.saveBytestoDisk(fileContent, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileName);
+            //fileService.saveBytestoDisk(fileContent, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileName);
+            fileService.saveBytestoDisk(additionalDocuments, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+            fileService.saveBytestoDisk(photo, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+            fileService.saveBytestoDisk(applicationForm, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+            fileService.saveBytestoDisk(aadharCard, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+            fileService.saveBytestoDisk(rationCard, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+            fileService.saveBytestoDisk(doctorReport, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileUUID.randomUUID().toString()Name);
+            fileService.saveBytestoDisk(bankPassbookFrontPage, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+            fileService.saveBytestoDisk(nomineePhoto, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+            fileService.saveBytestoDisk(nomineeAadharCardRationCard, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+            fileService.saveBytestoDisk(nomineeRelationShipProof, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+            fileService.saveBytestoDisk(nomineeBankPassbookFrontPage, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,7 +116,12 @@ public class ApekshaServiceImpl implements ApekshaService{
     }
 
     private void createApplicationNumber(Apeksha apeksha) {
-    	String applicationNumber = apeksha.getId() + "/2017/TVM";
+        
+        String formattedWithLeadingZeros = String.format("%08d", apeksha.getId());
+        String yearOfApplication = String.valueOf(apeksha.getDateOfApplcation().getYear());
+        String districtOfApplicant = apeksha.getDistrict();
+
+    	String applicationNumber = formattedWithLeadingZeros + "/" + yearOfApplication + "/" + districtOfApplicant;
     	apeksha.setApplicationNumber(applicationNumber);
 	}
 
