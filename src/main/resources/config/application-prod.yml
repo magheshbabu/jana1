@@ -23,7 +23,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/janasanthwanam?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
-        password:
+        password: Password123
         hikari:
             data-source-properties:
                 cachePrepStmts: true
@@ -137,3 +137,7 @@ application:
     fileRoot: uploads/
     apeksha:
         fileRoot: apeksha/
+
+multipart:
+    maxFileSize: 10Mb
+    maxRequestSize: 100Mb
