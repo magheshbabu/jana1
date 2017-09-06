@@ -332,15 +332,41 @@
 
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.requirementPurpose" for="field_requirementPurpose">Requirement Purpose</label>
-                    <input type="text" class="form-control" name="requirementPurpose" id="field_requirementPurpose"
+                    <!-- <input type="text" class="form-control" name="requirementPurpose" id="field_requirementPurpose"
                             ng-model="vm.apeksha.requirementPurpose"
-                            required/>
+                            required/> -->
+
+                            <select class="form-control" name="requirementPurpose" id="field_requirementPurpose" ng-model="vm.apeksha.requirementPurpose"  required 
+                            >
+                                    
+									<option  value="അനുബന്ധം I - ഗുരുതരമായ രോഗം (അപകടം,അതിക്രമം) തുടര്‍ചികിത്സ">അനുബന്ധം I</option>
+                                    <option  value="അനുബന്ധം II - അപൂര്‍വ അജ്ഞാത രോഗബാധിതര്‍">അനുബന്ധം II</option>
+                                    <option  value="അനുബന്ധം III - ഡയാലിസിസിന്/ഹീമോഫീലിയ അനുബന്ധ രോഗങ്ങളും ബാധിച്ച തുടര്‍ചികിത്സ">അനുബന്ധം III</option>
+                                    <option  value="അനുബന്ധം IV - ഗുരുതരമായ രോഗങ്ങള്‍ മൂലം മരുന്നുകള്‍ വാങ്ങാന്‍ ">അനുബന്ധം IV</option>
+                                    <option  value="അനുബന്ധം V - ഹൃദയം/കരള്‍/നാടീവ്യൂഹ സംബന്ധിയായ ശാസ്ത്രക്രിയകള്‍ക്കും തുടര്‍ന്നുള്ള ചികിത്സകള്‍ക്കും">അനുബന്ധം V</option>
+                                    <option  value="അനുബന്ധം VI - ലൈംഗിക അതിക്രമം/സാമൂഹ്യ അരക്ഷിതാവസ്ഥ ഇരയായവര്‍ക്ക്">അനുബന്ധം VI</option>
+                                    <option  value="അനുബന്ധം VII - സാമ്പത്തികമായി പിന്നാക്കം നില്‍ക്കുന്ന കുടുംബത്തിലെ ഗൃഹനാഥനോ/ഗൃഹനാഥയോ അകാലത്തില്‍ മരണപ്പെടുകയോ /ശയ്യാവലംബരായി തീരുകയോ ആണങ്കില്‍ ആശ്രിതര്‍ക്ക് /രോഗിക്ക്/">അനുബന്ധം VII</option>
+                                    <option  value="അനുബന്ധം VIII - അപകടം/സാമൂഹ്യ അരക്ഷിതാവസ്ഥ എന്നിവ മൂലം അവയവങ്ങള്‍ നഷ്ടപ്പെടുകയോ മാരകമായി പരുക്കേല്‍ക്കുകയോചെയ്യുന്നവര്‍ക്ക്">അനുബന്ധം VIII</option>
+                                    <option  value="അനുബന്ധം IX - സ്പെഷ്യല്‍ സ്കൂളുകളിലും മറ്റു വിദ്യാഭ്യാസ സ്ഥാപനങ്ങളിലും പഠിക്കുന്ന അംഗപരിമിതരായ വിദ്യാര്‍ഥികള്‍ക്ക് ആവശ്യമായ ( കാഴ്ച പരിമിതര്‍/മൂകര്‍/ബധിരര്‍/മാനസിക വൈകല്യമുള്ളവര്‍) പഠനോപകരണങ്ങള്‍ വാങ്ങുന്നതിനുള്ള വ്യക്തിഗതസഹായം. ">അനുബന്ധം IX</option>
+                                    <option  value="അനുബന്ധം X - ഫിസിയോതറാപ്പി ഉള്‍പ്പെടെയുള്ള നൂതന സാങ്കേതിക ചികിത്സാരീതികള്‍ ആവശ്യമായി വരുന്ന സ്പെഷ്യല്‍ സ്കൂളില്‍ പഠിക്കുന്ന കുട്ടികള്‍ക്ക്">അനുബന്ധം X</option>
+                                    <option  value="അനുബന്ധം XI - സര്‍ക്കാരില്‍ നിന്നും സാമൂഹ്യസുരക്ഷ പെന്‍ഷന്‍ ഉള്‍പ്പെടെയുള്ള ധനസഹായങ്ങള്‍ ലഭിക്കാത്ത സാമൂഹ്യ നീതി വകുപ്പിന്‍റെ കീഴില്‍ പ്രവര്‍ത്തിക്കുന്ന മഹിളാമന്ദിരം/ആശാഭവന്‍/റെസ്ക്യുഹോമുകള്‍/ആഫ്റ്റര്‍കെയര്‍ ഹോമുകള്‍/ഷോര്‍ട്ട് സ്റ്റേ ഹോമുകള്‍/നിര്‍ഭയ ഷെല്‍ട്ടര്‍ ഹോം എന്നിവടങ്ങളിലെ അന്തേവാസികള്‍ക്ക്">അനുബന്ധം XI</option>
+                                    <option  value="അനുബന്ധം XII - ദാരിദ്ര്യരേഖയ്ക്ക് താഴെയുള്ള കുടുംബങ്ങളിലെ ഇരുപതുവയസ്സ് പൂര്‍ത്തിയാക്കുന്ന സമര്‍ത്ഥരായ കുട്ടികള്‍ക്കും ശാരീരിക മാനസിക വെല്ലുവിളികള്‍ നേരിടുന്ന കുട്ടികളുടെ വിദ്യാഭ്യാസത്തിനും">അനുബന്ധം XII</option>
+                                    <option  value="അനുബന്ധം XIII - മുഖ്യമന്ത്രിയോ മന്ദ്രിസഭായോഗമോ ഈ പദ്ധതിയില്‍ ഉള്‍പ്പെടുത്തി പ്രഖ്യാപിക്കുന്ന മറ്റു ആനുകൂല്യങ്ങള്‍ ">അനുബന്ധം XIII</option>
+                                    <option  value="അനുബന്ധം XIV - മുഖ്യമന്ത്രി നേരിട്ടു അനുവദിക്കപ്പെടുന്ന ധനസഹായങ്ങള്‍ക്ക് ">അനുബന്ധം XIV</option>
+									<option  value="അനുബന്ധം XV - മറ്റുള്ളവ">അനുബന്ധം XV</option>
+                                    </select>                            
                     <div ng-show="editForm.requirementPurpose.$invalid">
                         <p class="help-block"
                             ng-show="editForm.requirementPurpose.$error.required" data-translate="entity.validation.required">
                             This field is required.
                         </p>
+                                                
                     </div>
+                    <div >
+                            <p class="help-block">
+                                {{ vm.apeksha.requirementPurpose }}
+                            </p>
+                        </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMinister" for="field_recommendationMinister">Recommendation Minister</label>
@@ -395,7 +421,7 @@
                             required/> -->
 
                             <select class="form-control" name="hospitalName" id="field_hospitalName" ng-model="vm.apeksha.hospitalName"  >
-                                    <option ng-repeat="hosp in vm.hospitalList" value="{{ hosp.PLACE }} - {{hosp.HOSP}} ({{ hosp.SECTOR }})">{{hosp.HOSP}} ({{ hosp.SECTOR }})</option>
+                                    <option ng-repeat="hosp in vm.hospitalList" value="{{hosp.HOSP}} ({{ hosp.SECTOR }}) - {{ hosp.PLACE }}">{{hosp.HOSP}} ({{ hosp.SECTOR }})</option>
                                     </select>   
 
                     <div ng-show="editForm.hospitalName.$invalid">
