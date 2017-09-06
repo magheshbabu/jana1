@@ -366,11 +366,38 @@
                             ng-model="vm.apeksha.recommendationOthers"
                             />
                 </div>
+
+                <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.hospitalDistrict" for="field_recommendationOthers">Hospital District</label>
+                        <select class="form-control" name="hospitalDistrict" id="field_hospitalDistrict" ng-model="vm.apeksha.hospitalDistrict"  required 
+                        ng-change="vm.updateHospitalMasters(vm.apeksha.hospitalDistrict)">
+                                <option  value="തിരുവനന്തപുരം">തിരുവനന്തപുരം</option>
+                                <option  value="കൊല്ലം">കൊല്ലം</option>
+                                <option  value="പത്തനംതിട്ട">പത്തനംതിട്ട</option>
+                                <option  value="ആലപ്പുഴ">ആലപ്പുഴ</option>
+                                <option  value="കോട്ടയം">കോട്ടയം</option>
+                                <option  value="ഇടുക്കി">ഇടുക്കി</option>
+                                <option  value="എറണകുളം">എറണകുളം</option>
+                                <option  value="തൃശൂര്‍">തൃശൂര്‍</option>
+                                <option  value="പാലക്കാട്‌">പാലക്കാട്‌</option>
+                                <option  value="മലപ്പുറം">മലപ്പുറം</option>
+                                <option  value="കോഴിക്കോട്">കോഴിക്കോട്</option>
+                                <option  value="വയനാട്">വയനാട്</option>
+                                <option  value="കണ്ണൂര്‍">കണ്ണൂര്‍</option>
+                                <option  value="കാസര്‍ഗോഡ്‌">കാസര്‍ഗോഡ്‌</option>
+                                </select>
+                    </div>
+
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.hospitalName" for="field_hospitalName">Hospital Name</label>
-                    <input type="text" class="form-control" name="hospitalName" id="field_hospitalName"
+                    <!-- <input type="text" class="form-control" name="hospitalName" id="field_hospitalName"
                             ng-model="vm.apeksha.hospitalName"
-                            required/>
+                            required/> -->
+
+                            <select class="form-control" name="hospitalName" id="field_hospitalName" ng-model="vm.apeksha.hospitalName"  >
+                                    <option ng-repeat="hosp in vm.hospitalList" value="{{ hosp.PLACE }} - {{hosp.HOSP}} ({{ hosp.SECTOR }})">{{hosp.HOSP}} ({{ hosp.SECTOR }})</option>
+                                    </select>   
+
                     <div ng-show="editForm.hospitalName.$invalid">
                         <p class="help-block"
                             ng-show="editForm.hospitalName.$error.required" data-translate="entity.validation.required">

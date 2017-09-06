@@ -51,6 +51,7 @@
             "recommendationMLA": "Recommendation MLA",
             "recommendationMP": "Recommendation MP",
             "recommendationOthers": "Recommendation Others",
+            "hospitalDistrict": "Hospital District",            
             "hospitalName": "Hospital Name",
             "treatmentHistory": "Treatment History",
             "expectedAmount": "Expected Amount",

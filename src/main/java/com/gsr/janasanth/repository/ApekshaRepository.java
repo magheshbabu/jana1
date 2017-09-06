@@ -12,5 +12,7 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface ApekshaRepository extends JpaRepository<Apeksha,Long> {
+
+    //List<Apeksha> findByAadharNumber(String aadharNumber);
     
 }

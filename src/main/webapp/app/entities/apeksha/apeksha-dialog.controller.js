@@ -5,9 +5,9 @@
         .module('janasanthwanamApp')
         .controller('ApekshaDialogController', ApekshaDialogController);
 
-    ApekshaDialogController.$inject = ['$translate', '$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Apeksha', 'masterDataPopulator', 'masterCasteReligion'];
+    ApekshaDialogController.$inject = ['$translate', '$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Apeksha', 'masterDataPopulator', 'masterCasteReligion','masterHospitals'];
 
-    function ApekshaDialogController ($translate, $timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Apeksha, masterDataPopulator, masterCasteReligion) {
+    function ApekshaDialogController ($translate, $timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Apeksha, masterDataPopulator, masterCasteReligion,masterHospitals) {
         var vm = this;
         
         vm.currentSelectedLanguage = $translate.use();
@@ -30,6 +30,22 @@
 
         vm.landMasterDistricts = masterDataPopulator.getDistricts();
 
+        
+        
+        /**
+         * Update hospitals list based on district selection
+         */
+        vm.updateHospitalMasters = function(districtName) {
+            vm.hospitalList = masterHospitals.getHospitalsForDistrict(districtName);
+          };
+
+
+          
+          
+          /**
+           * Update dropdown boxes of VILLAGES, THALUKS, PO AND BLOCS
+           * based on district selection
+           */
         vm.updateblocks = function(districtName) {
             vm.blockslist = masterDataPopulator.getBlocksForDistrict(districtName);
             vm.postofficelist = masterDataPopulator.getPostOfficesForDistrict(districtName);
@@ -38,6 +54,13 @@
           
           };
 
+
+
+          /**
+           * Update dropdown boxes of VILLAGES, THALUKS, PO AND BLOCKS
+           * of Land details of application
+           * based on district selection
+           */
           vm.landMasters = function(districtName) {
               //alert('i');
             vm.landBlockslist = masterDataPopulator.getBlocksForDistrict(districtName);

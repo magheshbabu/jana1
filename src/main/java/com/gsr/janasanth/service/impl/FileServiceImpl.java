@@ -25,11 +25,20 @@ public class FileServiceImpl implements FileService{
 
 	@Override
 	public void saveBytestoDisk(byte[] content, String path, String fileName) throws IOException {
-		
+		//System.out.println("inside saveing ..content = " + content);
 		File file = new File(properties.getFileRoot() + path + fileName);
 		file.getParentFile().mkdirs();
+		FileOutputStream fo = new FileOutputStream(file);
+		try {
+			IOUtils.write(content, fo);
+			
+		} catch (IOException e) {
+			throw e;
+		}finally {
+			IOUtils.closeQuietly(fo);
+		}
 		
-		IOUtils.write(content, new FileOutputStream(file));
+		//System.out.println("file =======" + file);
 		
 	}
 
@@ -38,7 +47,10 @@ public class FileServiceImpl implements FileService{
 		
 		File file = new File(properties.getFileRoot() + path + fileName);
 		if(file.exists()){
+			System.out.println("file =======" + file);
 			return IOUtils.toByteArray(new FileInputStream(file));
+
+
 		}
 		
 		return null;
