@@ -60,7 +60,10 @@ public class ApekshaServiceImpl implements ApekshaService{
         log.debug("Request to save Apeksha : {}", apekshaDTO);
         Apeksha apeksha = apekshaMapper.toEntity(apekshaDTO);
 
-        //byte[] fileContent = apeksha.getAdditionalDocuments();
+        //STORING ALL FILE CONTENTS TO ANOTHER VARIABLE
+        // THIS IS BEING DONE BECAUSE, WE DONT WANT TO STORE FILES IN DB. WE WANT TO STORE FILE IN FILESYSTEM
+        // IN DB, WE JUST SAVE THE FILE NAME
+        byte[] fileContent = apeksha.getAdditionalDocuments();
         byte[] additionalDocuments = apeksha.getAdditionalDocuments();
         byte[] photo = apeksha.getPhoto();
         byte[] applicationForm = apeksha.getApplicationForm();
@@ -89,13 +92,13 @@ public class ApekshaServiceImpl implements ApekshaService{
         apeksha = apekshaRepository.save(apeksha);
         String fileName = UUID.randomUUID().toString();
         try {
-            //fileService.saveBytestoDisk(fileContent, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileName);
+            fileService.saveBytestoDisk(fileContent, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileName);
             fileService.saveBytestoDisk(additionalDocuments, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(photo, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(applicationForm, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(aadharCard, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(rationCard, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
-            fileService.saveBytestoDisk(doctorReport, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileUUID.randomUUID().toString()Name);
+            fileService.saveBytestoDisk(doctorReport, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(bankPassbookFrontPage, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(nomineePhoto, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(nomineeAadharCardRationCard, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
