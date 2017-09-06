@@ -57,14 +57,16 @@ public class ApekshaServiceImpl implements ApekshaService{
      */
     @Override
     public ApekshaDTO save(ApekshaDTO apekshaDTO) {
-        log.debug("Request to save Apeksha : {}", apekshaDTO);
+        //log.debug("Request to save Apeksha : {}", apekshaDTO);
         Apeksha apeksha = apekshaMapper.toEntity(apekshaDTO);
 
         //STORING ALL FILE CONTENTS TO ANOTHER VARIABLE
         // THIS IS BEING DONE BECAUSE, WE DONT WANT TO STORE FILES IN DB. WE WANT TO STORE FILE IN FILESYSTEM
         // IN DB, WE JUST SAVE THE FILE NAME
         byte[] fileContent = apeksha.getAdditionalDocuments();
-        byte[] additionalDocuments = apeksha.getAdditionalDocuments();
+        //log.debug("file content = " + fileContent.length);
+
+       /* byte[] additionalDocuments = apeksha.getAdditionalDocuments();
         byte[] photo = apeksha.getPhoto();
         byte[] applicationForm = apeksha.getApplicationForm();
         byte[] aadharCard = apeksha.getAadharCard();
@@ -74,11 +76,12 @@ public class ApekshaServiceImpl implements ApekshaService{
         byte[] nomineePhoto = apeksha.getNomineePhoto();
         byte[] nomineeAadharCardRationCard = apeksha.getNomineeAadharCardRationCard();
         byte[] nomineeRelationShipProof = apeksha.getNomineeRelationShipProof();
-        byte[] nomineeBankPassbookFrontPage = apeksha.getNomineeBankPassbookFrontPage();
+        byte[] nomineeBankPassbookFrontPage = apeksha.getNomineeBankPassbookFrontPage();*/
 
 
         apeksha.setAdditionalDocuments(null);
-        apeksha.setPhoto(null);
+        
+        /*apeksha.setPhoto(null);
         apeksha.setApplicationForm(null);
         apeksha.setAadharCard(null);
         apeksha.setRationCard(null);
@@ -87,13 +90,15 @@ public class ApekshaServiceImpl implements ApekshaService{
         apeksha.setNomineePhoto(null);
         apeksha.setNomineeAadharCardRationCard(null);
         apeksha.setNomineeRelationShipProof(null);
-        apeksha.setNomineeBankPassbookFrontPage(null);
+        apeksha.setNomineeBankPassbookFrontPage(null);*/
 
         apeksha = apekshaRepository.save(apeksha);
         String fileName = UUID.randomUUID().toString();
         try {
+           // log.debug("file content = " + fileContent.length);
             fileService.saveBytestoDisk(fileContent, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileName);
-            fileService.saveBytestoDisk(additionalDocuments, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
+            //log.debug("file content = " + fileContent.length);
+            /*fileService.saveBytestoDisk(additionalDocuments, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(photo, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(applicationForm, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(aadharCard, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
@@ -104,16 +109,18 @@ public class ApekshaServiceImpl implements ApekshaService{
             fileService.saveBytestoDisk(nomineeAadharCardRationCard, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(nomineeRelationShipProof, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
             fileService.saveBytestoDisk(nomineeBankPassbookFrontPage, properties.getApeksha().getFileRoot() + apeksha.getId() + "/", UUID.randomUUID().toString());
-
+*/
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+            e.printStackTrace();
+            log.error("error", "an expcetion orruced while saiving", e);
 		}
         createApplicationNumber(apeksha);
         apeksha.additionalDocuments(fileName.getBytes(Charset.forName("UTF-8")));
         apeksha = apekshaRepository.save(apeksha);
-        ApekshaDTO result = apekshaMapper.toDto(apeksha);
+       // ApekshaDTO result = apekshaMapper.toDto(apeksha);
+       ApekshaDTO result = toDto(apeksha);
         apekshaSearchRepository.save(apeksha);
         return result;
     }
@@ -149,7 +156,8 @@ public class ApekshaServiceImpl implements ApekshaService{
     	if(null != dto.getAdditionalDocuments() && dto.getAdditionalDocuments().length > 0){
     		String fileName = new String(dto.getAdditionalDocuments(), Charset.forName("UTF-8"));
     		try {
-				dto.setAdditionalDocuments(fileService.readBytesFromDisk(properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileName));
+                dto.setAdditionalDocuments(fileService.readBytesFromDisk(properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileName));
+               // log.debug("READIING", "ADD DOC"+ dto.getAdditionalDocuments());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
