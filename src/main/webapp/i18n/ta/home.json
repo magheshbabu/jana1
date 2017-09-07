@@ -1,7 +1,7 @@
 {
 	"home": {
-		"title": "സ്വാഗതം,ജനസാന്ത്വനം !",
-		"subtitle": "ഇത് നിങ്ങളുടെ ഹോം പേജ്",
+		"title": "&#160;",
+		"subtitle": "&#160;",
 		"logged": {
 			"message": "You are logged in as user \"{{username}}\"."
 		},
