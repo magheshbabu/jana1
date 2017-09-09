@@ -19,6 +19,13 @@
                 "logout": "Sign out",
                 "register": "Register"
             },
+            "instructions": {
+                "main": "Instructions",
+                "dataentry": "Data Entry Instructions",
+                "login": "Login / Logout Instructions",
+                "upload": "Image Upload Instructions",
+                "subject": "Subject Instructions"
+            },
             "admin": {
                 "main": "Administration",
                 "userManagement": "User management",

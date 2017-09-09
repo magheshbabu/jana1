@@ -1,0 +1,8 @@
+{
+    "instructions": {
+        "dataentryinstructionstitle": "Data Entry Instructions",
+        "logininstructionstitle": "Login / Logout Instructions",
+        "uploadinstructionstitle": "Upload Instructions",
+        "subjectinstructionstitle": "Subject Instructions"
+    }
+}
