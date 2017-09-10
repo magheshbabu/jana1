@@ -18,6 +18,8 @@
 		"firstName": "ആദ്യപേര്",
 		"lastName": "അവസാനപേര്",
 		"email": "ഇമെയില്‍",
+        "mobileNumber": "മൊബൈല്‍ നമ്പര്‍",
+        "designation": "ഉദ്യോഗം",		
 		"activated": "പ്രവര്‍ത്തന ക്ഷമമാക്കുക",
 		"deactivated": "പ്രവര്‍ത്തന രഹിതം",
 		"profiles": "രൂപരേഖ",

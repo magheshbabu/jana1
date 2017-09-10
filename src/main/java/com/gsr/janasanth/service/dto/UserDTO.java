@@ -53,19 +53,25 @@ public class UserDTO {
 
     private Set<String> authorities;
 
+
+    private String mobileNumber;
+
+
+    private String designation;
+
     public UserDTO() {
         // Empty constructor needed for Jackson.
     }
 
     public UserDTO(User user) {
-        this(user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
+        this(user.getMobileNumber(), user.getDesignation(), user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
             user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
             user.getCreatedBy(), user.getCreatedDate(), user.getLastModifiedBy(), user.getLastModifiedDate(),
             user.getAuthorities().stream().map(Authority::getName)
                 .collect(Collectors.toSet()));
     }
 
-    public UserDTO(Long id, String login, String firstName, String lastName,
+    public UserDTO(String mobileNumber, String designation, Long id, String login, String firstName, String lastName,
         String email, boolean activated, String imageUrl, String langKey,
         String createdBy, Instant createdDate, String lastModifiedBy, Instant lastModifiedDate,
         Set<String> authorities) {
@@ -83,6 +89,8 @@ public class UserDTO {
         this.lastModifiedBy = lastModifiedBy;
         this.lastModifiedDate = lastModifiedDate;
         this.authorities = authorities;
+        this.mobileNumber = mobileNumber;
+        this.designation = designation;
     }
 
     public Long getId() {
@@ -149,6 +157,25 @@ public class UserDTO {
         return authorities;
     }
 
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+  
+   public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+
+    public String getDesignation() {
+        return designation;
+    }
+
+  
+   public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
     @Override
     public String toString() {
         return "UserDTO{" +
@@ -164,6 +191,8 @@ public class UserDTO {
             ", lastModifiedBy='" + lastModifiedBy + '\'' +
             ", lastModifiedDate=" + lastModifiedDate +
             ", authorities=" + authorities +
+            ", mobileNumber='" + mobileNumber + '\'' +
+            ", designation='" + designation + '\'' +            
             "}";
     }
 }

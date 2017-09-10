@@ -80,6 +80,33 @@
                  </p>
             </div>
         </div>
+
+
+        <div class="form-group">
+                <label data-translate="userManagement.mobileNumber">Mobile Number</label>
+                <input type="text" class="form-control" name="mobileNumber"
+                       ng-model="vm.user.mobileNumber" ng-maxlength="50">
+    
+                <div ng-show="editForm.mobileNumber.$invalid">
+                    <p class="help-block"
+                       ng-show="editForm.mobileNumber.$error.maxlength" data-translate="entity.validation.maxlength"
+                       translate-value-max="50">
+                        This field cannot be longer than 50 characters.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Added by Maghesh -->
+            <div class="form-group">
+                    <label data-translate="userManagement.designation">Designation</label>
+                    <input type="text" class="form-control" name="mobdesignationileNumber"
+                           ng-model="vm.user.designation" >
+        
+
+                </div>            
+            
+            
+            
         <div class="form-group">
             <label for="activated">
                 <input ng-disabled="vm.user.id === null" type="checkbox" id="activated" name="activated" ng-model="vm.user.activated">

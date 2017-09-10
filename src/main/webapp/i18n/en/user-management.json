@@ -18,6 +18,8 @@
         "firstName": "First name",
         "lastName": "Last name",
         "email": "Email",
+        "mobileNumber": "Mobile Number",
+        "designation": "Designation",
         "activated": "Activated",
         "deactivated": "Deactivated",
         "profiles": "Profiles",

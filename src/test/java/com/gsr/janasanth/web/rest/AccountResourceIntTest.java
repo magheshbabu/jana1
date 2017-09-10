@@ -156,6 +156,8 @@ public class AccountResourceIntTest {
     @Transactional
     public void testRegisterValid() throws Exception {
         ManagedUserVM validUser = new ManagedUserVM(
+        	"123123123",
+        	"designation",
             null,                   // id
             "joe",                  // login
             "password",             // password
@@ -185,6 +187,8 @@ public class AccountResourceIntTest {
     @Transactional
     public void testRegisterInvalidLogin() throws Exception {
         ManagedUserVM invalidUser = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             null,                   // id
             "funky-log!n",          // login <-- invalid
             "password",             // password
@@ -214,6 +218,8 @@ public class AccountResourceIntTest {
     @Transactional
     public void testRegisterInvalidEmail() throws Exception {
         ManagedUserVM invalidUser = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             null,               // id
             "bob",              // login
             "password",         // password
@@ -243,6 +249,8 @@ public class AccountResourceIntTest {
     @Transactional
     public void testRegisterInvalidPassword() throws Exception {
         ManagedUserVM invalidUser = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             null,               // id
             "bob",              // login
             "123",              // password with only 3 digits
@@ -272,6 +280,8 @@ public class AccountResourceIntTest {
     @Transactional
     public void testRegisterNullPassword() throws Exception {
         ManagedUserVM invalidUser = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             null,               // id
             "bob",              // login
             null,               // invalid null password
@@ -302,6 +312,8 @@ public class AccountResourceIntTest {
     public void testRegisterDuplicateLogin() throws Exception {
         // Good
         ManagedUserVM validUser = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             null,                   // id
             "alice",                // login
             "password",             // password
@@ -318,7 +330,7 @@ public class AccountResourceIntTest {
             new HashSet<>(Collections.singletonList(AuthoritiesConstants.USER)));
 
         // Duplicate login, different email
-        ManagedUserVM duplicatedUser = new ManagedUserVM(validUser.getId(), validUser.getLogin(), validUser.getPassword(), validUser.getFirstName(), validUser.getLastName(),
+        ManagedUserVM duplicatedUser = new ManagedUserVM(validUser.getMobileNumber(),validUser.getDesignation(), validUser.getId(), validUser.getLogin(), validUser.getPassword(), validUser.getFirstName(), validUser.getLastName(),
             "alicejr@example.com", true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities());
 
         // Good user
@@ -344,6 +356,8 @@ public class AccountResourceIntTest {
     public void testRegisterDuplicateEmail() throws Exception {
         // Good
         ManagedUserVM validUser = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             null,                   // id
             "john",                 // login
             "password",             // password
@@ -360,7 +374,7 @@ public class AccountResourceIntTest {
             new HashSet<>(Collections.singletonList(AuthoritiesConstants.USER)));
 
         // Duplicate email, different login
-        ManagedUserVM duplicatedUser = new ManagedUserVM(validUser.getId(), "johnjr", validUser.getPassword(), validUser.getLogin(), validUser.getLastName(),
+        ManagedUserVM duplicatedUser = new ManagedUserVM(validUser.getMobileNumber(),validUser.getDesignation(),validUser.getId(), "johnjr", validUser.getPassword(), validUser.getLogin(), validUser.getLastName(),
             validUser.getEmail(), true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities());
 
         // Good user
@@ -385,6 +399,8 @@ public class AccountResourceIntTest {
     @Transactional
     public void testRegisterAdminIsIgnored() throws Exception {
         ManagedUserVM validUser = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             null,                   // id
             "badguy",               // login
             "password",             // password
@@ -452,6 +468,8 @@ public class AccountResourceIntTest {
         userRepository.saveAndFlush(user);
 
         UserDTO userDTO = new UserDTO(
+            	"123123123",
+            	"designation",
             null,                   // id
             "not-used",          // login
             "firstname",                // firstName
@@ -497,6 +515,8 @@ public class AccountResourceIntTest {
         userRepository.saveAndFlush(user);
 
         UserDTO userDTO = new UserDTO(
+            	"123123123",
+            	"designation",
             null,                   // id
             "not-used",          // login
             "firstname",                // firstName
@@ -542,6 +562,8 @@ public class AccountResourceIntTest {
         userRepository.saveAndFlush(anotherUser);
 
         UserDTO userDTO = new UserDTO(
+            	"123123123",
+            	"designation",
             null,                   // id
             "not-used",          // login
             "firstname",                // firstName
@@ -580,6 +602,8 @@ public class AccountResourceIntTest {
         userRepository.saveAndFlush(user);
 
         UserDTO userDTO = new UserDTO(
+            	"123123123",
+            	"designation",
             null,                   // id
             "not-used",          // login
             "firstname",                // firstName

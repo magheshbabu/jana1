@@ -44124,7 +44124,7 @@ angular.module('janasanthwanamApp')
     {
       "POSTID": 4568,
       "E": "Nanthancode",
-      "M": "",
+      "M": "നന്തങ്കോട്",
       "PIN": "695003",
       "DID": "1"
     },
@@ -44236,7 +44236,7 @@ angular.module('janasanthwanamApp')
     {
       "POSTID": 4584,
       "E": "Perunthanni",
-      "M": "",
+      "M": "പെരുത്താന്നി",
       "PIN": "695008",
       "DID": "1"
     },
@@ -44250,7 +44250,7 @@ angular.module('janasanthwanamApp')
     {
       "POSTID": 4586,
       "E": "Ayiranimuttom",
-      "M": "",
+      "M": "അയിരാനിമുട്ടം",
       "PIN": "695009",
       "DID": "1"
     },
@@ -46329,7 +46329,7 @@ angular.module('janasanthwanamApp')
     {
       "POSTID": 4883,
       "E": "Alinera",
-      "M": "",
+      "M": "അലിനേര",
       "PIN": "695581",
       "DID": "1"
     },

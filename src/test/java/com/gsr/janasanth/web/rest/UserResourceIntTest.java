@@ -149,6 +149,8 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             null,
             DEFAULT_LOGIN,
             DEFAULT_PASSWORD,
@@ -189,6 +191,8 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             1L,
             DEFAULT_LOGIN,
             DEFAULT_PASSWORD,
@@ -226,6 +230,8 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             null,
             DEFAULT_LOGIN, // this login should already be used
             DEFAULT_PASSWORD,
@@ -263,6 +269,8 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             null,
             "anotherlogin",
             DEFAULT_PASSWORD,
@@ -349,6 +357,8 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             updatedUser.getId(),
             updatedUser.getLogin(),
             UPDATED_PASSWORD,
@@ -394,6 +404,8 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             updatedUser.getId(),
             UPDATED_LOGIN,
             UPDATED_PASSWORD,
@@ -451,6 +463,8 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             updatedUser.getId(),
             updatedUser.getLogin(),
             updatedUser.getPassword(),
@@ -497,6 +511,8 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+            	"123123123",
+            	"designation",
             updatedUser.getId(),
             "jhipster", // this login should already be used by anotherUser
             updatedUser.getPassword(),
@@ -572,6 +588,8 @@ public class UserResourceIntTest {
     @Test
     public void testUserDTOtoUser() {
         UserDTO userDTO = new UserDTO(
+            	"123123123",
+            	"designation",
             DEFAULT_ID,
             DEFAULT_LOGIN,
             DEFAULT_FIRSTNAME,

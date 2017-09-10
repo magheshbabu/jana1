@@ -35,6 +35,8 @@
             collapseNavbar();
             Auth.logout();
             $state.go('home');
+            alert("You have been logged out.");
+            
         }
 
         function toggleNavbar() {
