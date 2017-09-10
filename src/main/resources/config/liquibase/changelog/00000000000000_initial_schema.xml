@@ -49,6 +49,10 @@
             </column>
             <column name="last_modified_by" type="varchar(50)"/>
             <column name="last_modified_date" type="timestamp"/>
+            
+            <column name="mobile_number" type="varchar(50)"/>
+            <column name="designation" type="varchar(256)"/>
+            
         </createTable>
         <createIndex indexName="idx_user_login"
             tableName="jhi_user"
