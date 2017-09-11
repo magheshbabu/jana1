@@ -19,6 +19,13 @@
 				"logout": "പുറത്തുപോവുക",
 				"register": "രജിസ്റ്റര്‍"
 			},
+            "instructions": {
+                "main": "Instructions",
+                "dataentry": "Data Entry Instructions",
+                "login": "Login / Logout Instructions",
+                "upload": "Image Upload Instructions",
+                "subject": "Subject Instructions"
+            },
 			"admin": {
 				"main": "അട്മിനിസ്ട്രറേന്‍",
 				"userManagement": "User management",
