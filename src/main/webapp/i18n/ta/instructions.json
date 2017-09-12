@@ -1,0 +1,9 @@
+{
+    "instructions": {
+    	"instructionmenutitle" : "വിവരങ്ങള്‍",
+        "dataentryinstructionstitle": "ഡാറ്റാഎന്‍ട്രി ചെയ്യാന്‍",
+        "logininstructionstitle": "ലോഗിന്‍  / ലോഗൌട്ട്",
+        "uploadinstructionstitle": "ഇമേജു അപ്പ്‌ലോഡ് ചെയ്യുക",
+        "subjectinstructionstitle": "സോഫ്റ്റ്‌വെയറിനെ കുറിച്ചുള്ള വിവരങ്ങള്‍"
+    }
+}

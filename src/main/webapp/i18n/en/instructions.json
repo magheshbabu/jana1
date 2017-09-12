@@ -1,5 +1,6 @@
 {
     "instructions": {
+        "instructionmenutitle" : "Instructions",
         "dataentryinstructionstitle": "Data Entry Instructions",
         "logininstructionstitle": "Login / Logout Instructions",
         "uploadinstructionstitle": "Upload Instructions",
