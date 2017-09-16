@@ -37,7 +37,9 @@
                             ng-model="vm.apeksha.district"
                             required/> -->
         
-                            <select class="form-control" name="district" id="field_district" ng-model="vm.apeksha.district" required ng-change="vm.updateblocks(vm.apeksha.district)">
+                            <select class="form-control" name="district" id="field_district" ng-model="vm.apeksha.district" required 
+                            ng-change="vm.updateblocks(vm.apeksha.district)"
+                            ng-init="vm.updateblocks(vm.apeksha.district)">
                                 <option ng-repeat="x in vm.masterDistricts" value="{{x.malDistName}}">{{x.malDistName}}</option>
                                 </select>
                             <!-- <input type="select" class="form-control" name="district" id="field_district"
@@ -603,7 +605,9 @@
                 <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.hospitalDistrict" for="field_recommendationOthers">Hospital District</label>
                         <select class="form-control" name="hospitalDistrict" id="field_hospitalDistrict" ng-model="vm.apeksha.hospitalDistrict"  required 
-                        ng-change="vm.updateHospitalMasters(vm.apeksha.hospitalDistrict)">
+                        ng-change="vm.updateHospitalMasters(vm.apeksha.hospitalDistrict)"
+                        ng-init="vm.updateHospitalMasters(vm.hospitalPlaceName)"
+                        >
                                 <option  value="തിരുവനന്തപുരം">തിരുവനന്തപുരം</option>
                                 <option  value="കൊല്ലം">കൊല്ലം</option>
                                 <option  value="പത്തനംതിട്ട">പത്തനംതിട്ട</option>
