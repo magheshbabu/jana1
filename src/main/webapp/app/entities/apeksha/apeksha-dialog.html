@@ -35,10 +35,10 @@
             <div class="panel-heading" >
                 <label  data-translate="janasanthwanamApp.apeksha.isApplicantApplyingForBeneficiary" for="field_isApplicantApplyingForBeneficiary">Is Applicant Applying For Beneficiary</label>
                 <input type="checkbox"  name="isApplicantApplyingForBeneficiary" id="field_isApplicantApplyingForBeneficiary"
-                    ng-model="vm.apeksha.isApplicantApplyingForBeneficiary" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.isApplicantApplyingForBeneficiary=false"
+                    ng-model="vm.isApplicantApplyingForBeneficiary" ng-true-value="true" ng-false-value="false"  ng-init="vm.isApplicantApplyingForBeneficiary=false"
                     />
             </div>
-            <div class="panel-body" ng-show = "vm.apeksha.isApplicantApplyingForBeneficiary">
+            <div class="panel-body" ng-show = "vm.isApplicantApplyingForBeneficiary">
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantName" for="field_applicantName">Applicant Name</label>
                     <input type="text" class="form-control" name="applicantName" id="field_applicantName"
@@ -317,10 +317,10 @@
                 <div class="panel-heading" >
                     <label  data-translate="janasanthwanamApp.apeksha.hasOwnProperty" for="field_hasOwnProperty">Has Own Property</label>
                     <input type="checkbox"  name="hasOwnPropertyy" id="field_hasOwnProperty"
-                        ng-model="vm.apeksha.hasOwnProperty" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.hasOwnProperty=false"
+                        ng-model="vm.hasOwnProperty" ng-true-value="true" ng-false-value="false"  ng-init="vm.hasOwnProperty=false"
                         />
                 </div>
-                <div class="panel-body" ng-show = "vm.apeksha.hasOwnProperty">
+                <div class="panel-body" ng-show = "vm.hasOwnProperty">
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.landTotalCent" for="field_landTotalCent">Land Total Cent</label>
                         <input type="text" class="form-control" name="landTotalCent" id="field_landTotalCent"
@@ -394,10 +394,10 @@
                 <div class="panel-heading" >
                     <label  data-translate="janasanthwanamApp.apeksha.hasRecommendation" for="field_hasRecommendation">Has Own Property</label>
                     <input type="checkbox"  name="hasRecommendationn" id="field_hasRecommendation"
-                        ng-model="vm.apeksha.hasRecommendation" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.hasRecommendation=false"
+                        ng-model="vm.hasRecommendation" ng-true-value="true" ng-false-value="false"  ng-init="vm.hasRecommendation=false"
                         />
                 </div>
-                <div class="panel-body" ng-show="vm.apeksha.hasRecommendation">
+                <div class="panel-body" ng-show="vm.hasRecommendation">
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMinister" for="field_recommendationMinister">Recommendation Minister</label>
                         <!-- <input type="text" class="form-control" name="recommendationMinister" id="field_recommendationMinister"
@@ -685,10 +685,10 @@
                 <div class="panel-heading" >
                     <label  data-translate="janasanthwanamApp.apeksha.isReceivingAmountFromGovt" for="field_isReceivingAmountFromGovt">Any Amount Receiving From Govt</label>
                     <input type="checkbox"  name="isReceivingAmountFromGovtt" id="field_isReceivingAmountFromGovt"
-                        ng-model="vm.apeksha.isReceivingAmountFromGovt" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.isReceivingAmountFromGovt=false"
+                        ng-model="vm.isReceivingAmountFromGovt" ng-true-value="true" ng-false-value="false"  ng-init="vm.isReceivingAmountFromGovt=false"
                         />
                 </div>
-                <div class="panel-body" ng-show="vm.apeksha.isReceivingAmountFromGovt">
+                <div class="panel-body" ng-show="vm.isReceivingAmountFromGovt">
                     <!-- even though the field name of below field is 'anyAmountReceivingFromGovt' it is actually used to store the amount. dont get confused--> 
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.anyAmountReceivingFromGovt" for="field_anyAmountReceivingFromGovt"> Amount</label>
@@ -880,6 +880,8 @@
                         <span class="glyphicon glyphicon-remove"></span>
                         </button>
                     </div>
+                   
+                    </div> 
                     <button type="button" ngf-select class="btn btn-default btn-block"
                         ngf-change="vm.setPhoto($file, vm.apeksha)" data-translate="entity.action.addblob">
                     Add blob

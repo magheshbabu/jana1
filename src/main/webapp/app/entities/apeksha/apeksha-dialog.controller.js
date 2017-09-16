@@ -11,6 +11,7 @@
         var vm = this;
 
         vm.currentSelectedLanguage = $translate.use();
+        //ng-init="vm.apeksha.hasOwnProperty=false"
 
         vm.apeksha = entity;
         vm.clear = clear;
