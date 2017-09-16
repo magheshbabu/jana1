@@ -296,6 +296,19 @@
                             ng-model="vm.apeksha.familyDetails"
                             />
                 </div>
+
+
+                <div class="panel panel-info">
+                        
+                                        <div class="panel-heading" >
+                    <label  data-translate="janasanthwanamApp.apeksha.hasOwnProperty" for="field_hasOwnProperty">Has Own Property</label>
+                    <input type="checkbox"  name="hasOwnPropertyy" id="field_hasOwnProperty"
+                            ng-model="vm.apeksha.hasOwnProperty" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.hasOwnProperty=false"
+                            />
+                </div>                
+
+                <div class="panel-body" ng-show = "vm.apeksha.hasOwnProperty">
+
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.landTotalCent" for="field_landTotalCent">Land Total Cent</label>
                     <input type="text" class="form-control" name="landTotalCent" id="field_landTotalCent"
@@ -331,7 +344,8 @@
                                     <option ng-repeat="lndVilg in vm.landVillagelist" value="{{lndVilg.M}}">{{lndVilg.M}}</option>
                                     </select>   
                 </div>
-
+                </div>
+                </div>
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.requirementPurpose" for="field_requirementPurpose">Requirement Purpose</label>
                     <!-- <input type="text" class="form-control" name="requirementPurpose" id="field_requirementPurpose"
@@ -369,6 +383,18 @@
                             </p>
                         </div>
                 </div>
+
+
+                <div class="panel panel-info">
+                        
+                                        <div class="panel-heading" >
+                            <label  data-translate="janasanthwanamApp.apeksha.hasRecommendation" for="field_hasRecommendation">Has Own Property</label>
+                            <input type="checkbox"  name="hasRecommendationn" id="field_hasRecommendation"
+                                    ng-model="vm.apeksha.hasRecommendation" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.hasRecommendation=false"
+                                    />
+                        </div>  
+
+                <div class="panel-body" ng-show="vm.apeksha.hasRecommendation">
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMinister" for="field_recommendationMinister">Recommendation Minister</label>
                     <!-- <input type="text" class="form-control" name="recommendationMinister" id="field_recommendationMinister"
@@ -376,7 +402,7 @@
                             /> -->
 
                             <select class="form-control" name="recommendationMinister" id="field_recommendationMinister" ng-model="vm.apeksha.recommendationMinister"  >
-                                    
+                                    <option value = ""></option>
 									<option value=”ശ്രീ.പിണറായിവിജയന്‍“>ശ്രീ.പിണറായിവിജയന്‍</option>
                                     <option value=”ശ്രീ.റ്റി.എം.തോമസ്ഐസക്“>ശ്രീ.റ്റി.എം.തോമസ്ഐസക്</option>
                                     <option value=”ശ്രീ.എം.എം.മണി“>ശ്രീ.എം.എം.മണി</option>
@@ -409,7 +435,7 @@
 
 
                             <select class="form-control" name="recommendationMLA" id="field_recommendationMLA" ng-model="vm.apeksha.recommendationMLA"  >
-                                    
+                                    <option value = ""></option>
 									<option  value="ശ്രീ ചിറ്റായം ഗോപകുമാര്‍ (അടൂര്‍)">ശ്രീ ചിറ്റായം ഗോപകുമാര്‍ (അടൂര്‍)</option>
                                     <option  value="ശ്രീ തോമസ്‌ ഐസക് (ആലപ്പുഴ)">ശ്രീ തോമസ്‌ ഐസക് (ആലപ്പുഴ)</option>
                                     <option  value="ശ്രീ കെ ഡി പ്രസന്നന്‍ (ആലത്തൂര്‍)">ശ്രീ കെ ഡി പ്രസന്നന്‍ (ആലത്തൂര്‍)</option> 
@@ -561,6 +587,7 @@
                             /> -->
 
                             <select class="form-control" name="recommendationMP" id="field_recommendationMP" ng-model="vm.apeksha.recommendationMP"  >
+                                    <option value = ""></option>
                                     <option value = "ശ്രീ. പി.കരുണാകരന്‍(കാസര്‍ഗോഡ്‌)">ശ്രീ. പി.കരുണാകരന്‍(കാസര്‍ഗോഡ്‌)</option>
                                     <option value = "ശ്രീമതി.പി.കെ.ശ്രീമതി(കണ്ണൂര്‍)">ശ്രീമതി.പി.കെ.ശ്രീമതി(കണ്ണൂര്‍)</option>
                                     <option value = "ശ്രീ.മുല്ലപ്പള്ളി രാമചന്ദ്രന്‍(വടകര)">ശ്രീ.മുല്ലപ്പള്ളി രാമചന്ദ്രന്‍(വടകര)</option>
@@ -601,13 +628,15 @@
                             ng-model="vm.apeksha.recommendationOthers"
                             />
                 </div>
-
+                </div>
+                </div>
                 <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.hospitalDistrict" for="field_recommendationOthers">Hospital District</label>
                         <select class="form-control" name="hospitalDistrict" id="field_hospitalDistrict" ng-model="vm.apeksha.hospitalDistrict"  required 
                         ng-change="vm.updateHospitalMasters(vm.apeksha.hospitalDistrict)"
                         ng-init="vm.updateHospitalMasters(vm.hospitalPlaceName)"
                         >
+                                <option  value=""></option>
                                 <option  value="തിരുവനന്തപുരം">തിരുവനന്തപുരം</option>
                                 <option  value="കൊല്ലം">കൊല്ലം</option>
                                 <option  value="പത്തനംതിട്ട">പത്തനംതിട്ട</option>
@@ -664,8 +693,21 @@
                         </p>
                     </div>
                 </div>
+
+                <div class="panel panel-info">
+
+                <div class="panel-heading" >
+                        <label  data-translate="janasanthwanamApp.apeksha.isReceivingAmountFromGovt" for="field_isReceivingAmountFromGovt">Any Amount Receiving From Govt</label>
+                        <input type="checkbox"  name="isReceivingAmountFromGovtt" id="field_isReceivingAmountFromGovt"
+                                ng-model="vm.apeksha.isReceivingAmountFromGovt" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.isReceivingAmountFromGovt=false"
+                                />
+                    </div> 
+                    
+
+                <div class="panel-body" ng-show="vm.apeksha.isReceivingAmountFromGovt">
+                    <!-- even though the field name of below field is 'anyAmountReceivingFromGovt' it is actually used to store the amount. dont get confused--> 
                 <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.anyAmountReceivingFromGovt" for="field_anyAmountReceivingFromGovt">Any Amount Receiving From Govt</label>
+                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.anyAmountReceivingFromGovt" for="field_anyAmountReceivingFromGovt"> Amount</label>
                     <input type="number" class="form-control" name="anyAmountReceivingFromGovt" id="field_anyAmountReceivingFromGovt"
                             ng-model="vm.apeksha.anyAmountReceivingFromGovt"
                             />
@@ -676,6 +718,20 @@
                             ng-model="vm.apeksha.govtAmountPurposeDetails"
                             />
                 </div>
+
+                <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.stillReceivingAmountFromGovt" for="field_stillReceivingAmountFromGovt">Still Receiving Amount from Govt</label>
+    
+                                <select class="form-control" name="stillReceivingAmountFromGovtt" id="field_stillReceivingAmountFromGovt" ng-model="vm.apeksha.stillReceivingAmountFromGovt"  >
+                                        <option  value="എ പി എല്‍ കാര്‍ഡ്">എ പി എല്‍ കാര്‍ഡ്, വെള്ള, നീല</option>
+                                        <option  value="ബി പി എല്‍ കാര്‍ഡ്">ബി പി എല്‍ കാര്‍ഡ്, മഞ്ഞ, ചുവപ്പ്</option>
+                                        </select>
+                    </div>
+
+
+                </div>
+                </div>
+
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankName" for="field_bankName">Bank Name</label>
                     <input type="text" class="form-control" name="bankName" id="field_bankName"
@@ -738,12 +794,20 @@
                             </span>
                         </div>
                 </div>
-                <div class="form-group">
+
+
+
+      
+
+
+                        <div class="panel panel-info">
+                        <div class="panel-heading" >
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeAvailable" for="field_nomineeAvailable">Nominee Available</label>
-                    <input type="text" class="form-control" name="nomineeAvailable" id="field_nomineeAvailable"
-                            ng-model="vm.apeksha.nomineeAvailable"
+                    <input type="checkbox"  name="nomineeAvailable" id="field_nomineeAvailable"
+                            ng-model="vm.apeksha.nomineeAvailable" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.nomineeAvailable=false"
                             />
                 </div>
+                <div ng-show="vm.apeksha.nomineeAvailable" class="panel-body">
                 <div class="form-group">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeName" for="field_nomineeName">Nominee Name</label>
                     <input type="text" class="form-control" name="nomineeName" id="field_nomineeName"
@@ -852,6 +916,10 @@
                             ng-model="vm.apeksha.nomineeBankIfscCode"
                             />
                 </div>
+
+                </div>
+                        </div>
+
                 <div class="form-group" ngf-drop ngf-change="vm.setPhoto($file, vm.apeksha)">
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.photo" for="field_photo">Photo</label>
                     <div>

@@ -14,6 +14,10 @@ angular.module('janasanthwanamApp')
 
 
         var religions = [{
+            "CASTE": "",
+            "RELIGION": ""
+        },
+        {
                 "CASTE": "പട്ടികജാതി",
                 "RELIGION": "  ആദി ആന്ധ്ര"
             },

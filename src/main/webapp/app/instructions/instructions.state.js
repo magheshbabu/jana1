@@ -9,10 +9,10 @@
 
     function stateConfig($stateProvider) {
         $stateProvider.state('dataentryinstructions', {
-            parent: 'admin',
+            parent: 'app',
             url: '/dataentryinstructionspage',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: [],
                 pageTitle: 'instructions.dataentryinstructionstitle'
             },
             views: {
@@ -27,10 +27,10 @@
                 }]
             }
         }).state('logininstructions', {
-            parent: 'admin',
+            parent: 'app',
             url: '/logininstructionspage',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: [],
                 pageTitle: 'instructions.logininstructionstitle'
             },
             views: {
@@ -45,10 +45,10 @@
                 }]
             }
         }).state('uploadinstructions', {
-            parent: 'admin',
+            parent: 'app',
             url: '/uploadinstructionspage',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: [],
                 pageTitle: 'instructions.uploadinstructionstitle'
             },
             views: {
@@ -63,10 +63,10 @@
                 }]
             }
         }).state('subjectinstructions', {
-            parent: 'admin',
+            parent: 'app',
             url: '/subjectinstructions',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: [],
                 pageTitle: 'instructions.subjectinstructionstitle'
             },
             views: {

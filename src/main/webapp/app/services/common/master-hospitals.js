@@ -11,6 +11,11 @@ angular.module('janasanthwanamApp')
     .factory('masterHospitals', function () {
 
             var hospitals = [{
+                "PLACE": "",
+                "HOSP": "",
+                "SECTOR": ""
+            },
+                {
                     "PLACE": "തിരുവനന്തപുരം",
                     "HOSP": "കമ്മ്യൂണിറ്റി ഹെല്‍ത്ത്‌ സെന്‍റെര്‍, കല്ലറ",
                     "SECTOR": "ഗവ: ആശുപത്രി"

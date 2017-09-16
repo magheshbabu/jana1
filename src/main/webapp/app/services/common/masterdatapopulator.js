@@ -16,6 +16,13 @@ angular.module('janasanthwanamApp')
   
   var villages = [
     {
+      "E": "",
+      "M": "",
+      "TID": 1,
+      "DID": 1,
+      "VID": "58"
+    },    
+    {
       "E": "Kadakampally",
       "M": "കടകംപള്ളി",
       "TID": 1,
