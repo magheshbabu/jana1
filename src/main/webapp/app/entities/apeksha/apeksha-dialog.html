@@ -1,1154 +1,1123 @@
-
 <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
-        
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                        ng-click="vm.clear()">&times;</button>
-                <h4 class="modal-title" id="myApekshaLabel" data-translate="janasanthwanamApp.apeksha.home.createOrEditLabel">Create or edit a Apeksha</h4>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+            <h4 class="modal-title" id="myApekshaLabel" data-translate="janasanthwanamApp.apeksha.home.createOrEditLabel">Create or edit a Apeksha</h4>
+        </div>
+        <div class="modal-body">
+            <jhi-alert-error></jhi-alert-error>
+            <div class="form-group" ng-show="vm.apeksha.id">
+                <label for="id" data-translate="global.field.id">ID</label>
+                <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.apeksha.id" readonly />
             </div>
-            <div class="modal-body">
-                <jhi-alert-error></jhi-alert-error>
-                <div class="form-group" ng-show="vm.apeksha.id">
-                    <label for="id" data-translate="global.field.id">ID</label>
-                    <input type="text" class="form-control" id="id" name="id"
-                            ng-model="vm.apeksha.id" readonly />
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicationNumber" for="field_applicationNumber">Application Number</label>
+                <input type="text" class="form-control" name="applicationNumber" id="field_applicationNumber"
+                    ng-model="vm.apeksha.applicationNumber"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.beneficiaryName" for="field_beneficiaryName">Beneficiary Name</label>
+                <input type="text" class="form-control" name="beneficiaryName" id="field_beneficiaryName"
+                    ng-model="vm.apeksha.beneficiaryName"
+                    required/>
+                <div ng-show="editForm.beneficiaryName.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.beneficiaryName.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
                 </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicationNumber" for="field_applicationNumber">Application Number</label>
-                    <input type="text" class="form-control" name="applicationNumber" id="field_applicationNumber"
-                            ng-model="vm.apeksha.applicationNumber"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.beneficiaryName" for="field_beneficiaryName">Beneficiary Name</label>
-                    <input type="text" class="form-control" name="beneficiaryName" id="field_beneficiaryName"
-                            ng-model="vm.apeksha.beneficiaryName"
-                            required/>
-                    <div ng-show="editForm.beneficiaryName.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.beneficiaryName.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.district" for="field_district">District</label>
-                    <!-- <input type="text" class="form-control" name="district" id="field_district"
-                            ng-model="vm.apeksha.district"
-                            required/> -->
-        
-                            <select class="form-control" name="district" id="field_district" ng-model="vm.apeksha.district" required 
-                            ng-change="vm.updateblocks(vm.apeksha.district)"
-                            ng-init="vm.updateblocks(vm.apeksha.district)">
-                                <option ng-repeat="x in vm.masterDistricts" value="{{x.malDistName}}">{{x.malDistName}}</option>
-                                </select>
-                            <!-- <input type="select" class="form-control" name="district" id="field_district"
-                            ng-model="vm.apeksha.district"
-                            required/> -->
-                            
-                            
-                    <div ng-show="editForm.district.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.district.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.gender" for="field_gender">Gender</label>
-                    <!-- <input type="text" class="form-control" name="gender" id="field_gender"
-                            ng-model="vm.apeksha.gender"
-                            required/> -->
-
-                            <select class="form-control" name="gender" id="field_gender" ng-model="vm.apeksha.gender" required >
-                                    <option  value="പുരുഷന്‍">പുരുഷന്‍</option>
-                                    <option  value="സ്ത്രീ">സ്ത്രീ</option>
-                                    <option  value="മറ്റുള്ളവ">മറ്റുള്ളവ</option>
-                                    </select>
-                                    
-                                    
-                    <div ng-show="editForm.gender.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.gender.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.fathersName" for="field_fathersName">Fathers Name</label>
-                    <input type="text" class="form-control" name="fathersName" id="field_fathersName"
-                            ng-model="vm.apeksha.fathersName"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.age" for="field_age">Age</label>
-                    <input type="number" class="form-control" name="age" id="field_age"
-                            ng-model="vm.apeksha.age"
-                            required/>
-                    <div ng-show="editForm.age.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.age.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                        <p class="help-block"
-                            ng-show="editForm.age.$error.number" data-translate="entity.validation.number">
-                            This field should be a number.
-                        </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.dateOfBirth" for="field_dateOfBirth">Date Of Birth</label>
-                        <div class="input-group">
-                            <input id="field_dateOfBirth" type="text" class="form-control" name="dateOfBirth" uib-datepicker-popup="{{dateformat}}" ng-model="vm.apeksha.dateOfBirth" is-open="vm.datePickerOpenStatus.dateOfBirth"
-                            />
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfBirth')"><i class="glyphicon glyphicon-calendar"></i></button>
-                            </span>
-                        </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.aadharNumber" for="field_aadharNumber">Aadhar Number</label>
-                    <input type="text" class="form-control" name="aadharNumber" id="field_aadharNumber"
-                            ng-model="vm.apeksha.aadharNumber"
-                            required/>
-                    <div ng-show="editForm.aadharNumber.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.aadharNumber.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.rationCardNumber" for="field_rationCardNumber">Ration Card Number</label>
-                    <input type="text" class="form-control" name="rationCardNumber" id="field_rationCardNumber"
-                            ng-model="vm.apeksha.rationCardNumber"
-                            required/>
-                    <div ng-show="editForm.rationCardNumber.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.rationCardNumber.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.rationCardCategory" for="field_rationCardCategory">Ration Card Category</label>
-                    <!-- <input type="text" class="form-control" name="rationCardCategory" id="field_rationCardCategory"
-                            ng-model="vm.apeksha.rationCardCategory"
-                            /> -->
-
-                            <select class="form-control" name="rationCardCategory" id="field_rationCardCategory" ng-model="vm.apeksha.rationCardCategory"  >
-                                    <option  value="എ പി എല്‍ കാര്‍ഡ്">എ പി എല്‍ കാര്‍ഡ്, വെള്ള, നീല</option>
-                                    <option  value="ബി പി എല്‍ കാര്‍ഡ്">ബി പി എല്‍ കാര്‍ഡ്, മഞ്ഞ, ചുവപ്പ്</option>
-                                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.caste" for="field_caste">Caste</label>
-                    <!-- <input type="text" class="form-control" name="caste" id="field_caste"
-                            ng-model="vm.apeksha.caste"
-                            required/> -->
-                            <select class="form-control" name="caste" id="field_caste" ng-model="vm.apeksha.caste"  required 
-                            ng-change="vm.masterCasteReligions(vm.apeksha.caste)">
-                                    <option  value="പട്ടികജാതി">പട്ടികജാതി</option>
-                                    <option  value="പട്ടിക വര്‍ഗം">പട്ടിക വര്‍ഗം</option>
-                                    <option  value="ഒ ബി സി">ഒ ബി സി</option>
-                                    <option  value="ഒ ഇ സി">ഒ ഇ സി</option>
-                                    <option  value="ജെനറല്‍">ജെനറല്‍</option>
-                                    </select>
+            </div>
 
 
-
-                    <div ng-show="editForm.caste.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.caste.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                    </div>
+            <div class="panel panel-info">
+            <div class="panel-heading" >
+                <label  data-translate="janasanthwanamApp.apeksha.isApplicantApplyingForBeneficiary" for="field_isApplicantApplyingForBeneficiary">Is Applicant Applying For Beneficiary</label>
+                <input type="checkbox"  name="isApplicantApplyingForBeneficiary" id="field_isApplicantApplyingForBeneficiary"
+                    ng-model="vm.apeksha.isApplicantApplyingForBeneficiary" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.isApplicantApplyingForBeneficiary=false"
+                    />
+            </div>
+            <div class="panel-body" ng-show = "vm.apeksha.isApplicantApplyingForBeneficiary">
+                <div class="form-group">
+                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantName" for="field_applicantName">Applicant Name</label>
+                    <input type="text" class="form-control" name="applicantName" id="field_applicantName"
+                        ng-model="vm.apeksha.applicantName"
+                        />
                 </div>
                 <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.religion" for="field_religion">Religion</label>
-                    <!-- <input type="text" class="form-control" name="religion" id="field_religion"
-                            ng-model="vm.apeksha.religion"
-                            required/> -->
-
-
-                            <select class="form-control" name="religion" id="field_religion" ng-model="vm.apeksha.religion" required >
-                                    <option ng-repeat="cr in vm.casteReligions" value="{{cr.RELIGION}}">{{cr.RELIGION}}</option>
-                                    </select>
-
-
-                    <div ng-show="editForm.religion.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.religion.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                    </div>
-                </div>
+                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantIdProofDetails" for="field_applicantIdProofDetails">Applicant ID Proof Details</label>
+                     <input type="text" class="form-control" name="applicantIdProofDetails" id="field_applicantIdProofDetails"
+                        ng-model="vm.apeksha.applicantIdProofDetails"
+                        /> 
+                 </div>
                 <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.houseName" for="field_houseName">House Name</label>
-                    <input type="text" class="form-control" name="houseName" id="field_houseName"
-                            ng-model="vm.apeksha.houseName"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.houseNumber" for="field_houseNumber">House Number</label>
-                    <input type="text" class="form-control" name="houseNumber" id="field_houseNumber"
-                            ng-model="vm.apeksha.houseNumber"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.tcNumber" for="field_tcNumber">Tc Number</label>
-                    <input type="text" class="form-control" name="tcNumber" id="field_tcNumber"
-                            ng-model="vm.apeksha.tcNumber"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.village" for="field_village">Village</label>
-                    <!-- <input type="text" class="form-control" name="village" id="field_village"
-                            ng-model="vm.apeksha.village"
-                            required/> -->
-                            <select class="form-control" name="village" id="field_village" ng-model="vm.apeksha.village" required>
-                                <option ng-repeat="village in vm.villagelist" value="{{village.M}}">{{village.M}}</option>
-                                </select>                            
-                    <div ng-show="editForm.village.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.village.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.taluk" for="field_taluk">Taluk</label>
-                    <!-- <input type="text" class="form-control" name="taluk" id="field_taluk"
-                            ng-model="vm.apeksha.taluk"
-                            /> -->
-
-                            <select class="form-control" name="taluk" id="field_taluk" ng-model="vm.apeksha.taluk"  >
-                                    <option ng-repeat="th in vm.thalukList" value="{{th.M}}">{{th.M}}</option>
-                                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.panchayat" for="field_panchayat">Panchayat</label>
-                    <input type="text" class="form-control" name="panchayat" id="field_panchayat"
-                            ng-model="vm.apeksha.panchayat"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.postOffice" for="field_postOffice">Post Office</label>
-                    <!-- <input type="text" class="form-control" name="postOffice" id="field_postOffice"
-                            ng-model="vm.apeksha.postOffice"
-                            /> -->
-                            <select class="form-control" name="postOffice" id="field_postOffice" ng-model="vm.apeksha.postOffice"  >
-                                    <option ng-repeat="po in vm.postofficelist" value="{{po.M}}">{{po.M}}</option>
-                                    </select>                            
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.pinCode" for="field_pinCode">Pin Code</label>
-                    <!-- <input type="text" class="form-control" name="pinCode" id="field_pinCode"
-                            ng-model="vm.apeksha.pinCode"
-                            /> -->
-                            <select class="form-control" name="pinCode" id="field_pinCode" ng-model="vm.apeksha.pinCode"  >
-                                    <option ng-repeat="pin in vm.postofficelist" value="{{pin.PIN}}">{{pin.PIN}}, {{pin.M}}</option>
-                                    </select>                              
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.mobileNumber" for="field_mobileNumber">Mobile Number</label>
-                    <input type="text" class="form-control" name="mobileNumber" id="field_mobileNumber"
-                            ng-model="vm.apeksha.mobileNumber"
-                            required/>
-                    <div ng-show="editForm.mobileNumber.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.mobileNumber.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.landLineWithSTD" for="field_landLineWithSTD">Land Line With STD</label>
-                    <input type="text" class="form-control" name="landLineWithSTD" id="field_landLineWithSTD"
-                            ng-model="vm.apeksha.landLineWithSTD"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.occupation" for="field_occupation">Occupation</label>
-                    <input type="text" class="form-control" name="occupation" id="field_occupation"
-                            ng-model="vm.apeksha.occupation"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.annualIncome" for="field_annualIncome">Annual Income</label>
-                    <input type="number" class="form-control" name="annualIncome" id="field_annualIncome"
-                            ng-model="vm.apeksha.annualIncome"
-                            required/>
-                    <div ng-show="editForm.annualIncome.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.annualIncome.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                        <p class="help-block"
-                            ng-show="editForm.annualIncome.$error.number" data-translate="entity.validation.number">
-                            This field should be a number.
-                        </p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.familyDetails" for="field_familyDetails">Family Details</label>
-                    <input type="text" class="form-control" name="familyDetails" id="field_familyDetails"
-                            ng-model="vm.apeksha.familyDetails"
-                            />
+                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantRelationShip" for="field_applicantRelationShip">Applicant Relationship with Beneficiary</label>
+                     <input type="text" class="form-control" name="applicantRelationShip" id="field_applicantRelationShip"
+                        ng-model="vm.apeksha.applicantRelationShip"
+                        /> 
                 </div>
 
+            </div>
+        </div>
+            
 
-                <div class="panel panel-info">
-                        
-                                        <div class="panel-heading" >
+            
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.district" for="field_district">District</label>
+                <!-- <input type="text" class="form-control" name="district" id="field_district"
+                    ng-model="vm.apeksha.district"
+                    required/> -->
+                <select class="form-control" name="district" id="field_district" ng-model="vm.apeksha.district" required 
+                    ng-change="vm.updateblocks(vm.apeksha.district)"
+                    ng-init="vm.updateblocks(vm.apeksha.district)">
+                    <option ng-repeat="x in vm.masterDistricts" value="{{x.malDistName}}">{{x.malDistName}}</option>
+                </select>
+                <!-- <input type="select" class="form-control" name="district" id="field_district"
+                    ng-model="vm.apeksha.district"
+                    required/> -->
+                <div ng-show="editForm.district.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.district.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.gender" for="field_gender">Gender</label>
+                <!-- <input type="text" class="form-control" name="gender" id="field_gender"
+                    ng-model="vm.apeksha.gender"
+                    required/> -->
+                <select class="form-control" name="gender" id="field_gender" ng-model="vm.apeksha.gender" required >
+                    <option  value="പുരുഷന്‍">പുരുഷന്‍</option>
+                    <option  value="സ്ത്രീ">സ്ത്രീ</option>
+                    <option  value="മറ്റുള്ളവ">മറ്റുള്ളവ</option>
+                </select>
+                <div ng-show="editForm.gender.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.gender.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.fathersName" for="field_fathersName">Fathers Name</label>
+                <input type="text" class="form-control" name="fathersName" id="field_fathersName"
+                    ng-model="vm.apeksha.fathersName"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.age" for="field_age">Age</label>
+                <input type="number" class="form-control" name="age" id="field_age"
+                    ng-model="vm.apeksha.age"
+                    required/>
+                <div ng-show="editForm.age.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.age.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                    <p class="help-block"
+                        ng-show="editForm.age.$error.number" data-translate="entity.validation.number">
+                        This field should be a number.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.dateOfBirth" for="field_dateOfBirth">Date Of Birth</label>
+                <div class="input-group">
+                    <input id="field_dateOfBirth" type="text" class="form-control" name="dateOfBirth" uib-datepicker-popup="{{dateformat}}" ng-model="vm.apeksha.dateOfBirth" is-open="vm.datePickerOpenStatus.dateOfBirth"
+                        />
+                    <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfBirth')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.aadharNumber" for="field_aadharNumber">Aadhar Number</label>
+                <input type="text" class="form-control" name="aadharNumber" id="field_aadharNumber"
+                    ng-model="vm.apeksha.aadharNumber"
+                    required/>
+                <div ng-show="editForm.aadharNumber.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.aadharNumber.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.rationCardNumber" for="field_rationCardNumber">Ration Card Number</label>
+                <input type="text" class="form-control" name="rationCardNumber" id="field_rationCardNumber"
+                    ng-model="vm.apeksha.rationCardNumber"
+                    required/>
+                <div ng-show="editForm.rationCardNumber.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.rationCardNumber.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.rationCardCategory" for="field_rationCardCategory">Ration Card Category</label>
+                <!-- <input type="text" class="form-control" name="rationCardCategory" id="field_rationCardCategory"
+                    ng-model="vm.apeksha.rationCardCategory"
+                    /> -->
+                <select class="form-control" name="rationCardCategory" id="field_rationCardCategory" ng-model="vm.apeksha.rationCardCategory"  >
+                    <option  value="എ പി എല്‍ കാര്‍ഡ്">എ പി എല്‍ കാര്‍ഡ്, വെള്ള, നീല</option>
+                    <option  value="ബി പി എല്‍ കാര്‍ഡ്">ബി പി എല്‍ കാര്‍ഡ്, മഞ്ഞ, ചുവപ്പ്</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.caste" for="field_caste">Caste</label>
+                <!-- <input type="text" class="form-control" name="caste" id="field_caste"
+                    ng-model="vm.apeksha.caste"
+                    required/> -->
+                <select class="form-control" name="caste" id="field_caste" ng-model="vm.apeksha.caste"  required 
+                    ng-change="vm.masterCasteReligions(vm.apeksha.caste)">
+                    <option  value="പട്ടികജാതി">പട്ടികജാതി</option>
+                    <option  value="പട്ടിക വര്‍ഗം">പട്ടിക വര്‍ഗം</option>
+                    <option  value="ഒ ബി സി">ഒ ബി സി</option>
+                    <option  value="ഒ ഇ സി">ഒ ഇ സി</option>
+                    <option  value="ജെനറല്‍">ജെനറല്‍</option>
+                </select>
+                <div ng-show="editForm.caste.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.caste.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.religion" for="field_religion">Religion</label>
+                <!-- <input type="text" class="form-control" name="religion" id="field_religion"
+                    ng-model="vm.apeksha.religion"
+                    required/> -->
+                <select class="form-control" name="religion" id="field_religion" ng-model="vm.apeksha.religion" required >
+                    <option ng-repeat="cr in vm.casteReligions" value="{{cr.RELIGION}}">{{cr.RELIGION}}</option>
+                </select>
+                <div ng-show="editForm.religion.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.religion.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.houseName" for="field_houseName">House Name</label>
+                <input type="text" class="form-control" name="houseName" id="field_houseName"
+                    ng-model="vm.apeksha.houseName"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.houseNumber" for="field_houseNumber">House Number</label>
+                <input type="text" class="form-control" name="houseNumber" id="field_houseNumber"
+                    ng-model="vm.apeksha.houseNumber"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.tcNumber" for="field_tcNumber">Tc Number</label>
+                <input type="text" class="form-control" name="tcNumber" id="field_tcNumber"
+                    ng-model="vm.apeksha.tcNumber"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.village" for="field_village">Village</label>
+                <!-- <input type="text" class="form-control" name="village" id="field_village"
+                    ng-model="vm.apeksha.village"
+                    required/> -->
+                <select class="form-control" name="village" id="field_village" ng-model="vm.apeksha.village" required>
+                    <option ng-repeat="village in vm.villagelist" value="{{village.M}}">{{village.M}}</option>
+                </select>
+                <div ng-show="editForm.village.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.village.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.taluk" for="field_taluk">Taluk</label>
+                <!-- <input type="text" class="form-control" name="taluk" id="field_taluk"
+                    ng-model="vm.apeksha.taluk"
+                    /> -->
+                <select class="form-control" name="taluk" id="field_taluk" ng-model="vm.apeksha.taluk"  >
+                    <option ng-repeat="th in vm.thalukList" value="{{th.M}}">{{th.M}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.panchayat" for="field_panchayat">Panchayat</label>
+                <input type="text" class="form-control" name="panchayat" id="field_panchayat"
+                    ng-model="vm.apeksha.panchayat"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.postOffice" for="field_postOffice">Post Office</label>
+                <!-- <input type="text" class="form-control" name="postOffice" id="field_postOffice"
+                    ng-model="vm.apeksha.postOffice"
+                    /> -->
+                <select class="form-control" name="postOffice" id="field_postOffice" ng-model="vm.apeksha.postOffice"  >
+                    <option ng-repeat="po in vm.postofficelist" value="{{po.M}}">{{po.M}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.pinCode" for="field_pinCode">Pin Code</label>
+                <!-- <input type="text" class="form-control" name="pinCode" id="field_pinCode"
+                    ng-model="vm.apeksha.pinCode"
+                    /> -->
+                <select class="form-control" name="pinCode" id="field_pinCode" ng-model="vm.apeksha.pinCode"  >
+                    <option ng-repeat="pin in vm.postofficelist" value="{{pin.PIN}}">{{pin.PIN}}, {{pin.M}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.mobileNumber" for="field_mobileNumber">Mobile Number</label>
+                <input type="text" class="form-control" name="mobileNumber" id="field_mobileNumber"
+                    ng-model="vm.apeksha.mobileNumber"
+                    required/>
+                <div ng-show="editForm.mobileNumber.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.mobileNumber.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.landLineWithSTD" for="field_landLineWithSTD">Land Line With STD</label>
+                <input type="text" class="form-control" name="landLineWithSTD" id="field_landLineWithSTD"
+                    ng-model="vm.apeksha.landLineWithSTD"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.occupation" for="field_occupation">Occupation</label>
+                <input type="text" class="form-control" name="occupation" id="field_occupation"
+                    ng-model="vm.apeksha.occupation"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.annualIncome" for="field_annualIncome">Annual Income</label>
+                <input type="number" class="form-control" name="annualIncome" id="field_annualIncome"
+                    ng-model="vm.apeksha.annualIncome"
+                    required/>
+                <div ng-show="editForm.annualIncome.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.annualIncome.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                    <p class="help-block"
+                        ng-show="editForm.annualIncome.$error.number" data-translate="entity.validation.number">
+                        This field should be a number.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.familyDetails" for="field_familyDetails">Family Details</label>
+                <input type="text" class="form-control" name="familyDetails" id="field_familyDetails"
+                    ng-model="vm.apeksha.familyDetails"
+                    />
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading" >
                     <label  data-translate="janasanthwanamApp.apeksha.hasOwnProperty" for="field_hasOwnProperty">Has Own Property</label>
                     <input type="checkbox"  name="hasOwnPropertyy" id="field_hasOwnProperty"
-                            ng-model="vm.apeksha.hasOwnProperty" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.hasOwnProperty=false"
-                            />
-                </div>                
-
+                        ng-model="vm.apeksha.hasOwnProperty" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.hasOwnProperty=false"
+                        />
+                </div>
                 <div class="panel-body" ng-show = "vm.apeksha.hasOwnProperty">
-
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.landTotalCent" for="field_landTotalCent">Land Total Cent</label>
-                    <input type="text" class="form-control" name="landTotalCent" id="field_landTotalCent"
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.landTotalCent" for="field_landTotalCent">Land Total Cent</label>
+                        <input type="text" class="form-control" name="landTotalCent" id="field_landTotalCent"
                             ng-model="vm.apeksha.landTotalCent"
                             />
-                </div>
-                <div class="form-group">
+                    </div>
+                    <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.landDistrict" for="field_landDistrict">Land District</label>
                         <!-- <input type="text" class="form-control" name="landDistrict" id="field_landDistrict"
-                                ng-model="vm.apeksha.landDistrict"
-                                /> -->
-
-                                <select class="form-control" name="landDistrict" id="field_landDistrict" ng-model="vm.apeksha.landDistrict"  ng-change="vm.landMasters(vm.apeksha.landDistrict)">
-                                        <option ng-repeat="lndDistricts in vm.landMasterDistricts" value="{{lndDistricts.malDistName}}">{{lndDistricts.malDistName}}</option>
-                                        </select>                                   
-                    </div>                
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.landThaluk" for="field_landThaluk">Land Thaluk</label>
-                    <!-- <input type="text" class="form-control" name="landThaluk" id="field_landThaluk"
+                            ng-model="vm.apeksha.landDistrict"
+                            /> -->
+                        <select class="form-control" name="landDistrict" id="field_landDistrict" ng-model="vm.apeksha.landDistrict"  ng-change="vm.landMasters(vm.apeksha.landDistrict)">
+                            <option ng-repeat="lndDistricts in vm.landMasterDistricts" value="{{lndDistricts.malDistName}}">{{lndDistricts.malDistName}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.landThaluk" for="field_landThaluk">Land Thaluk</label>
+                        <!-- <input type="text" class="form-control" name="landThaluk" id="field_landThaluk"
                             ng-model="vm.apeksha.landThaluk"
                             /> -->
-                            <select class="form-control" name="landThaluk" id="field_landThaluk" ng-model="vm.apeksha.landThaluk"  >
-                                    <option ng-repeat="lndThluk in vm.landThalukList" value="{{lndThluk.M}}">{{lndThluk.M}}</option>
-                                    </select>                              
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.landVillage" for="field_landVillage">Land Village</label>
-                    <!-- <input type="text" class="form-control" name="landVillage" id="field_landVillage"
+                        <select class="form-control" name="landThaluk" id="field_landThaluk" ng-model="vm.apeksha.landThaluk"  >
+                            <option ng-repeat="lndThluk in vm.landThalukList" value="{{lndThluk.M}}">{{lndThluk.M}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.landVillage" for="field_landVillage">Land Village</label>
+                        <!-- <input type="text" class="form-control" name="landVillage" id="field_landVillage"
                             ng-model="vm.apeksha.landVillage"
                             /> -->
-
-                            <select class="form-control" name="landVillage" id="field_landVillage" ng-model="vm.apeksha.landVillage"  >
-                                    <option ng-repeat="lndVilg in vm.landVillagelist" value="{{lndVilg.M}}">{{lndVilg.M}}</option>
-                                    </select>   
-                </div>
-                </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.requirementPurpose" for="field_requirementPurpose">Requirement Purpose</label>
-                    <!-- <input type="text" class="form-control" name="requirementPurpose" id="field_requirementPurpose"
-                            ng-model="vm.apeksha.requirementPurpose"
-                            required/> -->
-
-                            <select class="form-control" name="requirementPurpose" id="field_requirementPurpose" ng-model="vm.apeksha.requirementPurpose"  required >
-                                    
-									<option  value="അനുബന്ധം I - ഗുരുതരമായ രോഗം (അപകടം,അതിക്രമം) തുടര്‍ചികിത്സ">അനുബന്ധം I</option>
-                                    <option  value="അനുബന്ധം II - അപൂര്‍വ അജ്ഞാത രോഗബാധിതര്‍">അനുബന്ധം II</option>
-                                    <option  value="അനുബന്ധം III - ഡയാലിസിസിന്/ഹീമോഫീലിയ അനുബന്ധ രോഗങ്ങളും ബാധിച്ച തുടര്‍ചികിത്സ">അനുബന്ധം III</option>
-                                    <option  value="അനുബന്ധം IV - ഗുരുതരമായ രോഗങ്ങള്‍ മൂലം മരുന്നുകള്‍ വാങ്ങാന്‍ ">അനുബന്ധം IV</option>
-                                    <option  value="അനുബന്ധം V - ഹൃദയം/കരള്‍/നാടീവ്യൂഹ സംബന്ധിയായ ശാസ്ത്രക്രിയകള്‍ക്കും തുടര്‍ന്നുള്ള ചികിത്സകള്‍ക്കും">അനുബന്ധം V</option>
-                                    <option  value="അനുബന്ധം VI - ലൈംഗിക അതിക്രമം/സാമൂഹ്യ അരക്ഷിതാവസ്ഥ ഇരയായവര്‍ക്ക്">അനുബന്ധം VI</option>
-                                    <option  value="അനുബന്ധം VII - സാമ്പത്തികമായി പിന്നാക്കം നില്‍ക്കുന്ന കുടുംബത്തിലെ ഗൃഹനാഥനോ/ഗൃഹനാഥയോ അകാലത്തില്‍ മരണപ്പെടുകയോ /ശയ്യാവലംബരായി തീരുകയോ ആണങ്കില്‍ ആശ്രിതര്‍ക്ക് /രോഗിക്ക്/">അനുബന്ധം VII</option>
-                                    <option  value="അനുബന്ധം VIII - അപകടം/സാമൂഹ്യ അരക്ഷിതാവസ്ഥ എന്നിവ മൂലം അവയവങ്ങള്‍ നഷ്ടപ്പെടുകയോ മാരകമായി പരുക്കേല്‍ക്കുകയോചെയ്യുന്നവര്‍ക്ക്">അനുബന്ധം VIII</option>
-                                    <option  value="അനുബന്ധം IX - സ്പെഷ്യല്‍ സ്കൂളുകളിലും മറ്റു വിദ്യാഭ്യാസ സ്ഥാപനങ്ങളിലും പഠിക്കുന്ന അംഗപരിമിതരായ വിദ്യാര്‍ഥികള്‍ക്ക് ആവശ്യമായ ( കാഴ്ച പരിമിതര്‍/മൂകര്‍/ബധിരര്‍/മാനസിക വൈകല്യമുള്ളവര്‍) പഠനോപകരണങ്ങള്‍ വാങ്ങുന്നതിനുള്ള വ്യക്തിഗതസഹായം. ">അനുബന്ധം IX</option>
-                                    <option  value="അനുബന്ധം X - ഫിസിയോതറാപ്പി ഉള്‍പ്പെടെയുള്ള നൂതന സാങ്കേതിക ചികിത്സാരീതികള്‍ ആവശ്യമായി വരുന്ന സ്പെഷ്യല്‍ സ്കൂളില്‍ പഠിക്കുന്ന കുട്ടികള്‍ക്ക്">അനുബന്ധം X</option>
-                                    <option  value="അനുബന്ധം XI - സര്‍ക്കാരില്‍ നിന്നും സാമൂഹ്യസുരക്ഷ പെന്‍ഷന്‍ ഉള്‍പ്പെടെയുള്ള ധനസഹായങ്ങള്‍ ലഭിക്കാത്ത സാമൂഹ്യ നീതി വകുപ്പിന്‍റെ കീഴില്‍ പ്രവര്‍ത്തിക്കുന്ന മഹിളാമന്ദിരം/ആശാഭവന്‍/റെസ്ക്യുഹോമുകള്‍/ആഫ്റ്റര്‍കെയര്‍ ഹോമുകള്‍/ഷോര്‍ട്ട് സ്റ്റേ ഹോമുകള്‍/നിര്‍ഭയ ഷെല്‍ട്ടര്‍ ഹോം എന്നിവടങ്ങളിലെ അന്തേവാസികള്‍ക്ക്">അനുബന്ധം XI</option>
-                                    <option  value="അനുബന്ധം XII - ദാരിദ്ര്യരേഖയ്ക്ക് താഴെയുള്ള കുടുംബങ്ങളിലെ ഇരുപതുവയസ്സ് പൂര്‍ത്തിയാക്കുന്ന സമര്‍ത്ഥരായ കുട്ടികള്‍ക്കും ശാരീരിക മാനസിക വെല്ലുവിളികള്‍ നേരിടുന്ന കുട്ടികളുടെ വിദ്യാഭ്യാസത്തിനും">അനുബന്ധം XII</option>
-                                    <option  value="അനുബന്ധം XIII - മുഖ്യമന്ത്രിയോ മന്ദ്രിസഭായോഗമോ ഈ പദ്ധതിയില്‍ ഉള്‍പ്പെടുത്തി പ്രഖ്യാപിക്കുന്ന മറ്റു ആനുകൂല്യങ്ങള്‍ ">അനുബന്ധം XIII</option>
-                                    <option  value="അനുബന്ധം XIV - മുഖ്യമന്ത്രി നേരിട്ടു അനുവദിക്കപ്പെടുന്ന ധനസഹായങ്ങള്‍ക്ക് ">അനുബന്ധം XIV</option>
-									<option  value="അനുബന്ധം XV - മറ്റുള്ളവ">അനുബന്ധം XV</option>
-                                    </select>                            
-                    <div ng-show="editForm.requirementPurpose.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.requirementPurpose.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                                                
+                        <select class="form-control" name="landVillage" id="field_landVillage" ng-model="vm.apeksha.landVillage"  >
+                            <option ng-repeat="lndVilg in vm.landVillagelist" value="{{lndVilg.M}}">{{lndVilg.M}}</option>
+                        </select>
                     </div>
-                    <div >
-                            <p class="help-block">
-                                {{ vm.apeksha.requirementPurpose }}
-                            </p>
-                        </div>
                 </div>
-
-
-                <div class="panel panel-info">
-                        
-                                        <div class="panel-heading" >
-                            <label  data-translate="janasanthwanamApp.apeksha.hasRecommendation" for="field_hasRecommendation">Has Own Property</label>
-                            <input type="checkbox"  name="hasRecommendationn" id="field_hasRecommendation"
-                                    ng-model="vm.apeksha.hasRecommendation" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.hasRecommendation=false"
-                                    />
-                        </div>  
-
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.requirementPurpose" for="field_requirementPurpose">Requirement Purpose</label>
+                <!-- <input type="text" class="form-control" name="requirementPurpose" id="field_requirementPurpose"
+                    ng-model="vm.apeksha.requirementPurpose"
+                    required/> -->
+                <select class="form-control" name="requirementPurpose" id="field_requirementPurpose" ng-model="vm.apeksha.requirementPurpose"  required >
+                    <option  value="അനുബന്ധം I - ഗുരുതരമായ രോഗം (അപകടം,അതിക്രമം) തുടര്‍ചികിത്സ">അനുബന്ധം I</option>
+                    <option  value="അനുബന്ധം II - അപൂര്‍വ അജ്ഞാത രോഗബാധിതര്‍">അനുബന്ധം II</option>
+                    <option  value="അനുബന്ധം III - ഡയാലിസിസിന്/ഹീമോഫീലിയ അനുബന്ധ രോഗങ്ങളും ബാധിച്ച തുടര്‍ചികിത്സ">അനുബന്ധം III</option>
+                    <option  value="അനുബന്ധം IV - ഗുരുതരമായ രോഗങ്ങള്‍ മൂലം മരുന്നുകള്‍ വാങ്ങാന്‍ ">അനുബന്ധം IV</option>
+                    <option  value="അനുബന്ധം V - ഹൃദയം/കരള്‍/നാടീവ്യൂഹ സംബന്ധിയായ ശാസ്ത്രക്രിയകള്‍ക്കും തുടര്‍ന്നുള്ള ചികിത്സകള്‍ക്കും">അനുബന്ധം V</option>
+                    <option  value="അനുബന്ധം VI - ലൈംഗിക അതിക്രമം/സാമൂഹ്യ അരക്ഷിതാവസ്ഥ ഇരയായവര്‍ക്ക്">അനുബന്ധം VI</option>
+                    <option  value="അനുബന്ധം VII - സാമ്പത്തികമായി പിന്നാക്കം നില്‍ക്കുന്ന കുടുംബത്തിലെ ഗൃഹനാഥനോ/ഗൃഹനാഥയോ അകാലത്തില്‍ മരണപ്പെടുകയോ /ശയ്യാവലംബരായി തീരുകയോ ആണങ്കില്‍ ആശ്രിതര്‍ക്ക് /രോഗിക്ക്/">അനുബന്ധം VII</option>
+                    <option  value="അനുബന്ധം VIII - അപകടം/സാമൂഹ്യ അരക്ഷിതാവസ്ഥ എന്നിവ മൂലം അവയവങ്ങള്‍ നഷ്ടപ്പെടുകയോ മാരകമായി പരുക്കേല്‍ക്കുകയോചെയ്യുന്നവര്‍ക്ക്">അനുബന്ധം VIII</option>
+                    <option  value="അനുബന്ധം IX - സ്പെഷ്യല്‍ സ്കൂളുകളിലും മറ്റു വിദ്യാഭ്യാസ സ്ഥാപനങ്ങളിലും പഠിക്കുന്ന അംഗപരിമിതരായ വിദ്യാര്‍ഥികള്‍ക്ക് ആവശ്യമായ ( കാഴ്ച പരിമിതര്‍/മൂകര്‍/ബധിരര്‍/മാനസിക വൈകല്യമുള്ളവര്‍) പഠനോപകരണങ്ങള്‍ വാങ്ങുന്നതിനുള്ള വ്യക്തിഗതസഹായം. ">അനുബന്ധം IX</option>
+                    <option  value="അനുബന്ധം X - ഫിസിയോതറാപ്പി ഉള്‍പ്പെടെയുള്ള നൂതന സാങ്കേതിക ചികിത്സാരീതികള്‍ ആവശ്യമായി വരുന്ന സ്പെഷ്യല്‍ സ്കൂളില്‍ പഠിക്കുന്ന കുട്ടികള്‍ക്ക്">അനുബന്ധം X</option>
+                    <option  value="അനുബന്ധം XI - സര്‍ക്കാരില്‍ നിന്നും സാമൂഹ്യസുരക്ഷ പെന്‍ഷന്‍ ഉള്‍പ്പെടെയുള്ള ധനസഹായങ്ങള്‍ ലഭിക്കാത്ത സാമൂഹ്യ നീതി വകുപ്പിന്‍റെ കീഴില്‍ പ്രവര്‍ത്തിക്കുന്ന മഹിളാമന്ദിരം/ആശാഭവന്‍/റെസ്ക്യുഹോമുകള്‍/ആഫ്റ്റര്‍കെയര്‍ ഹോമുകള്‍/ഷോര്‍ട്ട് സ്റ്റേ ഹോമുകള്‍/നിര്‍ഭയ ഷെല്‍ട്ടര്‍ ഹോം എന്നിവടങ്ങളിലെ അന്തേവാസികള്‍ക്ക്">അനുബന്ധം XI</option>
+                    <option  value="അനുബന്ധം XII - ദാരിദ്ര്യരേഖയ്ക്ക് താഴെയുള്ള കുടുംബങ്ങളിലെ ഇരുപതുവയസ്സ് പൂര്‍ത്തിയാക്കുന്ന സമര്‍ത്ഥരായ കുട്ടികള്‍ക്കും ശാരീരിക മാനസിക വെല്ലുവിളികള്‍ നേരിടുന്ന കുട്ടികളുടെ വിദ്യാഭ്യാസത്തിനും">അനുബന്ധം XII</option>
+                    <option  value="അനുബന്ധം XIII - മുഖ്യമന്ത്രിയോ മന്ദ്രിസഭായോഗമോ ഈ പദ്ധതിയില്‍ ഉള്‍പ്പെടുത്തി പ്രഖ്യാപിക്കുന്ന മറ്റു ആനുകൂല്യങ്ങള്‍ ">അനുബന്ധം XIII</option>
+                    <option  value="അനുബന്ധം XIV - മുഖ്യമന്ത്രി നേരിട്ടു അനുവദിക്കപ്പെടുന്ന ധനസഹായങ്ങള്‍ക്ക് ">അനുബന്ധം XIV</option>
+                    <option  value="അനുബന്ധം XV - മറ്റുള്ളവ">അനുബന്ധം XV</option>
+                </select>
+                <div ng-show="editForm.requirementPurpose.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.requirementPurpose.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+                <div >
+                    <p class="help-block">
+                        {{ vm.apeksha.requirementPurpose }}
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading" >
+                    <label  data-translate="janasanthwanamApp.apeksha.hasRecommendation" for="field_hasRecommendation">Has Own Property</label>
+                    <input type="checkbox"  name="hasRecommendationn" id="field_hasRecommendation"
+                        ng-model="vm.apeksha.hasRecommendation" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.hasRecommendation=false"
+                        />
+                </div>
                 <div class="panel-body" ng-show="vm.apeksha.hasRecommendation">
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMinister" for="field_recommendationMinister">Recommendation Minister</label>
-                    <!-- <input type="text" class="form-control" name="recommendationMinister" id="field_recommendationMinister"
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMinister" for="field_recommendationMinister">Recommendation Minister</label>
+                        <!-- <input type="text" class="form-control" name="recommendationMinister" id="field_recommendationMinister"
                             ng-model="vm.apeksha.recommendationMinister"
                             /> -->
-
-                            <select class="form-control" name="recommendationMinister" id="field_recommendationMinister" ng-model="vm.apeksha.recommendationMinister"  >
-                                    <option value = ""></option>
-									<option value=”ശ്രീ.പിണറായിവിജയന്‍“>ശ്രീ.പിണറായിവിജയന്‍</option>
-                                    <option value=”ശ്രീ.റ്റി.എം.തോമസ്ഐസക്“>ശ്രീ.റ്റി.എം.തോമസ്ഐസക്</option>
-                                    <option value=”ശ്രീ.എം.എം.മണി“>ശ്രീ.എം.എം.മണി</option>
-                                    <option value=”ശ്രീ.ജി.സുധാകരന്‍“>ശ്രീ.ജി.സുധാകരന്‍</option>
-                                    <option value=”ശ്രീ.എ.കെ.ബാലന്‍“>ശ്രീ.എ.കെ.ബാലന്‍</option>
-                                    <option value=”ശ്രിമതി.കെ.കെ.ശൈലജ“>ശ്രിമതി.കെ.കെ.ശൈലജ</option>
-                                    <option value=”ശ്രി.സി.രവീന്ദ്രനാഥ്“>ശ്രി.സി.രവീന്ദ്രനാഥ്</option>
-                                    <option value=”ശ്രീ.കടകംപള്ളി സുരേന്ദ്രന്‍“>ശ്രീ.കടകംപള്ളി സുരേന്ദ്രന്‍</option>
-                                    <option value=”ശ്രീ.റ്റി.പി.രാമകൃഷ്ണന്‍“>ശ്രീ.റ്റി.പി.രാമകൃഷ്ണന്‍</option>
-                                    <option value=”ശ്രീമതി.ജെ.മേഴ്സിക്കുട്ടിയമ്മ“>ശ്രീമതി.ജെ.മേഴ്സിക്കുട്ടിയമ്മ</option>
-                                    <option value=”ശ്രീ.എ.സി.മൊയ്തീന്‍“>ശ്രീ.എ.സി.മൊയ്തീന്‍</option>
-                                    <option value=”ശ്രീ.കെ.റ്റി.ജലീല്‍“>ശ്രീ.കെ.റ്റി.ജലീല്‍</option>
-                                    <option value=”ശ്രീ.ഇ.ചന്ദ്രശേഖരന്‍“>ശ്രീ.ഇ.ചന്ദ്രശേഖരന്‍</option>
-                                    <option value=”ശ്രീ,വി.എസ്.സുനില്‍ കുമാര്‍“>ശ്രീ,വി.എസ്.സുനില്‍ കുമാര്‍</option>
-                                    <option value=”ശ്രീ.പി.തിലോത്തമന്‍“>ശ്രീ.പി.തിലോത്തമന്‍</option>
-                                    <option value=”ശ്രീ.കെ.രാജു“>ശ്രീ.കെ.രാജു</option>
-                                    <option value=”ശ്രീ.മാത്യു റ്റി.തോമസ്‌“>ശ്രീ.മാത്യു റ്റി.തോമസ്‌</option>
-                                    <option value=”ശ്രീ.തോമസ്‌ ചാണ്ടി“>ശ്രീ.തോമസ്‌ ചാണ്ടി</option>
-                                    <option value=”ശ്രീ.രാമചന്ദ്രന്‍ കടന്നപ്പള്ളി“>ശ്രീ.രാമചന്ദ്രന്‍ കടന്നപ്പള്ളി</option>
-                                    
-
-                                    </select>       
-
-                        </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMLA" for="field_recommendationMLA">Recommendation MLA</label>
-                    <!-- <input type="text" class="form-control" name="recommendationMLA" id="field_recommendationMLA"
+                        <select class="form-control" name="recommendationMinister" id="field_recommendationMinister" ng-model="vm.apeksha.recommendationMinister"  >
+                            <option value = ""></option>
+                            <option value=”ശ്രീ.പിണറായിവിജയന്‍“>ശ്രീ.പിണറായിവിജയന്‍</option>
+                            <option value=”ശ്രീ.റ്റി.എം.തോമസ്ഐസക്“>ശ്രീ.റ്റി.എം.തോമസ്ഐസക്</option>
+                            <option value=”ശ്രീ.എം.എം.മണി“>ശ്രീ.എം.എം.മണി</option>
+                            <option value=”ശ്രീ.ജി.സുധാകരന്‍“>ശ്രീ.ജി.സുധാകരന്‍</option>
+                            <option value=”ശ്രീ.എ.കെ.ബാലന്‍“>ശ്രീ.എ.കെ.ബാലന്‍</option>
+                            <option value=”ശ്രിമതി.കെ.കെ.ശൈലജ“>ശ്രിമതി.കെ.കെ.ശൈലജ</option>
+                            <option value=”ശ്രി.സി.രവീന്ദ്രനാഥ്“>ശ്രി.സി.രവീന്ദ്രനാഥ്</option>
+                            <option value=”ശ്രീ.കടകംപള്ളി സുരേന്ദ്രന്‍“>ശ്രീ.കടകംപള്ളി സുരേന്ദ്രന്‍</option>
+                            <option value=”ശ്രീ.റ്റി.പി.രാമകൃഷ്ണന്‍“>ശ്രീ.റ്റി.പി.രാമകൃഷ്ണന്‍</option>
+                            <option value=”ശ്രീമതി.ജെ.മേഴ്സിക്കുട്ടിയമ്മ“>ശ്രീമതി.ജെ.മേഴ്സിക്കുട്ടിയമ്മ</option>
+                            <option value=”ശ്രീ.എ.സി.മൊയ്തീന്‍“>ശ്രീ.എ.സി.മൊയ്തീന്‍</option>
+                            <option value=”ശ്രീ.കെ.റ്റി.ജലീല്‍“>ശ്രീ.കെ.റ്റി.ജലീല്‍</option>
+                            <option value=”ശ്രീ.ഇ.ചന്ദ്രശേഖരന്‍“>ശ്രീ.ഇ.ചന്ദ്രശേഖരന്‍</option>
+                            <option value=”ശ്രീ,വി.എസ്.സുനില്‍ കുമാര്‍“>ശ്രീ,വി.എസ്.സുനില്‍ കുമാര്‍</option>
+                            <option value=”ശ്രീ.പി.തിലോത്തമന്‍“>ശ്രീ.പി.തിലോത്തമന്‍</option>
+                            <option value=”ശ്രീ.കെ.രാജു“>ശ്രീ.കെ.രാജു</option>
+                            <option value=”ശ്രീ.മാത്യു റ്റി.തോമസ്‌“>ശ്രീ.മാത്യു റ്റി.തോമസ്‌</option>
+                            <option value=”ശ്രീ.തോമസ്‌ ചാണ്ടി“>ശ്രീ.തോമസ്‌ ചാണ്ടി</option>
+                            <option value=”ശ്രീ.രാമചന്ദ്രന്‍ കടന്നപ്പള്ളി“>ശ്രീ.രാമചന്ദ്രന്‍ കടന്നപ്പള്ളി</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMLA" for="field_recommendationMLA">Recommendation MLA</label>
+                        <!-- <input type="text" class="form-control" name="recommendationMLA" id="field_recommendationMLA"
                             ng-model="vm.apeksha.recommendationMLA"
                             /> -->
-
-
-                            <select class="form-control" name="recommendationMLA" id="field_recommendationMLA" ng-model="vm.apeksha.recommendationMLA"  >
-                                    <option value = ""></option>
-									<option  value="ശ്രീ ചിറ്റായം ഗോപകുമാര്‍ (അടൂര്‍)">ശ്രീ ചിറ്റായം ഗോപകുമാര്‍ (അടൂര്‍)</option>
-                                    <option  value="ശ്രീ തോമസ്‌ ഐസക് (ആലപ്പുഴ)">ശ്രീ തോമസ്‌ ഐസക് (ആലപ്പുഴ)</option>
-                                    <option  value="ശ്രീ കെ ഡി പ്രസന്നന്‍ (ആലത്തൂര്‍)">ശ്രീ കെ ഡി പ്രസന്നന്‍ (ആലത്തൂര്‍)</option> 
-                                    <option  value="ശ്രീ അന്‍വര്‍ സാദത്ത് (ആലുവ )">ശ്രീ അന്‍വര്‍ സാദത്ത് (ആലുവ )</option>
-                                    <option  value="ശ്രീ ജി സുധാകരന്‍ (അമ്പലപ്പുഴ)">ശ്രീ ജി സുധാകരന്‍ (അമ്പലപ്പുഴ)</option>
-                                    <option  value="ശ്രീ റോജി എം ജോണ്‍ (അംഗമാലി)">ശ്രീ റോജി എം ജോണ്‍ (അംഗമാലി )</option>
-                                    <option  value="ശ്രീ വീണ ജോര്‍ജ് (ആറമ്മുള)">ശ്രീ വീണ ജോര്‍ജ് (ആറമ്മുള)</option>
-                                    <option  value="ശ്രീ അഡ്വ എ എം ആരിഫ് (അടൂര്‍)">ശ്രീ അഡ്വ എ എം ആരിഫ് (അടൂര്‍)</option>
-                                    <option  value="ശ്രീ കെ എസ് ശബരീനാഥന്‍ (അരുവിക്കര)">ശ്രീ കെ എസ് ശബരീനാഥന്‍ (അരുവിക്കര)</option>
-                                    <option  value="ശ്രീ അഡ്വ ബി സത്യന്‍ (ആറ്റിങ്ങല്‍)">ശ്രീ അഡ്വ ബി സത്യന്‍ (ആറ്റിങ്ങല്‍)</option>
-                                    <option  value="ശ്രീ കെ എം ഷാജി  (അഴിക്കോട്)">ശ്രീ കെ എം ഷാജി  (അഴിക്കോട്)</option>
-                                    <option  value="ശ്രീ പുരുഷന്‍ കടലുണ്ടി (ബാലുശ്ശേരി)">ശ്രീ പുരുഷന്‍ കടലുണ്ടി (ബാലുശ്ശേരി)</option>
-                                    <option  value="ശ്രീ മമ്മദ് കോയ വി കെ സി  (ബേപ്പൂര്‍)">ശ്രീ മമ്മദ് കോയ വി കെ സി  (ബേപ്പൂര്‍)</option>
-                                    <option  value="ശ്രീ മുല്ലക്കര രത്നാകരന്‍ (ചടയമംഗലം)">ശ്രീ മുല്ലക്കര രത്നാകരന്‍ (ചടയമംഗലം)</option>
-                                    <option  value="ശ്രീ ഡി ഡി ദേവസ്യ  (ചാലക്കുടി)">ശ്രീ ഡി ഡി ദേവസ്യ  (ചാലക്കുടി)</option>
-                                    <option  value="ശ്രീ സി എഫ് തോമസ്‌ (ചങ്ങനാശ്ശേരി)">ശ്രീ സി എഫ് തോമസ്‌ (ചങ്ങനാശ്ശേരി)</option>
-                                    <option  value="ശ്രീ ജി എസ് ജയലാല്‍  (ചാത്തന്നൂര്‍)">ശ്രീ ജി എസ് ജയലാല്‍  (ചാത്തന്നൂര്‍)</option>
-                                    <option  value="ശ്രീ എന്‍ വിജയന്‍ പിള്ള (ചവറ)">ശ്രീ എന്‍ വിജയന്‍ പിള്ള (ചവറ)</option>
-                                    <option  value="ശ്രീ യു ആര്‍ പ്രദീപ് (ചേലക്കര)">ശ്രീ യു ആര്‍ പ്രദീപ് (ചേലക്കര)</option>
-                                    <option  value="ശ്രീ അഡ്വ കെ കെ രാമചന്ദ്രന്‍ നായര്‍ (ചെങ്ങന്നൂര്‍)">ശ്രീ അഡ്വ കെ കെ രാമചന്ദ്രന്‍ നായര്‍ (ചെങ്ങന്നൂര്‍)</option>
-                                    <option  value="ശ്രീ പി തിലോത്തമന്‍ (ചേര്‍ത്തല)">ശ്രീ പി തിലോത്തമന്‍ (ചേര്‍ത്തല)</option>
-                                    <option  value="ശ്രീ വി ശശി (ചിറയന്‍കീഴ്)">ശ്രീ വി ശശി (ചിറയന്‍കീഴ്)</option>
-                                    <option  value="ശ്രീ കെ കൃഷ്ണന്‍ കുട്ടി (ചിറ്റൂര്‍)">ശ്രീ കെ കൃഷ്ണന്‍ കുട്ടി (ചിറ്റൂര്‍)</option>
-                                    <option  value="ശ്രീ എസ് രാജേന്ദ്രന്‍ (ദേവികുളം)">ശ്രീ എസ് രാജേന്ദ്രന്‍ (ദേവികുളം)</option>
-                                    <option  value="ശ്രീ പിണറായിവിജയന്‍ (ധര്‍മ്മടം)">ശ്രീ പിണറായിവിജയന്‍ (ധര്‍മ്മടം)</option>
-                                    <option  value="ശ്രീ എ കെ ശശീന്ദ്രന്‍ (ഏലത്തൂര്‍)">ശ്രീ എ കെ ശശീന്ദ്രന്‍ (ഏലത്തൂര്‍)</option>
-                                    <option  value="ശ്രീ പി കെ ബഷീര്‍ (ഏറനാട്)">ശ്രീ പി കെ ബഷീര്‍ (ഏറനാട്)</option>
-                                    <option  value="ശ്രീ ഹൈബി ഈഡന്‍ (എറണാകുളം)">ശ്രീ ഹൈബി ഈഡന്‍ (എറണാകുളം)</option>
-                                    <option  value="ശ്രീ എം നൌഷാദ് (ഇരവിപുരം)">ശ്രീ എം നൌഷാദ് (ഇരവിപുരം)</option>
-                                    <option  value="ശ്രീ സുരേഷ് കുറുപ്പ് (ഏറ്റുമാനൂര്‍)">ശ്രീ സുരേഷ് കുറുപ്പ് (ഏറ്റുമാനൂര്‍)</option>
-                                    <option  value="ശ്രീ കെ വി അബ്ദുല്‍ ഖാദര്‍ (ഗുരുവായൂര്‍)">ശ്രീ കെ വി അബ്ദുല്‍ ഖാദര്‍ (ഗുരുവായൂര്‍)</option>
-                                    <option  value="ശ്രീ രമേഷ് ചെന്നിത്തല (ഹരിപ്പാട്)">ശ്രീ രമേഷ് ചെന്നിത്തല (ഹരിപ്പാട്)</option>
-                                    <option  value="ശ്രീ റോഷി അഗസ്റ്റിന്‍ (ഇടുക്കി)">ശ്രീ റോഷി അഗസ്റ്റിന്‍ (ഇടുക്കി)</option>
-                                    <option  value="ശ്രീ കെ സി ജൊസഫ് (ഇരിക്കൂര്‍)">ശ്രീ കെ സി ജൊസഫ് (ഇരിക്കൂര്‍)</option>
-                                    <option  value="ശ്രീ പ്രൊഫ് കെ യു അരുണന്‍ (ഇരിഞ്ഞാലക്കുട)">ശ്രീ പ്രൊഫ് കെ യു അരുണന്‍ (ഇരിഞ്ഞാലക്കുട)</option>
-                                    <option  value="ശ്രീ അഡ്വ മോന്‍സ് ജൊസഫ് (കടുത്തുരുത്തി)">ശ്രീ അഡ്വ മോന്‍സ് ജൊസഫ് (കടുത്തുരുത്തി)</option>
-                                    <option  value="ശ്രീ ഇ റ്റി ടയ്സണ്‍ മാസ്റ്റര്‍ (കൈപ്പമംഗലം)">ശ്രീ ഇ റ്റി ടയ്സണ്‍ മാസ്റ്റര്‍ (കൈപ്പമംഗലം)</option>
-                                    <option  value="ശ്രീ വി കെ ഇബ്രാഹിം കുഞ്ഞ് (കളമശ്ശേരി)">ശ്രീ വി കെ ഇബ്രാഹിം കുഞ്ഞ് (കളമശ്ശേരി)</option>
-                                    <option  value="ശ്രീ റ്റി വി രാജേഷ്‌ (കല്യാശേരി)">ശ്രീ റ്റി വി രാജേഷ്‌ (കല്യാശേരി)</option>
-                                    <option  value="ശ്രീ സി കെ ശശിന്ദ്രന്‍ (കല്‍പറ്റ)">ശ്രീ സി കെ ശശിന്ദ്രന്‍ (കല്‍പറ്റ)</option>
-                                    <option  value="ശ്രീ ഇ ചന്ദ്രശേഖരന്‍ (കാഞ്ഞങ്ങാട്)">ശ്രീ ഇ ചന്ദ്രശേഖരന്‍ (കാഞ്ഞങ്ങാട്)</option>
-                                    <option  value="ശ്രീ ഡോ എന്‍ ജയരാജ്‌  (കാഞ്ഞിരപ്പള്ളി)">ശ്രീ ഡോ എന്‍ ജയരാജ്‌  (കാഞ്ഞിരപ്പള്ളി)</option>
-                                    <option  value="ശ്രീ രാമചന്ദ്രന്‍ കടന്നപ്പള്ളി (കണ്ണൂര്‍)">ശ്രീ രാമചന്ദ്രന്‍ കടന്നപ്പള്ളി (കണ്ണൂര്‍)</option>
-                                    <option  value="ശ്രീ എസ് രാമചന്ദ്രന്‍ (കരുനാഗപള്ളി)">ശ്രീ എസ് രാമചന്ദ്രന്‍ (കരുനാഗപള്ളി)</option>
-                                    <option  value="ശ്രീ എന്‍ എ നെല്ലികുന്ന് (കാസര്‍ഗോഡ്‌)">ശ്രീ എന്‍ എ നെല്ലികുന്ന് (കാസര്‍ഗോഡ്‌)</option>
-                                    <option  value="ശ്രീ അഡ്വ ഐ ബി സതീഷ്‌ (കാട്ടാക്കട)">ശ്രീ അഡ്വ ഐ ബി സതീഷ്‌ (കാട്ടാക്കട)</option>
-                                    <option  value="ശ്രീ അഡ്വ യു പ്രതിഭ ഹരി (കായംകുളം)">ശ്രീ അഡ്വ യു പ്രതിഭ ഹരി (കായംകുളം)</option>
-                                    <option  value="ശ്രീ കടകംപള്ളി സുരേന്ദ്രന്‍ (കഴക്കൂട്ടം)">ശ്രീ കടകംപള്ളി സുരേന്ദ്രന്‍ (കഴക്കൂട്ടം)</option>
-                                    <option  value="ശ്രീ കെ ജെ മക്സിക് (കൊച്ചി)">ശ്രീ കെ ജെ മക്സിക് (കൊച്ചി)</option>
-                                    <option  value="ശ്രീ വി ആര്‍ സുനില്‍ കുമാര്‍ (കൊടുങ്ങല്ലൂര്‍)">ശ്രീ വി ആര്‍ സുനില്‍ കുമാര്‍ (കൊടുങ്ങല്ലൂര്‍)</option>
-                                    <option  value="ശ്രീ കാരാട്ട് റസാഖ് (കൊടുവള്ളി)">ശ്രീ കാരാട്ട് റസാഖ് (കൊടുവള്ളി)</option>
-                                    <option  value="ശ്രീ എം മുകേഷ് (കൊല്ലം)">ശ്രീ എം മുകേഷ് (കൊല്ലം)</option>
-                                    <option  value="ശ്രീ റ്റി വി ഇബ്രാഹിം (കൊണ്ടോട്ടി)">ശ്രീ റ്റി വി ഇബ്രാഹിം (കൊണ്ടോട്ടി)</option>
-                                    <option  value="ശ്രീ കെ വി വിജയദാസ് (കോങ്ങാട്)">ശ്രീ കെ വി വിജയദാസ് (കോങ്ങാട്)</option>
-                                    <option  value="ശ്രീ അടൂര്‍ പ്രകാശ്‌ (കോന്നി)">ശ്രീ അടൂര്‍ പ്രകാശ്‌ (കോന്നി)</option>
-                                    <option  value="ശ്രീ ആന്‍റ്ണി ജോണ്‍ (കോതമംഗലം)">ശ്രീ ആന്‍റ്ണി ജോണ്‍ (കോതമംഗലം)</option>
-                                    <option  value="ശ്രീ അബിത് ഹുസൈന്‍ തങ്ങള്‍ (കോട്ടയ്ക്കല്‍)">ശ്രീ അബിത് ഹുസൈന്‍ തങ്ങള്‍ (കോട്ടയ്ക്കല്‍)</option>
-                                    <option  value="ശ്രീ അഡ്വ പി ആയിഷ പോറ്റി (കൊട്ടാരക്കര)">ശ്രീ അഡ്വ പി ആയിഷ പോറ്റി (കൊട്ടാരക്കര)</option>
-                                    <option  value="ശ്രീ തിരുവഞ്ചിയൂര്‍ രാധാകൃഷ്ണന്‍ (കോട്ടയം)">ശ്രീ തിരുവഞ്ചിയൂര്‍ രാധാകൃഷ്ണന്‍ (കോട്ടയം)</option>
-                                    <option  value="ശ്രീ അഡ്വ എം വിന്‍സെന്‍റ് (കോവളം)">ശ്രീ അഡ്വ എം വിന്‍സെന്‍റ് (കോവളം)</option>
-                                    <option  value="ശ്രീ എ പ്രദീപ്കുമാര്‍ (കോഴിക്കോട് നോര്‍ത്ത്)">ശ്രീ എ പ്രദീപ്കുമാര്‍ (കോഴിക്കോട് നോര്‍ത്ത്)</option>
-                                    <option  value="ശ്രീ ഡോ എം കെ മുനീര്‍ (കോഴിക്കോട് സൗത്ത്‌)">ശ്രീ ഡോ എം കെ മുനീര്‍ (കോഴിക്കോട് സൗത്ത്‌)</option>
-                                    <option  value="ശ്രീ ജെ മെഴ്സികുട്ടിയമ്മ (കുണ്ടറ)">ശ്രീ ജെ മെഴ്സികുട്ടിയമ്മ (കുണ്ടറ)</option>
-                                    <option  value="ശ്രീ പി റ്റി എ റഹിം (കുന്നമംഗലം)">ശ്രീ പി റ്റി എ റഹിം (കുന്നമംഗലം)</option>
-                                    <option  value="ശ്രീ എ സി മൊയ്തീന്‍ (കുന്നംകുളം)">ശ്രീ എ സി മൊയ്തീന്‍ (കുന്നംകുളം)</option>
-                                    <option  value="ശ്രീ വി പി സജീന്ദ്രന്‍ (കുന്നത്തുനാട്‌)">ശ്രീ വി പി സജീന്ദ്രന്‍ (കുന്നത്തുനാട്‌)</option>
-                                    <option  value="ശ്രീ കോവൂര്‍ കുഞ്ഞുമോന്‍ (കുന്നത്തൂര്‍)">ശ്രീ കോവൂര്‍ കുഞ്ഞുമോന്‍ (കുന്നത്തൂര്‍)</option>
-                                    <option  value="ശ്രീ കെ കെ ശൈലജ ടീച്ചര്‍ (കൂത്തുപറമ്പ്)">ശ്രീ കെ കെ ശൈലജ ടീച്ചര്‍ (കൂത്തുപറമ്പ്)</option>
-                                    <option  value="ശ്രീ തോമസ്‌ ചാണ്ടി (കുട്ടനാട്)">ശ്രീ തോമസ്‌ ചാണ്ടി (കുട്ടനാട്)</option>
-                                    <option  value="ശ്രീ പാറയ്ക്കല്‍ അബ്ദുള്ള (കുറ്റിയാടി)">ശ്രീ പാറയ്ക്കല്‍ അബ്ദുള്ള (കുറ്റിയാടി)</option>
-                                    <option  value="ശ്രീ വി എസ് അച്ചുധാനന്ദന്‍ (മലമ്പുഴ)">ശ്രീ വി എസ് അച്ചുധാനന്ദന്‍ (മലമ്പുഴ)</option>
-                                    <option  value="ശ്രീ പി ഉബൈദുള്ള (മലപ്പുറം)">ശ്രീ പി ഉബൈദുള്ള (മലപ്പുറം)</option>
-                                    <option  value="ശ്രീ മുരളി പെരുനല്ലി (മണലൂര്‍)">ശ്രീ മുരളി പെരുനല്ലി (മണലൂര്‍)</option>
-                                    <option  value="ശ്രീ ഒ ആര്‍ കേളു (മാനന്തവാടി)">ശ്രീ ഒ ആര്‍ കേളു (മാനന്തവാടി)</option>
-                                    <option  value="ശ്രീ അഡ്വ എം ഉമ്മര്‍ (മഞ്ചേരി)">ശ്രീ അഡ്വ എം ഉമ്മര്‍ (മഞ്ചേരി)</option>
-                                    <option  value="ശ്രീ പി വി അബ്ദുല്‍ റസാഖ് (മഞ്ചേശ്വരം)">ശ്രീ പി വി അബ്ദുല്‍ റസാഖ് (മഞ്ചേശ്വരം)</option>
-                                    <option  value="ശ്രീ റ്റി എ അഹമ്മദ് കബീര്‍ (മംഗട)">ശ്രീ റ്റി എ അഹമ്മദ് കബീര്‍ (മംഗട)</option>
-                                    <option  value="ശ്രീ അഡ്വ എം സംസുധീന്‍ (മണ്ണാര്‍ക്കാട്)">ശ്രീ അഡ്വ എം സംസുധീന്‍ (മണ്ണാര്‍ക്കാട്)</option>
-                                    <option  value="ശ്രീ ഇ പി ജയരാജന്‍ (മട്ടന്നൂര്‍)">ശ്രീ ഇ പി ജയരാജന്‍ (മട്ടന്നൂര്‍)</option>
-                                    <option  value="ശ്രീ ആര്‍ രാജേഷ്‌ (മാവേലിക്കര)">ശ്രീ ആര്‍ രാജേഷ്‌ (മാവേലിക്കര)</option>
-                                    <option  value="ശ്രീ എല്‍ദോ എബ്രഹാം (മൂവാറ്റുപുഴ)">ശ്രീ എല്‍ദോ എബ്രഹാം (മൂവാറ്റുപുഴ)</option>
-                                    <option  value="ശ്രീ ഇ കെ വിജയന്‍ (നാദാപുരം)">ശ്രീ ഇ കെ വിജയന്‍ (നാദാപുരം)</option>
-                                    <option  value="ശ്രീ ഗീത ഗോപി (നാട്ടികം)">ശ്രീ ഗീത ഗോപി (നാട്ടികം)</option>
-                                    <option  value="ശ്രീ സി ദിവാകരന്‍ (നെടുമങ്ങാട്)">ശ്രീ സി ദിവാകരന്‍ (നെടുമങ്ങാട്)</option>
-                                    <option  value="ശ്രീ ഒ രാജഗോപാല്‍ (നേമം)">ശ്രീ ഒ രാജഗോപാല്‍ (നേമം)</option>
-                                    <option  value="ശ്രീ കെ ബാബു (നെന്മാറ)">ശ്രീ കെ ബാബു (നെന്മാറ)</option>
-                                    <option  value="ശ്രീ കെ ആന്‍സലന്‍ (നെയ്യാറ്റിന്‍കര)">ശ്രീ കെ ആന്‍സലന്‍ (നെയ്യാറ്റിന്‍കര)</option>
-                                    <option  value="ശ്രീ പി വി അന്‍വര്‍ (നിലമ്പൂര്‍)">ശ്രീ പി വി അന്‍വര്‍ (നിലമ്പൂര്‍)</option>
-                                    <option  value="ശ്രീ അഡ്വ കെ രാജന്‍ (ഒല്ലൂര്‍)">ശ്രീ അഡ്വ കെ രാജന്‍ (ഒല്ലൂര്‍)</option>
-                                    <option  value="ശ്രീ പി ഉണ്ണി (ഒറ്റപ്പാലം)">ശ്രീ പി ഉണ്ണി (ഒറ്റപ്പാലം)</option>
-                                    <option  value="ശ്രീ കെ എം മാണി (പാല)">ശ്രീ കെ എം മാണി (പാല)</option>
-                                    <option  value="ശ്രീ ഷാഫി പറമ്പില്‍ (പാലക്കാട്)">ശ്രീ ഷാഫി പറമ്പില്‍ (പാലക്കാട്)</option>
-                                    <option  value="ശ്രീ സി കെ ഹരീന്ദ്രന്‍ (പാറശാല)">ശ്രീ സി കെ ഹരീന്ദ്രന്‍ (പാറശാല)</option>
-                                    <option  value="ശ്രീ വി ഡി സതീശന്‍ (പറവൂര്‍)">ശ്രീ വി ഡി സതീശന്‍ (പറവൂര്‍)</option>
-                                    <option  value="ശ്രീ കെ ബി ഗണേഷ് കുമാര്‍ (പത്തനാപുരം)">ശ്രീ കെ ബി ഗണേഷ് കുമാര്‍ (പത്തനാപുരം)</option>
-                                    <option  value="ശ്രീ മുഹമ്മദ്‌ മുഹാസ്സിന്‍ (പട്ടാമ്പി)">ശ്രീ മുഹമ്മദ്‌ മുഹാസ്സിന്‍ (പട്ടാമ്പി)</option>
-                                    <option  value="ശ്രീ സി കൃഷ്ണന്‍ (പയ്യന്നൂര്‍)">ശ്രീ സി കൃഷ്ണന്‍ (പയ്യന്നൂര്‍)</option>
-                                    <option  value="ശ്രീ ഇ എസ് ബിജിമോള്‍ (പീരുമേട്)">ശ്രീ ഇ എസ് ബിജിമോള്‍ (പീരുമേട്)</option>
-                                    <option  value="ശ്രീ ടി പി രാമകൃഷ്ണന്‍ (പേരാംബ്ര)">ശ്രീ ടി പി രാമകൃഷ്ണന്‍ (പേരാംബ്ര)</option>
-                                    <option  value="ശ്രീ അഡ്വ സണ്ണി ജൊസഫ് (പേരാവൂര്‍)">ശ്രീ അഡ്വ സണ്ണി ജൊസഫ് (പേരാവൂര്‍)</option>
-                                    <option  value="ശ്രീ മഞ്ഞളാംകുഴി അലി (പെരുന്തല്‍മന്ന)">ശ്രീ മഞ്ഞളാംകുഴി അലി (പെരുന്തല്‍മന്ന)</option>
-                                    <option  value="ശ്രീ അഡ്വ എല്‍ദോസ് പി കുന്നപ്പള്ളി (പെരുമ്പാവൂര്‍)">ശ്രീ അഡ്വ എല്‍ദോസ് പി കുന്നപ്പള്ളി (പെരുമ്പാവൂര്‍)</option>
-                                    <option  value="ശ്രീ അനൂപ്‌ ജേക്കബ് (പിറവം)">ശ്രീ അനൂപ്‌ ജേക്കബ് (പിറവം)</option>
-                                    <option  value="ശ്രീ പി ശ്രീരാമകൃഷ്ണന്‍ (പൊന്നാനി)">ശ്രീ പി ശ്രീരാമകൃഷ്ണന്‍ (പൊന്നാനി)</option>
-                                    <option  value="ശ്രീ പി സി ജോര്‍ജ് പ്ലാതോട്ടം (പൂഞ്ഞാര്‍)">ശ്രീ പി സി ജോര്‍ജ് പ്ലാതോട്ടം (പൂഞ്ഞാര്‍)</option>
-                                    <option  value="ശ്രീ അഡ്വ കെ രാജു (പുനലൂര്‍)">ശ്രീ അഡ്വ കെ രാജു (പുനലൂര്‍)</option>
-                                    <option  value="ശ്രീ പ്രൊഫ്‌ സി രവീന്ദ്രനാഥ് (പുതുകാട്)">ശ്രീ പ്രൊഫ്‌ സി രവീന്ദ്രനാഥ് (പുതുകാട്)</option>
-                                    <option  value="ശ്രീ ഉമ്മന്‍ ചാണ്ടി (പുതുപ്പള്ളി)">ശ്രീ ഉമ്മന്‍ ചാണ്ടി (പുതുപ്പള്ളി)</option>
-                                    <option  value="ശ്രീ കെ ദാസന്‍ (കൊയിലാണ്ടി)">ശ്രീ കെ ദാസന്‍ (കൊയിലാണ്ടി)</option>
-                                    <option  value="ശ്രീ രാജു എബ്രഹാം (റാന്നി)">ശ്രീ രാജു എബ്രഹാം (റാന്നി)</option>
-                                    <option  value="ശ്രീ പി കെ ശശി (ഷോര്‍ണ്ണൂര്‍)">ശ്രീ പി കെ ശശി (ഷോര്‍ണ്ണൂര്‍)</option>
-                                    <option  value="ശ്രീ ഐ സി ബാലകൃഷന്‍ (സുല്‍ത്താന്‍ ബത്തേരി)">ശ്രീ ഐ സി ബാലകൃഷന്‍ (സുല്‍ത്താന്‍ ബത്തേരി)</option>
-                                    <option  value="ശ്രീ ജെയിംസ്‌ മാത്യു (തളിപ്പറമ്പ്)">ശ്രീ ജെയിംസ്‌ മാത്യു (തളിപ്പറമ്പ്)</option>
-                                    <option  value="ശ്രീ എ കെ ബാലന്‍ (തരൂര്‍)">ശ്രീ എ കെ ബാലന്‍ (തരൂര്‍)</option>
-                                    <option  value="ശ്രീ വി അബ്ദുല്‍ റഹ്മാന്‍ (താന്നൂര്‍)">ശ്രീ വി അബ്ദുല്‍ റഹ്മാന്‍ (താന്നൂര്‍)</option>
-                                    <option  value="ശ്രീ അഡ്വ എ എന്‍ ഷംസീര്‍ (തലശ്ശേരി)">ശ്രീ അഡ്വ എ എന്‍ ഷംസീര്‍ (തലശ്ശേരി)</option>
-                                    <option  value="ശ്രീ ഡോക് കെ ടി ജലീല്‍ (തവനുര്‍)">ശ്രീ ഡോക് കെ ടി ജലീല്‍ (തവനുര്‍)</option>
-                                    <option  value="ശ്രീ അഡ്വ മാത്യു ടി തോമസ്‌ (തിരുവല്ല)">ശ്രീ അഡ്വ മാത്യു ടി തോമസ്‌ (തിരുവല്ല)</option>
-                                    <option  value="ശ്രീ ജോര്‍ജ് എം തോമസ്‌ (തിരുവമ്പാടി)">ശ്രീ ജോര്‍ജ് എം തോമസ്‌ (തിരുവമ്പാടി)</option>
-                                    <option  value="ശ്രീ വി എസ് ശിവകുമാര്‍ (തിരുവനന്തപുരം)">ശ്രീ വി എസ് ശിവകുമാര്‍ (തിരുവനന്തപുരം)</option>
-                                    <option  value="ശ്രീ പി ജെ ജോസഫ്‌ (തൊടുപുഴ)">ശ്രീ പി ജെ ജോസഫ്‌ (തൊടുപുഴ)</option>
-                                    <option  value="ശ്രീ അഡ്വ പി ടി തോമസ്‌ (തൃക്കാക്കര)">ശ്രീ അഡ്വ പി ടി തോമസ്‌ (തൃക്കാക്കര)</option>
-                                    <option  value="ശ്രീ അഡ്വ എം സ്വരാജ് (ത്രിപ്പുണിത്തറ)">ശ്രീ അഡ്വ എം സ്വരാജ് (ത്രിപ്പുണിത്തറ)</option>
-                                    <option  value="ശ്രീ വി എസ് സുനില്‍കുമാര്‍ (തൃശൂര്‍)">ശ്രീ വി എസ് സുനില്‍കുമാര്‍ (തൃശൂര്‍)</option>
-                                    <option  value="ശ്രീ വി ടി ബല്‍റാം (തൃത്താല)">ശ്രീ വി ടി ബല്‍റാം (തൃത്താല)</option>
-                                    <option  value="ശ്രീ സി മമ്മൂട്ടി (തിരൂര്‍)">ശ്രീ സി മമ്മൂട്ടി (തിരൂര്‍)</option>
-                                    <option  value="ശ്രീ എം രാജഗോപാലന്‍ (തൃക്കരിപ്പൂര്‍)">ശ്രീ എം രാജഗോപാലന്‍ (തൃക്കരിപ്പൂര്‍)</option>
-                                    <option  value="ശ്രീ കെ കുഞ്ഞിരാമന്‍ (ഉദുമ)">ശ്രീ കെ കുഞ്ഞിരാമന്‍ (ഉദുമ)</option>
-                                    <option  value="ശ്രീ എം എം മണി (ഉടുംബുംചോല)">ശ്രീ എം എം മണി (ഉടുംബുംചോല)</option>
-                                    <option  value="ശ്രീ സി കെ നാണു (വടകര)">ശ്രീ സി കെ നാണു (വടകര)</option>
-                                    <option  value="ശ്രീ സി കെ ആശ (വൈക്കം)">ശ്രീ സി കെ ആശ (വൈക്കം)</option>
-                                    <option  value="ശ്രീ അബ്ദുല്‍ ഹമീദ് മാസ്റ്റര്‍ (വള്ളിക്കുന്ന്)">ശ്രീ അബ്ദുല്‍ ഹമീദ് മാസ്റ്റര്‍ (വള്ളിക്കുന്ന്)</option>
-                                    <option  value="ശ്രീ അഡ്വ ഡി കെ മുരളി (വാമനപുരം)">ശ്രീ അഡ്വ ഡി കെ മുരളി (വാമനപുരം)</option>
-                                    <option  value="ശ്രീ അഡ്വ വി ജോയ് (വര്‍ക്കല)">ശ്രീ അഡ്വ വി ജോയ് (വര്‍ക്കല)</option>
-                                    <option  value="ശ്രീ കെ മുരളീധരന്‍ (വട്ടിയൂര്‍ക്കാവ്)">ശ്രീ കെ മുരളീധരന്‍ (വട്ടിയൂര്‍ക്കാവ്)</option>
-                                    <option  value="ശ്രീ  (വേങ്ങര)">ശ്രീ  (വേങ്ങര)</option>
-                                    <option  value="ശ്രീ അനില്‍ അക്കര (വടക്കാഞ്ചേരി)">ശ്രീ അനില്‍ അക്കര (വടക്കാഞ്ചേരി)</option>
-                                    <option  value="ശ്രീ എ പി അനില്‍ കുമാര്‍ (വണ്ടൂര്‍)">ശ്രീ എ പി അനില്‍ കുമാര്‍ (വണ്ടൂര്‍)</option>
-                                    <option  value="ശ്രീ എ പി അനില്‍ കുമാര്‍ (വണ്ടൂര്‍)">ശ്രീ എ പി അനില്‍ കുമാര്‍ (വണ്ടൂര്‍)</option>
-
-                                    </select>  
-
-
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMP" for="field_recommendationMP">Recommendation MP</label>
-                    <!-- <input type="text" class="form-control" name="recommendationMP" id="field_recommendationMP"
+                        <select class="form-control" name="recommendationMLA" id="field_recommendationMLA" ng-model="vm.apeksha.recommendationMLA"  >
+                            <option value = ""></option>
+                            <option  value="ശ്രീ ചിറ്റായം ഗോപകുമാര്‍ (അടൂര്‍)">ശ്രീ ചിറ്റായം ഗോപകുമാര്‍ (അടൂര്‍)</option>
+                            <option  value="ശ്രീ തോമസ്‌ ഐസക് (ആലപ്പുഴ)">ശ്രീ തോമസ്‌ ഐസക് (ആലപ്പുഴ)</option>
+                            <option  value="ശ്രീ കെ ഡി പ്രസന്നന്‍ (ആലത്തൂര്‍)">ശ്രീ കെ ഡി പ്രസന്നന്‍ (ആലത്തൂര്‍)</option>
+                            <option  value="ശ്രീ അന്‍വര്‍ സാദത്ത് (ആലുവ )">ശ്രീ അന്‍വര്‍ സാദത്ത് (ആലുവ )</option>
+                            <option  value="ശ്രീ ജി സുധാകരന്‍ (അമ്പലപ്പുഴ)">ശ്രീ ജി സുധാകരന്‍ (അമ്പലപ്പുഴ)</option>
+                            <option  value="ശ്രീ റോജി എം ജോണ്‍ (അംഗമാലി)">ശ്രീ റോജി എം ജോണ്‍ (അംഗമാലി )</option>
+                            <option  value="ശ്രീ വീണ ജോര്‍ജ് (ആറമ്മുള)">ശ്രീ വീണ ജോര്‍ജ് (ആറമ്മുള)</option>
+                            <option  value="ശ്രീ അഡ്വ എ എം ആരിഫ് (അടൂര്‍)">ശ്രീ അഡ്വ എ എം ആരിഫ് (അടൂര്‍)</option>
+                            <option  value="ശ്രീ കെ എസ് ശബരീനാഥന്‍ (അരുവിക്കര)">ശ്രീ കെ എസ് ശബരീനാഥന്‍ (അരുവിക്കര)</option>
+                            <option  value="ശ്രീ അഡ്വ ബി സത്യന്‍ (ആറ്റിങ്ങല്‍)">ശ്രീ അഡ്വ ബി സത്യന്‍ (ആറ്റിങ്ങല്‍)</option>
+                            <option  value="ശ്രീ കെ എം ഷാജി  (അഴിക്കോട്)">ശ്രീ കെ എം ഷാജി  (അഴിക്കോട്)</option>
+                            <option  value="ശ്രീ പുരുഷന്‍ കടലുണ്ടി (ബാലുശ്ശേരി)">ശ്രീ പുരുഷന്‍ കടലുണ്ടി (ബാലുശ്ശേരി)</option>
+                            <option  value="ശ്രീ മമ്മദ് കോയ വി കെ സി  (ബേപ്പൂര്‍)">ശ്രീ മമ്മദ് കോയ വി കെ സി  (ബേപ്പൂര്‍)</option>
+                            <option  value="ശ്രീ മുല്ലക്കര രത്നാകരന്‍ (ചടയമംഗലം)">ശ്രീ മുല്ലക്കര രത്നാകരന്‍ (ചടയമംഗലം)</option>
+                            <option  value="ശ്രീ ഡി ഡി ദേവസ്യ  (ചാലക്കുടി)">ശ്രീ ഡി ഡി ദേവസ്യ  (ചാലക്കുടി)</option>
+                            <option  value="ശ്രീ സി എഫ് തോമസ്‌ (ചങ്ങനാശ്ശേരി)">ശ്രീ സി എഫ് തോമസ്‌ (ചങ്ങനാശ്ശേരി)</option>
+                            <option  value="ശ്രീ ജി എസ് ജയലാല്‍  (ചാത്തന്നൂര്‍)">ശ്രീ ജി എസ് ജയലാല്‍  (ചാത്തന്നൂര്‍)</option>
+                            <option  value="ശ്രീ എന്‍ വിജയന്‍ പിള്ള (ചവറ)">ശ്രീ എന്‍ വിജയന്‍ പിള്ള (ചവറ)</option>
+                            <option  value="ശ്രീ യു ആര്‍ പ്രദീപ് (ചേലക്കര)">ശ്രീ യു ആര്‍ പ്രദീപ് (ചേലക്കര)</option>
+                            <option  value="ശ്രീ അഡ്വ കെ കെ രാമചന്ദ്രന്‍ നായര്‍ (ചെങ്ങന്നൂര്‍)">ശ്രീ അഡ്വ കെ കെ രാമചന്ദ്രന്‍ നായര്‍ (ചെങ്ങന്നൂര്‍)</option>
+                            <option  value="ശ്രീ പി തിലോത്തമന്‍ (ചേര്‍ത്തല)">ശ്രീ പി തിലോത്തമന്‍ (ചേര്‍ത്തല)</option>
+                            <option  value="ശ്രീ വി ശശി (ചിറയന്‍കീഴ്)">ശ്രീ വി ശശി (ചിറയന്‍കീഴ്)</option>
+                            <option  value="ശ്രീ കെ കൃഷ്ണന്‍ കുട്ടി (ചിറ്റൂര്‍)">ശ്രീ കെ കൃഷ്ണന്‍ കുട്ടി (ചിറ്റൂര്‍)</option>
+                            <option  value="ശ്രീ എസ് രാജേന്ദ്രന്‍ (ദേവികുളം)">ശ്രീ എസ് രാജേന്ദ്രന്‍ (ദേവികുളം)</option>
+                            <option  value="ശ്രീ പിണറായിവിജയന്‍ (ധര്‍മ്മടം)">ശ്രീ പിണറായിവിജയന്‍ (ധര്‍മ്മടം)</option>
+                            <option  value="ശ്രീ എ കെ ശശീന്ദ്രന്‍ (ഏലത്തൂര്‍)">ശ്രീ എ കെ ശശീന്ദ്രന്‍ (ഏലത്തൂര്‍)</option>
+                            <option  value="ശ്രീ പി കെ ബഷീര്‍ (ഏറനാട്)">ശ്രീ പി കെ ബഷീര്‍ (ഏറനാട്)</option>
+                            <option  value="ശ്രീ ഹൈബി ഈഡന്‍ (എറണാകുളം)">ശ്രീ ഹൈബി ഈഡന്‍ (എറണാകുളം)</option>
+                            <option  value="ശ്രീ എം നൌഷാദ് (ഇരവിപുരം)">ശ്രീ എം നൌഷാദ് (ഇരവിപുരം)</option>
+                            <option  value="ശ്രീ സുരേഷ് കുറുപ്പ് (ഏറ്റുമാനൂര്‍)">ശ്രീ സുരേഷ് കുറുപ്പ് (ഏറ്റുമാനൂര്‍)</option>
+                            <option  value="ശ്രീ കെ വി അബ്ദുല്‍ ഖാദര്‍ (ഗുരുവായൂര്‍)">ശ്രീ കെ വി അബ്ദുല്‍ ഖാദര്‍ (ഗുരുവായൂര്‍)</option>
+                            <option  value="ശ്രീ രമേഷ് ചെന്നിത്തല (ഹരിപ്പാട്)">ശ്രീ രമേഷ് ചെന്നിത്തല (ഹരിപ്പാട്)</option>
+                            <option  value="ശ്രീ റോഷി അഗസ്റ്റിന്‍ (ഇടുക്കി)">ശ്രീ റോഷി അഗസ്റ്റിന്‍ (ഇടുക്കി)</option>
+                            <option  value="ശ്രീ കെ സി ജൊസഫ് (ഇരിക്കൂര്‍)">ശ്രീ കെ സി ജൊസഫ് (ഇരിക്കൂര്‍)</option>
+                            <option  value="ശ്രീ പ്രൊഫ് കെ യു അരുണന്‍ (ഇരിഞ്ഞാലക്കുട)">ശ്രീ പ്രൊഫ് കെ യു അരുണന്‍ (ഇരിഞ്ഞാലക്കുട)</option>
+                            <option  value="ശ്രീ അഡ്വ മോന്‍സ് ജൊസഫ് (കടുത്തുരുത്തി)">ശ്രീ അഡ്വ മോന്‍സ് ജൊസഫ് (കടുത്തുരുത്തി)</option>
+                            <option  value="ശ്രീ ഇ റ്റി ടയ്സണ്‍ മാസ്റ്റര്‍ (കൈപ്പമംഗലം)">ശ്രീ ഇ റ്റി ടയ്സണ്‍ മാസ്റ്റര്‍ (കൈപ്പമംഗലം)</option>
+                            <option  value="ശ്രീ വി കെ ഇബ്രാഹിം കുഞ്ഞ് (കളമശ്ശേരി)">ശ്രീ വി കെ ഇബ്രാഹിം കുഞ്ഞ് (കളമശ്ശേരി)</option>
+                            <option  value="ശ്രീ റ്റി വി രാജേഷ്‌ (കല്യാശേരി)">ശ്രീ റ്റി വി രാജേഷ്‌ (കല്യാശേരി)</option>
+                            <option  value="ശ്രീ സി കെ ശശിന്ദ്രന്‍ (കല്‍പറ്റ)">ശ്രീ സി കെ ശശിന്ദ്രന്‍ (കല്‍പറ്റ)</option>
+                            <option  value="ശ്രീ ഇ ചന്ദ്രശേഖരന്‍ (കാഞ്ഞങ്ങാട്)">ശ്രീ ഇ ചന്ദ്രശേഖരന്‍ (കാഞ്ഞങ്ങാട്)</option>
+                            <option  value="ശ്രീ ഡോ എന്‍ ജയരാജ്‌  (കാഞ്ഞിരപ്പള്ളി)">ശ്രീ ഡോ എന്‍ ജയരാജ്‌  (കാഞ്ഞിരപ്പള്ളി)</option>
+                            <option  value="ശ്രീ രാമചന്ദ്രന്‍ കടന്നപ്പള്ളി (കണ്ണൂര്‍)">ശ്രീ രാമചന്ദ്രന്‍ കടന്നപ്പള്ളി (കണ്ണൂര്‍)</option>
+                            <option  value="ശ്രീ എസ് രാമചന്ദ്രന്‍ (കരുനാഗപള്ളി)">ശ്രീ എസ് രാമചന്ദ്രന്‍ (കരുനാഗപള്ളി)</option>
+                            <option  value="ശ്രീ എന്‍ എ നെല്ലികുന്ന് (കാസര്‍ഗോഡ്‌)">ശ്രീ എന്‍ എ നെല്ലികുന്ന് (കാസര്‍ഗോഡ്‌)</option>
+                            <option  value="ശ്രീ അഡ്വ ഐ ബി സതീഷ്‌ (കാട്ടാക്കട)">ശ്രീ അഡ്വ ഐ ബി സതീഷ്‌ (കാട്ടാക്കട)</option>
+                            <option  value="ശ്രീ അഡ്വ യു പ്രതിഭ ഹരി (കായംകുളം)">ശ്രീ അഡ്വ യു പ്രതിഭ ഹരി (കായംകുളം)</option>
+                            <option  value="ശ്രീ കടകംപള്ളി സുരേന്ദ്രന്‍ (കഴക്കൂട്ടം)">ശ്രീ കടകംപള്ളി സുരേന്ദ്രന്‍ (കഴക്കൂട്ടം)</option>
+                            <option  value="ശ്രീ കെ ജെ മക്സിക് (കൊച്ചി)">ശ്രീ കെ ജെ മക്സിക് (കൊച്ചി)</option>
+                            <option  value="ശ്രീ വി ആര്‍ സുനില്‍ കുമാര്‍ (കൊടുങ്ങല്ലൂര്‍)">ശ്രീ വി ആര്‍ സുനില്‍ കുമാര്‍ (കൊടുങ്ങല്ലൂര്‍)</option>
+                            <option  value="ശ്രീ കാരാട്ട് റസാഖ് (കൊടുവള്ളി)">ശ്രീ കാരാട്ട് റസാഖ് (കൊടുവള്ളി)</option>
+                            <option  value="ശ്രീ എം മുകേഷ് (കൊല്ലം)">ശ്രീ എം മുകേഷ് (കൊല്ലം)</option>
+                            <option  value="ശ്രീ റ്റി വി ഇബ്രാഹിം (കൊണ്ടോട്ടി)">ശ്രീ റ്റി വി ഇബ്രാഹിം (കൊണ്ടോട്ടി)</option>
+                            <option  value="ശ്രീ കെ വി വിജയദാസ് (കോങ്ങാട്)">ശ്രീ കെ വി വിജയദാസ് (കോങ്ങാട്)</option>
+                            <option  value="ശ്രീ അടൂര്‍ പ്രകാശ്‌ (കോന്നി)">ശ്രീ അടൂര്‍ പ്രകാശ്‌ (കോന്നി)</option>
+                            <option  value="ശ്രീ ആന്‍റ്ണി ജോണ്‍ (കോതമംഗലം)">ശ്രീ ആന്‍റ്ണി ജോണ്‍ (കോതമംഗലം)</option>
+                            <option  value="ശ്രീ അബിത് ഹുസൈന്‍ തങ്ങള്‍ (കോട്ടയ്ക്കല്‍)">ശ്രീ അബിത് ഹുസൈന്‍ തങ്ങള്‍ (കോട്ടയ്ക്കല്‍)</option>
+                            <option  value="ശ്രീ അഡ്വ പി ആയിഷ പോറ്റി (കൊട്ടാരക്കര)">ശ്രീ അഡ്വ പി ആയിഷ പോറ്റി (കൊട്ടാരക്കര)</option>
+                            <option  value="ശ്രീ തിരുവഞ്ചിയൂര്‍ രാധാകൃഷ്ണന്‍ (കോട്ടയം)">ശ്രീ തിരുവഞ്ചിയൂര്‍ രാധാകൃഷ്ണന്‍ (കോട്ടയം)</option>
+                            <option  value="ശ്രീ അഡ്വ എം വിന്‍സെന്‍റ് (കോവളം)">ശ്രീ അഡ്വ എം വിന്‍സെന്‍റ് (കോവളം)</option>
+                            <option  value="ശ്രീ എ പ്രദീപ്കുമാര്‍ (കോഴിക്കോട് നോര്‍ത്ത്)">ശ്രീ എ പ്രദീപ്കുമാര്‍ (കോഴിക്കോട് നോര്‍ത്ത്)</option>
+                            <option  value="ശ്രീ ഡോ എം കെ മുനീര്‍ (കോഴിക്കോട് സൗത്ത്‌)">ശ്രീ ഡോ എം കെ മുനീര്‍ (കോഴിക്കോട് സൗത്ത്‌)</option>
+                            <option  value="ശ്രീ ജെ മെഴ്സികുട്ടിയമ്മ (കുണ്ടറ)">ശ്രീ ജെ മെഴ്സികുട്ടിയമ്മ (കുണ്ടറ)</option>
+                            <option  value="ശ്രീ പി റ്റി എ റഹിം (കുന്നമംഗലം)">ശ്രീ പി റ്റി എ റഹിം (കുന്നമംഗലം)</option>
+                            <option  value="ശ്രീ എ സി മൊയ്തീന്‍ (കുന്നംകുളം)">ശ്രീ എ സി മൊയ്തീന്‍ (കുന്നംകുളം)</option>
+                            <option  value="ശ്രീ വി പി സജീന്ദ്രന്‍ (കുന്നത്തുനാട്‌)">ശ്രീ വി പി സജീന്ദ്രന്‍ (കുന്നത്തുനാട്‌)</option>
+                            <option  value="ശ്രീ കോവൂര്‍ കുഞ്ഞുമോന്‍ (കുന്നത്തൂര്‍)">ശ്രീ കോവൂര്‍ കുഞ്ഞുമോന്‍ (കുന്നത്തൂര്‍)</option>
+                            <option  value="ശ്രീ കെ കെ ശൈലജ ടീച്ചര്‍ (കൂത്തുപറമ്പ്)">ശ്രീ കെ കെ ശൈലജ ടീച്ചര്‍ (കൂത്തുപറമ്പ്)</option>
+                            <option  value="ശ്രീ തോമസ്‌ ചാണ്ടി (കുട്ടനാട്)">ശ്രീ തോമസ്‌ ചാണ്ടി (കുട്ടനാട്)</option>
+                            <option  value="ശ്രീ പാറയ്ക്കല്‍ അബ്ദുള്ള (കുറ്റിയാടി)">ശ്രീ പാറയ്ക്കല്‍ അബ്ദുള്ള (കുറ്റിയാടി)</option>
+                            <option  value="ശ്രീ വി എസ് അച്ചുധാനന്ദന്‍ (മലമ്പുഴ)">ശ്രീ വി എസ് അച്ചുധാനന്ദന്‍ (മലമ്പുഴ)</option>
+                            <option  value="ശ്രീ പി ഉബൈദുള്ള (മലപ്പുറം)">ശ്രീ പി ഉബൈദുള്ള (മലപ്പുറം)</option>
+                            <option  value="ശ്രീ മുരളി പെരുനല്ലി (മണലൂര്‍)">ശ്രീ മുരളി പെരുനല്ലി (മണലൂര്‍)</option>
+                            <option  value="ശ്രീ ഒ ആര്‍ കേളു (മാനന്തവാടി)">ശ്രീ ഒ ആര്‍ കേളു (മാനന്തവാടി)</option>
+                            <option  value="ശ്രീ അഡ്വ എം ഉമ്മര്‍ (മഞ്ചേരി)">ശ്രീ അഡ്വ എം ഉമ്മര്‍ (മഞ്ചേരി)</option>
+                            <option  value="ശ്രീ പി വി അബ്ദുല്‍ റസാഖ് (മഞ്ചേശ്വരം)">ശ്രീ പി വി അബ്ദുല്‍ റസാഖ് (മഞ്ചേശ്വരം)</option>
+                            <option  value="ശ്രീ റ്റി എ അഹമ്മദ് കബീര്‍ (മംഗട)">ശ്രീ റ്റി എ അഹമ്മദ് കബീര്‍ (മംഗട)</option>
+                            <option  value="ശ്രീ അഡ്വ എം സംസുധീന്‍ (മണ്ണാര്‍ക്കാട്)">ശ്രീ അഡ്വ എം സംസുധീന്‍ (മണ്ണാര്‍ക്കാട്)</option>
+                            <option  value="ശ്രീ ഇ പി ജയരാജന്‍ (മട്ടന്നൂര്‍)">ശ്രീ ഇ പി ജയരാജന്‍ (മട്ടന്നൂര്‍)</option>
+                            <option  value="ശ്രീ ആര്‍ രാജേഷ്‌ (മാവേലിക്കര)">ശ്രീ ആര്‍ രാജേഷ്‌ (മാവേലിക്കര)</option>
+                            <option  value="ശ്രീ എല്‍ദോ എബ്രഹാം (മൂവാറ്റുപുഴ)">ശ്രീ എല്‍ദോ എബ്രഹാം (മൂവാറ്റുപുഴ)</option>
+                            <option  value="ശ്രീ ഇ കെ വിജയന്‍ (നാദാപുരം)">ശ്രീ ഇ കെ വിജയന്‍ (നാദാപുരം)</option>
+                            <option  value="ശ്രീ ഗീത ഗോപി (നാട്ടികം)">ശ്രീ ഗീത ഗോപി (നാട്ടികം)</option>
+                            <option  value="ശ്രീ സി ദിവാകരന്‍ (നെടുമങ്ങാട്)">ശ്രീ സി ദിവാകരന്‍ (നെടുമങ്ങാട്)</option>
+                            <option  value="ശ്രീ ഒ രാജഗോപാല്‍ (നേമം)">ശ്രീ ഒ രാജഗോപാല്‍ (നേമം)</option>
+                            <option  value="ശ്രീ കെ ബാബു (നെന്മാറ)">ശ്രീ കെ ബാബു (നെന്മാറ)</option>
+                            <option  value="ശ്രീ കെ ആന്‍സലന്‍ (നെയ്യാറ്റിന്‍കര)">ശ്രീ കെ ആന്‍സലന്‍ (നെയ്യാറ്റിന്‍കര)</option>
+                            <option  value="ശ്രീ പി വി അന്‍വര്‍ (നിലമ്പൂര്‍)">ശ്രീ പി വി അന്‍വര്‍ (നിലമ്പൂര്‍)</option>
+                            <option  value="ശ്രീ അഡ്വ കെ രാജന്‍ (ഒല്ലൂര്‍)">ശ്രീ അഡ്വ കെ രാജന്‍ (ഒല്ലൂര്‍)</option>
+                            <option  value="ശ്രീ പി ഉണ്ണി (ഒറ്റപ്പാലം)">ശ്രീ പി ഉണ്ണി (ഒറ്റപ്പാലം)</option>
+                            <option  value="ശ്രീ കെ എം മാണി (പാല)">ശ്രീ കെ എം മാണി (പാല)</option>
+                            <option  value="ശ്രീ ഷാഫി പറമ്പില്‍ (പാലക്കാട്)">ശ്രീ ഷാഫി പറമ്പില്‍ (പാലക്കാട്)</option>
+                            <option  value="ശ്രീ സി കെ ഹരീന്ദ്രന്‍ (പാറശാല)">ശ്രീ സി കെ ഹരീന്ദ്രന്‍ (പാറശാല)</option>
+                            <option  value="ശ്രീ വി ഡി സതീശന്‍ (പറവൂര്‍)">ശ്രീ വി ഡി സതീശന്‍ (പറവൂര്‍)</option>
+                            <option  value="ശ്രീ കെ ബി ഗണേഷ് കുമാര്‍ (പത്തനാപുരം)">ശ്രീ കെ ബി ഗണേഷ് കുമാര്‍ (പത്തനാപുരം)</option>
+                            <option  value="ശ്രീ മുഹമ്മദ്‌ മുഹാസ്സിന്‍ (പട്ടാമ്പി)">ശ്രീ മുഹമ്മദ്‌ മുഹാസ്സിന്‍ (പട്ടാമ്പി)</option>
+                            <option  value="ശ്രീ സി കൃഷ്ണന്‍ (പയ്യന്നൂര്‍)">ശ്രീ സി കൃഷ്ണന്‍ (പയ്യന്നൂര്‍)</option>
+                            <option  value="ശ്രീ ഇ എസ് ബിജിമോള്‍ (പീരുമേട്)">ശ്രീ ഇ എസ് ബിജിമോള്‍ (പീരുമേട്)</option>
+                            <option  value="ശ്രീ ടി പി രാമകൃഷ്ണന്‍ (പേരാംബ്ര)">ശ്രീ ടി പി രാമകൃഷ്ണന്‍ (പേരാംബ്ര)</option>
+                            <option  value="ശ്രീ അഡ്വ സണ്ണി ജൊസഫ് (പേരാവൂര്‍)">ശ്രീ അഡ്വ സണ്ണി ജൊസഫ് (പേരാവൂര്‍)</option>
+                            <option  value="ശ്രീ മഞ്ഞളാംകുഴി അലി (പെരുന്തല്‍മന്ന)">ശ്രീ മഞ്ഞളാംകുഴി അലി (പെരുന്തല്‍മന്ന)</option>
+                            <option  value="ശ്രീ അഡ്വ എല്‍ദോസ് പി കുന്നപ്പള്ളി (പെരുമ്പാവൂര്‍)">ശ്രീ അഡ്വ എല്‍ദോസ് പി കുന്നപ്പള്ളി (പെരുമ്പാവൂര്‍)</option>
+                            <option  value="ശ്രീ അനൂപ്‌ ജേക്കബ് (പിറവം)">ശ്രീ അനൂപ്‌ ജേക്കബ് (പിറവം)</option>
+                            <option  value="ശ്രീ പി ശ്രീരാമകൃഷ്ണന്‍ (പൊന്നാനി)">ശ്രീ പി ശ്രീരാമകൃഷ്ണന്‍ (പൊന്നാനി)</option>
+                            <option  value="ശ്രീ പി സി ജോര്‍ജ് പ്ലാതോട്ടം (പൂഞ്ഞാര്‍)">ശ്രീ പി സി ജോര്‍ജ് പ്ലാതോട്ടം (പൂഞ്ഞാര്‍)</option>
+                            <option  value="ശ്രീ അഡ്വ കെ രാജു (പുനലൂര്‍)">ശ്രീ അഡ്വ കെ രാജു (പുനലൂര്‍)</option>
+                            <option  value="ശ്രീ പ്രൊഫ്‌ സി രവീന്ദ്രനാഥ് (പുതുകാട്)">ശ്രീ പ്രൊഫ്‌ സി രവീന്ദ്രനാഥ് (പുതുകാട്)</option>
+                            <option  value="ശ്രീ ഉമ്മന്‍ ചാണ്ടി (പുതുപ്പള്ളി)">ശ്രീ ഉമ്മന്‍ ചാണ്ടി (പുതുപ്പള്ളി)</option>
+                            <option  value="ശ്രീ കെ ദാസന്‍ (കൊയിലാണ്ടി)">ശ്രീ കെ ദാസന്‍ (കൊയിലാണ്ടി)</option>
+                            <option  value="ശ്രീ രാജു എബ്രഹാം (റാന്നി)">ശ്രീ രാജു എബ്രഹാം (റാന്നി)</option>
+                            <option  value="ശ്രീ പി കെ ശശി (ഷോര്‍ണ്ണൂര്‍)">ശ്രീ പി കെ ശശി (ഷോര്‍ണ്ണൂര്‍)</option>
+                            <option  value="ശ്രീ ഐ സി ബാലകൃഷന്‍ (സുല്‍ത്താന്‍ ബത്തേരി)">ശ്രീ ഐ സി ബാലകൃഷന്‍ (സുല്‍ത്താന്‍ ബത്തേരി)</option>
+                            <option  value="ശ്രീ ജെയിംസ്‌ മാത്യു (തളിപ്പറമ്പ്)">ശ്രീ ജെയിംസ്‌ മാത്യു (തളിപ്പറമ്പ്)</option>
+                            <option  value="ശ്രീ എ കെ ബാലന്‍ (തരൂര്‍)">ശ്രീ എ കെ ബാലന്‍ (തരൂര്‍)</option>
+                            <option  value="ശ്രീ വി അബ്ദുല്‍ റഹ്മാന്‍ (താന്നൂര്‍)">ശ്രീ വി അബ്ദുല്‍ റഹ്മാന്‍ (താന്നൂര്‍)</option>
+                            <option  value="ശ്രീ അഡ്വ എ എന്‍ ഷംസീര്‍ (തലശ്ശേരി)">ശ്രീ അഡ്വ എ എന്‍ ഷംസീര്‍ (തലശ്ശേരി)</option>
+                            <option  value="ശ്രീ ഡോക് കെ ടി ജലീല്‍ (തവനുര്‍)">ശ്രീ ഡോക് കെ ടി ജലീല്‍ (തവനുര്‍)</option>
+                            <option  value="ശ്രീ അഡ്വ മാത്യു ടി തോമസ്‌ (തിരുവല്ല)">ശ്രീ അഡ്വ മാത്യു ടി തോമസ്‌ (തിരുവല്ല)</option>
+                            <option  value="ശ്രീ ജോര്‍ജ് എം തോമസ്‌ (തിരുവമ്പാടി)">ശ്രീ ജോര്‍ജ് എം തോമസ്‌ (തിരുവമ്പാടി)</option>
+                            <option  value="ശ്രീ വി എസ് ശിവകുമാര്‍ (തിരുവനന്തപുരം)">ശ്രീ വി എസ് ശിവകുമാര്‍ (തിരുവനന്തപുരം)</option>
+                            <option  value="ശ്രീ പി ജെ ജോസഫ്‌ (തൊടുപുഴ)">ശ്രീ പി ജെ ജോസഫ്‌ (തൊടുപുഴ)</option>
+                            <option  value="ശ്രീ അഡ്വ പി ടി തോമസ്‌ (തൃക്കാക്കര)">ശ്രീ അഡ്വ പി ടി തോമസ്‌ (തൃക്കാക്കര)</option>
+                            <option  value="ശ്രീ അഡ്വ എം സ്വരാജ് (ത്രിപ്പുണിത്തറ)">ശ്രീ അഡ്വ എം സ്വരാജ് (ത്രിപ്പുണിത്തറ)</option>
+                            <option  value="ശ്രീ വി എസ് സുനില്‍കുമാര്‍ (തൃശൂര്‍)">ശ്രീ വി എസ് സുനില്‍കുമാര്‍ (തൃശൂര്‍)</option>
+                            <option  value="ശ്രീ വി ടി ബല്‍റാം (തൃത്താല)">ശ്രീ വി ടി ബല്‍റാം (തൃത്താല)</option>
+                            <option  value="ശ്രീ സി മമ്മൂട്ടി (തിരൂര്‍)">ശ്രീ സി മമ്മൂട്ടി (തിരൂര്‍)</option>
+                            <option  value="ശ്രീ എം രാജഗോപാലന്‍ (തൃക്കരിപ്പൂര്‍)">ശ്രീ എം രാജഗോപാലന്‍ (തൃക്കരിപ്പൂര്‍)</option>
+                            <option  value="ശ്രീ കെ കുഞ്ഞിരാമന്‍ (ഉദുമ)">ശ്രീ കെ കുഞ്ഞിരാമന്‍ (ഉദുമ)</option>
+                            <option  value="ശ്രീ എം എം മണി (ഉടുംബുംചോല)">ശ്രീ എം എം മണി (ഉടുംബുംചോല)</option>
+                            <option  value="ശ്രീ സി കെ നാണു (വടകര)">ശ്രീ സി കെ നാണു (വടകര)</option>
+                            <option  value="ശ്രീ സി കെ ആശ (വൈക്കം)">ശ്രീ സി കെ ആശ (വൈക്കം)</option>
+                            <option  value="ശ്രീ അബ്ദുല്‍ ഹമീദ് മാസ്റ്റര്‍ (വള്ളിക്കുന്ന്)">ശ്രീ അബ്ദുല്‍ ഹമീദ് മാസ്റ്റര്‍ (വള്ളിക്കുന്ന്)</option>
+                            <option  value="ശ്രീ അഡ്വ ഡി കെ മുരളി (വാമനപുരം)">ശ്രീ അഡ്വ ഡി കെ മുരളി (വാമനപുരം)</option>
+                            <option  value="ശ്രീ അഡ്വ വി ജോയ് (വര്‍ക്കല)">ശ്രീ അഡ്വ വി ജോയ് (വര്‍ക്കല)</option>
+                            <option  value="ശ്രീ കെ മുരളീധരന്‍ (വട്ടിയൂര്‍ക്കാവ്)">ശ്രീ കെ മുരളീധരന്‍ (വട്ടിയൂര്‍ക്കാവ്)</option>
+                            <option  value="ശ്രീ  (വേങ്ങര)">ശ്രീ  (വേങ്ങര)</option>
+                            <option  value="ശ്രീ അനില്‍ അക്കര (വടക്കാഞ്ചേരി)">ശ്രീ അനില്‍ അക്കര (വടക്കാഞ്ചേരി)</option>
+                            <option  value="ശ്രീ എ പി അനില്‍ കുമാര്‍ (വണ്ടൂര്‍)">ശ്രീ എ പി അനില്‍ കുമാര്‍ (വണ്ടൂര്‍)</option>
+                            <option  value="ശ്രീ എ പി അനില്‍ കുമാര്‍ (വണ്ടൂര്‍)">ശ്രീ എ പി അനില്‍ കുമാര്‍ (വണ്ടൂര്‍)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMP" for="field_recommendationMP">Recommendation MP</label>
+                        <!-- <input type="text" class="form-control" name="recommendationMP" id="field_recommendationMP"
                             ng-model="vm.apeksha.recommendationMP"
                             /> -->
-
-                            <select class="form-control" name="recommendationMP" id="field_recommendationMP" ng-model="vm.apeksha.recommendationMP"  >
-                                    <option value = ""></option>
-                                    <option value = "ശ്രീ. പി.കരുണാകരന്‍(കാസര്‍ഗോഡ്‌)">ശ്രീ. പി.കരുണാകരന്‍(കാസര്‍ഗോഡ്‌)</option>
-                                    <option value = "ശ്രീമതി.പി.കെ.ശ്രീമതി(കണ്ണൂര്‍)">ശ്രീമതി.പി.കെ.ശ്രീമതി(കണ്ണൂര്‍)</option>
-                                    <option value = "ശ്രീ.മുല്ലപ്പള്ളി രാമചന്ദ്രന്‍(വടകര)">ശ്രീ.മുല്ലപ്പള്ളി രാമചന്ദ്രന്‍(വടകര)</option>
-                                    <option value = "ശ്രീ.എം.ഐ.ഷാനവാസ്‌(വയനാട്)">ശ്രീ.എം.ഐ.ഷാനവാസ്‌(വയനാട്)</option>
-                                    <option value = "ശ്രീ.എം.കെ.രാഘവന്‍(കോഴിക്കോട്)">ശ്രീ.എം.കെ.രാഘവന്‍(കോഴിക്കോട്)</option>
-                                    <option value = "ശ്രീ.പി.കെ.കുഞ്ഞാലിക്കുട്ടി(മലപ്പുറം)">ശ്രീ.പി.കെ.കുഞ്ഞാലിക്കുട്ടി(മലപ്പുറം)</option>
-                                    <option value = "ശ്രീ.ഇ.റ്റി.മുഹമ്മദ് ബഷീര്‍(പൊന്നാനി)">ശ്രീ.ഇ.റ്റി.മുഹമ്മദ് ബഷീര്‍(പൊന്നാനി)</option>
-                                    <option value = "ശ്രീ.എം.പി.രാജേഷ്(പാലക്കാട്)">ശ്രീ.എം.പി.രാജേഷ്(പാലക്കാട്)</option>
-                                    <option value = "ശ്രീ. പി.കെ.ബൈജു(അലതൂര്‍)">ശ്രീ. പി.കെ.ബൈജു(അലതൂര്‍)</option>
-                                    <option value = "ശ്രീ. സി.എന്‍.ജയദേവന്‍(തൃശ്ശൂര്‍)">ശ്രീ. സി.എന്‍.ജയദേവന്‍(തൃശ്ശൂര്‍)</option>
-                                    <option value = "ശ്രീ. ഇന്നസെന്‍റ് വി.റ്റി(ചാലക്കുടി)">ശ്രീ. ഇന്നസെന്‍റ് വി.റ്റി(ചാലക്കുടി)</option>
-                                    <option value = "ശ്രീ.കെ.വി.തോമസ്‌(ഏറണാകുളം)">ശ്രീ.കെ.വി.തോമസ്‌(ഏറണാകുളം)</option>
-                                    <option value = "ശ്രീമതി.ജോയ്‌സി ജോര്‍ജ്(ഇടുക്കി)">ശ്രീമതി.ജോയ്‌സി ജോര്‍ജ്(ഇടുക്കി)</option>
-                                    <option value = "ശ്രീ.ജോസ്.കെ.മണി(കോട്ടയം)">ശ്രീ.ജോസ്.കെ.മണി(കോട്ടയം)</option>
-                                    <option value = "ശ്രീ.കെ.സി.വേണുഗോപാല്‍(ആലപ്പുഴ)">ശ്രീ.കെ.സി.വേണുഗോപാല്‍(ആലപ്പുഴ)</option>
-                                    <option value = "ശ്രീ.കൊടിക്കുന്നില്‍ സുരേഷ്(മാവേലിക്കര)">ശ്രീ.കൊടിക്കുന്നില്‍ സുരേഷ്(മാവേലിക്കര)</option>
-                                    <option value = "ശ്രീ.ആന്‍റോ ആന്‍റണി പുന്നതനിയില്‍(പത്തനംത്തിട്ട)">ശ്രീ.ആന്‍റോ ആന്‍റണി പുന്നതനിയില്‍(പത്തനംത്തിട്ട)</option>
-                                    <option value = "ശ്രീ.എന്‍.കെ.പ്രേമ ചന്ദ്രന്‍(കൊല്ലം)">ശ്രീ.എന്‍.കെ.പ്രേമ ചന്ദ്രന്‍(കൊല്ലം)</option>
-                                    <option value = "ശ്രീ.എ.സമ്പത്ത്(ആറ്റിങ്ങല്‍)">ശ്രീ.എ.സമ്പത്ത്(ആറ്റിങ്ങല്‍)</option>
-                                    <option value = "ശ്രീ.ശശി തരൂര്‍(തിരുവനന്തപുരം)">ശ്രീ.ശശി തരൂര്‍(തിരുവനന്തപുരം)</option>
-                                    <option value = "ശ്രീ.എം പി വീരേന്ദ്രകുമാര്‍(രാജ്യസഭ)">ശ്രീ.എം പി വീരേന്ദ്രകുമാര്‍(രാജ്യസഭ)</option>
-                                    <option value = "ശ്രീ.എ.കെ.ആന്‍റണി(രാജ്യസഭ)">ശ്രീ.എ.കെ.ആന്‍റണി(രാജ്യസഭ)</option>
-                                    <option value = "ശ്രീ.കെ.സോമപ്രസാദ്(രാജ്യസഭ)">ശ്രീ.കെ.സോമപ്രസാദ്(രാജ്യസഭ)</option>
-                                    <option value = "ശ്രീ.ജോയ് എബ്രഹാം(രാജ്യസഭ)">ശ്രീ.ജോയ് എബ്രഹാം(രാജ്യസഭ)</option>
-                                    <option value = "ശ്രീ.പി.ജെ.കുര്യന്‍(രാജ്യസഭ)">ശ്രീ.പി.ജെ.കുര്യന്‍(രാജ്യസഭ)</option>
-                                    <option value = "ശ്രീ.സി.പി.നാരായണന്‍(രാജ്യസഭ)">ശ്രീ.സി.പി.നാരായണന്‍(രാജ്യസഭ)</option>
-                                    <option value = "ശ്രീ.കെ.കെ.രാഗേഷ്(രാജ്യസഭ)">ശ്രീ.കെ.കെ.രാഗേഷ്(രാജ്യസഭ)</option>
-                                    <option value = "ശ്രീ.വയലാര്‍ രവി(രാജ്യസഭ)">ശ്രീ.വയലാര്‍ രവി(രാജ്യസഭ)</option>
-                                    <option value = "ശ്രീ.പി.വി.അബ്ദുല്‍ വഹാബ്(രാജ്യസഭ)">ശ്രീ.പി.വി.അബ്ദുല്‍ വഹാബ്(രാജ്യസഭ)</option>
-                                    <option value = "ശ്രീ.സുരേഷ്ഗോപി(രാജ്യസഭ)">ശ്രീ.സുരേഷ്ഗോപി(രാജ്യസഭ)</option>
-                                    
-                                    
-                            </select>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationOthers" for="field_recommendationOthers">Recommendation Others</label>
-                    <input type="text" class="form-control" name="recommendationOthers" id="field_recommendationOthers"
+                        <select class="form-control" name="recommendationMP" id="field_recommendationMP" ng-model="vm.apeksha.recommendationMP"  >
+                            <option value = ""></option>
+                            <option value = "ശ്രീ. പി.കരുണാകരന്‍(കാസര്‍ഗോഡ്‌)">ശ്രീ. പി.കരുണാകരന്‍(കാസര്‍ഗോഡ്‌)</option>
+                            <option value = "ശ്രീമതി.പി.കെ.ശ്രീമതി(കണ്ണൂര്‍)">ശ്രീമതി.പി.കെ.ശ്രീമതി(കണ്ണൂര്‍)</option>
+                            <option value = "ശ്രീ.മുല്ലപ്പള്ളി രാമചന്ദ്രന്‍(വടകര)">ശ്രീ.മുല്ലപ്പള്ളി രാമചന്ദ്രന്‍(വടകര)</option>
+                            <option value = "ശ്രീ.എം.ഐ.ഷാനവാസ്‌(വയനാട്)">ശ്രീ.എം.ഐ.ഷാനവാസ്‌(വയനാട്)</option>
+                            <option value = "ശ്രീ.എം.കെ.രാഘവന്‍(കോഴിക്കോട്)">ശ്രീ.എം.കെ.രാഘവന്‍(കോഴിക്കോട്)</option>
+                            <option value = "ശ്രീ.പി.കെ.കുഞ്ഞാലിക്കുട്ടി(മലപ്പുറം)">ശ്രീ.പി.കെ.കുഞ്ഞാലിക്കുട്ടി(മലപ്പുറം)</option>
+                            <option value = "ശ്രീ.ഇ.റ്റി.മുഹമ്മദ് ബഷീര്‍(പൊന്നാനി)">ശ്രീ.ഇ.റ്റി.മുഹമ്മദ് ബഷീര്‍(പൊന്നാനി)</option>
+                            <option value = "ശ്രീ.എം.പി.രാജേഷ്(പാലക്കാട്)">ശ്രീ.എം.പി.രാജേഷ്(പാലക്കാട്)</option>
+                            <option value = "ശ്രീ. പി.കെ.ബൈജു(അലതൂര്‍)">ശ്രീ. പി.കെ.ബൈജു(അലതൂര്‍)</option>
+                            <option value = "ശ്രീ. സി.എന്‍.ജയദേവന്‍(തൃശ്ശൂര്‍)">ശ്രീ. സി.എന്‍.ജയദേവന്‍(തൃശ്ശൂര്‍)</option>
+                            <option value = "ശ്രീ. ഇന്നസെന്‍റ് വി.റ്റി(ചാലക്കുടി)">ശ്രീ. ഇന്നസെന്‍റ് വി.റ്റി(ചാലക്കുടി)</option>
+                            <option value = "ശ്രീ.കെ.വി.തോമസ്‌(ഏറണാകുളം)">ശ്രീ.കെ.വി.തോമസ്‌(ഏറണാകുളം)</option>
+                            <option value = "ശ്രീമതി.ജോയ്‌സി ജോര്‍ജ്(ഇടുക്കി)">ശ്രീമതി.ജോയ്‌സി ജോര്‍ജ്(ഇടുക്കി)</option>
+                            <option value = "ശ്രീ.ജോസ്.കെ.മണി(കോട്ടയം)">ശ്രീ.ജോസ്.കെ.മണി(കോട്ടയം)</option>
+                            <option value = "ശ്രീ.കെ.സി.വേണുഗോപാല്‍(ആലപ്പുഴ)">ശ്രീ.കെ.സി.വേണുഗോപാല്‍(ആലപ്പുഴ)</option>
+                            <option value = "ശ്രീ.കൊടിക്കുന്നില്‍ സുരേഷ്(മാവേലിക്കര)">ശ്രീ.കൊടിക്കുന്നില്‍ സുരേഷ്(മാവേലിക്കര)</option>
+                            <option value = "ശ്രീ.ആന്‍റോ ആന്‍റണി പുന്നതനിയില്‍(പത്തനംത്തിട്ട)">ശ്രീ.ആന്‍റോ ആന്‍റണി പുന്നതനിയില്‍(പത്തനംത്തിട്ട)</option>
+                            <option value = "ശ്രീ.എന്‍.കെ.പ്രേമ ചന്ദ്രന്‍(കൊല്ലം)">ശ്രീ.എന്‍.കെ.പ്രേമ ചന്ദ്രന്‍(കൊല്ലം)</option>
+                            <option value = "ശ്രീ.എ.സമ്പത്ത്(ആറ്റിങ്ങല്‍)">ശ്രീ.എ.സമ്പത്ത്(ആറ്റിങ്ങല്‍)</option>
+                            <option value = "ശ്രീ.ശശി തരൂര്‍(തിരുവനന്തപുരം)">ശ്രീ.ശശി തരൂര്‍(തിരുവനന്തപുരം)</option>
+                            <option value = "ശ്രീ.എം പി വീരേന്ദ്രകുമാര്‍(രാജ്യസഭ)">ശ്രീ.എം പി വീരേന്ദ്രകുമാര്‍(രാജ്യസഭ)</option>
+                            <option value = "ശ്രീ.എ.കെ.ആന്‍റണി(രാജ്യസഭ)">ശ്രീ.എ.കെ.ആന്‍റണി(രാജ്യസഭ)</option>
+                            <option value = "ശ്രീ.കെ.സോമപ്രസാദ്(രാജ്യസഭ)">ശ്രീ.കെ.സോമപ്രസാദ്(രാജ്യസഭ)</option>
+                            <option value = "ശ്രീ.ജോയ് എബ്രഹാം(രാജ്യസഭ)">ശ്രീ.ജോയ് എബ്രഹാം(രാജ്യസഭ)</option>
+                            <option value = "ശ്രീ.പി.ജെ.കുര്യന്‍(രാജ്യസഭ)">ശ്രീ.പി.ജെ.കുര്യന്‍(രാജ്യസഭ)</option>
+                            <option value = "ശ്രീ.സി.പി.നാരായണന്‍(രാജ്യസഭ)">ശ്രീ.സി.പി.നാരായണന്‍(രാജ്യസഭ)</option>
+                            <option value = "ശ്രീ.കെ.കെ.രാഗേഷ്(രാജ്യസഭ)">ശ്രീ.കെ.കെ.രാഗേഷ്(രാജ്യസഭ)</option>
+                            <option value = "ശ്രീ.വയലാര്‍ രവി(രാജ്യസഭ)">ശ്രീ.വയലാര്‍ രവി(രാജ്യസഭ)</option>
+                            <option value = "ശ്രീ.പി.വി.അബ്ദുല്‍ വഹാബ്(രാജ്യസഭ)">ശ്രീ.പി.വി.അബ്ദുല്‍ വഹാബ്(രാജ്യസഭ)</option>
+                            <option value = "ശ്രീ.സുരേഷ്ഗോപി(രാജ്യസഭ)">ശ്രീ.സുരേഷ്ഗോപി(രാജ്യസഭ)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationOthers" for="field_recommendationOthers">Recommendation Others</label>
+                        <input type="text" class="form-control" name="recommendationOthers" id="field_recommendationOthers"
                             ng-model="vm.apeksha.recommendationOthers"
                             />
-                </div>
-                </div>
-                </div>
-                <div class="form-group">
-                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.hospitalDistrict" for="field_recommendationOthers">Hospital District</label>
-                        <select class="form-control" name="hospitalDistrict" id="field_hospitalDistrict" ng-model="vm.apeksha.hospitalDistrict"  required 
-                        ng-change="vm.updateHospitalMasters(vm.apeksha.hospitalDistrict)"
-                        ng-init="vm.updateHospitalMasters(vm.hospitalPlaceName)"
-                        >
-                                <option  value=""></option>
-                                <option  value="തിരുവനന്തപുരം">തിരുവനന്തപുരം</option>
-                                <option  value="കൊല്ലം">കൊല്ലം</option>
-                                <option  value="പത്തനംതിട്ട">പത്തനംതിട്ട</option>
-                                <option  value="ആലപ്പുഴ">ആലപ്പുഴ</option>
-                                <option  value="കോട്ടയം">കോട്ടയം</option>
-                                <option  value="ഇടുക്കി">ഇടുക്കി</option>
-                                <option  value="എറണകുളം">എറണകുളം</option>
-                                <option  value="തൃശൂര്‍">തൃശൂര്‍</option>
-                                <option  value="പാലക്കാട്‌">പാലക്കാട്‌</option>
-                                <option  value="മലപ്പുറം">മലപ്പുറം</option>
-                                <option  value="കോഴിക്കോട്">കോഴിക്കോട്</option>
-                                <option  value="വയനാട്">വയനാട്</option>
-                                <option  value="കണ്ണൂര്‍">കണ്ണൂര്‍</option>
-                                <option  value="കാസര്‍ഗോഡ്‌">കാസര്‍ഗോഡ്‌</option>
-                                </select>
-                    </div>
-
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.hospitalName" for="field_hospitalName">Hospital Name</label>
-                    <!-- <input type="text" class="form-control" name="hospitalName" id="field_hospitalName"
-                            ng-model="vm.apeksha.hospitalName"
-                            required/> -->
-
-                            <select class="form-control" name="hospitalName" id="field_hospitalName" ng-model="vm.apeksha.hospitalName"  >
-                                    <option ng-repeat="hosp in vm.hospitalList" value="{{hosp.HOSP}} ({{ hosp.SECTOR }}) - {{ hosp.PLACE }}">{{hosp.HOSP}} ({{ hosp.SECTOR }})</option>
-                                    </select>   
-
-                    <div ng-show="editForm.hospitalName.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.hospitalName.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.treatmentHistory" for="field_treatmentHistory">Treatment History</label>
-                    <input type="text" class="form-control" name="treatmentHistory" id="field_treatmentHistory"
-                            ng-model="vm.apeksha.treatmentHistory"
-                            />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.hospitalDistrict" for="field_recommendationOthers">Hospital District</label>
+                <select class="form-control" name="hospitalDistrict" id="field_hospitalDistrict" ng-model="vm.apeksha.hospitalDistrict"  required 
+                    ng-change="vm.updateHospitalMasters(vm.apeksha.hospitalDistrict)"
+                    ng-init="vm.updateHospitalMasters(vm.hospitalPlaceName)"
+                    >
+                    <option  value=""></option>
+                    <option  value="തിരുവനന്തപുരം">തിരുവനന്തപുരം</option>
+                    <option  value="കൊല്ലം">കൊല്ലം</option>
+                    <option  value="പത്തനംതിട്ട">പത്തനംതിട്ട</option>
+                    <option  value="ആലപ്പുഴ">ആലപ്പുഴ</option>
+                    <option  value="കോട്ടയം">കോട്ടയം</option>
+                    <option  value="ഇടുക്കി">ഇടുക്കി</option>
+                    <option  value="എറണകുളം">എറണകുളം</option>
+                    <option  value="തൃശൂര്‍">തൃശൂര്‍</option>
+                    <option  value="പാലക്കാട്‌">പാലക്കാട്‌</option>
+                    <option  value="മലപ്പുറം">മലപ്പുറം</option>
+                    <option  value="കോഴിക്കോട്">കോഴിക്കോട്</option>
+                    <option  value="വയനാട്">വയനാട്</option>
+                    <option  value="കണ്ണൂര്‍">കണ്ണൂര്‍</option>
+                    <option  value="കാസര്‍ഗോഡ്‌">കാസര്‍ഗോഡ്‌</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.hospitalName" for="field_hospitalName">Hospital Name</label>
+                <!-- <input type="text" class="form-control" name="hospitalName" id="field_hospitalName"
+                    ng-model="vm.apeksha.hospitalName"
+                    required/> -->
+                <select class="form-control" name="hospitalName" id="field_hospitalName" ng-model="vm.apeksha.hospitalName"  >
+                    <option ng-repeat="hosp in vm.hospitalList" value="{{hosp.HOSP}} ({{ hosp.SECTOR }}) - {{ hosp.PLACE }}">{{hosp.HOSP}} ({{ hosp.SECTOR }})</option>
+                </select>
+                <div ng-show="editForm.hospitalName.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.hospitalName.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
                 </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.expectedAmount" for="field_expectedAmount">Expected Amount</label>
-                    <input type="number" class="form-control" name="expectedAmount" id="field_expectedAmount"
-                            ng-model="vm.apeksha.expectedAmount"
-                            required/>
-                    <div ng-show="editForm.expectedAmount.$invalid">
-                        <p class="help-block"
-                            ng-show="editForm.expectedAmount.$error.required" data-translate="entity.validation.required">
-                            This field is required.
-                        </p>
-                        <p class="help-block"
-                            ng-show="editForm.expectedAmount.$error.number" data-translate="entity.validation.number">
-                            This field should be a number.
-                        </p>
-                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.treatmentHistory" for="field_treatmentHistory">Treatment History</label>
+                <input type="text" class="form-control" name="treatmentHistory" id="field_treatmentHistory"
+                    ng-model="vm.apeksha.treatmentHistory"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.expectedAmount" for="field_expectedAmount">Expected Amount</label>
+                <input type="number" class="form-control" name="expectedAmount" id="field_expectedAmount"
+                    ng-model="vm.apeksha.expectedAmount"
+                    required/>
+                <div ng-show="editForm.expectedAmount.$invalid">
+                    <p class="help-block"
+                        ng-show="editForm.expectedAmount.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                    <p class="help-block"
+                        ng-show="editForm.expectedAmount.$error.number" data-translate="entity.validation.number">
+                        This field should be a number.
+                    </p>
                 </div>
-
-                <div class="panel panel-info">
-
+            </div>
+            <div class="panel panel-info">
                 <div class="panel-heading" >
-                        <label  data-translate="janasanthwanamApp.apeksha.isReceivingAmountFromGovt" for="field_isReceivingAmountFromGovt">Any Amount Receiving From Govt</label>
-                        <input type="checkbox"  name="isReceivingAmountFromGovtt" id="field_isReceivingAmountFromGovt"
-                                ng-model="vm.apeksha.isReceivingAmountFromGovt" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.isReceivingAmountFromGovt=false"
-                                />
-                    </div> 
-                    
-
+                    <label  data-translate="janasanthwanamApp.apeksha.isReceivingAmountFromGovt" for="field_isReceivingAmountFromGovt">Any Amount Receiving From Govt</label>
+                    <input type="checkbox"  name="isReceivingAmountFromGovtt" id="field_isReceivingAmountFromGovt"
+                        ng-model="vm.apeksha.isReceivingAmountFromGovt" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.isReceivingAmountFromGovt=false"
+                        />
+                </div>
                 <div class="panel-body" ng-show="vm.apeksha.isReceivingAmountFromGovt">
                     <!-- even though the field name of below field is 'anyAmountReceivingFromGovt' it is actually used to store the amount. dont get confused--> 
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.anyAmountReceivingFromGovt" for="field_anyAmountReceivingFromGovt"> Amount</label>
-                    <input type="number" class="form-control" name="anyAmountReceivingFromGovt" id="field_anyAmountReceivingFromGovt"
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.anyAmountReceivingFromGovt" for="field_anyAmountReceivingFromGovt"> Amount</label>
+                        <input type="number" class="form-control" name="anyAmountReceivingFromGovt" id="field_anyAmountReceivingFromGovt"
                             ng-model="vm.apeksha.anyAmountReceivingFromGovt"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.govtAmountPurposeDetails" for="field_govtAmountPurposeDetails">Govt Amount Purpose Details</label>
-                    <input type="text" class="form-control" name="govtAmountPurposeDetails" id="field_govtAmountPurposeDetails"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.govtAmountPurposeDetails" for="field_govtAmountPurposeDetails">Govt Amount Purpose Details</label>
+                        <input type="text" class="form-control" name="govtAmountPurposeDetails" id="field_govtAmountPurposeDetails"
                             ng-model="vm.apeksha.govtAmountPurposeDetails"
                             />
-                </div>
-
-                <div class="form-group">
+                    </div>
+                    <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.stillReceivingAmountFromGovt" for="field_stillReceivingAmountFromGovt">Still Receiving Amount from Govt</label>
-    
-                                <select class="form-control" name="stillReceivingAmountFromGovtt" id="field_stillReceivingAmountFromGovt" ng-model="vm.apeksha.stillReceivingAmountFromGovt"  >
-                                        <option  value="എ പി എല്‍ കാര്‍ഡ്">എ പി എല്‍ കാര്‍ഡ്, വെള്ള, നീല</option>
-                                        <option  value="ബി പി എല്‍ കാര്‍ഡ്">ബി പി എല്‍ കാര്‍ഡ്, മഞ്ഞ, ചുവപ്പ്</option>
-                                        </select>
+                        <select class="form-control" name="stillReceivingAmountFromGovtt" id="field_stillReceivingAmountFromGovt" ng-model="vm.apeksha.stillReceivingAmountFromGovt"  >
+                            <option  value="എ പി എല്‍ കാര്‍ഡ്">എ പി എല്‍ കാര്‍ഡ്, വെള്ള, നീല</option>
+                            <option  value="ബി പി എല്‍ കാര്‍ഡ്">ബി പി എല്‍ കാര്‍ഡ്, മഞ്ഞ, ചുവപ്പ്</option>
+                        </select>
                     </div>
-
-
                 </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankName" for="field_bankName">Bank Name</label>
-                    <input type="text" class="form-control" name="bankName" id="field_bankName"
-                            ng-model="vm.apeksha.bankName"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankBranchName" for="field_bankBranchName">Bank Branch Name</label>
-                    <input type="text" class="form-control" name="bankBranchName" id="field_bankBranchName"
-                            ng-model="vm.apeksha.bankBranchName"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankAccountNumber" for="field_bankAccountNumber">Bank Account Number</label>
-                    <input type="text" class="form-control" name="bankAccountNumber" id="field_bankAccountNumber"
-                            ng-model="vm.apeksha.bankAccountNumber"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankIfscCode" for="field_bankIfscCode">Bank Ifsc Code</label>
-                    <input type="text" class="form-control" name="bankIfscCode" id="field_bankIfscCode"
-                            ng-model="vm.apeksha.bankIfscCode"
-                            />
-                </div>
-                <div class="form-group" ngf-drop ngf-change="vm.setAdditionalDocuments($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.additionalDocuments" for="field_additionalDocuments">Additional Documents</label>
-                    <div>
-                        <div ng-if="vm.apeksha.additionalDocuments" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.additionalDocumentsContentType, vm.apeksha.additionalDocuments)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.additionalDocumentsContentType}}, {{vm.byteSize(vm.apeksha.additionalDocuments)}}</span>
-                            <button type="button" ng-click="vm.apeksha.additionalDocuments=null;vm.apeksha.additionalDocumentsContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setAdditionalDocuments($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
-                    </div>
-                    <input type="hidden" class="form-control" name="additionalDocuments" id="field_additionalDocuments"
-                            ng-model="vm.apeksha.additionalDocuments"
-                            />
-                    <input type="hidden" class="form-control" name="additionalDocumentsContentType" id="field_additionalDocumentsContentType"
-                            ng-model="vm.apeksha.additionalDocumentsContentType" />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.remarks" for="field_remarks">Remarks</label>
-                    <input type="text" class="form-control" name="remarks" id="field_remarks"
-                            ng-model="vm.apeksha.remarks"
-                            />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.dateOfApplcation" for="field_dateOfApplcation">Date Of Applcation</label>
-                        <div class="input-group">
-                            <input id="field_dateOfApplcation" type="text" class="form-control" name="dateOfApplcation" uib-datepicker-popup="{{dateformat}}" ng-model="vm.apeksha.dateOfApplcation" is-open="vm.datePickerOpenStatus.dateOfApplcation"
-                            />
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfApplcation')"><i class="glyphicon glyphicon-calendar"></i></button>
-                            </span>
-                        </div>
-                </div>
-
-
-
-      
-
-
-                        <div class="panel panel-info">
-                        <div class="panel-heading" >
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankName" for="field_bankName">Bank Name</label>
+                <input type="text" class="form-control" name="bankName" id="field_bankName"
+                    ng-model="vm.apeksha.bankName"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankBranchName" for="field_bankBranchName">Bank Branch Name</label>
+                <input type="text" class="form-control" name="bankBranchName" id="field_bankBranchName"
+                    ng-model="vm.apeksha.bankBranchName"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankAccountNumber" for="field_bankAccountNumber">Bank Account Number</label>
+                <input type="text" class="form-control" name="bankAccountNumber" id="field_bankAccountNumber"
+                    ng-model="vm.apeksha.bankAccountNumber"
+                    />
+            </div>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankIfscCode" for="field_bankIfscCode">Bank Ifsc Code</label>
+                <input type="text" class="form-control" name="bankIfscCode" id="field_bankIfscCode"
+                    ng-model="vm.apeksha.bankIfscCode"
+                    />
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading" >
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeAvailable" for="field_nomineeAvailable">Nominee Available</label>
                     <input type="checkbox"  name="nomineeAvailable" id="field_nomineeAvailable"
-                            ng-model="vm.apeksha.nomineeAvailable" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.nomineeAvailable=false"
-                            />
+                        ng-model="vm.apeksha.nomineeAvailable" ng-true-value="true" ng-false-value="false"  ng-init="vm.apeksha.nomineeAvailable=false"
+                        />
                 </div>
                 <div ng-show="vm.apeksha.nomineeAvailable" class="panel-body">
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeName" for="field_nomineeName">Nominee Name</label>
-                    <input type="text" class="form-control" name="nomineeName" id="field_nomineeName"
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeName" for="field_nomineeName">Nominee Name</label>
+                        <input type="text" class="form-control" name="nomineeName" id="field_nomineeName"
                             ng-model="vm.apeksha.nomineeName"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeGender" for="field_nomineeGender">Nominee Gender</label>
-                    <input type="text" class="form-control" name="nomineeGender" id="field_nomineeGender"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeGender" for="field_nomineeGender">Nominee Gender</label>
+                        <input type="text" class="form-control" name="nomineeGender" id="field_nomineeGender"
                             ng-model="vm.apeksha.nomineeGender"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeAge" for="field_nomineeAge">Nominee Age</label>
-                    <input type="number" class="form-control" name="nomineeAge" id="field_nomineeAge"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeAge" for="field_nomineeAge">Nominee Age</label>
+                        <input type="number" class="form-control" name="nomineeAge" id="field_nomineeAge"
                             ng-model="vm.apeksha.nomineeAge"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeRelationship" for="field_nomineeRelationship">Nominee Relationship</label>
-                    <input type="text" class="form-control" name="nomineeRelationship" id="field_nomineeRelationship"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeRelationship" for="field_nomineeRelationship">Nominee Relationship</label>
+                        <input type="text" class="form-control" name="nomineeRelationship" id="field_nomineeRelationship"
                             ng-model="vm.apeksha.nomineeRelationship"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeHouseName" for="field_nomineeHouseName">Nominee House Name</label>
-                    <input type="text" class="form-control" name="nomineeHouseName" id="field_nomineeHouseName"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeHouseName" for="field_nomineeHouseName">Nominee House Name</label>
+                        <input type="text" class="form-control" name="nomineeHouseName" id="field_nomineeHouseName"
                             ng-model="vm.apeksha.nomineeHouseName"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeHouseNumber" for="field_nomineeHouseNumber">Nominee House Number</label>
-                    <input type="text" class="form-control" name="nomineeHouseNumber" id="field_nomineeHouseNumber"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeHouseNumber" for="field_nomineeHouseNumber">Nominee House Number</label>
+                        <input type="text" class="form-control" name="nomineeHouseNumber" id="field_nomineeHouseNumber"
                             ng-model="vm.apeksha.nomineeHouseNumber"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeTcNo" for="field_nomineeTcNo">Nominee Tc No</label>
-                    <input type="text" class="form-control" name="nomineeTcNo" id="field_nomineeTcNo"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeTcNo" for="field_nomineeTcNo">Nominee Tc No</label>
+                        <input type="text" class="form-control" name="nomineeTcNo" id="field_nomineeTcNo"
                             ng-model="vm.apeksha.nomineeTcNo"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeVillage" for="field_nomineeVillage">Nominee Village</label>
-                    <input type="text" class="form-control" name="nomineeVillage" id="field_nomineeVillage"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeVillage" for="field_nomineeVillage">Nominee Village</label>
+                        <input type="text" class="form-control" name="nomineeVillage" id="field_nomineeVillage"
                             ng-model="vm.apeksha.nomineeVillage"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeThaluk" for="field_nomineeThaluk">Nominee Thaluk</label>
-                    <input type="text" class="form-control" name="nomineeThaluk" id="field_nomineeThaluk"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeThaluk" for="field_nomineeThaluk">Nominee Thaluk</label>
+                        <input type="text" class="form-control" name="nomineeThaluk" id="field_nomineeThaluk"
                             ng-model="vm.apeksha.nomineeThaluk"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePanchayat" for="field_nomineePanchayat">Nominee Panchayat</label>
-                    <input type="text" class="form-control" name="nomineePanchayat" id="field_nomineePanchayat"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePanchayat" for="field_nomineePanchayat">Nominee Panchayat</label>
+                        <input type="text" class="form-control" name="nomineePanchayat" id="field_nomineePanchayat"
                             ng-model="vm.apeksha.nomineePanchayat"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePostOffice" for="field_nomineePostOffice">Nominee Post Office</label>
-                    <input type="text" class="form-control" name="nomineePostOffice" id="field_nomineePostOffice"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePostOffice" for="field_nomineePostOffice">Nominee Post Office</label>
+                        <input type="text" class="form-control" name="nomineePostOffice" id="field_nomineePostOffice"
                             ng-model="vm.apeksha.nomineePostOffice"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePinCode" for="field_nomineePinCode">Nominee Pin Code</label>
-                    <input type="text" class="form-control" name="nomineePinCode" id="field_nomineePinCode"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePinCode" for="field_nomineePinCode">Nominee Pin Code</label>
+                        <input type="text" class="form-control" name="nomineePinCode" id="field_nomineePinCode"
                             ng-model="vm.apeksha.nomineePinCode"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeMobileNumber" for="field_nomineeMobileNumber">Nominee Mobile Number</label>
-                    <input type="text" class="form-control" name="nomineeMobileNumber" id="field_nomineeMobileNumber"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeMobileNumber" for="field_nomineeMobileNumber">Nominee Mobile Number</label>
+                        <input type="text" class="form-control" name="nomineeMobileNumber" id="field_nomineeMobileNumber"
                             ng-model="vm.apeksha.nomineeMobileNumber"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeLandLineWithSTD" for="field_nomineeLandLineWithSTD">Nominee Land Line With STD</label>
-                    <input type="text" class="form-control" name="nomineeLandLineWithSTD" id="field_nomineeLandLineWithSTD"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeLandLineWithSTD" for="field_nomineeLandLineWithSTD">Nominee Land Line With STD</label>
+                        <input type="text" class="form-control" name="nomineeLandLineWithSTD" id="field_nomineeLandLineWithSTD"
                             ng-model="vm.apeksha.nomineeLandLineWithSTD"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankName" for="field_nomineeBankName">Nominee Bank Name</label>
-                    <input type="text" class="form-control" name="nomineeBankName" id="field_nomineeBankName"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankName" for="field_nomineeBankName">Nominee Bank Name</label>
+                        <input type="text" class="form-control" name="nomineeBankName" id="field_nomineeBankName"
                             ng-model="vm.apeksha.nomineeBankName"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankBranch" for="field_nomineeBankBranch">Nominee Bank Branch</label>
-                    <input type="text" class="form-control" name="nomineeBankBranch" id="field_nomineeBankBranch"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankBranch" for="field_nomineeBankBranch">Nominee Bank Branch</label>
+                        <input type="text" class="form-control" name="nomineeBankBranch" id="field_nomineeBankBranch"
                             ng-model="vm.apeksha.nomineeBankBranch"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankAccountNumber" for="field_nomineeBankAccountNumber">Nominee Bank Account Number</label>
-                    <input type="text" class="form-control" name="nomineeBankAccountNumber" id="field_nomineeBankAccountNumber"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankAccountNumber" for="field_nomineeBankAccountNumber">Nominee Bank Account Number</label>
+                        <input type="text" class="form-control" name="nomineeBankAccountNumber" id="field_nomineeBankAccountNumber"
                             ng-model="vm.apeksha.nomineeBankAccountNumber"
                             />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankIfscCode" for="field_nomineeBankIfscCode">Nominee Bank Ifsc Code</label>
-                    <input type="text" class="form-control" name="nomineeBankIfscCode" id="field_nomineeBankIfscCode"
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankIfscCode" for="field_nomineeBankIfscCode">Nominee Bank Ifsc Code</label>
+                        <input type="text" class="form-control" name="nomineeBankIfscCode" id="field_nomineeBankIfscCode"
                             ng-model="vm.apeksha.nomineeBankIfscCode"
                             />
-                </div>
-
-                </div>
-                        </div>
-
-                <div class="form-group" ngf-drop ngf-change="vm.setPhoto($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.photo" for="field_photo">Photo</label>
-                    <div>
-                        <div ng-if="vm.apeksha.photo" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.photoContentType, vm.apeksha.photo)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.photoContentType}}, {{vm.byteSize(vm.apeksha.photo)}}</span>
-                            <button type="button" ng-click="vm.apeksha.photo=null;vm.apeksha.photoContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setPhoto($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
                     </div>
-                    <input type="hidden" class="form-control" name="photo" id="field_photo"
-                            ng-model="vm.apeksha.photo"
-                            />
-                    <input type="hidden" class="form-control" name="photoContentType" id="field_photoContentType"
-                            ng-model="vm.apeksha.photoContentType" />
                 </div>
-                <div class="form-group" ngf-drop ngf-change="vm.setApplicationForm($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicationForm" for="field_applicationForm">Application Form</label>
-                    <div>
-                        <div ng-if="vm.apeksha.applicationForm" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.applicationFormContentType, vm.apeksha.applicationForm)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.applicationFormContentType}}, {{vm.byteSize(vm.apeksha.applicationForm)}}</span>
-                            <button type="button" ng-click="vm.apeksha.applicationForm=null;vm.apeksha.applicationFormContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setApplicationForm($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
-                    </div>
-                    <input type="hidden" class="form-control" name="applicationForm" id="field_applicationForm"
-                            ng-model="vm.apeksha.applicationForm"
-                            />
-                    <input type="hidden" class="form-control" name="applicationFormContentType" id="field_applicationFormContentType"
-                            ng-model="vm.apeksha.applicationFormContentType" />
-                </div>
-                <div class="form-group" ngf-drop ngf-change="vm.setAadharCard($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.aadharCard" for="field_aadharCard">Aadhar Card</label>
-                    <div>
-                        <div ng-if="vm.apeksha.aadharCard" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.aadharCardContentType, vm.apeksha.aadharCard)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.aadharCardContentType}}, {{vm.byteSize(vm.apeksha.aadharCard)}}</span>
-                            <button type="button" ng-click="vm.apeksha.aadharCard=null;vm.apeksha.aadharCardContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setAadharCard($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
-                    </div>
-                    <input type="hidden" class="form-control" name="aadharCard" id="field_aadharCard"
-                            ng-model="vm.apeksha.aadharCard"
-                            />
-                    <input type="hidden" class="form-control" name="aadharCardContentType" id="field_aadharCardContentType"
-                            ng-model="vm.apeksha.aadharCardContentType" />
-                </div>
-                <div class="form-group" ngf-drop ngf-change="vm.setRationCard($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.rationCard" for="field_rationCard">Ration Card</label>
-                    <div>
-                        <div ng-if="vm.apeksha.rationCard" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.rationCardContentType, vm.apeksha.rationCard)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.rationCardContentType}}, {{vm.byteSize(vm.apeksha.rationCard)}}</span>
-                            <button type="button" ng-click="vm.apeksha.rationCard=null;vm.apeksha.rationCardContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setRationCard($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
-                    </div>
-                    <input type="hidden" class="form-control" name="rationCard" id="field_rationCard"
-                            ng-model="vm.apeksha.rationCard"
-                            />
-                    <input type="hidden" class="form-control" name="rationCardContentType" id="field_rationCardContentType"
-                            ng-model="vm.apeksha.rationCardContentType" />
-                </div>
-                <div class="form-group" ngf-drop ngf-change="vm.setDoctorReport($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.doctorReport" for="field_doctorReport">Doctor Report</label>
-                    <div>
-                        <div ng-if="vm.apeksha.doctorReport" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.doctorReportContentType, vm.apeksha.doctorReport)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.doctorReportContentType}}, {{vm.byteSize(vm.apeksha.doctorReport)}}</span>
-                            <button type="button" ng-click="vm.apeksha.doctorReport=null;vm.apeksha.doctorReportContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setDoctorReport($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
-                    </div>
-                    <input type="hidden" class="form-control" name="doctorReport" id="field_doctorReport"
-                            ng-model="vm.apeksha.doctorReport"
-                            />
-                    <input type="hidden" class="form-control" name="doctorReportContentType" id="field_doctorReportContentType"
-                            ng-model="vm.apeksha.doctorReportContentType" />
-                </div>
-                <div class="form-group" ngf-drop ngf-change="vm.setBankPassbookFrontPage($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankPassbookFrontPage" for="field_bankPassbookFrontPage">Bank Passbook Front Page</label>
-                    <div>
-                        <div ng-if="vm.apeksha.bankPassbookFrontPage" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.bankPassbookFrontPageContentType, vm.apeksha.bankPassbookFrontPage)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.bankPassbookFrontPageContentType}}, {{vm.byteSize(vm.apeksha.bankPassbookFrontPage)}}</span>
-                            <button type="button" ng-click="vm.apeksha.bankPassbookFrontPage=null;vm.apeksha.bankPassbookFrontPageContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setBankPassbookFrontPage($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
-                    </div>
-                    <input type="hidden" class="form-control" name="bankPassbookFrontPage" id="field_bankPassbookFrontPage"
-                            ng-model="vm.apeksha.bankPassbookFrontPage"
-                            />
-                    <input type="hidden" class="form-control" name="bankPassbookFrontPageContentType" id="field_bankPassbookFrontPageContentType"
-                            ng-model="vm.apeksha.bankPassbookFrontPageContentType" />
-                </div>
-                <div class="form-group" ngf-drop ngf-change="vm.setNomineePhoto($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePhoto" for="field_nomineePhoto">Nominee Photo</label>
-                    <div>
-                        <div ng-if="vm.apeksha.nomineePhoto" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineePhotoContentType, vm.apeksha.nomineePhoto)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.nomineePhotoContentType}}, {{vm.byteSize(vm.apeksha.nomineePhoto)}}</span>
-                            <button type="button" ng-click="vm.apeksha.nomineePhoto=null;vm.apeksha.nomineePhotoContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setNomineePhoto($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
-                    </div>
-                    <input type="hidden" class="form-control" name="nomineePhoto" id="field_nomineePhoto"
-                            ng-model="vm.apeksha.nomineePhoto"
-                            />
-                    <input type="hidden" class="form-control" name="nomineePhotoContentType" id="field_nomineePhotoContentType"
-                            ng-model="vm.apeksha.nomineePhotoContentType" />
-                </div>
-                <div class="form-group" ngf-drop ngf-change="vm.setNomineeAadharCardRationCard($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeAadharCardRationCard" for="field_nomineeAadharCardRationCard">Nominee Aadhar Card Ration Card</label>
-                    <div>
-                        <div ng-if="vm.apeksha.nomineeAadharCardRationCard" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineeAadharCardRationCardContentType, vm.apeksha.nomineeAadharCardRationCard)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.nomineeAadharCardRationCardContentType}}, {{vm.byteSize(vm.apeksha.nomineeAadharCardRationCard)}}</span>
-                            <button type="button" ng-click="vm.apeksha.nomineeAadharCardRationCard=null;vm.apeksha.nomineeAadharCardRationCardContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setNomineeAadharCardRationCard($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
-                    </div>
-                    <input type="hidden" class="form-control" name="nomineeAadharCardRationCard" id="field_nomineeAadharCardRationCard"
-                            ng-model="vm.apeksha.nomineeAadharCardRationCard"
-                            />
-                    <input type="hidden" class="form-control" name="nomineeAadharCardRationCardContentType" id="field_nomineeAadharCardRationCardContentType"
-                            ng-model="vm.apeksha.nomineeAadharCardRationCardContentType" />
-                </div>
-                <div class="form-group" ngf-drop ngf-change="vm.setNomineeRelationShipProof($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeRelationShipProof" for="field_nomineeRelationShipProof">Nominee Relation Ship Proof</label>
-                    <div>
-                        <div ng-if="vm.apeksha.nomineeRelationShipProof" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineeRelationShipProofContentType, vm.apeksha.nomineeRelationShipProof)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.nomineeRelationShipProofContentType}}, {{vm.byteSize(vm.apeksha.nomineeRelationShipProof)}}</span>
-                            <button type="button" ng-click="vm.apeksha.nomineeRelationShipProof=null;vm.apeksha.nomineeRelationShipProofContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setNomineeRelationShipProof($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
-                    </div>
-                    <input type="hidden" class="form-control" name="nomineeRelationShipProof" id="field_nomineeRelationShipProof"
-                            ng-model="vm.apeksha.nomineeRelationShipProof"
-                            />
-                    <input type="hidden" class="form-control" name="nomineeRelationShipProofContentType" id="field_nomineeRelationShipProofContentType"
-                            ng-model="vm.apeksha.nomineeRelationShipProofContentType" />
-                </div>
-                <div class="form-group" ngf-drop ngf-change="vm.setNomineeBankPassbookFrontPage($file, vm.apeksha)">
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankPassbookFrontPage" for="field_nomineeBankPassbookFrontPage">Nominee Bank Passbook Front Page</label>
-                    <div>
-                        <div ng-if="vm.apeksha.nomineeBankPassbookFrontPage" class="help-block clearfix">
-                            <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineeBankPassbookFrontPageContentType, vm.apeksha.nomineeBankPassbookFrontPage)" data-translate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{vm.apeksha.nomineeBankPassbookFrontPageContentType}}, {{vm.byteSize(vm.apeksha.nomineeBankPassbookFrontPage)}}</span>
-                            <button type="button" ng-click="vm.apeksha.nomineeBankPassbookFrontPage=null;vm.apeksha.nomineeBankPassbookFrontPageContentType=null;"
-                                    class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </div>
-                        <button type="button" ngf-select class="btn btn-default btn-block"
-                                ngf-change="vm.setNomineeBankPassbookFrontPage($file, vm.apeksha)" data-translate="entity.action.addblob">
-                            Add blob
-                        </button>
-                    </div>
-                    <input type="hidden" class="form-control" name="nomineeBankPassbookFrontPage" id="field_nomineeBankPassbookFrontPage"
-                            ng-model="vm.apeksha.nomineeBankPassbookFrontPage"
-                            />
-                    <input type="hidden" class="form-control" name="nomineeBankPassbookFrontPageContentType" id="field_nomineeBankPassbookFrontPageContentType"
-                            ng-model="vm.apeksha.nomineeBankPassbookFrontPageContentType" />
-                </div>
-        
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-                    <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
-                </button>
-                <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
-                </button>
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.remarks" for="field_remarks">Remarks</label>
+                <input type="text" class="form-control" name="remarks" id="field_remarks"
+                    ng-model="vm.apeksha.remarks"
+                    />
             </div>
-        </form>
-        
+            <div class="form-group">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.dateOfApplcation" for="field_dateOfApplcation">Date Of Applcation</label>
+                <div class="input-group">
+                    <input id="field_dateOfApplcation" type="text" class="form-control" name="dateOfApplcation" uib-datepicker-popup="{{dateformat}}" ng-model="vm.apeksha.dateOfApplcation" is-open="vm.datePickerOpenStatus.dateOfApplcation"
+                        />
+                    <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfApplcation')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setPhoto($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.photo" for="field_photo">Photo</label>
+                <div>
+                    <div ng-if="vm.apeksha.photo" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.photoContentType, vm.apeksha.photo)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.photoContentType}}, {{vm.byteSize(vm.apeksha.photo)}}</span>
+                        <button type="button" ng-click="vm.apeksha.photo=null;vm.apeksha.photoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setPhoto($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="photo" id="field_photo"
+                    ng-model="vm.apeksha.photo"
+                    />
+                <input type="hidden" class="form-control" name="photoContentType" id="field_photoContentType"
+                    ng-model="vm.apeksha.photoContentType" />
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setApplicationForm($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicationForm" for="field_applicationForm">Application Form</label>
+                <div>
+                    <div ng-if="vm.apeksha.applicationForm" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.applicationFormContentType, vm.apeksha.applicationForm)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.applicationFormContentType}}, {{vm.byteSize(vm.apeksha.applicationForm)}}</span>
+                        <button type="button" ng-click="vm.apeksha.applicationForm=null;vm.apeksha.applicationFormContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setApplicationForm($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="applicationForm" id="field_applicationForm"
+                    ng-model="vm.apeksha.applicationForm"
+                    />
+                <input type="hidden" class="form-control" name="applicationFormContentType" id="field_applicationFormContentType"
+                    ng-model="vm.apeksha.applicationFormContentType" />
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setAadharCard($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.aadharCard" for="field_aadharCard">Aadhar Card</label>
+                <div>
+                    <div ng-if="vm.apeksha.aadharCard" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.aadharCardContentType, vm.apeksha.aadharCard)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.aadharCardContentType}}, {{vm.byteSize(vm.apeksha.aadharCard)}}</span>
+                        <button type="button" ng-click="vm.apeksha.aadharCard=null;vm.apeksha.aadharCardContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setAadharCard($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="aadharCard" id="field_aadharCard"
+                    ng-model="vm.apeksha.aadharCard"
+                    />
+                <input type="hidden" class="form-control" name="aadharCardContentType" id="field_aadharCardContentType"
+                    ng-model="vm.apeksha.aadharCardContentType" />
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setRationCard($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.rationCard" for="field_rationCard">Ration Card</label>
+                <div>
+                    <div ng-if="vm.apeksha.rationCard" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.rationCardContentType, vm.apeksha.rationCard)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.rationCardContentType}}, {{vm.byteSize(vm.apeksha.rationCard)}}</span>
+                        <button type="button" ng-click="vm.apeksha.rationCard=null;vm.apeksha.rationCardContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setRationCard($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="rationCard" id="field_rationCard"
+                    ng-model="vm.apeksha.rationCard"
+                    />
+                <input type="hidden" class="form-control" name="rationCardContentType" id="field_rationCardContentType"
+                    ng-model="vm.apeksha.rationCardContentType" />
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setDoctorReport($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.doctorReport" for="field_doctorReport">Doctor Report</label>
+                <div>
+                    <div ng-if="vm.apeksha.doctorReport" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.doctorReportContentType, vm.apeksha.doctorReport)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.doctorReportContentType}}, {{vm.byteSize(vm.apeksha.doctorReport)}}</span>
+                        <button type="button" ng-click="vm.apeksha.doctorReport=null;vm.apeksha.doctorReportContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setDoctorReport($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="doctorReport" id="field_doctorReport"
+                    ng-model="vm.apeksha.doctorReport"
+                    />
+                <input type="hidden" class="form-control" name="doctorReportContentType" id="field_doctorReportContentType"
+                    ng-model="vm.apeksha.doctorReportContentType" />
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setBankPassbookFrontPage($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.bankPassbookFrontPage" for="field_bankPassbookFrontPage">Bank Passbook Front Page</label>
+                <div>
+                    <div ng-if="vm.apeksha.bankPassbookFrontPage" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.bankPassbookFrontPageContentType, vm.apeksha.bankPassbookFrontPage)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.bankPassbookFrontPageContentType}}, {{vm.byteSize(vm.apeksha.bankPassbookFrontPage)}}</span>
+                        <button type="button" ng-click="vm.apeksha.bankPassbookFrontPage=null;vm.apeksha.bankPassbookFrontPageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setBankPassbookFrontPage($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="bankPassbookFrontPage" id="field_bankPassbookFrontPage"
+                    ng-model="vm.apeksha.bankPassbookFrontPage"
+                    />
+                <input type="hidden" class="form-control" name="bankPassbookFrontPageContentType" id="field_bankPassbookFrontPageContentType"
+                    ng-model="vm.apeksha.bankPassbookFrontPageContentType" />
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setNomineePhoto($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePhoto" for="field_nomineePhoto">Nominee Photo</label>
+                <div>
+                    <div ng-if="vm.apeksha.nomineePhoto" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineePhotoContentType, vm.apeksha.nomineePhoto)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.nomineePhotoContentType}}, {{vm.byteSize(vm.apeksha.nomineePhoto)}}</span>
+                        <button type="button" ng-click="vm.apeksha.nomineePhoto=null;vm.apeksha.nomineePhotoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setNomineePhoto($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="nomineePhoto" id="field_nomineePhoto"
+                    ng-model="vm.apeksha.nomineePhoto"
+                    />
+                <input type="hidden" class="form-control" name="nomineePhotoContentType" id="field_nomineePhotoContentType"
+                    ng-model="vm.apeksha.nomineePhotoContentType" />
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setNomineeAadharCardRationCard($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeAadharCardRationCard" for="field_nomineeAadharCardRationCard">Nominee Aadhar Card Ration Card</label>
+                <div>
+                    <div ng-if="vm.apeksha.nomineeAadharCardRationCard" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineeAadharCardRationCardContentType, vm.apeksha.nomineeAadharCardRationCard)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.nomineeAadharCardRationCardContentType}}, {{vm.byteSize(vm.apeksha.nomineeAadharCardRationCard)}}</span>
+                        <button type="button" ng-click="vm.apeksha.nomineeAadharCardRationCard=null;vm.apeksha.nomineeAadharCardRationCardContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setNomineeAadharCardRationCard($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="nomineeAadharCardRationCard" id="field_nomineeAadharCardRationCard"
+                    ng-model="vm.apeksha.nomineeAadharCardRationCard"
+                    />
+                <input type="hidden" class="form-control" name="nomineeAadharCardRationCardContentType" id="field_nomineeAadharCardRationCardContentType"
+                    ng-model="vm.apeksha.nomineeAadharCardRationCardContentType" />
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setNomineeRelationShipProof($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeRelationShipProof" for="field_nomineeRelationShipProof">Nominee Relation Ship Proof</label>
+                <div>
+                    <div ng-if="vm.apeksha.nomineeRelationShipProof" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineeRelationShipProofContentType, vm.apeksha.nomineeRelationShipProof)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.nomineeRelationShipProofContentType}}, {{vm.byteSize(vm.apeksha.nomineeRelationShipProof)}}</span>
+                        <button type="button" ng-click="vm.apeksha.nomineeRelationShipProof=null;vm.apeksha.nomineeRelationShipProofContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setNomineeRelationShipProof($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="nomineeRelationShipProof" id="field_nomineeRelationShipProof"
+                    ng-model="vm.apeksha.nomineeRelationShipProof"
+                    />
+                <input type="hidden" class="form-control" name="nomineeRelationShipProofContentType" id="field_nomineeRelationShipProofContentType"
+                    ng-model="vm.apeksha.nomineeRelationShipProofContentType" />
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setNomineeBankPassbookFrontPage($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankPassbookFrontPage" for="field_nomineeBankPassbookFrontPage">Nominee Bank Passbook Front Page</label>
+                <div>
+                    <div ng-if="vm.apeksha.nomineeBankPassbookFrontPage" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.nomineeBankPassbookFrontPageContentType, vm.apeksha.nomineeBankPassbookFrontPage)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.nomineeBankPassbookFrontPageContentType}}, {{vm.byteSize(vm.apeksha.nomineeBankPassbookFrontPage)}}</span>
+                        <button type="button" ng-click="vm.apeksha.nomineeBankPassbookFrontPage=null;vm.apeksha.nomineeBankPassbookFrontPageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setNomineeBankPassbookFrontPage($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="nomineeBankPassbookFrontPage" id="field_nomineeBankPassbookFrontPage"
+                    ng-model="vm.apeksha.nomineeBankPassbookFrontPage"
+                    />
+                <input type="hidden" class="form-control" name="nomineeBankPassbookFrontPageContentType" id="field_nomineeBankPassbookFrontPageContentType"
+                    ng-model="vm.apeksha.nomineeBankPassbookFrontPageContentType" />
+            </div>
+            <div class="form-group" ngf-drop ngf-change="vm.setAdditionalDocuments($file, vm.apeksha)">
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.additionalDocuments" for="field_additionalDocuments">Additional Documents</label>
+                <div>
+                    <div ng-if="vm.apeksha.additionalDocuments" class="help-block clearfix">
+                        <a class="pull-left" ng-click="vm.openFile(vm.apeksha.additionalDocumentsContentType, vm.apeksha.additionalDocuments)" data-translate="entity.action.open">open</a><br>
+                        <span class="pull-left">{{vm.apeksha.additionalDocumentsContentType}}, {{vm.byteSize(vm.apeksha.additionalDocuments)}}</span>
+                        <button type="button" ng-click="vm.apeksha.additionalDocuments=null;vm.apeksha.additionalDocumentsContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                    <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setAdditionalDocuments($file, vm.apeksha)" data-translate="entity.action.addblob">
+                    Add blob
+                    </button>
+                </div>
+                <input type="hidden" class="form-control" name="additionalDocuments" id="field_additionalDocuments"
+                    ng-model="vm.apeksha.additionalDocuments"
+                    />
+                <input type="hidden" class="form-control" name="additionalDocumentsContentType" id="field_additionalDocumentsContentType"
+                    ng-model="vm.apeksha.additionalDocumentsContentType" />
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+            </button>
+            <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+            </button>
+        </div>
+    </form>
