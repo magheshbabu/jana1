@@ -20,11 +20,11 @@
 				"register": "രജിസ്റ്റര്‍"
 			},
             "instructions": {
-                "main": "Instructions",
-                "dataentry": "Data Entry Instructions",
-                "login": "Login / Logout Instructions",
-                "upload": "Image Upload Instructions",
-                "subject": "Subject Instructions"
+                "main": "കുറിപ്പുകള്‍",
+                "dataentry": "ഡാറ്റ ചെയ്യാനുള്ള കുറിപ്പുകള്‍",
+                "login": "ലോഗിന്‍ / ലോഗൌട്ട് കുറിപ്പുകള്‍",
+                "upload": "ഇമേജ് അപ്‌ലോഡ്‌ ചെയ്യാനുള്ള കുറിപ്പുകള്‍",
+                "subject": "സോഫ്റ്റ്‌വെയറിനെ കുറിചുള്ള കുറിപ്പുകള്‍"
             },
 			"admin": {
 				"main": "അട്മിനിസ്ട്രറേന്‍",
@@ -64,7 +64,7 @@
 					"required": "നിങ്ങളുടെ പാസ് വേര്‍ഡ് നിര്‍ബന്ധം.",
 					"minlength": "നിങ്ങളുടെ പാസ് വേര്‍ഡ് ല്‍ കുറഞ്ഞത്‌ നാല് ക്യാരക്ടര്‍ ഉണ്ടാകണം.",
 					"maxlength": "നിങ്ങളുടെ പാസ് വേര്‍ഡ് ക്യാരക്ടര്‍ 50 ല്‍ കൂടാന്‍ പാടില്ല .",
-					"strength": "Password strength:"
+					"strength": "പാസ്സ്‌വേര്ഡിന്‍റെ ഗുണം‍:"
 				},
 				"confirmpassword": {
 					"required": "നിങ്ങളുടെ ഉറപ്പാക്കിയ പാസ് വേര്‍ഡ് നിര്‍ബന്ധം.",
@@ -89,7 +89,7 @@
 	},
 	"entity": {
 		"action": {
-			"addblob": "Add blob",
+			"addblob": "മറ്റു രേഖകള്‍ കൂട്ടിച്ചെര്‍ക്കല്‍‍",
 			"addimage": "ഫോട്ടോ ചേര്‍ക്കുക",
 			"back": "പുറകിലേക്ക്",
 			"cancel": "വെട്ടിക്കളയുക",
@@ -107,7 +107,7 @@
 			"title": "ഒഴിവാക്കിഎന്ന് ഉറപ്പുവരുത്തുക"
 		},
 		"validation": {
-			"required": "This field is required.",
+			"required": "ഈ രേഖ ആവശ്യമാണ്.",
 			"minlength": "This field is required to be at least {{ min }} characters.",
 			"maxlength": "This field cannot be longer than {{ max }} characters.",
 			"min": "This field should be at least {{ min }}.",
@@ -120,7 +120,7 @@
 		}
 	},
 	"error": {
-		"internalServerError": "Internal server error",
+		"internalServerError": "ഇന്റെര്‍ണല്‍ സെര്‍വര്‍ എറര്‍",
 		"server.not.reachable": "Server not reachable",
 		"url.not.found": "ഇപ്പോള്‍ ലഭ്യമല്ല",
 		"NotNull": "Field {{ fieldName }} cannot be empty!",

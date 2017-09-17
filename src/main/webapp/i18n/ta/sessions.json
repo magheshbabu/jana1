@@ -1,11 +1,11 @@
 {
     "sessions": {
-        "title": "தற்போதைய வேளைகள் [<b>{{username}}</b>]",
+        "title": "ടെറ്റില്‍ [<b>{{username}}</b>]",
         "table": {
-            "ipaddress": "ஐ.பி முகவரி",
+            "ipaddress": "ഐ പി അഡ്രെസ്സ്",
             "useragent": "பிரெளஸர்",
-            "date": "தேதி",
-            "button": "செயலற்ற செய்க"
+            "date": "തിയതി",
+            "button": "ബട്ടന്‍"
         },
         "messages": {
             "success": "<strong>வேளை செயலற்றப்பட்டது!</strong>",

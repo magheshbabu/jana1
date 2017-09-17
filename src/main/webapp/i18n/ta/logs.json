@@ -1,11 +1,11 @@
 {
     "logs": {
-        "title": "பதிவுகள்",
-        "nbloggers": "{{ total }} பதிவேடுகள் உள்ளன.",
-        "filter": "வடி",
+        "title": "ടെറ്റില്‍",
+        "nbloggers": "{{ total }} nbloggers.",
+        "filter": "ഫില്‍റ്റര്‍",
         "table": {
-            "name": "பெயர்",
-            "level": "நிலை"
+            "name": "പേര്",
+            "level": "ലെവല്‍"
         }
     }
 }
