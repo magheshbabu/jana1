@@ -35,6 +35,7 @@
             "houseName": "House Name",
             "houseNumber": "House Number",
             "tcNumber": "Tc Number",
+			"place": "Place",            
             "village": "Village",
             "taluk": "Taluk",
             "panchayat": "Panchayat",
