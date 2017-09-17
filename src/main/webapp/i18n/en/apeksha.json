@@ -97,7 +97,7 @@
             "nomineeBankAccountNumber": "Nominee Bank Account Number",
             "nomineeBankIfscCode": "Nominee Bank Ifsc Code",
             "photo": "Photo",
-            "attachmentDetails": "Photo",
+            "attachmentDetails": "Image Upload",            
             "applicationForm": "Application Form",
             "aadharCard": "Aadhar Card",
             "rationCard": "Ration Card",

@@ -26,25 +26,25 @@
                             />
                     </div>
                     <div class="panel-body" ng-show = "vm.isApplicantApplyingForBeneficiary">
-                        <div class="form-group">
+                        <div class="form-group"><!-- dummy field -->
                             <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantName" for="field_applicantName">Applicant Name</label>
                             <input type="text" class="form-control" name="applicantName" id="field_applicantName"
                                 ng-model="vm.apeksha.applicantName"
                                 />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group"><!-- dummy field -->
                             <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantIdProofDetails" for="field_applicantIdProofDetails">Applicant ID Proof Details</label>
                              <input type="text" class="form-control" name="applicantIdProofDetails" id="field_applicantIdProofDetails"
                                 ng-model="vm.apeksha.applicantIdProofDetails"
                                 /> 
                          </div>
-                        <div class="form-group">
+                        <div class="form-group"><!-- dummy field -->
                             <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantRelationShip" for="field_applicantRelationShip">Applicant Relationship with Beneficiary</label>
                              <input type="text" class="form-control" name="applicantRelationShip" id="field_applicantRelationShip"
                                 ng-model="vm.apeksha.applicantRelationShip"
                                 /> 
                         </div>
-                        <div class="form-group">
+                        <div class="form-group"><!-- dummy field -->
                                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantMobileNumber" for="field_applicantMobileNumber">Applicant Mobile Number</label>
                                  <input type="text" class="form-control" name="applicantMobileNumber" id="field_applicantRelationShip"
                                     ng-model="vm.apeksha.applicantMobileNumber"
@@ -228,7 +228,7 @@
                     ng-model="vm.apeksha.tcNumber"
                     />
             </div>
-            <div class="form-group">
+            <div class="form-group"><!-- dummy field -->
                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.place" for="field_place">Place</label>
                     <input type="text" class="form-control" name="place" id="field_tcNumber"
                         ng-model="vm.place"
@@ -329,7 +329,7 @@
                     />
             </div>
             <div class="panel panel-info">
-                <div class="panel-heading" >
+                <div class="panel-heading" ><!-- dummy field -->
                     <label  data-translate="janasanthwanamApp.apeksha.hasOwnProperty" for="field_hasOwnProperty">Has Own Property</label>
                     <input type="checkbox"  name="hasOwnPropertyy" id="field_hasOwnProperty"
                         ng-model="vm.hasOwnProperty" ng-true-value="true" ng-false-value="false"  ng-init="vm.hasOwnProperty=false"
@@ -340,6 +340,7 @@
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.landTotalCent" for="field_landTotalCent">Land Total Cent</label>
                         <input type="text" class="form-control" name="landTotalCent" id="field_landTotalCent"
                             ng-model="vm.apeksha.landTotalCent"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
@@ -381,11 +382,12 @@
                     <div class="panel-body" ng-show="vm.hasRecommendation">
 
 
-                            <div class="form-group">
+                            <div class="form-group"><!-- dummy field -->
                                     <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationChiefMinister" for="field_recommendationChiefMinister">Recommendation Chief Minister</label>
-                                    <input type="checkbox"  name="recommendationChiefMinister" id="field_recommendationChiefMinister"
-                                        ng-model="vm.apeksha.recommendationChiefMinister"
-                                        />
+                                        <select class="form-control" name="recommendationChiefMinister" id="field_recommendationChiefMinister"   >
+                                                <option value = ""></option>
+                                                <option value=”ശ്രീ.പിണറായിവിജയന്‍“>ശ്രീ.പിണറായിവിജയന്‍</option>    
+                                        </select>                                    
                                 </div>
 
                         <div class="form-group">
@@ -395,7 +397,7 @@
                                 /> -->
                             <select class="form-control" name="recommendationMinister" id="field_recommendationMinister" ng-model="vm.apeksha.recommendationMinister"  >
                                 <option value = ""></option>
-                                <option value=”ശ്രീ.പിണറായിവിജയന്‍“>ശ്രീ.പിണറായിവിജയന്‍</option>
+                                <!-- <option value=”ശ്രീ.പിണറായിവിജയന്‍“>ശ്രീ.പിണറായിവിജയന്‍</option> -->
                                 <option value=”ശ്രീ.റ്റി.എം.തോമസ്ഐസക്“>ശ്രീ.റ്റി.എം.തോമസ്ഐസക്</option>
                                 <option value=”ശ്രീ.എം.എം.മണി“>ശ്രീ.എം.എം.മണി</option>
                                 <option value=”ശ്രീ.ജി.സുധാകരന്‍“>ശ്രീ.ജി.സുധാകരന്‍</option>
@@ -643,7 +645,7 @@
             </div>
 
             
-            <div class="panel panel-danger">
+            <div class="panel panel-info">
                     <div class="panel-heading" >
                         <label  data-translate="janasanthwanamApp.apeksha.requirementDetails" for="field_requirementDetails">Requirement Details</label>
                         <!-- <input type="checkbox"  name="requirementDetails" id="field_requirementDetails"
@@ -787,108 +789,126 @@
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeName" for="field_nomineeName">Nominee Name</label>
                         <input type="text" class="form-control" name="nomineeName" id="field_nomineeName"
                             ng-model="vm.apeksha.nomineeName"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeGender" for="field_nomineeGender">Nominee Gender</label>
                         <input type="text" class="form-control" name="nomineeGender" id="field_nomineeGender"
                             ng-model="vm.apeksha.nomineeGender"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeAge" for="field_nomineeAge">Nominee Age</label>
                         <input type="number" class="form-control" name="nomineeAge" id="field_nomineeAge"
                             ng-model="vm.apeksha.nomineeAge"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeRelationship" for="field_nomineeRelationship">Nominee Relationship</label>
                         <input type="text" class="form-control" name="nomineeRelationship" id="field_nomineeRelationship"
                             ng-model="vm.apeksha.nomineeRelationship"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeHouseName" for="field_nomineeHouseName">Nominee House Name</label>
                         <input type="text" class="form-control" name="nomineeHouseName" id="field_nomineeHouseName"
                             ng-model="vm.apeksha.nomineeHouseName"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeHouseNumber" for="field_nomineeHouseNumber">Nominee House Number</label>
                         <input type="text" class="form-control" name="nomineeHouseNumber" id="field_nomineeHouseNumber"
                             ng-model="vm.apeksha.nomineeHouseNumber"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeTcNo" for="field_nomineeTcNo">Nominee Tc No</label>
                         <input type="text" class="form-control" name="nomineeTcNo" id="field_nomineeTcNo"
                             ng-model="vm.apeksha.nomineeTcNo"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeVillage" for="field_nomineeVillage">Nominee Village</label>
                         <input type="text" class="form-control" name="nomineeVillage" id="field_nomineeVillage"
                             ng-model="vm.apeksha.nomineeVillage"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeThaluk" for="field_nomineeThaluk">Nominee Thaluk</label>
                         <input type="text" class="form-control" name="nomineeThaluk" id="field_nomineeThaluk"
                             ng-model="vm.apeksha.nomineeThaluk"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePanchayat" for="field_nomineePanchayat">Nominee Panchayat</label>
                         <input type="text" class="form-control" name="nomineePanchayat" id="field_nomineePanchayat"
                             ng-model="vm.apeksha.nomineePanchayat"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePostOffice" for="field_nomineePostOffice">Nominee Post Office</label>
                         <input type="text" class="form-control" name="nomineePostOffice" id="field_nomineePostOffice"
                             ng-model="vm.apeksha.nomineePostOffice"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePinCode" for="field_nomineePinCode">Nominee Pin Code</label>
                         <input type="text" class="form-control" name="nomineePinCode" id="field_nomineePinCode"
                             ng-model="vm.apeksha.nomineePinCode"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeMobileNumber" for="field_nomineeMobileNumber">Nominee Mobile Number</label>
                         <input type="text" class="form-control" name="nomineeMobileNumber" id="field_nomineeMobileNumber"
                             ng-model="vm.apeksha.nomineeMobileNumber"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeLandLineWithSTD" for="field_nomineeLandLineWithSTD">Nominee Land Line With STD</label>
                         <input type="text" class="form-control" name="nomineeLandLineWithSTD" id="field_nomineeLandLineWithSTD"
                             ng-model="vm.apeksha.nomineeLandLineWithSTD"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankName" for="field_nomineeBankName">Nominee Bank Name</label>
                         <input type="text" class="form-control" name="nomineeBankName" id="field_nomineeBankName"
                             ng-model="vm.apeksha.nomineeBankName"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankBranch" for="field_nomineeBankBranch">Nominee Bank Branch</label>
                         <input type="text" class="form-control" name="nomineeBankBranch" id="field_nomineeBankBranch"
                             ng-model="vm.apeksha.nomineeBankBranch"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankAccountNumber" for="field_nomineeBankAccountNumber">Nominee Bank Account Number</label>
                         <input type="text" class="form-control" name="nomineeBankAccountNumber" id="field_nomineeBankAccountNumber"
                             ng-model="vm.apeksha.nomineeBankAccountNumber"
+                            value="ഇല്ല"
                             />
                     </div>
                     <div class="form-group">
                         <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineeBankIfscCode" for="field_nomineeBankIfscCode">Nominee Bank Ifsc Code</label>
                         <input type="text" class="form-control" name="nomineeBankIfscCode" id="field_nomineeBankIfscCode"
                             ng-model="vm.apeksha.nomineeBankIfscCode"
+                            value="ഇല്ല"
                             />
                     </div>
                 </div>
@@ -903,16 +923,22 @@
                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.dateOfApplcation" for="field_dateOfApplcation">Date Of Applcation</label>
                 <div class="input-group">
                     <input id="field_dateOfApplcation" type="text" class="form-control" name="dateOfApplcation" uib-datepicker-popup="{{dateformat}}" ng-model="vm.apeksha.dateOfApplcation" is-open="vm.datePickerOpenStatus.dateOfApplcation"
-                        />
+                        required />
                     <span class="input-group-btn">
                     <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfApplcation')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </div>
+                <div ng-show="editForm.dateOfApplcation.$invalid">
+                        <p class="help-block"
+                            ng-show="editForm.dateOfApplcation.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>                
             </div>
 
             <div class="panel panel-info">
                     <div class="panel-heading" >
-                        <label  data-translate="janasanthwanamApp.apeksha.attachmentDetails" >Image Upload</label>
+                        <label  data-translate="janasanthwanamApp.apeksha.attachmentDetails">Image Upload</label>
                     </div>
                     <div class="panel-body" >
             
