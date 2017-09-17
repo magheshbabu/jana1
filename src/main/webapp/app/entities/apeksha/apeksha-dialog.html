@@ -44,6 +44,12 @@
                                 ng-model="vm.apeksha.applicantRelationShip"
                                 /> 
                         </div>
+                        <div class="form-group">
+                                <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantMobileNumber" for="field_applicantMobileNumber">Applicant Mobile Number</label>
+                                 <input type="text" class="form-control" name="applicantMobileNumber" id="field_applicantRelationShip"
+                                    ng-model="vm.apeksha.applicantMobileNumber"
+                                    /> 
+                            </div>                        
         
                     </div>
                 </div>
@@ -373,6 +379,15 @@
                             />
                     </div>
                     <div class="panel-body" ng-show="vm.hasRecommendation">
+
+
+                            <div class="form-group">
+                                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationChiefMinister" for="field_recommendationChiefMinister">Recommendation Chief Minister</label>
+                                    <input type="checkbox"  name="recommendationChiefMinister" id="field_recommendationChiefMinister"
+                                        ng-model="vm.apeksha.recommendationChiefMinister"
+                                        />
+                                </div>
+
                         <div class="form-group">
                             <label class="control-label" data-translate="janasanthwanamApp.apeksha.recommendationMinister" for="field_recommendationMinister">Recommendation Minister</label>
                             <!-- <input type="text" class="form-control" name="recommendationMinister" id="field_recommendationMinister"
@@ -894,6 +909,14 @@
                     </span>
                 </div>
             </div>
+
+            <div class="panel panel-info">
+                    <div class="panel-heading" >
+                        <label  data-translate="janasanthwanamApp.apeksha.attachmentDetails" >Image Upload</label>
+                    </div>
+                    <div class="panel-body" >
+            
+
             <div class="form-group" ngf-drop ngf-change="vm.setPhoto($file, vm.apeksha)">
                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.photo" for="field_photo">Photo</label>
                 <div>
@@ -1139,6 +1162,8 @@
                     />
                 <input type="hidden" class="form-control" name="additionalDocumentsContentType" id="field_additionalDocumentsContentType"
                     ng-model="vm.apeksha.additionalDocumentsContentType" />
+            </div>
+        </div>
             </div>
         </div>
         <div class="modal-footer">
