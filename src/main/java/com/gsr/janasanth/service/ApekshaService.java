@@ -1,8 +1,13 @@
 package com.gsr.janasanth.service;
 
-import com.gsr.janasanth.service.dto.ApekshaDTO;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+
+import com.gsr.janasanth.service.dto.ApekshaDTO;
 
 /**
  * Service Interface for managing Apeksha.
@@ -49,4 +54,7 @@ public interface ApekshaService {
      *  @return the list of entities
      */
     Page<ApekshaDTO> search(String query, Pageable pageable);
+
+	
+    File getFile(Long id, String fileName) throws FileNotFoundException, IOException;
 }

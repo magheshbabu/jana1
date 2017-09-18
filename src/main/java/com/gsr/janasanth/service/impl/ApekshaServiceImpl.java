@@ -1,13 +1,13 @@
 package com.gsr.janasanth.service.impl;
 
-import com.gsr.janasanth.service.ApekshaService;
-import com.gsr.janasanth.service.FileService;
-import com.gsr.janasanth.config.ApplicationProperties;
-import com.gsr.janasanth.domain.Apeksha;
-import com.gsr.janasanth.repository.ApekshaRepository;
-import com.gsr.janasanth.repository.search.ApekshaSearchRepository;
-import com.gsr.janasanth.service.dto.ApekshaDTO;
-import com.gsr.janasanth.service.mapper.ApekshaMapper;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.UUID;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -15,11 +15,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.elasticsearch.index.query.QueryBuilders.*;
-
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.util.UUID;
+import com.gsr.janasanth.config.ApplicationProperties;
+import com.gsr.janasanth.domain.Apeksha;
+import com.gsr.janasanth.repository.ApekshaRepository;
+import com.gsr.janasanth.repository.search.ApekshaSearchRepository;
+import com.gsr.janasanth.service.ApekshaService;
+import com.gsr.janasanth.service.FileService;
+import com.gsr.janasanth.service.dto.ApekshaDTO;
+import com.gsr.janasanth.service.mapper.ApekshaMapper;
 
 /**
  * Service Implementation for managing Apeksha.
@@ -184,145 +187,146 @@ public class ApekshaServiceImpl implements ApekshaService {
     private ApekshaDTO toDto(Apeksha apeksha) {
 
         ApekshaDTO dto = apekshaMapper.toDto(apeksha);
-        if (null != dto.getAdditionalDocuments() && dto.getAdditionalDocuments().length > 0) {
-            String fileName = new String(dto.getAdditionalDocuments(), Charset.forName("UTF-8"));
-
-            try {
-                dto.setAdditionalDocuments(fileService
-                        .readBytesFromDisk(properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        if (null != dto.getPhoto() && dto.getPhoto().length > 0) {
-            String photofileName = new String(dto.getPhoto(), Charset.forName("UTF-8"));
-
-            try {
-                dto.setPhoto(fileService.readBytesFromDisk(
-                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", photofileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        if (null != dto.getApplicationForm() && dto.getApplicationForm().length > 0) {
-            String applicationFormfileName = new String(dto.getApplicationForm(), Charset.forName("UTF-8"));
-
-            try {
-                dto.setApplicationForm(fileService.readBytesFromDisk(
-                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", applicationFormfileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        if (null != dto.getAadharCard() && dto.getAadharCard().length > 0) {
-            String aadharCardfileName = new String(dto.getAadharCard(), Charset.forName("UTF-8"));
-
-            try {
-                dto.setAadharCard(fileService.readBytesFromDisk(
-                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", aadharCardfileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        if (null != dto.getRationCard() && dto.getRationCard().length > 0) {
-            String rationCardfileName = new String(dto.getRationCard(), Charset.forName("UTF-8"));
-
-            try {
-                dto.setRationCard(fileService.readBytesFromDisk(
-                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", rationCardfileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        if (null != dto.getDoctorReport() && dto.getDoctorReport().length > 0) {
-            String doctorReportfileName = new String(dto.getDoctorReport(), Charset.forName("UTF-8"));
-
-            try {
-                dto.setDoctorReport(fileService.readBytesFromDisk(
-                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", doctorReportfileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        if (null != dto.getBankPassbookFrontPage() && dto.getBankPassbookFrontPage().length > 0) {
-            String bankPassbookFrontPagefileName = new String(dto.getBankPassbookFrontPage(), Charset.forName("UTF-8"));
-
-            try {
-                dto.setBankPassbookFrontPage(fileService.readBytesFromDisk(
-                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", bankPassbookFrontPagefileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        if (null != dto.getNomineePhoto() && dto.getNomineePhoto().length > 0) {
-            String nomineePhotofileName = new String(dto.getNomineePhoto(), Charset.forName("UTF-8"));
-
-            try {
-                dto.setNomineePhoto(fileService.readBytesFromDisk(
-                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", nomineePhotofileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        if (null != dto.getNomineeAadharCardRationCard() && dto.getNomineeAadharCardRationCard().length > 0) {
-            String nomineeAadharCardRationCardfileName = new String(dto.getNomineeAadharCardRationCard(),
-                    Charset.forName("UTF-8"));
-
-            try {
-                dto.setNomineeAadharCardRationCard(
-                        fileService.readBytesFromDisk(properties.getApeksha().getFileRoot() + apeksha.getId() + "/",
-                                nomineeAadharCardRationCardfileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        if (null != dto.getNomineeRelationShipProof() && dto.getNomineeRelationShipProof().length > 0) {
-            String nomineeRelationShipProoffileName = new String(dto.getNomineeRelationShipProof(),
-                    Charset.forName("UTF-8"));
-
-            try {
-                dto.setNomineeRelationShipProof(
-                        fileService.readBytesFromDisk(properties.getApeksha().getFileRoot() + apeksha.getId() + "/",
-                                nomineeRelationShipProoffileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        if (null != dto.getNomineeBankPassbookFrontPage() && dto.getNomineeBankPassbookFrontPage().length > 0) {
-            String nomineeBankPassbookFrontPagefileName = new String(dto.getNomineeBankPassbookFrontPage(),
-                    Charset.forName("UTF-8"));
-
-            try {
-                dto.setNomineeBankPassbookFrontPage(
-                        fileService.readBytesFromDisk(properties.getApeksha().getFileRoot() + apeksha.getId() + "/",
-                                nomineeBankPassbookFrontPagefileName));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
         return dto;
+//        if (null != dto.getAdditionalDocuments() && dto.getAdditionalDocuments().length > 0) {
+//            String fileName = new String(dto.getAdditionalDocuments(), Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setAdditionalDocuments(fileService
+//                        .readBytesFromDisk(properties.getApeksha().getFileRoot() + apeksha.getId() + "/", fileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        if (null != dto.getPhoto() && dto.getPhoto().length > 0) {
+//            String photofileName = new String(dto.getPhoto(), Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setPhoto(fileService.readBytesFromDisk(
+//                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", photofileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        if (null != dto.getApplicationForm() && dto.getApplicationForm().length > 0) {
+//            String applicationFormfileName = new String(dto.getApplicationForm(), Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setApplicationForm(fileService.readBytesFromDisk(
+//                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", applicationFormfileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        if (null != dto.getAadharCard() && dto.getAadharCard().length > 0) {
+//            String aadharCardfileName = new String(dto.getAadharCard(), Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setAadharCard(fileService.readBytesFromDisk(
+//                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", aadharCardfileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        if (null != dto.getRationCard() && dto.getRationCard().length > 0) {
+//            String rationCardfileName = new String(dto.getRationCard(), Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setRationCard(fileService.readBytesFromDisk(
+//                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", rationCardfileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        if (null != dto.getDoctorReport() && dto.getDoctorReport().length > 0) {
+//            String doctorReportfileName = new String(dto.getDoctorReport(), Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setDoctorReport(fileService.readBytesFromDisk(
+//                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", doctorReportfileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        if (null != dto.getBankPassbookFrontPage() && dto.getBankPassbookFrontPage().length > 0) {
+//            String bankPassbookFrontPagefileName = new String(dto.getBankPassbookFrontPage(), Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setBankPassbookFrontPage(fileService.readBytesFromDisk(
+//                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", bankPassbookFrontPagefileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        if (null != dto.getNomineePhoto() && dto.getNomineePhoto().length > 0) {
+//            String nomineePhotofileName = new String(dto.getNomineePhoto(), Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setNomineePhoto(fileService.readBytesFromDisk(
+//                        properties.getApeksha().getFileRoot() + apeksha.getId() + "/", nomineePhotofileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        if (null != dto.getNomineeAadharCardRationCard() && dto.getNomineeAadharCardRationCard().length > 0) {
+//            String nomineeAadharCardRationCardfileName = new String(dto.getNomineeAadharCardRationCard(),
+//                    Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setNomineeAadharCardRationCard(
+//                        fileService.readBytesFromDisk(properties.getApeksha().getFileRoot() + apeksha.getId() + "/",
+//                                nomineeAadharCardRationCardfileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        if (null != dto.getNomineeRelationShipProof() && dto.getNomineeRelationShipProof().length > 0) {
+//            String nomineeRelationShipProoffileName = new String(dto.getNomineeRelationShipProof(),
+//                    Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setNomineeRelationShipProof(
+//                        fileService.readBytesFromDisk(properties.getApeksha().getFileRoot() + apeksha.getId() + "/",
+//                                nomineeRelationShipProoffileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        if (null != dto.getNomineeBankPassbookFrontPage() && dto.getNomineeBankPassbookFrontPage().length > 0) {
+//            String nomineeBankPassbookFrontPagefileName = new String(dto.getNomineeBankPassbookFrontPage(),
+//                    Charset.forName("UTF-8"));
+//
+//            try {
+//                dto.setNomineeBankPassbookFrontPage(
+//                        fileService.readBytesFromDisk(properties.getApeksha().getFileRoot() + apeksha.getId() + "/",
+//                                nomineeBankPassbookFrontPagefileName));
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        return dto;
     }
 
     /**
@@ -364,5 +368,12 @@ public class ApekshaServiceImpl implements ApekshaService {
         log.debug("Request to search for a page of Apekshas for query {}", query);
         Page<Apeksha> result = apekshaSearchRepository.search(queryStringQuery(query), pageable);
         return result.map(a -> toDto(a));
+    }
+    
+    @Override
+    public File getFile(Long id, String fileName) throws FileNotFoundException, IOException {
+    	
+    	File file = new File(properties.getFileRoot() + properties.getApeksha().getFileRoot() + id + "/" + fileName);
+    	return file;
     }
 }
