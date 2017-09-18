@@ -5,6 +5,9 @@
 		"menu": {
 			"home": "ഹോം",
 			"jhipster-needle-menu-add-element": "GSR will add additional menu entries here (do not translate!)",
+            "reports": {
+                "main": "റിപ്പോര്‍ട്ട്‌"
+            },			
 			"entities": {
 				"main": "വസ്തുത",
 				"apeksha": "അപേക്ഷ",

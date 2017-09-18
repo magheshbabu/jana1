@@ -5,6 +5,9 @@
         "menu": {
             "home": "Home",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+            "reports": {
+                "main": "Reports"
+            },
             "entities": {
                 "main": "Entities",
                 "apeksha": "Apeksha",
@@ -83,7 +86,7 @@
             "id": "ID"
         },
         "ribbon": {
-            "dev":"Development"
+            "dev": "Development"
         },
         "item-count": "Showing {{first}} - {{second}} of {{total}} items."
     },
