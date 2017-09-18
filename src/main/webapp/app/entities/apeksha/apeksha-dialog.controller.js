@@ -21,7 +21,7 @@
         vm.openFile = DataUtils.openFile;
         vm.save = save;
 
-
+        console.log('message11' + JSON.stringify(vm.apeksha.id));
         /**
          * we dont store the place of the hospital in database as a seperate field...
          * but we store the place of hospital in database along with hospital with hypen seperated
@@ -34,11 +34,11 @@
             if (typeof (vm.apeksha.hospitalName) !== 'undefined' && vm.apeksha.hospitalName !== null && vm.apeksha.hospitalName.indexOf('-') !== -1)
             {
                 vm.hosptialFullStrings = hospitalFullNameAndPlace.split("-")
-                console.log(vm.hosptialFullStrings);
-                console.log(vm.hosptialFullStrings[0]);
-                console.log(vm.hosptialFullStrings[1]);
+               // console.log(vm.hosptialFullStrings);
+               // console.log(vm.hosptialFullStrings[0]);
+               // console.log(vm.hosptialFullStrings[1]);
                 hospitalPlaceName = vm.hosptialFullStrings[1].trim();
-                console.log('trimmed place name = ' + hospitalPlaceName);
+               // console.log('trimmed place name = ' + hospitalPlaceName);
             }
             return hospitalPlaceName;
         }

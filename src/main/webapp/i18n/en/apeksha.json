@@ -3,8 +3,8 @@
         "apeksha" : {
             "home": {
                 "title": "Apekshas",
-                "createLabel": "Create a new Apeksha",
-                "createOrEditLabel": "Create or edit a Apeksha",
+                "createLabel": "New Application",
+                "createOrEditLabel": "Edit Application",
                 "search": "Search for Apeksha"
             },
             "created": "A new Apeksha is created with identifier {{ param }}",
@@ -14,7 +14,7 @@
                 "question": "Are you sure you want to delete Apeksha {{ id }}?"
             },
             "detail": {
-                "title": "Apeksha"
+                "title": "Application"
             },
             "applicationNumber": "Application Number",
             "beneficiaryName": "Beneficiary Name",
