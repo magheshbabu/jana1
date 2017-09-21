@@ -21,7 +21,18 @@
         });
         $scope.$on('$destroy', unsubscribe);
         
+        vm.additionalDocumentsFileName = $window.atob(vm.apeksha.additionalDocuments);
         vm.applicationFormFileName = $window.atob(vm.apeksha.applicationForm);
+        vm.aadharCardFileName = $window.atob(vm.apeksha.aadharCard);
+        vm.rationCardFileName = $window.atob(vm.apeksha.rationCard);
+        vm.doctorReportFileName = $window.atob(vm.apeksha.doctorReport);
+        vm.bankPassbookFrontPageFileName = $window.atob(vm.apeksha.bankPassbookFrontPage);
+        vm.nomineePhotoFileName = $window.atob(vm.apeksha.nomineePhoto);
+        vm.nomineeAadharCardRationCardFileName = $window.atob(vm.apeksha.nomineeAadharCardRationCard);
+        vm.nomineeRelationShipProofFileName = $window.atob(vm.apeksha.nomineeRelationShipProof);
+        vm.nomineeBankPassbookFrontPageFileName = $window.atob(vm.apeksha.nomineeBankPassbookFrontPage);
+
+        
 
         vm.openWindow = function(that) {
             console.log(that)

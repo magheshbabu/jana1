@@ -231,9 +231,8 @@
         <dt><span data-translate="janasanthwanamApp.apeksha.additionalDocuments">Additional Documents</span></dt>
         <dd>
             <div ng-if="vm.apeksha.additionalDocuments">
-                <a ng-click="vm.openFile(vm.apeksha.additionalDocumentsContentType, vm.apeksha.additionalDocuments)" data-translate="entity.action.open">open</a>
+                <a ng-click="vm.openFileURL(vm.additionalDocumentsFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
                 <span data-translate="janasanthwanamApp.apeksha.additionalDocuments"></span>
-                <!-- {{vm.apeksha.additionalDocumentsContentType}} --><!-- , {{vm.byteSize(vm.apeksha.additionalDocuments)}} -->
             </div>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.remarks">Remarks</span></dt>
@@ -322,7 +321,7 @@
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.photo">Photo</span></dt>
         <dd>
-            <div ng-if="vm.apeksha.photo">
+            <div ng-if="vm.apeksha.photo"><!--  photo will work in the old way as it is initially loaded as base64 string<added by maghesh> -->
                 <a ng-click="vm.openFile(vm.apeksha.photoContentType, vm.apeksha.photo)" data-translate="entity.action.open">open</a>
                 <!-- {{vm.apeksha.photoContentType}}, {{vm.byteSize(vm.apeksha.photo)}} -->
                <span data-translate="janasanthwanamApp.apeksha.photo"></span><!-- , {{vm.byteSize(vm.apeksha.photo)}} -->
@@ -333,66 +332,63 @@
         <dd>
             <div ng-if="vm.apeksha.applicationForm">
             <a ng-click="vm.openFileURL(vm.applicationFormFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
-                <!-- <a ng-click="vm.openFile(vm.apeksha.applicationFormContentType, vm.apeksha.applicationForm)" data-translate="entity.action.open">open</a> -->
-                <!-- {{vm.apeksha.applicationFormContentType}}, {{vm.byteSize(vm.apeksha.applicationForm)}} -->
-                <span data-translate="janasanthwanamApp.apeksha.applicationForm"></span> <!-- {{ vm.apeksha.applicationForm }} , {{vm.applicationFormFileName}} -->
+                <span data-translate="janasanthwanamApp.apeksha.applicationForm"></span> 
             </div>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.aadharCard">Aadhar Card</span></dt>
         <dd>
             <div ng-if="vm.apeksha.aadharCard">
-                <a ng-click="vm.openFile(vm.apeksha.aadharCardContentType, vm.apeksha.aadharCard)" data-translate="entity.action.open">open</a>
-                <!-- {{vm.apeksha.aadharCardContentType}}, {{vm.byteSize(vm.apeksha.aadharCard)}} -->
-                <span data-translate="janasanthwanamApp.apeksha.aadharCard"></span><!-- , {{vm.byteSize(vm.apeksha.aadharCard)}} -->
+                <a ng-click="vm.openFileURL(vm.aadharCardFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
+                <span data-translate="janasanthwanamApp.apeksha.aadharCard"></span>
             </div>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.rationCard">Ration Card</span></dt>
         <dd>
             <div ng-if="vm.apeksha.rationCard">
-                <a ng-click="vm.openFile(vm.apeksha.rationCardContentType, vm.apeksha.rationCard)" data-translate="entity.action.open">open</a>
-                <span data-translate="janasanthwanamApp.apeksha.rationCard"></span><!-- , {{vm.byteSize(vm.apeksha.rationCard)}} -->
+                <a ng-click="vm.openFileURL(vm.rationCardFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
+                <span data-translate="janasanthwanamApp.apeksha.rationCard"></span>
             </div>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.doctorReport">Doctor Report</span></dt>
         <dd>
             <div ng-if="vm.apeksha.doctorReport">
-                <a ng-click="vm.openFile(vm.apeksha.doctorReportContentType, vm.apeksha.doctorReport)" data-translate="entity.action.open">open</a>
-                <span data-translate="janasanthwanamApp.apeksha.doctorReport"></span><!-- , {{vm.byteSize(vm.apeksha.doctorReport)}} -->
+                <a ng-click="vm.openFileURL(vm.doctorReportFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
+                <span data-translate="janasanthwanamApp.apeksha.doctorReport"></span>
             </div>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.bankPassbookFrontPage">Bank Passbook Front Page</span></dt>
         <dd>
             <div ng-if="vm.apeksha.bankPassbookFrontPage">
-                <a ng-click="vm.openFile(vm.apeksha.bankPassbookFrontPageContentType, vm.apeksha.bankPassbookFrontPage)" data-translate="entity.action.open">open</a>
-                <span data-translate="janasanthwanamApp.apeksha.bankPassbookFrontPage"></span><!-- , {{vm.byteSize(vm.apeksha.bankPassbookFrontPage)}} -->
+                <a ng-click="vm.openFileURL(vm.bankPassbookFrontPageFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
+                <span data-translate="janasanthwanamApp.apeksha.bankPassbookFrontPage"></span>
             </div>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.nomineePhoto">Nominee Photo</span></dt>
         <dd>
             <div ng-if="vm.apeksha.nomineePhoto">
-                <a ng-click="vm.openFile(vm.apeksha.nomineePhotoContentType, vm.apeksha.nomineePhoto)" data-translate="entity.action.open">open</a>
-                <span data-translate="janasanthwanamApp.apeksha.nomineePhoto"></span><!-- , {{vm.byteSize(vm.apeksha.nomineePhoto)}} -->
+                <a ng-click="vm.openFileURL(vm.nomineePhotoFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
+                <span data-translate="janasanthwanamApp.apeksha.nomineePhoto"></span>
             </div>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.nomineeAadharCardRationCard">Nominee Aadhar Card Ration Card</span></dt>
         <dd>
             <div ng-if="vm.apeksha.nomineeAadharCardRationCard">
-                <a ng-click="vm.openFile(vm.apeksha.nomineeAadharCardRationCardContentType, vm.apeksha.nomineeAadharCardRationCard)" data-translate="entity.action.open">open</a>
-                <span data-translate="janasanthwanamApp.apeksha.nomineeAadharCardRationCard"></span><!-- , {{vm.byteSize(vm.apeksha.nomineeAadharCardRationCard)}} -->
+                <a ng-click="vm.openFileURL(vm.nomineeAadharCardRationCardFileName, vm.apeksha.id)"  data-translate="entity.action.open">open</a>
+                <span data-translate="janasanthwanamApp.apeksha.nomineeAadharCardRationCard"></span>
             </div>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.nomineeRelationShipProof">Nominee Relation Ship Proof</span></dt>
         <dd>
             <div ng-if="vm.apeksha.nomineeRelationShipProof">
-                <a ng-click="vm.openFile(vm.apeksha.nomineeRelationShipProofContentType, vm.apeksha.nomineeRelationShipProof)" data-translate="entity.action.open">open</a>
-                <span data-translate="janasanthwanamApp.apeksha.nomineeRelationShipProof"></span><!-- , {{vm.byteSize(vm.apeksha.nomineeRelationShipProof)}} -->
+                <a ng-click="vm.openFileURL(vm.nomineeRelationShipProofFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
+                <span data-translate="janasanthwanamApp.apeksha.nomineeRelationShipProof"></span>
             </div>
         </dd>
         <dt><span data-translate="janasanthwanamApp.apeksha.nomineeBankPassbookFrontPage">Nominee Bank Passbook Front Page</span></dt>
         <dd>
             <div ng-if="vm.apeksha.nomineeBankPassbookFrontPage">
-                <a ng-click="vm.openFile(vm.apeksha.nomineeBankPassbookFrontPageContentType, vm.apeksha.nomineeBankPassbookFrontPage)" data-translate="entity.action.open">open</a>
-                <span data-translate="janasanthwanamApp.apeksha.nomineeBankPassbookFrontPage"></span><!-- , {{vm.byteSize(vm.apeksha.nomineeBankPassbookFrontPage)}} -->
+                <a ng-click="vm.openFileURL(vm.nomineeBankPassbookFrontPageFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
+                <span data-translate="janasanthwanamApp.apeksha.nomineeBankPassbookFrontPage"></span>
             </div>
         </dd>
     </dl>
