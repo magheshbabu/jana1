@@ -16,10 +16,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.nio.file.Files;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.StreamSupport;
@@ -145,4 +151,25 @@ public class ApekshaResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
+    
+    @RequestMapping(value = "/files/{id}/{file_name}", method = RequestMethod.GET)
+    public void getFile(
+    	@PathVariable("id") Long id, 
+        @PathVariable("file_name") String fileName, 
+        HttpServletResponse response) {
+        try {
+          // get your file as InputStream
+          File file = apekshaService.getFile(id, fileName);
+          
+          // copy it to response's OutputStream
+          org.apache.commons.io.IOUtils.copy(new FileInputStream(file), response.getOutputStream());
+          response.setContentType(Files.probeContentType(file.toPath()));
+          response.setHeader("Content-Disposition", "attachment; filename=" + file.getName()); 
+          response.flushBuffer();
+        } catch (IOException ex) {
+          log.info("Error writing file to output stream. Filename was '{}'", fileName, ex);
+          throw new RuntimeException("IOError writing file to output stream");
+        }
+
+    }
 }
