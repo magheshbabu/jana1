@@ -7,6 +7,8 @@ import com.gsr.janasanth.web.rest.util.PaginationUtil;
 import com.gsr.janasanth.service.dto.ApekshaDTO;
 import io.swagger.annotations.ApiParam;
 import io.github.jhipster.web.util.ResponseUtil;
+
+import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -25,10 +27,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.StreamSupport;
+
+import org.apache.commons.codec.binary.Base64;
+
 
 import static org.elasticsearch.index.query.QueryBuilders.*;
 
@@ -159,12 +165,19 @@ public class ApekshaResource {
         HttpServletResponse response) {
         try {
           // get your file as InputStream
+          //File file = apekshaService.getFile(id, fileName);
+          
           File file = apekshaService.getFile(id, fileName);
+          byte[] encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(file));
+          String encodedString =  new String(encoded, StandardCharsets.UTF_8);
+          
+          System.out.println(encodedString);
           
           // copy it to response's OutputStream
-          org.apache.commons.io.IOUtils.copy(new FileInputStream(file), response.getOutputStream());
-          response.setContentType(Files.probeContentType(file.toPath()));
-          response.setHeader("Content-Disposition", "attachment; filename=" + file.getName()); 
+          //org.apache.commons.io.IOUtils.copy(new FileInputStream(file), response.getOutputStream());
+          //response.setContentType(Files.probeContentType(file.toPath()));
+          response.setHeader("Content-Disposition", "attachment; filename=" + file.getName());
+          response.getWriter().write(encodedString);
           response.flushBuffer();
         } catch (IOException ex) {
           log.info("Error writing file to output stream. Filename was '{}'", fileName, ex);

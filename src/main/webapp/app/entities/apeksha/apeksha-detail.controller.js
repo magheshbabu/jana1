@@ -14,11 +14,14 @@
         vm.previousState = previousState.name;
         vm.byteSize = DataUtils.byteSize;
         vm.openFile = DataUtils.openFile;
+        vm.openFileURL = DataUtils.openFileURL;
 
         var unsubscribe = $rootScope.$on('janasanthwanamApp:apekshaUpdate', function(event, result) {
             vm.apeksha = result;
         });
         $scope.$on('$destroy', unsubscribe);
+        
+        vm.applicationFormFileName = $window.atob(vm.apeksha.applicationForm);
 
         vm.openWindow = function(that) {
             console.log(that)

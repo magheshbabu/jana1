@@ -5,15 +5,16 @@
         .module('janasanthwanamApp')
         .factory('DataUtils', DataUtils);
 
-    DataUtils.$inject = ['$window'];
+    DataUtils.$inject = ['$window','$localStorage', '$sessionStorage', '$http'];
 
-    function DataUtils ($window) {
+    function DataUtils ($window, $localStorage, $sessionStorage, $http) {
 
         var service = {
             abbreviate: abbreviate,
             byteSize: byteSize,
             openFile: openFile,
-            toBase64: toBase64
+            toBase64: toBase64,
+            openFileURL: openFileURL
         };
 
         return service;
@@ -60,7 +61,29 @@
 
         function openFile (type, data) {
             $window.open('data:' + type + ';base64,' + data, '_blank', 'height=300,width=400');
+
         }
+        
+        //added by maghesh - fileread optimisation
+        function openFileURL (filename, id) {
+        	var params = {};
+        	
+        	//Add authentication headers as params
+        	var token = $localStorage.authenticationToken || $sessionStorage.authenticationToken;
+
+
+        	//Add authentication headers in URL
+        	var url = ["api/files/" + id + "/" + filename, $.param(params)].join('?');
+        	console.log("URL IS > " + url);
+ 
+        	$http({method: 'GET', url: url, headers: {
+        	    'Authorization': 'Bearer ' + token,
+        	    'Accept': '*/*'}
+        	}).then(function(data){
+                $window.open('data:image/jpg' + ';base64,' + data.data, '_blank', 'height=300,width=400');
+            });
+
+       }
 
         function toBase64 (file, cb) {
             var fileReader = new FileReader();
@@ -70,5 +93,7 @@
                 cb(base64Data);
             };
         }
+
+
     }
 })();
