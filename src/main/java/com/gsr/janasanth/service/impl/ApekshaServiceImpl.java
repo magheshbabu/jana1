@@ -187,6 +187,17 @@ public class ApekshaServiceImpl implements ApekshaService {
     private ApekshaDTO toDto(Apeksha apeksha) {
 
         ApekshaDTO dto = apekshaMapper.toDto(apeksha);
+      if (null != dto.getPhoto() && dto.getPhoto().length > 0) {
+      String photofileName = new String(dto.getPhoto(), Charset.forName("UTF-8"));
+
+      try {
+          dto.setPhoto(fileService.readBytesFromDisk(
+                  properties.getApeksha().getFileRoot() + apeksha.getId() + "/", photofileName));
+      } catch (IOException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+      }
+  }        
         return dto;
 //        if (null != dto.getAdditionalDocuments() && dto.getAdditionalDocuments().length > 0) {
 //            String fileName = new String(dto.getAdditionalDocuments(), Charset.forName("UTF-8"));
