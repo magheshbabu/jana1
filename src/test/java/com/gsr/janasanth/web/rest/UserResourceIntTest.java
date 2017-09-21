@@ -149,6 +149,7 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+        		"department",
             	"123123123",
             	"designation",
             null,
@@ -191,6 +192,7 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+        		"department",
             	"123123123",
             	"designation",
             1L,
@@ -230,6 +232,7 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+        		"department",
             	"123123123",
             	"designation",
             null,
@@ -269,6 +272,7 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+        		"department",
             	"123123123",
             	"designation",
             null,
@@ -357,6 +361,7 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+        		"department",
             	"123123123",
             	"designation",
             updatedUser.getId(),
@@ -404,6 +409,7 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+        		"department",
             	"123123123",
             	"designation",
             updatedUser.getId(),
@@ -463,6 +469,7 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+        		"department",
             	"123123123",
             	"designation",
             updatedUser.getId(),
@@ -511,6 +518,7 @@ public class UserResourceIntTest {
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
+        		"department",
             	"123123123",
             	"designation",
             updatedUser.getId(),
@@ -588,6 +596,7 @@ public class UserResourceIntTest {
     @Test
     public void testUserDTOtoUser() {
         UserDTO userDTO = new UserDTO(
+        		"department",
             	"123123123",
             	"designation",
             DEFAULT_ID,

@@ -58,20 +58,22 @@ public class UserDTO {
 
 
     private String designation;
+    
+    private String department;
 
     public UserDTO() {
         // Empty constructor needed for Jackson.
     }
 
     public UserDTO(User user) {
-        this(user.getMobileNumber(), user.getDesignation(), user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
+        this(user.getDepartment(), user.getMobileNumber(), user.getDesignation(), user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
             user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
             user.getCreatedBy(), user.getCreatedDate(), user.getLastModifiedBy(), user.getLastModifiedDate(),
             user.getAuthorities().stream().map(Authority::getName)
                 .collect(Collectors.toSet()));
     }
 
-    public UserDTO(String mobileNumber, String designation, Long id, String login, String firstName, String lastName,
+    public UserDTO(String department, String mobileNumber, String designation, Long id, String login, String firstName, String lastName,
         String email, boolean activated, String imageUrl, String langKey,
         String createdBy, Instant createdDate, String lastModifiedBy, Instant lastModifiedDate,
         Set<String> authorities) {
@@ -91,6 +93,7 @@ public class UserDTO {
         this.authorities = authorities;
         this.mobileNumber = mobileNumber;
         this.designation = designation;
+        this.department = department;
     }
 
     public Long getId() {
@@ -176,7 +179,15 @@ public class UserDTO {
         this.designation = designation;
     }
 
-    @Override
+    public String getDepartment() {
+	return department;
+}
+
+public void setDepartment(String department) {
+	this.department = department;
+}
+
+	@Override
     public String toString() {
         return "UserDTO{" +
             "login='" + login + '\'' +

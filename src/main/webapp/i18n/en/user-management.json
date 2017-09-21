@@ -20,6 +20,7 @@
         "email": "Email",
         "mobileNumber": "Mobile Number",
         "designation": "Designation",
+        "department": "Department",
         "activated": "Activated",
         "deactivated": "Deactivated",
         "profiles": "Profiles",

@@ -94,6 +94,9 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "designation", length = 256)
     private String designation;
 
+    @Column(name = "department", length = 256)
+    private String department;
+
     @JsonIgnore
     @ManyToMany
     @JoinTable(
@@ -227,7 +230,15 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.designation = designation;
     }
 
-    @Override
+    public String getDepartment() {
+	return department;
+}
+
+public void setDepartment(String department) {
+	this.department = department;
+}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

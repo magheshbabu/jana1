@@ -44,6 +44,7 @@ public class UserMapper {
             user.setLangKey(userDTO.getLangKey());
             user.setMobileNumber(userDTO.getMobileNumber()) ;
             user.setDesignation(userDTO.getDesignation());
+            user.setDepartment(userDTO.getDepartment() );
             Set<Authority> authorities = this.authoritiesFromStrings(userDTO.getAuthorities());
             if(authorities != null) {
                 user.setAuthorities(authorities);

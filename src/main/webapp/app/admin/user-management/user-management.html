@@ -17,6 +17,7 @@
                 <th jh-sort-by="email"><span data-translate="userManagement.email">Email</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="email"><span data-translate="userManagement.mobileNumber">Mobile Number</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="email"><span data-translate="userManagement.designation">Designation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="email"><span data-translate="userManagement.department">Department</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th></th>
                 <th  jh-sort-by="langKey"> <span data-translate="userManagement.langKey">Lang Key</span> <span class="glyphicon glyphicon-sort"></span></th>                <th><span data-translate="userManagement.profiles">Profiles</span></th>                <th jh-sort-by="createdDate"><span data-translate="userManagement.createdDate">Created Date</span> <span class="glyphicon glyphicon-sort"></span></th>
                 <th jh-sort-by="lastModifiedBy"><span data-translate="userManagement.lastModifiedBy">Last Modified By</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -31,6 +32,7 @@
                 <td>{{user.email}}</td>
                 <td>{{user.mobileNumber}}</td>
                 <td>{{user.designation}}</td>
+                <td>{{user.department}}</td>
                 <td>
                     <button class="btn btn-danger btn-xs" ng-click="vm.setActive(user, true)" ng-show="!user.activated"
                             data-translate="userManagement.deactivated">Deactivated</button>
