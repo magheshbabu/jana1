@@ -5,13 +5,15 @@
         .module('janasanthwanamApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['$state', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
+    NavbarController.$inject = ['$scope','$state', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
 
-    function NavbarController ($state, Auth, Principal, ProfileService, LoginService) {
+    function NavbarController ($scope, $state, Auth, Principal, ProfileService, LoginService) {
         var vm = this;
 
         vm.isNavbarCollapsed = true;
         vm.isAuthenticated = Principal.isAuthenticated;
+        vm.account = null;
+
 
       
 
@@ -46,5 +48,19 @@
         function collapseNavbar() {
             vm.isNavbarCollapsed = true;
         }
+
+
+        $scope.$on('authenticationSuccess', function() {
+            getAccount();
+        });
+
+        getAccount();        
+
+        function getAccount() {
+            Principal.identity().then(function(account) {
+                vm.account = account;
+                vm.isAuthenticated = Principal.isAuthenticated;
+            });
+        }        
     }
 })();
