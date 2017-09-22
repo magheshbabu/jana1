@@ -187,6 +187,10 @@
         <dd>
             <span>{{vm.apeksha.recommendationOthers}}</span>
         </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.hospitalDistrict">Hospital District</span></dt>
+        <dd>
+            <span>{{vm.apeksha.hospitalDistrict}}</span>
+        </dd>        
         <dt><span data-translate="janasanthwanamApp.apeksha.hospitalName">Hospital Name</span></dt>
         <dd>
             <span>{{vm.apeksha.hospitalName}}</span>
@@ -228,21 +232,8 @@
 </div>
 <div class="tab-pane" id="3a">
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="janasanthwanamApp.apeksha.additionalDocuments">Additional Documents</span></dt>
-        <dd>
-            <div ng-if="vm.apeksha.additionalDocuments">
-                <a ng-click="vm.openFileURL(vm.additionalDocumentsFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
-                <span data-translate="janasanthwanamApp.apeksha.additionalDocuments"></span>
-            </div>
-        </dd>
-        <dt><span data-translate="janasanthwanamApp.apeksha.remarks">Remarks</span></dt>
-        <dd>
-            <span>{{vm.apeksha.remarks}}</span>
-        </dd>
-        <dt><span data-translate="janasanthwanamApp.apeksha.dateOfApplcation">Date Of Applcation</span></dt>
-        <dd>
-            <span>{{vm.apeksha.dateOfApplcation | date:'mediumDate'}}</span>
-        </dd>
+
+
         <dt><span data-translate="janasanthwanamApp.apeksha.nomineeAvailable">Nominee Available</span></dt>
         <dd>
             <span>{{vm.apeksha.nomineeAvailable}}</span>
@@ -319,6 +310,15 @@
         <dd>
             <span>{{vm.apeksha.nomineeBankIfscCode}}</span>
         </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.remarks">Remarks</span></dt>
+        <dd>
+            <span>{{vm.apeksha.remarks}}</span>
+        </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.dateOfApplcation">Date Of Applcation</span></dt>
+        <dd>
+            <span>{{vm.apeksha.dateOfApplcation | date:'mediumDate'}}</span>
+        </dd>
+       
         <dt><span data-translate="janasanthwanamApp.apeksha.photo">Photo</span></dt>
         <dd>
             <div ng-if="vm.apeksha.photo"><!--  photo will work in the old way as it is initially loaded as base64 string<added by maghesh> -->
@@ -391,6 +391,13 @@
                 <span data-translate="janasanthwanamApp.apeksha.nomineeBankPassbookFrontPage"></span>
             </div>
         </dd>
+        <dt><span data-translate="janasanthwanamApp.apeksha.additionalDocuments">Additional Documents</span></dt>
+        <dd>
+            <div ng-if="vm.apeksha.additionalDocuments">
+                <a ng-click="vm.openFileURL(vm.additionalDocumentsFileName, vm.apeksha.id)" data-translate="entity.action.open">open</a>
+                <span data-translate="janasanthwanamApp.apeksha.additionalDocuments"></span>
+            </div>
+        </dd> 
     </dl>
 </div>        
 </div>

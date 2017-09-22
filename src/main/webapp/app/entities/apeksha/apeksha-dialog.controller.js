@@ -28,23 +28,52 @@
          * in this function...we are retreving the place name by splitting the hospital name
          * // THIS IS REQUIRED TO FILL HOSPITAL PLACE AND HOSPITAL NAME COMBO BOXES
          */
-        function getHospitalPlaceName (hospitalFullNameAndPlace) {
-            console.log('calling getHospitalPlaceName' );
+        function getHospitalPlaceName(hospitalFullNameAndPlace) {
+            console.log('calling getHospitalPlaceName');
             var hospitalPlaceName = '';
-            if (typeof (vm.apeksha.hospitalName) !== 'undefined' && vm.apeksha.hospitalName !== null && vm.apeksha.hospitalName.indexOf('-') !== -1)
-            {
+            if (typeof (vm.apeksha.hospitalName) !== 'undefined' && vm.apeksha.hospitalName !== null && vm.apeksha.hospitalName.indexOf('-') !== -1) {
                 vm.hosptialFullStrings = hospitalFullNameAndPlace.split("-")
-               // console.log(vm.hosptialFullStrings);
-               // console.log(vm.hosptialFullStrings[0]);
-               // console.log(vm.hosptialFullStrings[1]);
+                // console.log(vm.hosptialFullStrings);
+                // console.log(vm.hosptialFullStrings[0]);
+                // console.log(vm.hosptialFullStrings[1]);
                 hospitalPlaceName = vm.hosptialFullStrings[1].trim();
-               // console.log('trimmed place name = ' + hospitalPlaceName);
+                // console.log('trimmed place name = ' + hospitalPlaceName);
             }
             return hospitalPlaceName;
         }
 
         vm.hospitalPlaceName = getHospitalPlaceName(vm.apeksha.hospitalName);
         vm.apeksha.hospitalDistrict = vm.hospitalPlaceName;
+
+        /**
+         * function to calculate age automatically
+         */
+        vm.calculateAge = function () {
+            if (angular.isDefined(vm.apeksha.dateOfBirth) && vm.apeksha.dateOfBirth !== null) {
+                var now = new Date();
+                var past = new Date(vm.apeksha.dateOfBirth);
+                var nowYear = now.getFullYear();
+                var pastYear = past.getFullYear();
+                var age = nowYear - pastYear;
+
+                vm.apeksha.age = age;
+
+            }
+
+        };
+
+
+        /**
+         * function to validate and see if any one of voterscardnumber OR aadharcardnumber OR rationcardnumber is filled in
+         */
+        vm.mustFillRationOrAadharOrVoters = function() {
+            if(vm.apeksha.rationCard.trim().length || vm.apeksha.aadharCard.trim().length || vm.apeksha.trim().voterscard) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        };
 
         vm.masterCasteReligions = function (castename) {
             vm.casteReligions = masterCasteReligion.getReligionForCaste(castename);
