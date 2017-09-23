@@ -23,12 +23,12 @@
 
             <div class="panel panel-info">
                     <div class="panel-heading" >
-                        <label  data-translate="janasanthwanamApp.apeksha.isApplicantApplyingForBeneficiary" for="field_isApplicantApplyingForBeneficiary">Is Applicant Applying For Beneficiary</label>
-                        <input type="checkbox"  name="isApplicantApplyingForBeneficiary" id="field_isApplicantApplyingForBeneficiary"
-                            ng-model="vm.isApplicantApplyingForBeneficiary" ng-true-value="true" ng-false-value="false"  ng-init="vm.isApplicantApplyingForBeneficiary=false"
+                        <label  class="control-label" data-translate="janasanthwanamApp.apeksha.isApplicantDifferentFromBenefeciary" for="field_isApplicantDifferentFromBenefeciary">Is Applicant Applying For Beneficiary</label>
+                        <input type="checkbox"  name="isApplicantDifferentFromBenefeciary" id="field_isApplicantDifferentFromBenefeciary"
+                            ng-model="vm.apeksha.isApplicantDifferentFromBenefeciary" ng-true-value="'true'" ng-false-value="'false'"
                             />
                     </div>
-                    <div class="panel-body" ng-show = "vm.isApplicantApplyingForBeneficiary">
+                    <div class="panel-body" ng-show = "vm.apeksha.isApplicantDifferentFromBenefeciary != 'false'">
                         <div class="form-group"><!-- dummy field -->
                             <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantName" for="field_applicantName">Applicant Name</label>
                             <input type="text" class="form-control" name="applicantName" id="field_applicantName"
@@ -149,14 +149,15 @@
             </div>
 
             <div class="form-group"> <!--dummy field -->
-                <label class="control-label" data-translate="janasanthwanamApp.apeksha.voterscard" for="field_voterscard">Voter's Card Number</label>
-                <input type="text" class="form-control" name="voterscard" id="field_voterscard"
-                    ng-model="vm.apeksha.voterscard"
+                <label class="control-label" data-translate="janasanthwanamApp.apeksha.votersCardNumber" for="field_votersCardNumber">Voter's Card Number</label>
+                <input type="text" class="form-control" name="votersCardNumber" id="field_votersCardNumber"
+                    ng-model="vm.apeksha.votersCardNumber"
                     ng-pattern="/^([a-zA-Z0-9]){10,17}$/"
-                    ng-required="vm.mustFillRationOrAadharOrVoters()"/>
-                <div ng-show="editForm.voterscard.$invalid">
+                    ng-change="vm.mustFillRationOrAadharOrVoters()"                    
+                    ng-required="vm.isRequiredRationOrAadharOrVoters"/>
+                <div ng-show="editForm.votersCardNumber.$invalid">
                     <p class="help-block"
-                        ng-show="editForm.voterscard.$error.required" data-translate="entity.validation.required">
+                        ng-show="editForm.votersCardNumber.$error.required" data-translate="entity.validation.votersValidationMessage">
                         This field is required.
                     </p>
                 </div>
@@ -167,10 +168,11 @@
                 <input type="text" class="form-control" name="aadharNumber" id="field_aadharNumber"
                     ng-model="vm.apeksha.aadharNumber"
                     ng-pattern="/^\d{9}$/"
-                    ng-required="vm.mustFillRationOrAadharOrVoters()"/>
+                    ng-change="vm.mustFillRationOrAadharOrVoters()"
+                    ng-required="vm.isRequiredRationOrAadharOrVoters"/>
                 <div ng-show="editForm.aadharNumber.$invalid">
                     <p class="help-block"
-                        ng-show="editForm.aadharNumber.$error.required" data-translate="entity.validation.required">
+                        ng-show="editForm.aadharNumber.$error.required" data-translate="entity.validation.aadharValidationMessage">
                         This field is required.
                     </p>
                 </div>
@@ -180,10 +182,11 @@
                 <input type="text" class="form-control" name="rationCardNumber" id="field_rationCardNumber"
                     ng-model="vm.apeksha.rationCardNumber"
                     ng-pattern="/^\d{10}$/"
-                    ng-required="vm.mustFillRationOrAadharOrVoters()"/>
+                    ng-change="vm.mustFillRationOrAadharOrVoters()"                    
+                    ng-required="vm.isRequiredRationOrAadharOrVoters"/>
                 <div ng-show="editForm.rationCardNumber.$invalid">
                     <p class="help-block"
-                        ng-show="editForm.rationCardNumber.$error.required" data-translate="entity.validation.required">
+                        ng-show="editForm.rationCardNumber.$error.required" data-translate="entity.validation.rationCardValiationMessage">
                         This field is required.
                     </p>
                 </div>
@@ -1221,18 +1224,18 @@
             
             <!-- NEW EXTRA FIELDS START -->
             
-<div class="form-group">
+<!-- <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.isApplicantDifferentFromBenefeciary" for="field_isApplicantDifferentFromBenefeciary">Is Applicant Different From Benefeciary</label>
             <input type="text" class="form-control" name="isApplicantDifferentFromBenefeciary" id="field_isApplicantDifferentFromBenefeciary"
                     ng-model="vm.apeksha.isApplicantDifferentFromBenefeciary"
                     />
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.votersCardNumber" for="field_votersCardNumber">Voters Card Number</label>
             <input type="text" class="form-control" name="votersCardNumber" id="field_votersCardNumber"
                     ng-model="vm.apeksha.votersCardNumber"
                     />
-        </div>
+        </div> -->
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantPlace" for="field_applicantPlace">Applicant Place</label>
             <input type="text" class="form-control" name="applicantPlace" id="field_applicantPlace"

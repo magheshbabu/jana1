@@ -66,13 +66,37 @@
         /**
          * function to validate and see if any one of voterscardnumber OR aadharcardnumber OR rationcardnumber is filled in
          */
-        vm.mustFillRationOrAadharOrVoters = function() {
-            if(vm.apeksha.rationCard.trim().length || vm.apeksha.aadharCard.trim().length || vm.apeksha.trim().voterscard) {
-                return false;
+        vm.mustFillRationOrAadharOrVoters = function () {
+            // console.log(vm.apeksha.rationCardNumber.length +',' +  vm.apeksha.aadharNumber.length + ',' + vm.apeksha.voterscard.length);
+            //console.log(vm.apeksha.rationCardNumber.length +',' +  vm.apeksha.aadharNumber.length + ',' + vm.apeksha.votersCardNumber.length);
+            if (angular.isDefined(vm.apeksha.rationCardNumber) && vm.apeksha.rationCardNumber !== null) {
+                if (vm.apeksha.rationCardNumber.length) {
+                    vm.isRequiredRationOrAadharOrVoters = false;
+                    return false;
+                }
+
             }
-            else {
-                return true;
+
+            if (angular.isDefined(vm.apeksha.aadharNumber) && vm.apeksha.aadharNumber !== null) {
+                if (vm.apeksha.aadharNumber.length) {
+                    vm.isRequiredRationOrAadharOrVoters = false;
+                    return false;
+                }
+
             }
+
+            if (angular.isDefined(vm.apeksha.votersCardNumber) && vm.apeksha.votersCardNumber !== null) {
+                if (vm.apeksha.votersCardNumber.length) {
+                    vm.isRequiredRationOrAadharOrVoters = false;
+                    return false;
+                }
+
+            }
+
+
+            vm.isRequiredRationOrAadharOrVoters = true;
+            return true;
+
         };
 
         vm.masterCasteReligions = function (castename) {

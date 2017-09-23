@@ -119,7 +119,10 @@
             "maxbytes": "This field cannot be more than {{ max }} bytes.",
             "pattern": "This field should follow pattern for {{ pattern }}.",
             "number": "This field should be a number.",
-            "datetimelocal": "This field should be a date and time."
+            "datetimelocal": "This field should be a date and time.",
+            "aadharValidationMessage": "This field is required and should consist of 9 digit number",
+            "votersValidationMessage": "This field is required and length should be between 10 to 17 characters",
+            "rationCardValiationMessage": "This field is required and should consist of 10 digit number"
         }
     },
     "error": {
