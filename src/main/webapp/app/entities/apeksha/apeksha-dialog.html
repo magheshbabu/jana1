@@ -28,31 +28,67 @@
                             ng-model="vm.apeksha.isApplicantDifferentFromBenefeciary" ng-true-value="'true'" ng-false-value="'false'"
                             />
                     </div>
+
                     <div class="panel-body" ng-show = "vm.apeksha.isApplicantDifferentFromBenefeciary != 'false'">
-                        <div class="form-group"><!-- dummy field -->
-                            <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantName" for="field_applicantName">Applicant Name</label>
-                            <input type="text" class="form-control" name="applicantName" id="field_applicantName"
-                                ng-model="vm.apeksha.applicantName"
-                                />
+                        
+                        
+                        <div class="form-group">
+                            <label class="control-label" data-translate="janasanthwanamApp.apeksha.onBehalfApplicantName" for="field_onBehalfApplicantName">On Behalf Applicant Name</label>
+                            <input type="text" class="form-control" name="onBehalfApplicantName" id="field_onBehalfApplicantName"
+                                    ng-model="vm.apeksha.onBehalfApplicantName"
+                                    />
                         </div>
-                        <div class="form-group"><!-- dummy field -->
-                            <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantIdProofDetails" for="field_applicantIdProofDetails">Applicant ID Proof Details</label>
-                             <input type="text" class="form-control" name="applicantIdProofDetails" id="field_applicantIdProofDetails"
-                                ng-model="vm.apeksha.applicantIdProofDetails"
-                                /> 
-                         </div>
-                        <div class="form-group"><!-- dummy field -->
-                            <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantRelationShip" for="field_applicantRelationShip">Applicant Relationship with Beneficiary</label>
-                             <input type="text" class="form-control" name="applicantRelationShip" id="field_applicantRelationShip"
-                                ng-model="vm.apeksha.applicantRelationShip"
-                                /> 
+
+
+
+                        <div class="form-group">
+                            <label class="control-label" data-translate="janasanthwanamApp.apeksha.onBehalfApplicantIDProof" for="field_onBehalfApplicantIDProof">On Behalf Applicant ID Proof</label>
+                            <!-- <input type="text" class="form-control" name="onBehalfApplicantIDProof" id="field_onBehalfApplicantIDProof"
+                                    ng-model="vm.apeksha.onBehalfApplicantIDProof"
+                                    /> -->
+                        
+
+                        <select class="form-control" name="onBehalfApplicantIDProof" id="field_onBehalfApplicantIDProof" ng-model="vm.apeksha.onBehalfApplicantIDProof"  >
+                            <option  value="റേഷന്‍ കാര്‍ഡ്‌">റേഷന്‍ കാര്‍ഡ്‌</option>
+                            <option  value="ആധാര്‍ കാര്‍ഡ്‌">ആധാര്‍ കാര്‍ഡ്‌</option>
+                            <option  value="വോട്ടെര്സ് കാര്‍ഡ്‌">വോട്ടെര്സ് കാര്‍ഡ്‌</option>
+                        </select>
+                        <div ng-show="editForm.onBehalfApplicantIDProof.$invalid">
+                            <p class="help-block"
+                                ng-show="editForm.onBehalfApplicantIDProof.$error.required" data-translate="entity.validation.required">
+                                This field is required.
+                            </p>
                         </div>
-                        <div class="form-group"><!-- dummy field -->
-                                <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantMobileNumber" for="field_applicantMobileNumber">Applicant Mobile Number</label>
-                                 <input type="text" class="form-control" name="applicantMobileNumber" id="field_applicantRelationShip"
-                                    ng-model="vm.apeksha.applicantMobileNumber"
-                                    /> 
-                            </div>                        
+                    </div>
+
+
+
+
+
+
+
+
+                        <div class="form-group">
+                            <label class="control-label" data-translate="janasanthwanamApp.apeksha.onBehalfApplicantIdProofNumber" for="field_onBehalfApplicantIdProofNumber">On Behalf Applicant Id Proof Number</label>
+                            <input type="text" class="form-control" name="onBehalfApplicantIdProofNumber" id="field_onBehalfApplicantIdProofNumber"
+                                    ng-model="vm.apeksha.onBehalfApplicantIdProofNumber"
+                                    />
+                        </div>                        
+
+
+                        <div class="form-group">
+                            <label class="control-label" data-translate="janasanthwanamApp.apeksha.onBehalfApplicantRelationship" for="field_onBehalfApplicantRelationship">On Behalf Applicant Relationship</label>
+                            <input type="text" class="form-control" name="onBehalfApplicantRelationship" id="field_onBehalfApplicantRelationship"
+                                    ng-model="vm.apeksha.onBehalfApplicantRelationship"
+                                    />
+                        </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="janasanthwanamApp.apeksha.onBehalfApplicantMobileNumber" for="field_onBehalfApplicantMobileNumber">On Behalf Applicant Mobile Number</label>
+            <input type="text" class="form-control" name="onBehalfApplicantMobileNumber" id="field_onBehalfApplicantMobileNumber"
+                    ng-model="vm.apeksha.onBehalfApplicantMobileNumber"
+                    />
+        </div>                       
         
                     </div>
                 </div>
@@ -97,9 +133,7 @@
             </div>
             <div class="form-group">
                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.gender" for="field_gender">Gender</label>
-                <!-- <input type="text" class="form-control" name="gender" id="field_gender"
-                    ng-model="vm.apeksha.gender"
-                    required/> -->
+
                 <select class="form-control" name="gender" id="field_gender" ng-model="vm.apeksha.gender" required >
                     <option  value="പുരുഷന്‍">പുരുഷന്‍</option>
                     <option  value="സ്ത്രീ">സ്ത്രീ</option>
@@ -148,7 +182,7 @@
                 </div>
             </div>
 
-            <div class="form-group"> <!--dummy field -->
+            <div class="form-group"> 
                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.votersCardNumber" for="field_votersCardNumber">Voter's Card Number</label>
                 <input type="text" class="form-control" name="votersCardNumber" id="field_votersCardNumber"
                     ng-model="vm.apeksha.votersCardNumber"
@@ -255,12 +289,34 @@
                     />
             </div>
 
-            <div class="form-group"><!-- dummy field -->
-                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.place" for="field_place">Place</label>
-                    <input type="text" class="form-control" name="place" id="field_tcNumber"
-                        ng-model="vm.place"
+            <div class="form-group">
+                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantPlace" for="field_place">Place</label>
+                    <input type="text" class="form-control" name="applicantPlace" id="field_applicantPlace"
+                        ng-model="vm.apeksha.applicantPlace"
                         />
-                </div>            
+                </div>  
+                
+                
+
+                <div class="form-group">
+                    <label class="control-label" data-translate="janasanthwanamApp.apeksha.isPanchayatCorporationMunicipality" for="field_isPanchayatCorporationMunicipality">Is Panchayat Corporation Municipality</label>
+                    <!-- <input type="text" class="form-control" name="isPanchayatCorporationMunicipality" id="field_isPanchayatCorporationMunicipality"
+                            ng-model="vm.apeksha.isPanchayatCorporationMunicipality"
+                            /> -->
+                            <select class="form-control" name="isPanchayatCorporationMunicipality" id="field_isPanchayatCorporationMunicipality" ng-model="vm.apeksha.isPanchayatCorporationMunicipality"  >
+                                <option  value="പഞ്ചായത്ത്">പഞ്ചായത്ത്</option>
+                                <option  value="കോര്‍പ്രഷേന്‍">കോര്‍പ്രഷേന്‍</option>
+                                <option  value="മുനിസിപാലിറ്റി">മുനിസിപാലിറ്റി</option>
+                            </select>                            
+                </div>
+
+
+
+
+
+
+
+
             <div class="form-group">
                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.village" for="field_village">Village</label>
                 <!-- <input type="text" class="form-control" name="village" id="field_village"
@@ -1236,42 +1292,42 @@
                     ng-model="vm.apeksha.votersCardNumber"
                     />
         </div> -->
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.applicantPlace" for="field_applicantPlace">Applicant Place</label>
             <input type="text" class="form-control" name="applicantPlace" id="field_applicantPlace"
                     ng-model="vm.apeksha.applicantPlace"
                     />
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.onBehalfApplicantName" for="field_onBehalfApplicantName">On Behalf Applicant Name</label>
             <input type="text" class="form-control" name="onBehalfApplicantName" id="field_onBehalfApplicantName"
                     ng-model="vm.apeksha.onBehalfApplicantName"
                     />
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.onBehalfApplicantIDProof" for="field_onBehalfApplicantIDProof">On Behalf Applicant ID Proof</label>
             <input type="text" class="form-control" name="onBehalfApplicantIDProof" id="field_onBehalfApplicantIDProof"
                     ng-model="vm.apeksha.onBehalfApplicantIDProof"
                     />
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.onBehalfApplicantIdProofNumber" for="field_onBehalfApplicantIdProofNumber">On Behalf Applicant Id Proof Number</label>
             <input type="text" class="form-control" name="onBehalfApplicantIdProofNumber" id="field_onBehalfApplicantIdProofNumber"
                     ng-model="vm.apeksha.onBehalfApplicantIdProofNumber"
                     />
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.onBehalfApplicantRelationship" for="field_onBehalfApplicantRelationship">On Behalf Applicant Relationship</label>
             <input type="text" class="form-control" name="onBehalfApplicantRelationship" id="field_onBehalfApplicantRelationship"
                     ng-model="vm.apeksha.onBehalfApplicantRelationship"
                     />
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.onBehalfApplicantMobileNumber" for="field_onBehalfApplicantMobileNumber">On Behalf Applicant Mobile Number</label>
             <input type="text" class="form-control" name="onBehalfApplicantMobileNumber" id="field_onBehalfApplicantMobileNumber"
                     ng-model="vm.apeksha.onBehalfApplicantMobileNumber"
                     />
-        </div>
+        </div> -->
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.benefieciaryHasOwnProperty" for="field_benefieciaryHasOwnProperty">Benefieciary Has Own Property</label>
             <input type="text" class="form-control" name="benefieciaryHasOwnProperty" id="field_benefieciaryHasOwnProperty"
@@ -1302,12 +1358,12 @@
                     ng-model="vm.apeksha.isNomineeAvailable"
                     />
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.isPanchayatCorporationMunicipality" for="field_isPanchayatCorporationMunicipality">Is Panchayat Corporation Municipality</label>
             <input type="text" class="form-control" name="isPanchayatCorporationMunicipality" id="field_isPanchayatCorporationMunicipality"
                     ng-model="vm.apeksha.isPanchayatCorporationMunicipality"
                     />
-        </div>
+        </div> -->
         <div class="form-group">
             <label class="control-label" data-translate="janasanthwanamApp.apeksha.nomineePlace" for="field_nomineePlace">Nominee Place</label>
             <input type="text" class="form-control" name="nomineePlace" id="field_nomineePlace"
