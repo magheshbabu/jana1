@@ -307,6 +307,76 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
 
     @Column(name = "nominee_bank_passbook_front_page_content_type")
     private String nomineeBankPassbookFrontPageContentType;
+    
+    @Column(name = "is_applicant_different_from_benefeciary")
+    private String isApplicantDifferentFromBenefeciary;
+
+    @Column(name = "voters_card_number")
+    private String votersCardNumber;
+
+    @Column(name = "applicant_place")
+    private String applicantPlace;
+
+    @Column(name = "on_behalf_applicant_name")
+    private String onBehalfApplicantName;
+
+    @Column(name = "on_behalf_applicant_id_proof")
+    private String onBehalfApplicantIDProof;
+
+    @Column(name = "on_behalf_applicant_id_proof_number")
+    private String onBehalfApplicantIdProofNumber;
+
+    @Column(name = "on_behalf_applicant_relationship")
+    private String onBehalfApplicantRelationship;
+
+    @Column(name = "on_behalf_applicant_mobile_number")
+    private String onBehalfApplicantMobileNumber;
+
+    @Column(name = "benefieciary_has_own_property")
+    private String benefieciaryHasOwnProperty;
+
+    @Column(name = "has_recommendation")
+    private String hasRecommendation;
+
+    @Column(name = "is_recommendation_from_chief_minister")
+    private String isRecommendationFromChiefMinister;
+
+    @Column(name = "is_any_amount_receiving_from_govt")
+    private String isAnyAmountReceivingFromGovt;
+
+    @Column(name = "is_nominee_available")
+    private String isNomineeAvailable;
+
+    @Column(name = "is_panchayat_corporation_municipality")
+    private String isPanchayatCorporationMunicipality;
+
+    @Column(name = "nominee_place")
+    private String nomineePlace;
+
+    @Column(name = "nominee_panchayat_corporation_municipality")
+    private String nomineePanchayatCorporationMunicipality;
+
+    @Column(name = "applicant_extra_field_1")
+    private String applicantExtraField1;
+
+    @Column(name = "applicant_extra_field_2")
+    private String applicantExtraField2;
+
+    @Column(name = "applicant_extra_field_3")
+    private String applicantExtraField3;
+
+    @Column(name = "benefieciary_extra_field_1")
+    private String benefieciaryExtraField1;
+
+    @Column(name = "general_purpose_extra_field_1")
+    private String generalPurposeExtraField1;
+
+    @Column(name = "general_purpose_extra_field_2")
+    private String generalPurposeExtraField2;
+
+    @Column(name = "general_purpose_extra_field_3")
+    private String generalPurposeExtraField3;
+    
 
     public Long getId() {
         return id;
@@ -1433,6 +1503,305 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
     public void setNomineeBankPassbookFrontPageContentType(String nomineeBankPassbookFrontPageContentType) {
         this.nomineeBankPassbookFrontPageContentType = nomineeBankPassbookFrontPageContentType;
     }
+    
+    public String getIsApplicantDifferentFromBenefeciary() {
+        return isApplicantDifferentFromBenefeciary;
+    }
+
+    public Apeksha isApplicantDifferentFromBenefeciary(String isApplicantDifferentFromBenefeciary) {
+        this.isApplicantDifferentFromBenefeciary = isApplicantDifferentFromBenefeciary;
+        return this;
+    }
+
+    public void setIsApplicantDifferentFromBenefeciary(String isApplicantDifferentFromBenefeciary) {
+        this.isApplicantDifferentFromBenefeciary = isApplicantDifferentFromBenefeciary;
+    }
+
+    public String getVotersCardNumber() {
+        return votersCardNumber;
+    }
+
+    public Apeksha votersCardNumber(String votersCardNumber) {
+        this.votersCardNumber = votersCardNumber;
+        return this;
+    }
+
+    public void setVotersCardNumber(String votersCardNumber) {
+        this.votersCardNumber = votersCardNumber;
+    }
+
+    public String getApplicantPlace() {
+        return applicantPlace;
+    }
+
+    public Apeksha applicantPlace(String applicantPlace) {
+        this.applicantPlace = applicantPlace;
+        return this;
+    }
+
+    public void setApplicantPlace(String applicantPlace) {
+        this.applicantPlace = applicantPlace;
+    }
+
+    public String getOnBehalfApplicantName() {
+        return onBehalfApplicantName;
+    }
+
+    public Apeksha onBehalfApplicantName(String onBehalfApplicantName) {
+        this.onBehalfApplicantName = onBehalfApplicantName;
+        return this;
+    }
+
+    public void setOnBehalfApplicantName(String onBehalfApplicantName) {
+        this.onBehalfApplicantName = onBehalfApplicantName;
+    }
+
+    public String getOnBehalfApplicantIDProof() {
+        return onBehalfApplicantIDProof;
+    }
+
+    public Apeksha onBehalfApplicantIDProof(String onBehalfApplicantIDProof) {
+        this.onBehalfApplicantIDProof = onBehalfApplicantIDProof;
+        return this;
+    }
+
+    public void setOnBehalfApplicantIDProof(String onBehalfApplicantIDProof) {
+        this.onBehalfApplicantIDProof = onBehalfApplicantIDProof;
+    }
+
+    public String getOnBehalfApplicantIdProofNumber() {
+        return onBehalfApplicantIdProofNumber;
+    }
+
+    public Apeksha onBehalfApplicantIdProofNumber(String onBehalfApplicantIdProofNumber) {
+        this.onBehalfApplicantIdProofNumber = onBehalfApplicantIdProofNumber;
+        return this;
+    }
+
+    public void setOnBehalfApplicantIdProofNumber(String onBehalfApplicantIdProofNumber) {
+        this.onBehalfApplicantIdProofNumber = onBehalfApplicantIdProofNumber;
+    }
+
+    public String getOnBehalfApplicantRelationship() {
+        return onBehalfApplicantRelationship;
+    }
+
+    public Apeksha onBehalfApplicantRelationship(String onBehalfApplicantRelationship) {
+        this.onBehalfApplicantRelationship = onBehalfApplicantRelationship;
+        return this;
+    }
+
+    public void setOnBehalfApplicantRelationship(String onBehalfApplicantRelationship) {
+        this.onBehalfApplicantRelationship = onBehalfApplicantRelationship;
+    }
+
+    public String getOnBehalfApplicantMobileNumber() {
+        return onBehalfApplicantMobileNumber;
+    }
+
+    public Apeksha onBehalfApplicantMobileNumber(String onBehalfApplicantMobileNumber) {
+        this.onBehalfApplicantMobileNumber = onBehalfApplicantMobileNumber;
+        return this;
+    }
+
+    public void setOnBehalfApplicantMobileNumber(String onBehalfApplicantMobileNumber) {
+        this.onBehalfApplicantMobileNumber = onBehalfApplicantMobileNumber;
+    }
+
+    public String getBenefieciaryHasOwnProperty() {
+        return benefieciaryHasOwnProperty;
+    }
+
+    public Apeksha benefieciaryHasOwnProperty(String benefieciaryHasOwnProperty) {
+        this.benefieciaryHasOwnProperty = benefieciaryHasOwnProperty;
+        return this;
+    }
+
+    public void setBenefieciaryHasOwnProperty(String benefieciaryHasOwnProperty) {
+        this.benefieciaryHasOwnProperty = benefieciaryHasOwnProperty;
+    }
+
+    public String getHasRecommendation() {
+        return hasRecommendation;
+    }
+
+    public Apeksha hasRecommendation(String hasRecommendation) {
+        this.hasRecommendation = hasRecommendation;
+        return this;
+    }
+
+    public void setHasRecommendation(String hasRecommendation) {
+        this.hasRecommendation = hasRecommendation;
+    }
+
+    public String getIsRecommendationFromChiefMinister() {
+        return isRecommendationFromChiefMinister;
+    }
+
+    public Apeksha isRecommendationFromChiefMinister(String isRecommendationFromChiefMinister) {
+        this.isRecommendationFromChiefMinister = isRecommendationFromChiefMinister;
+        return this;
+    }
+
+    public void setIsRecommendationFromChiefMinister(String isRecommendationFromChiefMinister) {
+        this.isRecommendationFromChiefMinister = isRecommendationFromChiefMinister;
+    }
+
+    public String getIsAnyAmountReceivingFromGovt() {
+        return isAnyAmountReceivingFromGovt;
+    }
+
+    public Apeksha isAnyAmountReceivingFromGovt(String isAnyAmountReceivingFromGovt) {
+        this.isAnyAmountReceivingFromGovt = isAnyAmountReceivingFromGovt;
+        return this;
+    }
+
+    public void setIsAnyAmountReceivingFromGovt(String isAnyAmountReceivingFromGovt) {
+        this.isAnyAmountReceivingFromGovt = isAnyAmountReceivingFromGovt;
+    }
+
+    public String getIsNomineeAvailable() {
+        return isNomineeAvailable;
+    }
+
+    public Apeksha isNomineeAvailable(String isNomineeAvailable) {
+        this.isNomineeAvailable = isNomineeAvailable;
+        return this;
+    }
+
+    public void setIsNomineeAvailable(String isNomineeAvailable) {
+        this.isNomineeAvailable = isNomineeAvailable;
+    }
+
+    public String getIsPanchayatCorporationMunicipality() {
+        return isPanchayatCorporationMunicipality;
+    }
+
+    public Apeksha isPanchayatCorporationMunicipality(String isPanchayatCorporationMunicipality) {
+        this.isPanchayatCorporationMunicipality = isPanchayatCorporationMunicipality;
+        return this;
+    }
+
+    public void setIsPanchayatCorporationMunicipality(String isPanchayatCorporationMunicipality) {
+        this.isPanchayatCorporationMunicipality = isPanchayatCorporationMunicipality;
+    }
+
+    public String getNomineePlace() {
+        return nomineePlace;
+    }
+
+    public Apeksha nomineePlace(String nomineePlace) {
+        this.nomineePlace = nomineePlace;
+        return this;
+    }
+
+    public void setNomineePlace(String nomineePlace) {
+        this.nomineePlace = nomineePlace;
+    }
+
+    public String getNomineePanchayatCorporationMunicipality() {
+        return nomineePanchayatCorporationMunicipality;
+    }
+
+    public Apeksha nomineePanchayatCorporationMunicipality(String nomineePanchayatCorporationMunicipality) {
+        this.nomineePanchayatCorporationMunicipality = nomineePanchayatCorporationMunicipality;
+        return this;
+    }
+
+    public void setNomineePanchayatCorporationMunicipality(String nomineePanchayatCorporationMunicipality) {
+        this.nomineePanchayatCorporationMunicipality = nomineePanchayatCorporationMunicipality;
+    }
+
+    public String getApplicantExtraField1() {
+        return applicantExtraField1;
+    }
+
+    public Apeksha applicantExtraField1(String applicantExtraField1) {
+        this.applicantExtraField1 = applicantExtraField1;
+        return this;
+    }
+
+    public void setApplicantExtraField1(String applicantExtraField1) {
+        this.applicantExtraField1 = applicantExtraField1;
+    }
+
+    public String getApplicantExtraField2() {
+        return applicantExtraField2;
+    }
+
+    public Apeksha applicantExtraField2(String applicantExtraField2) {
+        this.applicantExtraField2 = applicantExtraField2;
+        return this;
+    }
+
+    public void setApplicantExtraField2(String applicantExtraField2) {
+        this.applicantExtraField2 = applicantExtraField2;
+    }
+
+    public String getApplicantExtraField3() {
+        return applicantExtraField3;
+    }
+
+    public Apeksha applicantExtraField3(String applicantExtraField3) {
+        this.applicantExtraField3 = applicantExtraField3;
+        return this;
+    }
+
+    public void setApplicantExtraField3(String applicantExtraField3) {
+        this.applicantExtraField3 = applicantExtraField3;
+    }
+
+    public String getBenefieciaryExtraField1() {
+        return benefieciaryExtraField1;
+    }
+
+    public Apeksha benefieciaryExtraField1(String benefieciaryExtraField1) {
+        this.benefieciaryExtraField1 = benefieciaryExtraField1;
+        return this;
+    }
+
+    public void setBenefieciaryExtraField1(String benefieciaryExtraField1) {
+        this.benefieciaryExtraField1 = benefieciaryExtraField1;
+    }
+
+    public String getGeneralPurposeExtraField1() {
+        return generalPurposeExtraField1;
+    }
+
+    public Apeksha generalPurposeExtraField1(String generalPurposeExtraField1) {
+        this.generalPurposeExtraField1 = generalPurposeExtraField1;
+        return this;
+    }
+
+    public void setGeneralPurposeExtraField1(String generalPurposeExtraField1) {
+        this.generalPurposeExtraField1 = generalPurposeExtraField1;
+    }
+
+    public String getGeneralPurposeExtraField2() {
+        return generalPurposeExtraField2;
+    }
+
+    public Apeksha generalPurposeExtraField2(String generalPurposeExtraField2) {
+        this.generalPurposeExtraField2 = generalPurposeExtraField2;
+        return this;
+    }
+
+    public void setGeneralPurposeExtraField2(String generalPurposeExtraField2) {
+        this.generalPurposeExtraField2 = generalPurposeExtraField2;
+    }
+
+    public String getGeneralPurposeExtraField3() {
+        return generalPurposeExtraField3;
+    }
+
+    public Apeksha generalPurposeExtraField3(String generalPurposeExtraField3) {
+        this.generalPurposeExtraField3 = generalPurposeExtraField3;
+        return this;
+    }
+
+    public void setGeneralPurposeExtraField3(String generalPurposeExtraField3) {
+        this.generalPurposeExtraField3 = generalPurposeExtraField3;
+    }   
 
     @Override
     public boolean equals(Object o) {
@@ -1544,6 +1913,29 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
             ", nomineeRelationShipProofContentType='" + nomineeRelationShipProofContentType + "'" +
             ", nomineeBankPassbookFrontPage='" + getNomineeBankPassbookFrontPage() + "'" +
             ", nomineeBankPassbookFrontPageContentType='" + nomineeBankPassbookFrontPageContentType + "'" +
+            ", isApplicantDifferentFromBenefeciary='" + getIsApplicantDifferentFromBenefeciary() + "'" +
+            ", votersCardNumber='" + getVotersCardNumber() + "'" +
+            ", applicantPlace='" + getApplicantPlace() + "'" +
+            ", onBehalfApplicantName='" + getOnBehalfApplicantName() + "'" +
+            ", onBehalfApplicantIDProof='" + getOnBehalfApplicantIDProof() + "'" +
+            ", onBehalfApplicantIdProofNumber='" + getOnBehalfApplicantIdProofNumber() + "'" +
+            ", onBehalfApplicantRelationship='" + getOnBehalfApplicantRelationship() + "'" +
+            ", onBehalfApplicantMobileNumber='" + getOnBehalfApplicantMobileNumber() + "'" +
+            ", benefieciaryHasOwnProperty='" + getBenefieciaryHasOwnProperty() + "'" +
+            ", hasRecommendation='" + getHasRecommendation() + "'" +
+            ", isRecommendationFromChiefMinister='" + getIsRecommendationFromChiefMinister() + "'" +
+            ", isAnyAmountReceivingFromGovt='" + getIsAnyAmountReceivingFromGovt() + "'" +
+            ", isNomineeAvailable='" + getIsNomineeAvailable() + "'" +
+            ", isPanchayatCorporationMunicipality='" + getIsPanchayatCorporationMunicipality() + "'" +
+            ", nomineePlace='" + getNomineePlace() + "'" +
+            ", nomineePanchayatCorporationMunicipality='" + getNomineePanchayatCorporationMunicipality() + "'" +
+            ", applicantExtraField1='" + getApplicantExtraField1() + "'" +
+            ", applicantExtraField2='" + getApplicantExtraField2() + "'" +
+            ", applicantExtraField3='" + getApplicantExtraField3() + "'" +
+            ", benefieciaryExtraField1='" + getBenefieciaryExtraField1() + "'" +
+            ", generalPurposeExtraField1='" + getGeneralPurposeExtraField1() + "'" +
+            ", generalPurposeExtraField2='" + getGeneralPurposeExtraField2() + "'" +
+            ", generalPurposeExtraField3='" + getGeneralPurposeExtraField3() + "'" +            
             "}";
     }
 }

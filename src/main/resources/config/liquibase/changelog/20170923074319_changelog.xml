@@ -1,0 +1,118 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="maghesh (generated)" id="1506152629457-1">
+        <addColumn tableName="apeksha">
+            <column name="applicant_extra_field_1" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-2">
+        <addColumn tableName="apeksha">
+            <column name="applicant_extra_field_2" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-3">
+        <addColumn tableName="apeksha">
+            <column name="applicant_extra_field_3" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-4">
+        <addColumn tableName="apeksha">
+            <column name="applicant_place" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-5">
+        <addColumn tableName="apeksha">
+            <column name="benefieciary_extra_field_1" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-6">
+        <addColumn tableName="apeksha">
+            <column name="benefieciary_has_own_property" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-7">
+        <addColumn tableName="apeksha">
+            <column name="general_purpose_extra_field_1" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-8">
+        <addColumn tableName="apeksha">
+            <column name="general_purpose_extra_field_2" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-9">
+        <addColumn tableName="apeksha">
+            <column name="general_purpose_extra_field_3" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-10">
+        <addColumn tableName="apeksha">
+            <column name="has_recommendation" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-11">
+        <addColumn tableName="apeksha">
+            <column name="is_any_amount_receiving_from_govt" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-12">
+        <addColumn tableName="apeksha">
+            <column name="is_applicant_different_from_benefeciary" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-13">
+        <addColumn tableName="apeksha">
+            <column name="is_nominee_available" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-14">
+        <addColumn tableName="apeksha">
+            <column name="is_panchayat_corporation_municipality" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-15">
+        <addColumn tableName="apeksha">
+            <column name="is_recommendation_from_chief_minister" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-16">
+        <addColumn tableName="apeksha">
+            <column name="nominee_panchayat_corporation_municipality" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-17">
+        <addColumn tableName="apeksha">
+            <column name="nominee_place" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-18">
+        <addColumn tableName="apeksha">
+            <column name="on_behalf_applicant_id_proof" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-19">
+        <addColumn tableName="apeksha">
+            <column name="on_behalf_applicant_id_proof_number" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-20">
+        <addColumn tableName="apeksha">
+            <column name="on_behalf_applicant_mobile_number" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-21">
+        <addColumn tableName="apeksha">
+            <column name="on_behalf_applicant_name" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-22">
+        <addColumn tableName="apeksha">
+            <column name="on_behalf_applicant_relationship" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="maghesh (generated)" id="1506152629457-23">
+        <addColumn tableName="apeksha">
+            <column name="voters_card_number" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

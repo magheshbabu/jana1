@@ -109,7 +109,30 @@
             "nomineePhoto": "നോമിനീയുടെ ഫോട്ടോ",
             "nomineeAadharCardRationCard": "നോമിനീയുടെ ആധാറോ/വോടെര്സോ/ രേഷന്‍ കാര്‍ഡോ നമ്പര്‍",
             "nomineeRelationShipProof": "നോമിനീയും അവ്ശ്യക്കാരനും തമ്മിലുള്ള ബന്ധം തെളിയിക്കുന്ന രേഖ",
-            "nomineeBankPassbookFrontPage": "നോമിനീയുടെ പസ്സ്ബൂക്കിന്‍റെ ആദ്യത്തെ പേജ്"			
+            "nomineeBankPassbookFrontPage": "നോമിനീയുടെ പസ്സ്ബൂക്കിന്‍റെ ആദ്യത്തെ പേജ്"	,	
+            "isApplicantDifferentFromBenefeciary": "Is Applicant Different From Benefeciary",
+            "votersCardNumber": "Voters Card Number",
+            "applicantPlace": "Applicant Place",
+            "onBehalfApplicantName": "On Behalf Applicant Name",
+            "onBehalfApplicantIDProof": "On Behalf Applicant ID Proof",
+            "onBehalfApplicantIdProofNumber": "On Behalf Applicant Id Proof Number",
+            "onBehalfApplicantRelationship": "On Behalf Applicant Relationship",
+            "onBehalfApplicantMobileNumber": "On Behalf Applicant Mobile Number",
+            "benefieciaryHasOwnProperty": "Benefieciary Has Own Property",
+            "hasRecommendation": "Has Recommendation",
+            "isRecommendationFromChiefMinister": "Is Recommendation From Chief Minister",
+            "isAnyAmountReceivingFromGovt": "Is Any Amount Receiving From Govt",
+            "isNomineeAvailable": "Is Nominee Available",
+            "isPanchayatCorporationMunicipality": "Is Panchayat Corporation Municipality",
+            "nomineePlace": "Nominee Place",
+            "nomineePanchayatCorporationMunicipality": "Nominee Panchayat Corporation Municipality",
+            "applicantExtraField1": "Applicant Extra Field 1",
+            "applicantExtraField2": "Applicant Extra Field 2",
+            "applicantExtraField3": "Applicant Extra Field 3",
+            "benefieciaryExtraField1": "Benefieciary Extra Field 1",
+            "generalPurposeExtraField1": "General Purpose Extra Field 1",
+            "generalPurposeExtraField2": "General Purpose Extra Field 2",
+            "generalPurposeExtraField3": "General Purpose Extra Field 3"            	
 		}
 	}
 }

@@ -106,7 +106,30 @@
             "nomineePhoto": "Nominee Photo",
             "nomineeAadharCardRationCard": "Nominee Aadhar Card Ration Card",
             "nomineeRelationShipProof": "Nominee Relation Ship Proof",
-            "nomineeBankPassbookFrontPage": "Nominee Bank Passbook Front Page"
+            "nomineeBankPassbookFrontPage": "Nominee Bank Passbook Front Page",
+            "isApplicantDifferentFromBenefeciary": "Is Applicant Different From Benefeciary",
+            "votersCardNumber": "Voters Card Number",
+            "applicantPlace": "Applicant Place",
+            "onBehalfApplicantName": "On Behalf Applicant Name",
+            "onBehalfApplicantIDProof": "On Behalf Applicant ID Proof",
+            "onBehalfApplicantIdProofNumber": "On Behalf Applicant Id Proof Number",
+            "onBehalfApplicantRelationship": "On Behalf Applicant Relationship",
+            "onBehalfApplicantMobileNumber": "On Behalf Applicant Mobile Number",
+            "benefieciaryHasOwnProperty": "Benefieciary Has Own Property",
+            "hasRecommendation": "Has Recommendation",
+            "isRecommendationFromChiefMinister": "Is Recommendation From Chief Minister",
+            "isAnyAmountReceivingFromGovt": "Is Any Amount Receiving From Govt",
+            "isNomineeAvailable": "Is Nominee Available",
+            "isPanchayatCorporationMunicipality": "Is Panchayat Corporation Municipality",
+            "nomineePlace": "Nominee Place",
+            "nomineePanchayatCorporationMunicipality": "Nominee Panchayat Corporation Municipality",
+            "applicantExtraField1": "Applicant Extra Field 1",
+            "applicantExtraField2": "Applicant Extra Field 2",
+            "applicantExtraField3": "Applicant Extra Field 3",
+            "benefieciaryExtraField1": "Benefieciary Extra Field 1",
+            "generalPurposeExtraField1": "General Purpose Extra Field 1",
+            "generalPurposeExtraField2": "General Purpose Extra Field 2",
+            "generalPurposeExtraField3": "General Purpose Extra Field 3"            
         }
     }
 }
