@@ -130,7 +130,7 @@
 
         };
 
-        vm.mustFillRationOrAadharOrVoters();
+        vm.mustFillRationOrAadharOrVoters(); // this function has to be called to initialise the value of vm.isRequiredRationOrAadharOrVoters
 
         vm.masterCasteReligions = function (castename) {
             vm.casteReligions = masterCasteReligion.getReligionForCaste(castename);
