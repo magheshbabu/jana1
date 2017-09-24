@@ -66,6 +66,7 @@
         /**
          * function to validate and see if any one of voterscardnumber OR aadharcardnumber OR rationcardnumber is filled in
          */
+        vm.isRequiredRationOrAadharOrVoters = true; // initialising the default value for the variable // this is required
         vm.mustFillRationOrAadharOrVoters = function () {
             // console.log(vm.apeksha.rationCardNumber.length +',' +  vm.apeksha.aadharNumber.length + ',' + vm.apeksha.voterscard.length);
             //console.log(vm.apeksha.rationCardNumber.length +',' +  vm.apeksha.aadharNumber.length + ',' + vm.apeksha.votersCardNumber.length);
