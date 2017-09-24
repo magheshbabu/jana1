@@ -21,7 +21,26 @@
         vm.openFile = DataUtils.openFile;
         vm.save = save;
 
-        console.log('message11' + JSON.stringify(vm.apeksha.id));
+        /**
+         * initialising the default values for checkboxes...otherwise...it will be expanded when entering a NEW form
+         */
+        if(angular.isUndefined(vm.apeksha.isApplicantDifferentFromBenefeciary) || vm.apeksha.isApplicantDifferentFromBenefeciary === null) {
+            vm.apeksha.isApplicantDifferentFromBenefeciary = 'false';
+        }
+        if(angular.isUndefined(vm.apeksha.benefieciaryHasOwnProperty) || vm.apeksha.benefieciaryHasOwnProperty === null) {
+            vm.apeksha.benefieciaryHasOwnProperty = 'false';
+        }
+        if(angular.isUndefined(vm.apeksha.hasRecommendation) || vm.apeksha.hasRecommendation === null) {
+            vm.apeksha.hasRecommendation = 'false';
+        }
+        if(angular.isUndefined(vm.apeksha.isAnyAmountReceivingFromGovt) || vm.apeksha.isAnyAmountReceivingFromGovt === null) {
+            vm.apeksha.isAnyAmountReceivingFromGovt = 'false';
+        }
+        if(angular.isUndefined(vm.apeksha.isNomineeAvailable) || vm.apeksha.isNomineeAvailable === null) {
+            vm.apeksha.isNomineeAvailable = 'false';
+        }
+
+    
         /**
          * we dont store the place of the hospital in database as a seperate field...
          * but we store the place of hospital in database along with hospital with hypen seperated
@@ -77,7 +96,7 @@
         /**
          * function to validate and see if any one of voterscardnumber OR aadharcardnumber OR rationcardnumber is filled in
          */
-        vm.isRequiredRationOrAadharOrVoters = true; // initialising the default value for the variable // this is required
+        // initialising the default value for the variable // this is required
         vm.mustFillRationOrAadharOrVoters = function () {
             // console.log(vm.apeksha.rationCardNumber.length +',' +  vm.apeksha.aadharNumber.length + ',' + vm.apeksha.voterscard.length);
             //console.log(vm.apeksha.rationCardNumber.length +',' +  vm.apeksha.aadharNumber.length + ',' + vm.apeksha.votersCardNumber.length);
@@ -110,6 +129,8 @@
             return true;
 
         };
+
+        vm.mustFillRationOrAadharOrVoters();
 
         vm.masterCasteReligions = function (castename) {
             vm.casteReligions = masterCasteReligion.getReligionForCaste(castename);
