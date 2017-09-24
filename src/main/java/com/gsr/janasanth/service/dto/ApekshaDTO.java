@@ -32,18 +32,18 @@ public class ApekshaDTO implements Serializable {
 
     private LocalDate dateOfBirth;
 
-    @NotNull
+
     private String aadharNumber;
 
-    @NotNull
+
     private String rationCardNumber;
 
     private String rationCardCategory;
 
-    @NotNull
+
     private String caste;
 
-    @NotNull
+
     private String religion;
 
     private String houseName;

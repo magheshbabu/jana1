@@ -114,16 +114,16 @@
             <div class="form-group">
                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.district" for="field_district">District</label>
 
-                <!-- <input class="form-control" list="datalistDistricts" name="district" id="field_district" ng-model="vm.apeksha.district" required ng-blur="vm.updateblocks(vm.apeksha.district)">
+                <input class="form-control" list="datalistDistricts" name="district" id="field_district" ng-model="vm.apeksha.district" required ng-blur="vm.updateblocks(vm.apeksha.district)">
                 <datalist id="datalistDistricts">
                     <option ng-repeat="x in vm.masterDistricts" value="{{x.malDistName}}">{{x.malDistName}}</option>
-                </datalist>                 -->
+                </datalist>                
 
-                <select class="form-control" name="district" id="field_district" ng-model="vm.apeksha.district" required 
+                <!-- <select class="form-control" name="district" id="field_district" ng-model="vm.apeksha.district" required 
                     ng-change="vm.updateblocks(vm.apeksha.district)"
                     ng-init="vm.updateblocks(vm.apeksha.district)">
                     <option ng-repeat="x in vm.masterDistricts" value="{{x.malDistName}}">{{x.malDistName}}</option>
-                </select>
+                </select> -->
 
                 <div ng-show="editForm.district.$invalid">
                     <p class="help-block"
@@ -320,12 +320,17 @@
 
             <div class="form-group">
                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.village" for="field_village">Village</label>
-                <!-- <input type="text" class="form-control" name="village" id="field_village"
-                    ng-model="vm.apeksha.village"
-                    required/> -->
-                <select class="form-control" name="village" id="field_village" ng-model="vm.apeksha.village" required>
+
+
+                <input class="form-control" list="datalistVillages" name="village" id="field_village" ng-model="vm.apeksha.village" required >
+                <datalist id="datalistVillages">
                     <option ng-repeat="village in vm.villagelist" value="{{village.M}}">{{village.M}}</option>
-                </select>
+                </datalist>  
+
+
+                <!-- <select class="form-control" name="village" id="field_village" ng-model="vm.apeksha.village" required>
+                    <option ng-repeat="village in vm.villagelist" value="{{village.M}}">{{village.M}}</option>
+                </select> -->
                 <div ng-show="editForm.village.$invalid">
                     <p class="help-block"
                         ng-show="editForm.village.$error.required" data-translate="entity.validation.required">
@@ -335,12 +340,15 @@
             </div>
             <div class="form-group">
                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.taluk" for="field_taluk">Taluk</label>
-                <!-- <input type="text" class="form-control" name="taluk" id="field_taluk"
-                    ng-model="vm.apeksha.taluk"
-                    /> -->
-                <select class="form-control" name="taluk" id="field_taluk" ng-model="vm.apeksha.taluk"  >
+
+                <input class="form-control" list="datalistThaluks" name="taluk" id="field_taluk" ng-model="vm.apeksha.taluk"  >
+                <datalist id="datalistThaluks">
                     <option ng-repeat="th in vm.thalukList" value="{{th.M}}">{{th.M}}</option>
-                </select>
+                </datalist>  
+
+                <!-- <select class="form-control" name="taluk" id="field_taluk" ng-model="vm.apeksha.taluk"  >
+                    <option ng-repeat="th in vm.thalukList" value="{{th.M}}">{{th.M}}</option>
+                </select> -->
             </div>
             <div class="form-group">
                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.panchayat" for="field_panchayat">Panchayat</label>

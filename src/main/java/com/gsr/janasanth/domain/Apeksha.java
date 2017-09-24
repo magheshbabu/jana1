@@ -50,23 +50,23 @@ public class Apeksha extends AbstractAuditingEntity implements Serializable {
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
-    @NotNull
-    @Column(name = "aadhar_number", nullable = false)
+
+    @Column(name = "aadhar_number")
     private String aadharNumber;
 
-    @NotNull
-    @Column(name = "ration_card_number", nullable = false)
+
+    @Column(name = "ration_card_number")
     private String rationCardNumber;
 
     @Column(name = "ration_card_category")
     private String rationCardCategory;
 
-    @NotNull
-    @Column(name = "caste", nullable = false)
+
+    @Column(name = "caste")
     private String caste;
 
-    @NotNull
-    @Column(name = "religion", nullable = false)
+
+    @Column(name = "religion")
     private String religion;
 
     @Column(name = "house_name")
