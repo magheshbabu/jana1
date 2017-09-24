@@ -51,11 +51,11 @@
             </column>
 
             <column name="aadhar_number" type="text(255)">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
 
             <column name="ration_card_number" type="text(255)">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
 
             <column name="ration_card_category" type="text(255)">
@@ -63,11 +63,11 @@
             </column>
 
             <column name="caste" type="text(255)">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
 
             <column name="religion" type="text(255)">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
 
             <column name="house_name" type="text(255)">
