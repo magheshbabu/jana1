@@ -6,7 +6,11 @@
             "home": "Home",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "reports": {
-                "main": "Reports"
+                "main": "Reports",
+                "summaryreport": "Summary Report",
+                "collectorreport": "Collector Report",
+                "villageofficerreport": "Village Officer Report",
+                "financereport": "Finance Report"
             },
             "entities": {
                 "main": "Entities",

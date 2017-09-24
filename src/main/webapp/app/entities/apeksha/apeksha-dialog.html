@@ -412,6 +412,7 @@
                 <label class="control-label" data-translate="janasanthwanamApp.apeksha.annualIncome" for="field_annualIncome">Annual Income</label>
                 <input type="number" class="form-control" name="annualIncome" id="field_annualIncome"
                     ng-model="vm.apeksha.annualIncome"
+                    ng-blur="vm.calculateAnnualIncome()"
                     required/>
                 <div ng-show="editForm.annualIncome.$invalid">
                     <p class="help-block"

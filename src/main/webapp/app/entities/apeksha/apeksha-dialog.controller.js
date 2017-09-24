@@ -64,6 +64,17 @@
 
 
         /**
+         * accoding to ravi..data entry people enter monthly income into this text box
+         * we need to calculate annual income by multiplying it by 12
+         */
+        vm.calculateAnnualIncome = function() {
+            if(angular.isDefined(vm.apeksha.annualIncome) && vm.apeksha.annualIncome !== null) {
+                vm.apeksha.annualIncome = vm.apeksha.annualIncome * 12;
+            }
+        };
+
+
+        /**
          * function to validate and see if any one of voterscardnumber OR aadharcardnumber OR rationcardnumber is filled in
          */
         vm.isRequiredRationOrAadharOrVoters = true; // initialising the default value for the variable // this is required

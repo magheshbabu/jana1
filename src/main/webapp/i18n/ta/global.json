@@ -6,7 +6,11 @@
 			"home": "ഹോം",
 			"jhipster-needle-menu-add-element": "GSR will add additional menu entries here (do not translate!)",
             "reports": {
-                "main": "റിപ്പോര്‍ട്ട്‌"
+                "main": "റിപ്പോര്‍ട്ട്‌",
+                "summaryreport": "സമ്മറി റിപ്പോര്‍ട്ട്‌",
+                "collectorreport": "കളക്ടര്‍ റിപ്പോര്‍ട്ട്‌",
+                "villageofficerreport": "വില്ലജ് ഓഫീസര്‍ റിപ്പോര്‍ട്ട്‌",
+                "financereport": "ഫൈനാന്‍സ് റിപ്പോര്‍ട്ട്‌"
             },			
 			"entities": {
 				"main": "വസ്തുത",
